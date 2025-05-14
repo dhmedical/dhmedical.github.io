@@ -10824,3 +10824,13 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.custom-btn {
+  background-color: #46a942;
+  border-color: #46a942;
+  color: #fff;
+}
+
+.custom-btn:hover {
+  background-color: #3d913a;
+  border-color: #3d913a;
+}
