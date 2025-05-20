@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecurePortIV - DH Medical</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<!-- Pasek nawigacyjny -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container px-5">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/logo.png" alt="Logo" width="80" height="80" />
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Oferta</a></li>
+        <li class="nav-item"><a class="nav-link" href="o-nas.html">O nas</a></li>
+        <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero sekcja -->
+<header class="bg-light py-5">
+  <div class="container text-center">
+    <h1 class="display-5 fw-bold">SecurePortIV</h1>
+    <p class="lead">Innowacyjny klej do zabezpieczania dostępów naczyniowych – bez szwów, bez komplikacji.</p>
+    <img src="assets/secureportiv-main.jpg" alt="SecurePortIV" class="img-fluid rounded shadow mt-4" style="max-height: 500px;" />
+  </div>
+</header>
+
+<!-- Sekcja zalet -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-5">Dlaczego SecurePortIV?</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <h5>✅ Mniej infekcji</h5>
+        <p>Redukuje ryzyko zakażeń związanych z dostępem naczyniowym.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>✅ Bezpieczny dla skóry</h5>
+        <p>Delikatny klej opracowany specjalnie do zastosowań medycznych.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>✅ Łatwy w aplikacji</h5>
+        <p>Nie wymaga specjalistycznego przeszkolenia personelu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Krok po kroku -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Jak stosować?</h2>
+    <div class="row text-center">
+      <div class="col-md-3">
+        <h6>Krok 1</h6>
+        <p>Oczyść i osusz miejsce wkłucia.</p>
+      </div>
+      <div class="col-md-3">
+        <h6>Krok 2</h6>
+        <p>Nałóż klej SecurePortIV wokół miejsca wkłucia.</p>
+      </div>
+      <div class="col-md-3">
+        <h6>Krok 3</h6>
+        <p>Przytrzymaj dostęp przez kilka sekund.</p>
+      </div>
+      <div class="col-md-3">
+        <h6>Krok 4</h6>
+        <p>Zabezpiecz przezroczystym opatrunkiem (opcjonalnie).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Materiały wideo / zdjęcia -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="text-center mb-5">Zobacz produkt w działaniu</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/your_video_id" title="SecurePortIV video" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tabela porównawcza -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Porównanie metod</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>Cecha</th>
+            <th>SecurePortIV</th>
+            <th>Szycie</th>
+            <th>Opatrunek klasyczny</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ryzyko infekcji</td>
+            <td>🔽 Niskie</td>
+            <td>🔼 Wysokie</td>
+            <td>⚠️ Średnie</td>
+          </tr>
+          <tr>
+            <td>Czas aplikacji</td>
+            <td>✅ Krótki</td>
+            <td>⏱ Dłuższy</td>
+            <td>⏱ Krótki</td>
+          </tr>
+          <tr>
+            <td>Komfort pacjenta</td>
+            <td>✅ Wysoki</td>
+            <td>❌ Niski</td>
+            <td>✔️ Średni</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Kontakt -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h2>Chcesz wypróbować SecurePortIV?</h2>
+    <p class="lead mb-4">Skontaktuj się z nami, aby otrzymać próbkę lub prezentację produktu.</p>
+    <a href="kontakt.html" class="btn btn-success btn-lg">Skontaktuj się</a>
+  </div>
+</section>
+
+<!-- Stopka -->
+<footer class="bg-light text-dark py-4 mt-5">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <!-- Firma 1 -->
+      <div class="col-md-4 mb-4">
+        <h5>DH Medical Arkadiusz Dynda</h5>
+        <p>Szalowa 385<br>38-331 Szalowa<br>NIP: 7382168824</p>
+        <p>Email: <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>Tel: +48 883 480 355</p>
+      </div>
+      <!-- Firma 2 -->
+      <div class="col-md-4 mb-4">
+        <h5>DH Medical Sławomir Hutek</h5>
+        <p>ul. Samotna 8/A<br>33-300 Kraków<br>NIP: 7343623098</p>
+        <p>Email: <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>Tel: +48 507 687 927</p>
+      </div>
+      <!-- Social -->
+      <div class="col-md-4">
+        <h5>Social media</h5>
+        <p>
+          <a href="https://www.linkedin.com/in/arkadiuszdynda" target="_blank">LinkedIn Arkadiusz</a><br>
+          <a href="https://www.linkedin.com/in/slawomirhutek" target="_blank">LinkedIn Sławomir</a><br>
+          <a href="https://www.youtube.com/@dhmedical" target="_blank">YouTube</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
