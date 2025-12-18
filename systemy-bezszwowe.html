@@ -30,6 +30,26 @@
         footer a { color: #a8c7e6; text-decoration: none; transition: color 0.3s; }
         footer a:hover { color: white; }
         @media (max-width: 768px) { .page-header h1 { font-size: 2.8rem; } .card img { height: 220px; } .section-title { font-size: 2rem; } .subsection-title { font-size: 1.8rem; } }
+            .btn-secondary {
+        background-color: #6c757d; /* szary, żeby odróżnić od głównego niebieskiego */
+        border-color: #6c757d;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+        border-color: #545b62;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(108,117,125,0.3);
+    }
+
+    @media (max-width: 576px) {
+        .btn-product {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        .me-3 { margin-right: 0 !important; }
+    }
     </style>
 </head>
 <body>
@@ -62,16 +82,20 @@
         <h2 class="section-title">Klej do mocowania dostępów naczyniowych SecurePortIV</h2>
         <div class="row g-5 justify-content-center mb-5">
             <div class="col-md-8 col-lg-6">
-                <div class="card">
-                    <img src="assets/secureportiv.png" alt="SecurePortIV klej cyjanoakrylanowy">  <!-- Zamień na Twoje zdjęcie -->
-                    <div class="card-body">
-                        <h3 class="card-title">SecurePortIV™</h3>
-                        <p class="card-text">Pierwszy i jedyny klej cyjanoakrylanowy zatwierdzony przez FDA do mocowania urządzeń dostępu naczyniowego. Prosty w użyciu, mocny i bezpieczny.</p>
-                        <a href="kontakt.html" class="btn-product">Zamów</a>
-                    </div>
-                </div>
+    <div class="card">
+        <img src="assets/secureportiv.png" alt="SecurePortIV klej cyjanoakrylanowy">
+        <div class="card-body">
+            <h3 class="card-title">SecurePortIV™</h3>
+            <p class="card-text">Pierwszy i jedyny klej cyjanoakrylanowy zatwierdzony przez FDA do mocowania urządzeń dostępu naczyniowego. Prosty w użyciu, mocny i bezpieczny.</p>
+            
+            <!-- Dwa przyciski -->
+            <div class="mt-3">
+                <a href="kontakt.html" class="btn-product me-3">Zamów</a>
+                <a href="secureportiv.html" class="btn-product btn-secondary">Dowiedz się więcej</a>
             </div>
         </div>
+    </div>
+</div>
 
         <!-- FlexGrip -->
         <h2 class="section-title">Systemy Bezszwowe FlexGrip (Bedal)</h2>
