@@ -10834,3 +10834,21 @@ textarea.form-control-lg {
   background-color: #3d913a;
   border-color: #3d913a;
 }
+    /* Customowy przycisk pasujący do tła #25a7df */
+    .btn-custom {
+        background-color: #25a7df;
+        border-color: #25a7df;
+        color: white;
+        padding: 0.8rem 2.5rem;
+        font-size: 1.2rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(37, 167, 223, 0.2);
+    }
+
+    .btn-custom:hover {
+        background-color: #1e90c2;
+        border-color: #1e90c2;
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(37, 167, 223, 0.4);
+    }
