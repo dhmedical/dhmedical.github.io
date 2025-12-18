@@ -10885,3 +10885,24 @@ textarea.form-control-lg {
         z-index: 10;  /* na wierzchu */
         margin-top: -50px;  /* lekkie podciągnięcie, żeby delikatnie nachodził na tło – wygląda nowocześnie */
     }
+
+      html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* wrapper treści – dostosuj nazwę jeśli masz inną */
+main {
+  flex: 1;
+}
+
+/* footer */
+footer {
+  margin-top: auto;
+}
+
