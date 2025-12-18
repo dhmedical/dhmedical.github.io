@@ -10852,3 +10852,20 @@ textarea.form-control-lg {
         transform: translateY(-3px);
         box-shadow: 0 10px 25px rgba(37, 167, 223, 0.4);
     }
+    .partners img {
+        height: 80px;          /* stała wysokość – wszystkie będą równe */
+        width: auto;
+        margin: 0 2rem;
+        object-fit: contain;   /* zachowuje proporcje */
+        opacity: 0.9;
+        transition: opacity 0.3s;
+    }
+    .partners img:hover {
+        opacity: 1;
+    }
+    @media (max-width: 768px) {
+        .partners img {
+            height: 60px;
+            margin: 1rem;
+        }
+    }
