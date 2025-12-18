@@ -1,151 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>DH Medical - wspieramy innowacje w medycynie</title>
-        <!-- Favicon-->
-       <link rel="icon" href="assets/favicon.png" type="image/png" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-            <div class="container px-5">
-                <a class="navbar-brand" href="/index.html">
-    <img src="assets/logo.png" alt="DH Medical" style="height: 80px; width: 80px;">
-</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                     <li class="nav-item"><a class="nav-link" href="/index.html">Oferta</a></li>
-                        <li class="nav-item"><a class="nav-link" href="o-nas.html">O nas</a></li>
+<html lang="pl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="DH Medical - Dystrybutor innowacyjnych rozwiązań w sektorze dostępów naczyniowych. Współpracujemy z H.B. Fuller, Bedal i Districlass Medical." />
+    <meta name="author" content="" />
+    <title>DH Medical - Wspieramy innowacje w medycynie</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <!-- Dodatkowy CSS dla hero -->
+    <style>
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1579684453423-6c1e71e7b2d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3.5rem; }
+        .hero p { font-size: 1.5rem; max-width: 800px; margin: 0 auto 2rem; }
+        .partners img { height: 80px; margin: 0 2rem; opacity: 0.9; transition: opacity 0.3s; }
+        .partners img:hover { opacity: 1; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .partners img { height: 60px; margin: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/logo.png" alt="DH Medical" style="height: 80px; width: 80px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="oferta.html">Oferta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="o-nas.html">O nas</a></li>
                     <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
-                    </ul>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container px-5">
+            <h1>Wspieramy innowacje w medycynie</h1>
+            <p>Jesteśmy firmą specjalizującą się w dystrybucji nowoczesnych rozwiązań w sektorze dostępów naczyniowych. Oferujemy produkty najwyższej jakości, które zwiększają bezpieczeństwo pacjentów i ułatwiają pracę personelowi medycznemu.</p>
+            <a href="oferta.html" class="btn btn-success btn-lg">Zobacz ofertę</a>
+
+            <div class="partners mt-5">
+                <p class="mb-4" style="font-size: 1.2rem;">Współpracujemy z wiodącymi producentami:</p>
+                <img src="https://i.ytimg.com/vi/UICtftnrDuE/maxresdefault.jpg" alt="H.B. Fuller SecurePortIV">
+                <img src="https://www.cookmedical.com/wp-content/uploads/sites/2/2024/02/Bedal-FlexGRIP-catheter-securement-device.jpg" alt="Bedal FlexGRIP">
+                <img src="https://districlass.com/wp-content/uploads/2017/03/districath-picture-e1494490404714.png" alt="Districlass Medical">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (zachowany z Twojego kodu) -->
+    <footer class="py-5 bg-light text-dark border-top">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-4 mb-4">
+                    <h5>DH Medical Arkadiusz Dynda</h5>
+                    <p>Szalowa 385<br>38-331 Szalowa<br>NIP: 7382168824</p>
+                    <p>Email: <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>Tel: +48 883 480 355</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>DH Medical Sławomir Hutek</h5>
+                    <p>ul. Masarska 7/17<br>31-534 Kraków<br>NIP: 7343623098</p>
+                    <p>Email: <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>Tel: +48 507 687 927</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Social Media</h5>
+                    <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" class="d-block mb-2 text-decoration-none text-dark">LinkedIn – Arkadiusz Dynda</a>
+                    <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" class="d-block mb-2 text-decoration-none text-dark">LinkedIn – Sławomir Hutek</a>
+                    <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" class="d-block mb-2 text-decoration-none text-dark">YouTube – DH Medical</a>
                 </div>
             </div>
-        </nav>
-        <!-- Page Content-->
-        <div class="container px-4 px-lg-5">
-          <!-- Heading Row-->
-<div class="row gx-4 gx-lg-5 align-items-center my-5">
-  <div class="col-md-7">
-    <img class="img-fluid rounded mb-4 mb-md-0" src="assets/klej.png" alt="SecurePortIV – klej do mocowania cewników" />
-  </div>
-  <div class="col-md-5">
-    <h1 class="font-weight-light">Innowacja w mocowaniu cewników!</h1>
-    <p>
-      SecurePortIV™ jest pierwszym i jedynym klejem cyjanoakrylanowym, który został zatwierdzony przez FDA do mocowania urządzeń dostępu naczyniowego.
-      Prosty w użyciu, mocny i bezpieczny, zapewnia duże korzyści i przewagę nad tradycyjnymi metodami mocowania i zabezpieczania.
-    </p>
-<a href="secureportiv.html" class="btn btn-success">Dowiedz się więcej</a>
-  </div>
-</div>
-            <!-- Video Links Section -->
-<div class="row my-5 text-center">
-    <div class="col-md-4 mb-4">
-        <a href="https://www.youtube.com/watch?v=HHFnkImlRpM" target="_blank" class="btn btn-outline-success w-100">
-            📽️ Prezentacja Wideo - pełna
-        </a>
-    </div>
-    <div class="col-md-4 mb-4">
-        <a href="https://www.youtube.com/watch?v=LFHP9gRy9yc" target="_blank" class="btn btn-outline-success w-100">
-            🎬 Prezentacja Wideo - skrócona
-        </a>
-    </div>
-    <div class="col-md-4 mb-4">
-        <a href="https://www.youtube.com/watch?v=91ps-VM2IWE" target="_blank" class="btn btn-outline-success w-100">
-            🎥 Aplikacja SecurePortI - noworodek
-        </a>
-    </div>
-</div>
-           <!-- Product Cards - BEDAL -->
-<div class="row gx-4 gx-lg-5">
-    <!-- Produkt 1 -->
-    <div class="col-md-4 mb-5">
-        <div class="card h-100 border-success">
-            <img src="assets/bedal1.png" class="card-img-top" alt="Bedal Produkt 1">
-            <div class="card-body">
-                <h5 class="card-title">FlexGrip Alpha</h5>
-                <p class="card-text">Najnowszy system firmy Bedal. Mocuje bezszwowo wszystkie cewniki posiadające motylek. Mocuje cewniki centralne, dializacyjne, kaniule dotętnicze, cewniki PICC oraz Midline.</p>
-            </div>
-            <div class="card-footer text-center">
-                <a href="https://www.flex-grip.com/products/flexgrip-alpha" target="_blank" class="btn btn-success">Dowiedz się więcej</a>
+            <div class="text-center pt-4">
+                <p class="mb-0">&copy; 2025 DH Medical. Wszelkie prawa zastrzeżone.</p>
             </div>
         </div>
-    </div>
+    </footer>
 
-    <!-- Produkt 2 -->
-    <div class="col-md-4 mb-5">
-        <div class="card h-100 border-success">
-            <img src="assets/bedal2.png" class="card-img-top" alt="Bedal Produkt 2">
-            <div class="card-body">
-                <h5 class="card-title">FlexGrip Alpha Neo</h5>
-                <p class="card-text">Najnowszy system firmy Bedal w wersji Neonatologicznej. Mocuje bezszwowo wszystkie cewniki posiadające motylek. Mocuje cewniki centralne, dializacyjne, kaniule dotętnicze, cewniki PICC oraz Midline.</p>
-          </div>
-            <div class="card-footer text-center">
-                <a href="https://www.flex-grip.com/products/flexgrip-neo-alpha" target="_blank" class="btn btn-success">Dowiedz się więcej</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Produkt 3 -->
-    <div class="col-md-4 mb-5">
-        <div class="card h-100 border-success">
-            <img src="assets/bedal3.png" class="card-img-top" alt="Bedal Produkt 3">
-            <div class="card-body">
-                <h5 class="card-title">FlexGrip PICV Neo</h5>
-                <p class="card-text">Plaster w wersji neonatologicznej, mocujący wszystkie cewniki typu PICV(wenflony). Delikatny dla skóry dziecka, skuteczny i intuicyjny w obsłudze.</p>
-            </div>
-            <div class="card-footer text-center">
-                <a href="https://www.flex-grip.com/products/flexgrip-neo-pivc" target="_blank" class="btn btn-success">Dowiedz się więcej</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-       <!-- Light Footer with contact info and social icons -->
-<footer class="py-5 bg-light text-dark border-top">
-  <div class="container">
-    <div class="row justify-content-center text-center">
-      <!-- DH Medical Arkadiusz Dynda -->
-      <div class="col-md-4 mb-4">
-        <h5>DH Medical Arkadiusz Dynda</h5>
-        <p>Szalowa 385<br>38-331 Szalowa<br>NIP: 7382168824</p>
-        <p>Email: <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>Tel: +48 883 480 355</p>
-      </div>
-
-      <!-- DH Medical Sławomir Hutek -->
-      <div class="col-md-4 mb-4">
-        <h5>DH Medical Sławomir Hutek</h5>
-        <p>ul. Masarska 7/17<br>31-534 Kraków<br>NIP: 7343623098</p>
-        <p>Email: <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>Tel: +48 507 687 927</p>
-      </div>
-
-      <!-- Social media -->
-      <div class="col-md-4 mb-4">
-        <h5>Social Media</h5>
-        <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="d-block mb-2 text-decoration-none text-dark">
-          <i class="bi bi-linkedin me-1"></i> LinkedIn – DH Medical Arkadiusz Dynda
-        </a>
-        <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="d-block mb-2 text-decoration-none text-dark">
-          <i class="bi bi-linkedin me-1"></i> LinkedIn – DH Medical Sławomir Hutek
-        </a>
-        <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" class="d-block mb-2 text-decoration-none text-dark">
-          <i class="bi bi-youtube me-1"></i> YouTube – DH Medical
-        </a>
-      </div>
-    </div>
-
-    <div class="text-center pt-4">
-      <p class="mb-0">&copy; 2025 DH Medical. Wszelkie prawa zastrzeżone.</p>
-    </div>
-  </div>
-</footer>
-    <!-- Bootstrap JavaScript Bundle (z Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
