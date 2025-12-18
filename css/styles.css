@@ -4148,26 +4148,15 @@ textarea.form-control-lg {
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-<!-- Po navbarze -->
-<main>
-    <section class="hero">
-        <div class="container px-5">
-            <h1>Wspieramy innowacje w medycynie</h1>
-            <p>...</p>
-            <a href="oferta.html" class="btn btn-custom btn-lg">Zobacz ofertę</a>
+<!-- Po </nav> -->
+<section class="hero">
+    ... (cała zawartość hero z tekstem, przyciskiem i partnerami)
+</section>
 
-            <div class="partners mt-5">
-                ... (Twoje loga)
-            </div>
-        </div>
-    </section>
-</main>
-
-<!-- Footer zostaje poza <main> -->
+<!-- Bezpośrednio footer -->
 <footer class="py-5 bg-light text-dark border-top">
     ...
 </footer>
-
 .card {
   --bs-card-spacer-y: 1rem;
   --bs-card-spacer-x: 1rem;
@@ -4197,6 +4186,7 @@ textarea.form-control-lg {
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
 }
+
 .card > hr {
   margin-right: 0;
   margin-left: 0;
@@ -10888,22 +10878,3 @@ textarea.form-control-lg {
             height: 60px;
             margin: 1rem;
         }
-    }
-    html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-    }
-    body {
-        display: flex;
-        flex-direction: column;
-    }
-    main {
-        flex: 1 0 auto;  /* to "pcha" footer na dół */
-    }
-    footer {
-        flex-shrink: 0;  /* footer nie kurczy się */
-    }
-    .hero {
-        min-height: 90vh;  /* zmieniamy height na min-height – lepsze zachowanie */
-    }
