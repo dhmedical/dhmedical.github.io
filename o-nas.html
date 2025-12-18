@@ -24,6 +24,16 @@
         .team-card { text-align: center; }
         .team-card img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; margin-bottom: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
         .team-card h4 { font-size: 1.4rem; color: #1a3a5f; margin-bottom: 0.5rem; }
+
+        /* Sekcja partnerzy – klikowalne loga */
+        .partners-section { padding: 80px 20px; background: white; }
+        .partners-section h2 { font-size: 2.4rem; color: #1a3a5f; text-align: center; margin-bottom: 3rem; }
+        .partners-logos { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 6rem; }
+        .partners-logos a { display: block; transition: transform 0.4s; }
+        .partners-logos a:hover { transform: scale(1.1); }
+        .partners-logos img { height: 100px; width: auto; object-fit: contain; filter: brightness(1.2) drop-shadow(0 6px 15px rgba(0,0,0,0.2)); }
+        @media (max-width: 768px) { .partners-logos { gap: 4rem; } .partners-logos img { height: 80px; } }
+
         footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
         footer a { color: #a8c7e6; text-decoration: none; transition: color 0.3s; }
         footer a:hover { color: white; }
@@ -76,7 +86,7 @@
             <div class="row g-5 text-center">
                 <div class="col-md-6">
                     <div class="team-card">
-                        <img src="assets/arkadiusz.jpg" alt="Arkadiusz Dynda">  <!-- Jeśli masz zdjęcie, wrzuć do assets -->
+                        <img src="assets/arkadiusz.jpg" alt="Arkadiusz Dynda">  <!-- Jeśli masz zdjęcie -->
                         <h4>Arkadiusz Dynda</h4>
                         <p>Szalowa 385, 38-331 Szalowa<br>
                            Tel: +48 883 480 355<br>
@@ -92,6 +102,24 @@
                            Email: slawomirhutek@dhmedical.org</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sekcja partnerzy – klikowalne loga -->
+    <section class="partners-section">
+        <div class="container">
+            <h2>Współpracujemy z wiodącymi producentami</h2>
+            <div class="partners-logos">
+                <a href="https://medical.hbfuller.com/en" target="_blank">
+                    <img src="assets/hbfuller1-logo.png" alt="H.B. Fuller – SecurePortIV">
+                </a>
+                <a href="https://www.flex-grip.com/" target="_blank">
+                    <img src="assets/bedal1-logo.png" alt="Bedal – FlexGrip">
+                </a>
+                <a href="https://districlass.com/" target="_blank">
+                    <img src="assets/districath1-logo.png" alt="Districlass Medical – DistricAth">
+                </a>
             </div>
         </div>
     </section>
