@@ -10878,3 +10878,10 @@ textarea.form-control-lg {
             height: 60px;
             margin: 1rem;
         }
+
+          footer {
+        background: #f8f9fa !important;  /* jasne tło footera */
+        position: relative;
+        z-index: 10;  /* na wierzchu */
+        margin-top: -50px;  /* lekkie podciągnięcie, żeby delikatnie nachodził na tło – wygląda nowocześnie */
+    }
