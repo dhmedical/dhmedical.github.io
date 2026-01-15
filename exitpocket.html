@@ -150,7 +150,7 @@
             </div>
         </div>
 
-        <!-- Tabela z 4 wariantami – poprawiony REF dla rozmiaru małego -->
+        <!-- Tabela z 4 wariantami -->
         <div class="variant-table">
             <table class="table mb-0">
                 <thead>
@@ -164,7 +164,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- 1. S2013HL/WP -->
                     <tr>
                         <td><img src="assets/exitpocket-s2013hl.jpg" alt="S2013HL/WP" class="variant-image"></td>
                         <td><strong>S2013HL/WP</strong></td>
@@ -173,7 +172,6 @@
                         <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 25)">775,00 zł – 25 szt.</button></td>
                         <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 50)">1550,00 zł – 50 szt.</button></td>
                     </tr>
-                    <!-- 2. S2013H/WP wersja 2 -->
                     <tr>
                         <td><img src="assets/exitpocket-s2013h-ver2.jpg" alt="S2013H/WP wersja 2" class="variant-image"></td>
                         <td><strong>S2013H/WP</strong></td>
@@ -182,7 +180,6 @@
                         <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 25)">775,00 zł – 25 szt.</button></td>
                         <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 50)">1550,00 zł – 50 szt.</button></td>
                     </tr>
-                    <!-- 3. S2011H/WP – Rozmiar mały (poprawiony REF) -->
                     <tr>
                         <td><img src="assets/exitpocket-s2011h.jpg" alt="S2011H/WP mały" class="variant-image"></td>
                         <td><strong>S2011H/WP</strong></td>
@@ -191,7 +188,6 @@
                         <td><button class="price-btn" onclick="selectOrder('S2011H/WP', 25)">675,00 zł – 25 szt.</button></td>
                         <td><button class="price-btn" onclick="selectOrder('S2011H/WP', 50)">1350,00 zł – 50 szt.</button></td>
                     </tr>
-                    <!-- 4. S2005H/WP Mini -->
                     <tr>
                         <td><img src="assets/exitpocket-s2005h-mini.jpg" alt="S2005H/WP Mini" class="variant-image"></td>
                         <td><strong>S2005H/WP</strong></td>
@@ -204,10 +200,13 @@
             </table>
         </div>
 
-        <!-- Formularz zamówienia – Formspree -->
+        <!-- Formularz zamówienia – z polem CC -->
         <div class="order-form">
             <h3 class="mb-4 text-center">Zamów ExitPocket</h3>
             <form action="https://formspree.io/f/movdyplp" method="POST">
+                <!-- Ukryte pole CC – kopia na drugi mail -->
+                <input type="hidden" name="_cc" value="slawomirhutek@dhmedical.org">
+
                 <div class="row">
                     <div class="col-md-6">
                         <label for="variant">Wariant (REF)</label>
@@ -241,7 +240,7 @@
                     </div>
                 </div>
 
-                <!-- Ukryte pole – temat wiadomości w mailu -->
+                <!-- Ukryte pole – temat wiadomości -->
                 <input type="hidden" name="_subject" value="Nowe zamówienie ExitPocket ze strony">
 
                 <div class="text-center mt-4">
