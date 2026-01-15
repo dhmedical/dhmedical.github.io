@@ -28,7 +28,6 @@
     <style>
         body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background: #f8f9fa; }
         .navbar { position: sticky; top: 0; z-index: 1000; background: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-       
         .product-header {
             background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)),
                         url('assets/exitpocket-bg.png') center/cover no-repeat fixed;
@@ -36,23 +35,10 @@
             text-align: center;
             color: white;
         }
-       
-        .product-header h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            text-shadow: 0 4px 15px rgba(0,0,0,0.7);
-            margin-bottom: 0.5rem;
-        }
-       
-        .product-header p {
-            font-size: 1.4rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-       
+        .product-header h1 { font-size: 3.5rem; font-weight: 700; text-shadow: 0 4px 15px rgba(0,0,0,0.7); margin-bottom: 0.5rem; }
+        .product-header p { font-size: 1.4rem; max-width: 800px; margin: 0 auto; }
         .product-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-image-main { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-       
         .variant-table {
             background: white;
             border-radius: 12px;
@@ -60,46 +46,45 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin: 40px 0;
         }
-       
         .variant-table th, .variant-table td {
             padding: 1.2rem;
             text-align: center;
             border-bottom: 1px solid #dee2e6;
             vertical-align: middle;
         }
-       
-        .variant-table th {
+        .variant-table th { background: #25a7df; color: white; font-weight: 600; }
+        .variant-table tr:hover { background: #f1f9ff; }
+        .variant-image { max-width: 140px; height: auto; border-radius: 8px; }
+        .price-btn {
+            display: block;
+            width: 100%;
+            margin: 0.4rem 0;
             background: #25a7df;
             color: white;
-            font-weight: 600;
+            border: none;
+            padding: 0.7rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
         }
-       
-        .variant-table tr:hover { background: #f1f9ff; }
-        .variant-image { max-width: 150px; height: auto; border-radius: 8px; }
-       
+        .price-btn:hover {
+            background: #1e90c2;
+            transform: translateY(-2px);
+        }
         .order-form {
             background: white;
             border-radius: 12px;
             padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-       
-        .order-form label {
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-       
-        .order-form select,
-        .order-form input,
-        .order-form textarea {
+        .order-form label { font-weight: 500; margin-bottom: 0.5rem; display: block; }
+        .order-form select, .order-form textarea {
             width: 100%;
             padding: 0.8rem;
             margin-bottom: 1.2rem;
             border: 1px solid #ced4da;
             border-radius: 6px;
         }
-       
         .btn-order {
             background: #25a7df;
             color: white;
@@ -109,33 +94,26 @@
             border-radius: 50px;
             transition: all 0.3s;
         }
-       
         .btn-order:hover {
             background: #1e90c2;
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(37,167,223,0.4);
         }
-       
-        footer {
-            background: #1a3a5f;
-            color: #ffffff;
-            padding: 3rem 0 1.5rem;
-        }
-       
+        footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
         footer a { color: #a8c7e6; text-decoration: none; }
         footer a:hover { color: white; }
-       
         @media (max-width: 768px) {
             .product-header h1 { font-size: 2.8rem; }
-            .product-header { padding: 140px 20px; }
-            .product-header { background-attachment: scroll; } /* wyłącza fixed na mobile – lepiej wygląda */
-            .variant-table td { font-size: 0.9rem; }
+            .product-header { padding: 140px 20px; background-attachment: scroll; }
+            .variant-table td { font-size: 0.9rem; padding: 0.8rem; }
             .variant-image { max-width: 100px; }
+            .price-btn { font-size: 0.85rem; padding: 0.6rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Navbar – tylko standardowe opcje, Oferta aktywna -->
+
+    <!-- Navbar – standardowy, bez ExitPocket -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <div class="container px-5">
             <a class="navbar-brand" href="index.html"><img src="assets/logo.png" alt="DH Medical" style="height: 80px; width: 80px;"></a>
@@ -150,11 +128,13 @@
             </div>
         </div>
     </nav>
-    <!-- Hero z tłem exitpocket-bg.png -->
+
+    <!-- Hero -->
     <header class="product-header">
         <h1>ExitPocket</h1>
         <p>Specjalistyczne, wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego i nie tylko – popraw swój komfort!</p>
     </header>
+
     <!-- Główna treść -->
     <section class="product-section">
         <div class="row g-5">
@@ -172,93 +152,89 @@
                 <p class="mt-4 fs-5">Dostępne warianty dostosowane do różnych typów cewników i potrzeb klinicznych.</p>
             </div>
         </div>
-        <!-- Tabela wariantów – z zdjęciami i cenami (placeholdery, zmień na rzeczywiste) -->
+
+        <!-- Tabela z 4 wariantami -->
         <div class="variant-table">
             <table class="table mb-0">
                 <thead>
                     <tr>
                         <th>Zdjęcie</th>
                         <th>Wariant / REF</th>
-                        <th>Opis</th>
-                        <th>10 szt. (cena: 100 zł)</th>
-                        <th>25 szt. (cena: 200 zł)</th>
-                        <th>50 szt. (cena: 300 zł)</th>
+                        <th>Opis i wymiary</th>
+                        <th>10 szt.</th>
+                        <th>25 szt.</th>
+                        <th>50 szt.</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><img src="assets/exitpocket-s2005h.jpg" alt="S2005H/WP" class="variant-image"></td>
-                        <td><strong>S2005H/WP</strong></td>
-                        <td>Standardowy – dla cewników tunelizowanych</td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2005H/WP', 10)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2005H/WP', 25)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2005H/WP', 50)">Zamów</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/exitpocket-s2011h.jpg" alt="S2011H/WP" class="variant-image"></td>
-                        <td><strong>S2011H/WP</strong></td>
-                        <td>Z wzmocnioną adhezją</td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2011H/WP', 10)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2011H/WP', 25)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2011H/WP', 50)">Zamów</button></td>
-                    </tr>
+                    <!-- 1. S2013HL/WP -->
                     <tr>
                         <td><img src="assets/exitpocket-s2013hl.jpg" alt="S2013HL/WP" class="variant-image"></td>
                         <td><strong>S2013HL/WP</strong></td>
-                        <td>Długi – dla dłuższych tuneli</td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2013HL/WP', 10)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2013HL/WP', 25)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2013HL/WP', 50)">Zamów</button></td>
+                        <td>Rozmiar standardowy. Otwór 13×11 cm.<br>Szerokość 17,6 cm, Długość 30,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 10)">350,00 zł – 10 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 25)">775,00 zł – 25 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 50)">1550,00 zł – 50 szt.</button></td>
                     </tr>
+                    <!-- 2. S2013H/WP (wersja 2) -->
                     <tr>
-                        <td><img src="assets/exitpocket-s2020.jpg" alt="S2020/WP" class="variant-image"></td>
-                        <td><strong>S2020/WP</strong></td>
-                        <td>Pediatryczny / mały rozmiar</td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2020/WP', 10)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2020/WP', 25)">Zamów</button></td>
-                        <td><button class="btn btn-outline-primary btn-sm" onclick="selectOrder('S2020/WP', 50)">Zamów</button></td>
+                        <td><img src="assets/exitpocket-s2013h-ver2.jpg" alt="S2013H/WP wersja 2" class="variant-image"></td>
+                        <td><strong>S2013H/WP</strong></td>
+                        <td>Rozmiar standardowy wersja dwa.<br>Otwór 11×13 cm.<br>Szerokość 15,6 cm, Długość 30,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 10)">350,00 zł – 10 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 25)">775,00 zł – 25 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 50)">1550,00 zł – 50 szt.</button></td>
+                    </tr>
+                    <!-- 3. S2013H/WP mały -->
+                    <tr>
+                        <td><img src="assets/exitpocket-s2013h-small.jpg" alt="S2013H/WP mały" class="variant-image"></td>
+                        <td><strong>S2013H/WP</strong></td>
+                        <td>Rozmiar mały.<br>Otwór 10×9 cm.<br>Szerokość 13,0 cm, Długość 26,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP-mały', 10)">300,00 zł – 10 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP-mały', 25)">675,00 zł – 25 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP-mały', 50)">1350,00 zł – 50 szt.</button></td>
+                    </tr>
+                    <!-- 4. S2005H/WP Mini -->
+                    <tr>
+                        <td><img src="assets/exitpocket-s2005h-mini.jpg" alt="S2005H/WP Mini" class="variant-image"></td>
+                        <td><strong>S2005H/WP</strong></td>
+                        <td>Rozmiar Mini.<br>Otwór o średnicy 5 cm.<br>Szerokość 11,0 cm, Długość 22,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
+                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 10)">280,00 zł – 10 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 25)">625,00 zł – 25 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 50)">1250,00 zł – 50 szt.</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
-        <!-- Formularz zamówienia – e-mail na dwa adresy -->
+
+        <!-- Formularz zamówienia -->
         <div class="order-form">
             <h3 class="mb-4 text-center">Zamów ExitPocket</h3>
             <form id="orderForm" action="mailto:arkadiuszdynda@dhmedical.org,slawomirhutek@dhmedical.org?subject=Zamówienie ExitPocket" method="post" enctype="text/plain">
                 <div class="row">
                     <div class="col-md-6">
                         <label for="variant">Wariant (REF)</label>
-                        <select id="variant" name="variant" required>
-                            <option value="">Wybierz wariant</option>
-                            <option value="S2005H/WP">S2005H/WP – Standardowy</option>
-                            <option value="S2011H/WP">S2011H/WP – Wzmocniona adhezja</option>
-                            <option value="S2013HL/WP">S2013HL/WP – Długi</option>
-                            <option value="S2020/WP">S2020/WP – Pediatryczny</option>
-                        </select>
+                        <input type="text" id="variant" name="variant" class="form-control" readonly required>
                     </div>
                     <div class="col-md-6">
-                        <label for="quantity">Ilość paczek</label>
-                        <select id="quantity" name="quantity" required>
-                            <option value="">Wybierz ilość</option>
-                            <option value="10">10 sztuk</option>
-                            <option value="25">25 sztuk</option>
-                            <option value="50">50 sztuk</option>
-                        </select>
+                        <label for="quantity">Ilość paczek / sztuk</label>
+                        <input type="text" id="quantity" name="quantity" class="form-control" readonly required>
                     </div>
                 </div>
                 <div class="row mt-3">
                     <div class="col-12">
                         <label for="address">Adres dostawy / dane do faktury</label>
-                        <textarea id="address" name="address" rows="3" class="form-control" required placeholder="Imię i nazwisko / Firma, ulica, kod pocztowy, miasto, telefon kontaktowy"></textarea>
+                        <textarea id="address" name="address" rows="4" class="form-control" required placeholder="Imię i nazwisko / Firma, ulica, kod pocztowy, miasto, telefon kontaktowy, ewentualne uwagi"></textarea>
                     </div>
                 </div>
                 <div class="text-center mt-4">
                     <button type="submit" class="btn-order">Wyślij zapytanie ofertowe</button>
                 </div>
             </form>
-            <p class="text-center mt-3 text-muted small">Zamówienie zostanie wysłane jako e-mail. Skontaktujemy się w ciągu 24h w celu potwierdzenia i wyceny.</p>
+            <p class="text-center mt-3 text-muted small">Zamówienie zostanie wysłane jako e-mail na dwa adresy. Skontaktujemy się w ciągu 24h w celu potwierdzenia i wysyłki.</p>
         </div>
     </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -287,11 +263,12 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function selectOrder(variant, qty) {
-            document.getElementById('variant').value = variant;
-            document.getElementById('quantity').value = qty;
+            document.getElementById('variant').value = variant + ' – ' + qty + ' szt.';
+            document.getElementById('quantity').value = qty + ' sztuk';
             document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
         }
     </script>
