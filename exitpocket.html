@@ -67,10 +67,7 @@
             font-size: 0.95rem;
             transition: all 0.3s;
         }
-        .price-btn:hover {
-            background: #1e90c2;
-            transform: translateY(-2px);
-        }
+        .price-btn:hover { background: #1e90c2; transform: translateY(-2px); }
         .order-form {
             background: white;
             border-radius: 12px;
@@ -78,7 +75,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         .order-form label { font-weight: 500; margin-bottom: 0.5rem; display: block; }
-        .order-form select, .order-form textarea {
+        .order-form input, .order-form textarea {
             width: 100%;
             padding: 0.8rem;
             margin-bottom: 1.2rem;
@@ -113,7 +110,7 @@
 </head>
 <body>
 
-    <!-- Navbar – standardowy, bez ExitPocket -->
+    <!-- Navbar – standardowy -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <div class="container px-5">
             <a class="navbar-brand" href="index.html"><img src="assets/logo.png" alt="DH Medical" style="height: 80px; width: 80px;"></a>
@@ -176,7 +173,7 @@
                         <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 25)">775,00 zł – 25 szt.</button></td>
                         <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 50)">1550,00 zł – 50 szt.</button></td>
                     </tr>
-                    <!-- 2. S2013H/WP (wersja 2) -->
+                    <!-- 2. S2013H/WP wersja 2 -->
                     <tr>
                         <td><img src="assets/exitpocket-s2013h-ver2.jpg" alt="S2013H/WP wersja 2" class="variant-image"></td>
                         <td><strong>S2013H/WP</strong></td>
@@ -190,27 +187,27 @@
                         <td><img src="assets/exitpocket-s2013h-small.jpg" alt="S2013H/WP mały" class="variant-image"></td>
                         <td><strong>S2013H/WP</strong></td>
                         <td>Rozmiar mały.<br>Otwór 10×9 cm.<br>Szerokość 13,0 cm, Długość 26,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP-mały', 10)">300,00 zł – 10 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP-mały', 25)">675,00 zł – 25 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP-mały', 50)">1350,00 zł – 50 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP mały', 10)">300,00 zł – 10 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP mały', 25)">675,00 zł – 25 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP mały', 50)">1350,00 zł – 50 szt.</button></td>
                     </tr>
                     <!-- 4. S2005H/WP Mini -->
                     <tr>
                         <td><img src="assets/exitpocket-s2005h-mini.jpg" alt="S2005H/WP Mini" class="variant-image"></td>
                         <td><strong>S2005H/WP</strong></td>
                         <td>Rozmiar Mini.<br>Otwór o średnicy 5 cm.<br>Szerokość 11,0 cm, Długość 22,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
-                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 10)">280,00 zł – 10 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 25)">625,00 zł – 25 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 50)">1250,00 zł – 50 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP Mini', 10)">280,00 zł – 10 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP Mini', 25)">625,00 zł – 25 szt.</button></td>
+                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP Mini', 50)">1250,00 zł – 50 szt.</button></td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- Formularz zamówienia -->
+        <!-- Formularz zamówienia – teraz Formspree zamiast mailto -->
         <div class="order-form">
             <h3 class="mb-4 text-center">Zamów ExitPocket</h3>
-            <form id="orderForm" action="mailto:arkadiuszdynda@dhmedical.org,slawomirhutek@dhmedical.org?subject=Zamówienie ExitPocket" method="post" enctype="text/plain">
+            <form action="https://formspree.io/f/movdyplp" method="POST">
                 <div class="row">
                     <div class="col-md-6">
                         <label for="variant">Wariant (REF)</label>
@@ -221,17 +218,37 @@
                         <input type="text" id="quantity" name="quantity" class="form-control" readonly required>
                     </div>
                 </div>
+
                 <div class="row mt-3">
-                    <div class="col-12">
-                        <label for="address">Adres dostawy / dane do faktury</label>
-                        <textarea id="address" name="address" rows="4" class="form-control" required placeholder="Imię i nazwisko / Firma, ulica, kod pocztowy, miasto, telefon kontaktowy, ewentualne uwagi"></textarea>
+                    <div class="col-md-6">
+                        <label for="name">Imię i nazwisko / Firma</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email">Adres e-mail</label>
+                        <input type="email" id="email" name="_replyto" class="form-control" required>
                     </div>
                 </div>
+
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <label for="phone">Telefon kontaktowy</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="address">Adres dostawy / dane do faktury</label>
+                        <textarea id="address" name="address" rows="3" class="form-control" required placeholder="Ulica, kod pocztowy, miasto, NIP (jeśli firma), ewentualne uwagi"></textarea>
+                    </div>
+                </div>
+
+                <!-- Ukryte pole – temat wiadomości w mailu -->
+                <input type="hidden" name="_subject" value="Nowe zamówienie ExitPocket ze strony">
+
                 <div class="text-center mt-4">
                     <button type="submit" class="btn-order">Wyślij zapytanie ofertowe</button>
                 </div>
             </form>
-            <p class="text-center mt-3 text-muted small">Zamówienie zostanie wysłane jako e-mail na dwa adresy. Skontaktujemy się w ciągu 24h w celu potwierdzenia i wysyłki.</p>
+            <p class="text-center mt-3 text-muted small">Skontaktujemy się w ciągu 24h w celu potwierdzenia i wyceny.</p>
         </div>
     </section>
 
@@ -267,7 +284,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function selectOrder(variant, qty) {
-            document.getElementById('variant').value = variant + ' – ' + qty + ' szt.';
+            document.getElementById('variant').value = variant;
             document.getElementById('quantity').value = qty + ' sztuk';
             document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
         }
