@@ -40,7 +40,7 @@
         .product-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-image-main { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
 
-        /* OSTATECZNIE NAPRAWIONA TABELKA */
+        /* OSTATECZNIE NAPRAWIONA TABELKA – bez wcięć, równy nagłówek */
         .variant-table {
             width: 100%;
             border-collapse: separate;
@@ -61,17 +61,19 @@
             background: white;
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            overflow: hidden;
         }
         .variant-table td {
-            padding: 1.8rem 1.2rem; /* więcej miejsca wewnątrz */
+            padding: 1.8rem 1.2rem;
             text-align: center;
             vertical-align: middle;
             border: none;
+        }
+        .variant-table td > * {  /* wyśrodkowanie zawartości */
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 180px; /* zapewnia równą wysokość wierszy */
+            height: 100%;
+            width: 100%;
         }
         .variant-table td:nth-child(3) { /* kolumna Opis i wymiary */
             text-align: center;
@@ -190,6 +192,7 @@
     </style>
 </head>
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <div class="container px-5">
@@ -230,7 +233,7 @@
             </div>
         </div>
 
-        <!-- Tabela – ostatecznie naprawiona, bez wcięć -->
+        <!-- Tabela – finalna wersja bez wcięć -->
         <div class="variant-table">
             <table class="table mb-0">
                 <thead>
