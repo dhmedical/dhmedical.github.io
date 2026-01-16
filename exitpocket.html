@@ -45,14 +45,17 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             margin: 40px 0;
+            border-collapse: separate;
+            border-spacing: 0 1.5rem; /* Dodana przerwa między wierszami (kafelkami) */
         }
         .variant-table th, .variant-table td {
-            padding: 1.2rem;
+            padding: 1.5rem; /* Zwiększony padding dla lepszej przerwy wewnątrz */
             text-align: center;
             border-bottom: 1px solid #dee2e6;
             vertical-align: middle;
         }
         .variant-table th { background: #25a7df; color: white; font-weight: 600; }
+        .variant-table tr { background: #f8f9fa; border-radius: 8px; } /* Zaokrąglone krawędzie dla kafelek */
         .variant-table tr:hover { background: #f1f9ff; }
         .variant-image { max-width: 140px; height: auto; border-radius: 8px; }
         .price-btn {
@@ -96,7 +99,7 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(37,167,223,0.4);
         }
-        /* Dodatkowe style dla sekcji z filmem i zdjęciem */
+        /* Sekcja z filmem i zdjęciem */
         .media-section {
             margin-top: 3rem;
             background: white;
@@ -104,34 +107,11 @@
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .media-section h3 {
-            text-align: center;
-            color: #1a3a5f;
-            margin-bottom: 1.5rem;
-        }
-        .media-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-        .media-item {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-        }
-        .media-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        .media-item iframe {
-            width: 100%;
-            height: 280px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
+        .media-section h3 { text-align: center; color: #1a3a5f; margin-bottom: 1.5rem; }
+        .media-wrapper { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+        .media-item { flex: 1; min-width: 300px; max-width: 500px; }
+        .media-item img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .media-item iframe { width: 100%; height: 280px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
         footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
         footer a { color: #a8c7e6; text-decoration: none; }
         footer a:hover { color: white; }
@@ -140,13 +120,12 @@
             margin: 0 0.8rem;
             transition: transform 0.3s;
         }
-        footer .social-links a:hover {
-            transform: translateY(-3px);
-        }
+        footer .social-links a:hover { transform: translateY(-3px); }
         @media (max-width: 768px) {
             .product-header h1 { font-size: 2.8rem; }
             .product-header { padding: 140px 20px; background-attachment: scroll; }
-            .variant-table td { font-size: 0.9rem; padding: 0.8rem; }
+            .variant-table { border-spacing: 0 1rem; }
+            .variant-table td { font-size: 0.9rem; padding: 1rem; }
             .variant-image { max-width: 100px; }
             .price-btn { font-size: 0.85rem; padding: 0.6rem; }
             .media-item iframe { height: 200px; }
@@ -173,7 +152,7 @@
 
     <!-- Hero -->
     <header class="product-header">
-        <h1>ExitPocket</h1>
+        <h1>Exit Pocket</h1>
         <p>Specjalistyczne, wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego i nie tylko – popraw swój komfort!</p>
     </header>
 
@@ -184,7 +163,7 @@
                 <img src="assets/exitpocket-main.jpg" alt="ExitPocket – osłonka na cewnik dializacyjny" class="product-image-main">
             </div>
             <div class="col-lg-6">
-                <h2 class="mb-4" style="color: #1a3a5f;">Dlaczego ExitPocket?</h2>
+                <h2 class="mb-4" style="color: #1a3a5f;">Dlaczego Exit Pocket?</h2>
                 <ul class="list-unstyled fs-5">
                     <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Zwiększa higienę i zmniejsza ryzyko infekcji</li>
                     <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Łatwy w aplikacji i wygodny dla pacjenta</li>
@@ -247,26 +226,24 @@
 
         <!-- Dodatkowa sekcja ze zdjęciem i filmem -->
         <div class="media-section">
-            <h3>Dowiedz się więcej o Exit Pocket</h3>
+            <h3>Exit Pocket - popraw swój komfort</h3>
             <div class="media-wrapper">
                 <div class="media-item">
                     <img src="assets/exitpocket-demonstracja.jpg" alt="Demonstracja użycia ExitPocket">
-                    <!-- Zmień na swoje zdjęcie -->
                 </div>
                 <div class="media-item">
-                    <iframe src="https://www.youtube.com/watch?v=HkqLn8Dda74" 
-                            title="Exit Pocket - instrukcja użycia" 
+                    <iframe src="https://www.youtube.com/embed/HkqLn8Dda74" 
+                            title="ExitPocket - instrukcja użycia" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen></iframe>
-                    <!-- Zmień TWOJ_FILM_ID na ID filmu z YouTube, np. dQw4w9WgXcQ -->
                 </div>
             </div>
         </div>
 
         <!-- Formularz zamówienia -->
         <div class="order-form">
-            <h3 class="mb-4 text-center">Zamów ExitPocket</h3>
+            <h3 class="mb-4 text-center">Zamów Exit Pocket</h3>
             <form action="https://formspree.io/f/movdyplp" method="POST">
                 <input type="hidden" name="_cc" value="slawomirhutek@dhmedical.org">
 
@@ -309,7 +286,7 @@
                     <button type="submit" class="btn-order">Wyślij zapytanie ofertowe</button>
                 </div>
             </form>
-            <p class="text-center mt-3 text-muted small">Skontaktujemy się w ciągu 24h w celu potwierdzenia i wyceny.</p>
+            <p class="text-center mt-3 text-muted small">Skontaktujemy się w ciągu 24h w celu potwierdzenia zamówienia, dostępności oraz informacji dotyczącej czasu dostawy.</p>
         </div>
     </section>
 
