@@ -39,48 +39,50 @@
         .product-header p { font-size: 1.4rem; max-width: 800px; margin: 0 auto; }
         .product-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-image-main { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        /* NAPRAWIONA TABELKA – zero wcięć, czysty nagłówek, wyraźne przerwy */
+
+        /* OSTATECZNIE NAPRAWIONA TABELKA */
         .variant-table {
             width: 100%;
-            border-collapse: collapse; /* resetujemy spacing, kontrolujemy ręcznie */
+            border-collapse: separate;
+            border-spacing: 0 2rem;
             margin: 40px 0 60px;
         }
-        .variant-table thead {
+        .variant-table thead tr {
             background: #25a7df;
             color: white;
         }
         .variant-table th {
-            padding: 1.2rem 1rem;
+            padding: 1.2rem;
             text-align: center;
             font-weight: 600;
             border: none;
         }
         .variant-table tbody tr {
             background: white;
-            margin-bottom: 2rem; /* duża przerwa między wierszami */
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             overflow: hidden;
-            display: table-row; /* zapewniamy poprawne wyświetlanie */
         }
         .variant-table td {
-            padding: 1.5rem 1rem;
+            padding: 1.8rem 1.2rem; /* więcej miejsca wewnątrz */
             text-align: center;
             vertical-align: middle;
             border: none;
-            display: flex;               /* WYŚRODKOWANIE */
-            align-items: center;         /* pionowo */
-            justify-content: center;     /* poziomo */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px; /* zapewnia równą wysokość wierszy */
         }
-        .variant-table tr:hover { background: #f1f9ff; }
-        .variant-image { max-width: 160px; height: auto; border-radius: 8px; }
-
-        /* Dodatkowe wyśrodkowanie dla kolumny "Opis i wymiary" (trzecia kolumna) */
-        .variant-table td:nth-child(3) {
+        .variant-table td:nth-child(3) { /* kolumna Opis i wymiary */
             text-align: center;
             white-space: normal;
-            line-height: 1.5;
-            padding: 1.5rem 1.2rem;
+            line-height: 1.6;
+        }
+        .variant-table tr:hover { background: #f1f9ff; }
+        .variant-image {
+            max-width: 160px;
+            height: auto;
+            border-radius: 8px;
         }
 
         .price-btn {
@@ -96,6 +98,7 @@
             transition: all 0.3s;
         }
         .price-btn:hover { background: #1e90c2; transform: translateY(-2px); }
+
         /* Sekcja media */
         .media-section {
             margin: 5rem 0;
@@ -130,6 +133,7 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.12);
         }
         .media-item iframe { border: none; }
+
         .order-form {
             margin-top: 4rem;
             background: white;
@@ -159,6 +163,7 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(37,167,223,0.4);
         }
+
         footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
         footer a { color: #a8c7e6; text-decoration: none; }
         footer a:hover { color: white; }
@@ -168,6 +173,7 @@
             transition: transform 0.3s;
         }
         footer .social-links a:hover { transform: translateY(-3px); }
+
         @media (max-width: 992px) {
             .media-wrapper { flex-direction: column; gap: 2rem; }
             .media-item { max-width: 100%; }
@@ -199,11 +205,13 @@
             </div>
         </div>
     </nav>
+
     <!-- Hero -->
     <header class="product-header">
-        <h1>Exit Pocket</h1>
+        <h1>ExitPocket</h1>
         <p>Specjalistyczne, wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego i nie tylko – popraw swój komfort!</p>
     </header>
+
     <!-- Główna treść -->
     <section class="product-section">
         <div class="row g-5">
@@ -211,7 +219,7 @@
                 <img src="assets/exitpocket-main.jpg" alt="ExitPocket – osłonka na cewnik dializacyjny" class="product-image-main">
             </div>
             <div class="col-lg-6">
-                <h2 class="mb-4" style="color: #1a3a5f;">Dlaczego Exit Pocket?</h2>
+                <h2 class="mb-4" style="color: #1a3a5f;">Dlaczego ExitPocket?</h2>
                 <ul class="list-unstyled fs-5">
                     <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Zwiększa higienę i zmniejsza ryzyko infekcji</li>
                     <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Łatwy w aplikacji i wygodny dla pacjenta</li>
@@ -221,7 +229,8 @@
                 <p class="mt-4 fs-5">Dostępne warianty dostosowane do różnych typów cewników i potrzeb klinicznych.</p>
             </div>
         </div>
-        <!-- Naprawiona tabela – bez wcięć w nagłówku -->
+
+        <!-- Tabela – ostatecznie naprawiona, bez wcięć -->
         <div class="variant-table">
             <table class="table mb-0">
                 <thead>
@@ -270,6 +279,7 @@
                 </tbody>
             </table>
         </div>
+
         <!-- Sekcja z filmem i zdjęciem -->
         <div class="media-section">
             <h3>Exit Pocket - popraw swój komfort</h3>
@@ -286,9 +296,10 @@
                 </div>
             </div>
         </div>
+
         <!-- Formularz zamówienia -->
         <div class="order-form">
-            <h3 class="mb-4 text-center">Zamów Exit Pocket</h3>
+            <h3 class="mb-4 text-center">Zamów ExitPocket</h3>
             <form action="https://formspree.io/f/movdyplp" method="POST">
                 <input type="hidden" name="_cc" value="slawomirhutek@dhmedical.org">
                 <div class="row">
@@ -329,6 +340,7 @@
             <p class="text-center mt-3 text-muted small">Skontaktujemy się w ciągu 24h w celu potwierdzenia zamówienia, informacji o dostępności oraz czasie wysyłki.</p>
         </div>
     </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -357,6 +369,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function selectOrder(variant, qty) {
