@@ -40,12 +40,22 @@
         .product-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-image-main { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
 
-        /* TABELA – powrót do ładnego stylu z przerwami */
+        /* Naprawiona tabela – bez wcięć w nagłówku, wyraźne przerwy między wierszami */
         .variant-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 0 2rem; /* duża przerwa pionowa między wierszami */
+            border-spacing: 0 2rem; /* duża równa przerwa między wierszami */
             margin: 40px 0;
+        }
+        .variant-table thead th {
+            background: #25a7df;
+            color: white;
+            font-weight: 600;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            border: none;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
         }
         .variant-table tbody tr {
             background: white;
@@ -53,17 +63,11 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             overflow: hidden;
         }
-        .variant-table th, .variant-table td {
-            padding: 1.5rem;
+        .variant-table td {
+            padding: 1.5rem 1rem;
             text-align: center;
             vertical-align: middle;
-        }
-        .variant-table th {
-            background: #25a7df;
-            color: white;
-            font-weight: 600;
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
+            border: none;
         }
         .variant-table tr:hover { background: #f1f9ff; }
         .variant-image { max-width: 160px; height: auto; border-radius: 8px; }
@@ -82,9 +86,9 @@
         }
         .price-btn:hover { background: #1e90c2; transform: translateY(-2px); }
 
-        /* Sekcja z filmem i zdjęciem – z dużą przerwą i wyrównaniem */
+        /* Sekcja z filmem i zdjęciem */
         .media-section {
-            margin-top: 5rem; /* duża przerwa od tabeli */
+            margin-top: 5rem;
             background: white;
             border-radius: 12px;
             padding: 2.5rem;
@@ -99,7 +103,7 @@
         .media-wrapper {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem; /* większa przerwa między zdjęciem a filmem */
+            gap: 3rem;
             justify-content: center;
             align-items: stretch;
         }
@@ -112,17 +116,15 @@
         }
         .media-item img, .media-item iframe {
             width: 100%;
-            height: 340px; /* wyrównana wysokość obu elementów */
-            object-fit: cover; /* zdjęcie wypełnia ramkę bez zniekształceń */
+            height: 340px;
+            object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 6px 15px rgba(0,0,0,0.12);
         }
-        .media-item iframe {
-            border: none;
-        }
+        .media-item iframe { border: none; }
 
         .order-form {
-            margin-top: 4rem; /* duża przerwa od sekcji media */
+            margin-top: 4rem;
             background: white;
             border-radius: 12px;
             padding: 2.5rem;
@@ -221,7 +223,7 @@
             </div>
         </div>
 
-        <!-- Tabela z wyraźnymi przerwami i ładnym wyglądem -->
+        <!-- Tabela – bez wcięć, z wyraźnymi przerwami -->
         <div class="variant-table">
             <table class="table mb-0">
                 <thead>
@@ -273,10 +275,10 @@
 
         <!-- Sekcja z filmem i zdjęciem -->
         <div class="media-section">
-            <h3>Exit Pocket - popraw swój komort</h3>
+            <h3>Exit Pocket - popraw swój komfort</h3>
             <div class="media-wrapper">
                 <div class="media-item">
-                    <img src="assets/exitpocket-demonstracja.png" alt="Demonstracja użycia ExitPocket">
+                    <img src="assets/exitpocket-demonstracja.jpg" alt="Demonstracja użycia ExitPocket">
                 </div>
                 <div class="media-item">
                     <iframe src="https://www.youtube.com/embed/HkqLn8Dda74" 
