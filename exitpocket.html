@@ -12,7 +12,7 @@
     <meta property="og:image" content="https://www.dhmedical.org/assets/logo.png" />
     <meta property="og:url" content="https://www.dhmedical.org/exitpocket.html" />
     <meta property="og:type" content="website" />
-    <title>DH Medical – ExitPocket</title>
+    <title>DH Medical – Exit Pocket</title>
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -39,38 +39,49 @@
         .product-header p { font-size: 1.4rem; max-width: 800px; margin: 0 auto; }
         .product-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-image-main { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+        /* Poprawiona tabela z wyraźnymi przerwami między kafelkami */
         .variant-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 2rem; /* Duża przerwa pionowa między wierszami */
+            margin: 40px 0;
+        }
+        .variant-table tbody tr {
             background: white;
             border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin: 40px 0;
-            border-collapse: separate;
-            border-spacing: 0 1.5rem; /* Dodana przerwa między wierszami (kafelkami) */
         }
         .variant-table th, .variant-table td {
-            padding: 1.5rem; /* Zwiększony padding dla lepszej przerwy wewnątrz */
+            padding: 1.5rem;
             text-align: center;
-            border-bottom: 1px solid #dee2e6;
             vertical-align: middle;
         }
-        .variant-table th { background: #25a7df; color: white; font-weight: 600; }
-        .variant-table tr { background: #f8f9fa; border-radius: 8px; } /* Zaokrąglone krawędzie dla kafelek */
+        .variant-table th {
+            background: #25a7df;
+            color: white;
+            font-weight: 600;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
         .variant-table tr:hover { background: #f1f9ff; }
-        .variant-image { max-width: 140px; height: auto; border-radius: 8px; }
+        .variant-image { max-width: 160px; height: auto; border-radius: 8px; }
+
         .price-btn {
             display: block;
             width: 100%;
-            margin: 0.4rem 0;
+            margin: 0.5rem 0;
             background: #25a7df;
             color: white;
             border: none;
-            padding: 0.7rem;
+            padding: 0.8rem;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             transition: all 0.3s;
         }
         .price-btn:hover { background: #1e90c2; transform: translateY(-2px); }
+
         .order-form {
             background: white;
             border-radius: 12px;
@@ -99,19 +110,46 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(37,167,223,0.4);
         }
-        /* Sekcja z filmem i zdjęciem */
+
+        /* Sekcja z filmem i zdjęciem – wyrównane wysokości i odstępy */
         .media-section {
-            margin-top: 3rem;
+            margin-top: 4rem;
             background: white;
             border-radius: 12px;
-            padding: 2rem;
+            padding: 2.5rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .media-section h3 { text-align: center; color: #1a3a5f; margin-bottom: 1.5rem; }
-        .media-wrapper { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
-        .media-item { flex: 1; min-width: 300px; max-width: 500px; }
-        .media-item img { width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .media-item iframe { width: 100%; height: 280px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .media-section h3 {
+            text-align: center;
+            color: #1a3a5f;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        .media-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            justify-content: center;
+            align-items: stretch; /* wyrównuje wysokości */
+        }
+        .media-item {
+            flex: 1;
+            min-width: 320px;
+            max-width: 520px;
+            display: flex;
+            flex-direction: column;
+        }
+        .media-item img, .media-item iframe {
+            width: 100%;
+            height: 320px; /* stała wysokość dla obu elementów */
+            object-fit: cover; /* zdjęcie wypełnia ramkę */
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+        .media-item iframe {
+            border: none;
+        }
+
         footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
         footer a { color: #a8c7e6; text-decoration: none; }
         footer a:hover { color: white; }
@@ -121,14 +159,20 @@
             transition: transform 0.3s;
         }
         footer .social-links a:hover { transform: translateY(-3px); }
+
+        @media (max-width: 992px) {
+            .media-wrapper { flex-direction: column; align-items: center; }
+            .media-item { max-width: 100%; }
+            .media-item img, .media-item iframe { height: 280px; }
+        }
         @media (max-width: 768px) {
             .product-header h1 { font-size: 2.8rem; }
             .product-header { padding: 140px 20px; background-attachment: scroll; }
-            .variant-table { border-spacing: 0 1rem; }
+            .variant-table { border-spacing: 0 1.5rem; }
             .variant-table td { font-size: 0.9rem; padding: 1rem; }
-            .variant-image { max-width: 100px; }
-            .price-btn { font-size: 0.85rem; padding: 0.6rem; }
-            .media-item iframe { height: 200px; }
+            .variant-image { max-width: 120px; }
+            .price-btn { font-size: 0.9rem; padding: 0.6rem; }
+            .media-item img, .media-item iframe { height: 220px; }
         }
     </style>
 </head>
@@ -174,7 +218,7 @@
             </div>
         </div>
 
-        <!-- Tabela z 4 wariantami -->
+        <!-- Tabela z wyraźnymi przerwami -->
         <div class="variant-table">
             <table class="table mb-0">
                 <thead>
@@ -224,12 +268,12 @@
             </table>
         </div>
 
-        <!-- Dodatkowa sekcja ze zdjęciem i filmem -->
+        <!-- Sekcja z filmem i zdjęciem – wyrównane wysokości -->
         <div class="media-section">
-            <h3>Exit Pocket - popraw swój komfort</h3>
+            <h3>Exit Pocket - popraw swój komfort!</h3>
             <div class="media-wrapper">
                 <div class="media-item">
-                    <img src="assets/exitpocket-demonstracja.jpg" alt="Demonstracja użycia ExitPocket">
+                    <img src="assets/exitpocket-demonstracja.png" alt="Demonstracja użycia ExitPocket">
                 </div>
                 <div class="media-item">
                     <iframe src="https://www.youtube.com/embed/HkqLn8Dda74" 
@@ -286,7 +330,7 @@
                     <button type="submit" class="btn-order">Wyślij zapytanie ofertowe</button>
                 </div>
             </form>
-            <p class="text-center mt-3 text-muted small">Skontaktujemy się w ciągu 24h w celu potwierdzenia zamówienia, dostępności oraz informacji dotyczącej czasu dostawy.</p>
+            <p class="text-center mt-3 text-muted small">Skontaktujemy się w ciągu 24h w celu potwierdzenia i wyceny.</p>
         </div>
     </section>
 
