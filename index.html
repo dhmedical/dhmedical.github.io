@@ -92,43 +92,50 @@
             margin-bottom: 2.5rem;
             font-weight: 500;
         }
-        /* Klikowalne loga partnerów */
+        /* Sekcja partnerzy – wersja hybrydowa z o-nas (najładniejsza) */
         .partners-logos {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 5rem 4rem;
+            justify-items: center;
             align-items: center;
-            gap: 8rem;
-            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .partners-logos a {
-            display: block;
-            transition: transform 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120px;           /* stała wysokość kontenera – baseline idealnie wyrównany */
+            width: 100%;
+            transition: transform 0.3s ease;
         }
         .partners-logos a:hover {
-            transform: scale(1.1);
+            transform: scale(1.08);
         }
         .partners-logos img {
-            height: 80px;
+            max-height: 90px;        /* nie wychodzi poza kontener */
+            max-width: 100%;
             width: auto;
+            height: auto;
             object-fit: contain;
-            opacity: 1;
-            filter: brightness(1.4) drop-shadow(0 6px 15px rgba(255,255,255,0.7));
-            transition: all 0.4s ease;
+            filter: brightness(1.1) drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+            transition: filter 0.3s ease;
         }
         .partners-logos a:hover img {
-            filter: brightness(1.6) drop-shadow(0 8px 25px rgba(255,255,255,0.9));
+            filter: brightness(1.3) drop-shadow(0 8px 20px rgba(0,0,0,0.25));
         }
-        @media (max-width: 768px) {
-            .hero { padding: 100px 20px 60px; }
-            .hero h1 { font-size: 2.8rem; }
-            .hero p { font-size: 1.3rem; }
+        @media (max-width: 992px) {
             .partners-logos {
-                flex-direction: column;
-                gap: 3rem;
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 3.5rem 3rem;
             }
-            .partners-logos img {
-                height: 60px;
-            }
+            .partners-logos a { height: 100px; }
+            .partners-logos img { max-height: 80px; }
+        }
+        @media (max-width: 576px) {
+            .partners-logos { gap: 2.5rem 2rem; }
+            .partners-logos img { max-height: 70px; }
         }
         /* Profesjonalny footer */
         footer {
