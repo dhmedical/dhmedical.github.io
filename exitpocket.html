@@ -12,7 +12,7 @@
     <meta property="og:image" content="https://www.dhmedical.org/assets/logo.png" />
     <meta property="og:url" content="https://www.dhmedical.org/exitpocket.html" />
     <meta property="og:type" content="website" />
-    <title>DH Medical – Exit Pocket</title>
+    <title>DH Medical – ExitPocket</title>
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link href="css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -40,11 +40,11 @@
         .product-section { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-image-main { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
 
-        /* Poprawiona tabela z wyraźnymi przerwami między kafelkami */
+        /* TABELA – powrót do ładnego stylu z przerwami */
         .variant-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 0 2rem; /* Duża przerwa pionowa między wierszami */
+            border-spacing: 0 2rem; /* duża przerwa pionowa między wierszami */
             margin: 40px 0;
         }
         .variant-table tbody tr {
@@ -82,7 +82,47 @@
         }
         .price-btn:hover { background: #1e90c2; transform: translateY(-2px); }
 
+        /* Sekcja z filmem i zdjęciem – z dużą przerwą i wyrównaniem */
+        .media-section {
+            margin-top: 5rem; /* duża przerwa od tabeli */
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .media-section h3 {
+            text-align: center;
+            color: #1a3a5f;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+        .media-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem; /* większa przerwa między zdjęciem a filmem */
+            justify-content: center;
+            align-items: stretch;
+        }
+        .media-item {
+            flex: 1;
+            min-width: 320px;
+            max-width: 520px;
+            display: flex;
+            flex-direction: column;
+        }
+        .media-item img, .media-item iframe {
+            width: 100%;
+            height: 340px; /* wyrównana wysokość obu elementów */
+            object-fit: cover; /* zdjęcie wypełnia ramkę bez zniekształceń */
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        }
+        .media-item iframe {
+            border: none;
+        }
+
         .order-form {
+            margin-top: 4rem; /* duża przerwa od sekcji media */
             background: white;
             border-radius: 12px;
             padding: 2.5rem;
@@ -111,45 +151,6 @@
             box-shadow: 0 10px 25px rgba(37,167,223,0.4);
         }
 
-        /* Sekcja z filmem i zdjęciem – wyrównane wysokości i odstępy */
-        .media-section {
-            margin-top: 4rem;
-            background: white;
-            border-radius: 12px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .media-section h3 {
-            text-align: center;
-            color: #1a3a5f;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-        .media-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-            justify-content: center;
-            align-items: stretch; /* wyrównuje wysokości */
-        }
-        .media-item {
-            flex: 1;
-            min-width: 320px;
-            max-width: 520px;
-            display: flex;
-            flex-direction: column;
-        }
-        .media-item img, .media-item iframe {
-            width: 100%;
-            height: 320px; /* stała wysokość dla obu elementów */
-            object-fit: cover; /* zdjęcie wypełnia ramkę */
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-        }
-        .media-item iframe {
-            border: none;
-        }
-
         footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
         footer a { color: #a8c7e6; text-decoration: none; }
         footer a:hover { color: white; }
@@ -161,9 +162,9 @@
         footer .social-links a:hover { transform: translateY(-3px); }
 
         @media (max-width: 992px) {
-            .media-wrapper { flex-direction: column; align-items: center; }
+            .media-wrapper { flex-direction: column; align-items: center; gap: 2rem; }
             .media-item { max-width: 100%; }
-            .media-item img, .media-item iframe { height: 280px; }
+            .media-item img, .media-item iframe { height: 300px; }
         }
         @media (max-width: 768px) {
             .product-header h1 { font-size: 2.8rem; }
@@ -172,13 +173,15 @@
             .variant-table td { font-size: 0.9rem; padding: 1rem; }
             .variant-image { max-width: 120px; }
             .price-btn { font-size: 0.9rem; padding: 0.6rem; }
-            .media-item img, .media-item iframe { height: 220px; }
+            .media-item img, .media-item iframe { height: 240px; }
+            .media-section { padding: 1.5rem; }
+            .order-form { padding: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navbar – standardowy -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
         <div class="container px-5">
             <a class="navbar-brand" href="index.html"><img src="assets/logo.png" alt="DH Medical" style="height: 80px; width: 80px;"></a>
@@ -218,7 +221,7 @@
             </div>
         </div>
 
-        <!-- Tabela z wyraźnymi przerwami -->
+        <!-- Tabela z wyraźnymi przerwami i ładnym wyglądem -->
         <div class="variant-table">
             <table class="table mb-0">
                 <thead>
@@ -268,9 +271,9 @@
             </table>
         </div>
 
-        <!-- Sekcja z filmem i zdjęciem – wyrównane wysokości -->
+        <!-- Sekcja z filmem i zdjęciem -->
         <div class="media-section">
-            <h3>Exit Pocket - popraw swój komfort!</h3>
+            <h3>Exit Pocket - popraw swój komort</h3>
             <div class="media-wrapper">
                 <div class="media-item">
                     <img src="assets/exitpocket-demonstracja.png" alt="Demonstracja użycia ExitPocket">
