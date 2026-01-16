@@ -37,7 +37,13 @@
         }
         .page-header h1 { font-size: 3.5rem; font-weight: 700; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
         .about-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
-        .about-section h2 { font-size: 2.4rem; color: #1a3a5f; text-align: center; margin-bottom: 3rem; }
+        .about-section h2 { 
+            font-size: 2.4rem; 
+            color: #1a3a5f; 
+            text-align: center; 
+            margin: 3rem 0 2.5rem; 
+            font-weight: 700;
+        }
         .about-text { font-size: 1.2rem; line-height: 1.8; color: #444; text-align: center; margin-bottom: 4rem; }
         .news-section { padding: 60px 20px; background: #e8f4fd; text-align: center; }
         .news-section h3 { font-size: 2rem; color: #1a3a5f; margin-bottom: 1.5rem; }
@@ -45,19 +51,18 @@
         .team-card { text-align: center; }
         .team-card img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; margin-bottom: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
         .team-card h4 { font-size: 1.4rem; color: #1a3a5f; margin-bottom: 0.5rem; }
-       
-        /* Sekcja partnerzy – wersja hybrydowa (najładniejsza) */
+      
+        /* Sekcja partnerzy – spójna z innymi h2 */
         .partners-section {
             padding: 80px 20px;
             background: white;
         }
         .partners-section h2 {
-            font-size: 2.8rem;              /* ← większy napis, było 2.4rem */
+            font-size: 2.4rem;              /* dokładnie taki sam rozmiar jak Kim jesteśmy? i Nasz zespół */
             font-weight: 700;
             color: #1a3a5f;
             text-align: center;
-            margin-bottom: 4rem;            /* więcej przestrzeni pod napisem */
-            letter-spacing: -0.5px;
+            margin: 3rem 0 2.5rem;          /* taki sam odstęp jak inne sekcje */
         }
         .partners-logos {
             display: grid;
@@ -72,7 +77,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 120px;           /* stała wysokość – wyrównuje baseline */
+            height: 120px;
             width: 100%;
             transition: transform 0.3s ease;
         }
@@ -91,13 +96,12 @@
         .partners-logos a:hover img {
             filter: brightness(1.3) drop-shadow(0 8px 20px rgba(0,0,0,0.25));
         }
-
         /* Mobilna wersja – naprawiona */
         @media (max-width: 992px) {
             .partners-section { padding: 60px 15px; }
-            .partners-section h2 { font-size: 2.4rem; margin-bottom: 3rem; }
+            .partners-section h2 { font-size: 2.2rem; margin: 2.5rem 0 2rem; }
             .partners-logos {
-                grid-template-columns: repeat(2, 1fr);  /* zawsze 2 kolumny na tabletach */
+                grid-template-columns: repeat(2, 1fr);
                 gap: 3rem 2.5rem;
             }
             .partners-logos a { height: 100px; }
@@ -105,13 +109,12 @@
         }
         @media (max-width: 576px) {
             .partners-logos {
-                grid-template-columns: 1fr;     /* 1 kolumna na małych telefonach */
+                grid-template-columns: 1fr;
                 gap: 3rem 1rem;
             }
             .partners-logos a { height: 90px; }
             .partners-logos img { max-height: 70px; }
         }
-
         footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
         footer a { color: #a8c7e6; text-decoration: none; transition: color 0.3s; }
         footer a:hover { color: white; }
@@ -189,7 +192,7 @@
             </div>
         </div>
     </section>
-    <!-- Sekcja partnerzy – estetyczna wersja -->
+    <!-- Sekcja partnerzy – spójny rozmiar h2 -->
     <section class="partners-section">
         <div class="container">
             <h2>Współpracujemy z wiodącymi producentami</h2>
