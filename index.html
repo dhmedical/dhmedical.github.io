@@ -88,9 +88,10 @@
             margin-top: 4rem;
         }
         .partners p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            font-weight: 500;
+            font-size: 1.6rem;               /* ← większy napis */
+            font-weight: 700;
+            margin-bottom: 3rem;             /* więcej przestrzeni pod napisem */
+            letter-spacing: -0.5px;
         }
         /* Sekcja partnerzy – wersja hybrydowa z o-nas (najładniejsza) */
         .partners-logos {
@@ -106,7 +107,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 120px;           /* stała wysokość kontenera – baseline idealnie wyrównany */
+            height: 120px;           /* stała wysokość – baseline idealnie wyrównany */
             width: 100%;
             transition: transform 0.3s ease;
         }
@@ -114,7 +115,7 @@
             transform: scale(1.08);
         }
         .partners-logos img {
-            max-height: 90px;        /* nie wychodzi poza kontener */
+            max-height: 90px;
             max-width: 100%;
             width: auto;
             height: auto;
@@ -125,18 +126,29 @@
         .partners-logos a:hover img {
             filter: brightness(1.3) drop-shadow(0 8px 20px rgba(0,0,0,0.25));
         }
+
+        /* Naprawa mobilnej wersji – teraz wygląda estetycznie */
         @media (max-width: 992px) {
+            .hero { padding: 100px 20px 60px; }
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { font-size: 1.3rem; }
+            .partners p { font-size: 1.4rem; margin-bottom: 2.5rem; }
             .partners-logos {
-                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-                gap: 3.5rem 3rem;
+                grid-template-columns: repeat(2, 1fr);  /* zawsze 2 kolumny na tabletach/telefonach */
+                gap: 3rem 2.5rem;
             }
             .partners-logos a { height: 100px; }
             .partners-logos img { max-height: 80px; }
         }
         @media (max-width: 576px) {
-            .partners-logos { gap: 2.5rem 2rem; }
+            .partners-logos {
+                grid-template-columns: 1fr;     /* 1 kolumna na małych telefonach */
+                gap: 3rem 1.5rem;
+            }
+            .partners-logos a { height: 90px; }
             .partners-logos img { max-height: 70px; }
         }
+
         /* Profesjonalny footer */
         footer {
             background: #1a3a5f;
