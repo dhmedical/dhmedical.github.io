@@ -46,7 +46,7 @@
         .team-card img { width: 180px; height: 180px; object-fit: cover; border-radius: 50%; margin-bottom: 1.5rem; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
         .team-card h4 { font-size: 1.4rem; color: #1a3a5f; margin-bottom: 0.5rem; }
         
-        /* Sekcja partnerzy – poprawiona, estetyczna wersja */
+        /* Sekcja partnerzy – Opcja 1 ulepszona (najładniejsza) */
         .partners-section { 
             padding: 80px 20px; 
             background: white; 
@@ -55,47 +55,50 @@
             font-size: 2.4rem; 
             color: #1a3a5f; 
             text-align: center; 
-            margin-bottom: 3rem; 
+            margin-bottom: 3.5rem; 
         }
         .partners-logos { 
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 4rem 6rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 5rem 4rem;
             justify-items: center;
             align-items: center;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         .partners-logos a { 
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 110px;           /* stała wysokość kontenera – wyrównuje baseline */
+            height: 120px;           /* stała wysokość – wyrównuje wszystko idealnie */
+            width: 100%;
             transition: transform 0.3s ease;
         }
         .partners-logos a:hover { 
             transform: scale(1.08); 
         }
         .partners-logos img { 
-            max-height: 90px;        /* maksymalna wysokość logo */
+            max-height: 90px;        /* nie wychodzi poza kontener */
+            max-width: 100%;
             width: auto;
+            height: auto;
             object-fit: contain;
             filter: brightness(1.1) drop-shadow(0 4px 10px rgba(0,0,0,0.15));
             transition: filter 0.3s ease;
         }
         .partners-logos a:hover img {
-            filter: brightness(1.3) drop-shadow(0 6px 15px rgba(0,0,0,0.25));
+            filter: brightness(1.3) drop-shadow(0 8px 20px rgba(0,0,0,0.25));
         }
         @media (max-width: 992px) {
             .partners-logos { 
-                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-                gap: 3rem 4rem; 
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 3.5rem 3rem; 
             }
             .partners-logos a { height: 100px; }
             .partners-logos img { max-height: 80px; }
         }
         @media (max-width: 576px) {
-            .partners-logos { gap: 2.5rem 3rem; }
+            .partners-logos { gap: 2.5rem 2rem; }
             .partners-logos img { max-height: 70px; }
         }
 
@@ -176,7 +179,7 @@
             </div>
         </div>
     </section>
-    <!-- Sekcja partnerzy – estetyczna wersja Opcja 1 -->
+    <!-- Sekcja partnerzy – estetyczna Opcja 1 -->
     <section class="partners-section">
         <div class="container">
             <h2>Współpracujemy z wiodącymi producentami</h2>
