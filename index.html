@@ -33,6 +33,7 @@
             display: flex;
             flex-direction: column;
             font-family: 'Roboto', sans-serif;
+            background: #f8f9fa;
         }
         .navbar {
             position: sticky;
@@ -42,16 +43,13 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .hero {
-            flex: 1;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
                         url('assets/hero-background.png') center top / cover no-repeat;
             background-color: #0a1f3a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
             color: white;
-            padding: 120px 20px 80px;
+            text-align: center;
+            padding: 120px 20px 60px; /* kończymy wcześniej – pod przyciskiem */
+            margin-bottom: 0;
         }
         .hero h1 {
             font-size: 3.8rem;
@@ -68,7 +66,7 @@
         }
         .btn-custom {
             background-color: #25a7df;
-            border-color: #25a7df;
+            border: none;
             color: white;
             padding: 1rem 3rem;
             font-size: 1.3rem;
@@ -79,21 +77,26 @@
         }
         .btn-custom:hover {
             background-color: #1e90c2;
-            border-color: #1e90c2;
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(37, 167, 223, 0.6);
-            color: white;
         }
-        .partners {
-            margin-top: 4rem;
+        /* Sekcja partnerzy – jasne tło, zaczyna się od razu po hero */
+        .partners-section {
+            background: #ffffff; /* jasne tło */
+            padding: 60px 20px 80px;
+            margin-top: -40px; /* delikatne nałożenie na hero, ładny efekt */
+            border-top-left-radius: 40px;
+            border-top-right-radius: 40px;
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
         }
         .partners p {
-            font-size: 1.6rem;               /* ← większy napis */
+            font-size: 1.8rem;               /* jeszcze większy i ładniejszy napis */
             font-weight: 700;
-            margin-bottom: 3rem;             /* więcej przestrzeni pod napisem */
+            color: #1a3a5f;
+            margin-bottom: 3.5rem;
             letter-spacing: -0.5px;
+            text-align: center;
         }
-        /* Sekcja partnerzy – wersja hybrydowa z o-nas (najładniejsza) */
         .partners-logos {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -107,7 +110,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 120px;           /* stała wysokość – baseline idealnie wyrównany */
+            height: 120px;
             width: 100%;
             transition: transform 0.3s ease;
         }
@@ -120,21 +123,27 @@
             width: auto;
             height: auto;
             object-fit: contain;
-            filter: brightness(1.1) drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+            filter: brightness(1.0) drop-shadow(0 4px 12px rgba(0,0,0,0.12));
             transition: filter 0.3s ease;
         }
         .partners-logos a:hover img {
-            filter: brightness(1.3) drop-shadow(0 8px 20px rgba(0,0,0,0.25));
+            filter: brightness(1.15) drop-shadow(0 8px 20px rgba(0,0,0,0.2));
         }
 
-        /* Naprawa mobilnej wersji – teraz wygląda estetycznie */
+        /* MOBILNE – spójne z poprzednimi stronami */
         @media (max-width: 992px) {
-            .hero { padding: 100px 20px 60px; }
+            .hero { padding: 100px 20px 40px; }
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.3rem; }
-            .partners p { font-size: 1.4rem; margin-bottom: 2.5rem; }
+            .partners-section { 
+                padding: 50px 15px 60px; 
+                margin-top: -30px; 
+                border-top-left-radius: 30px;
+                border-top-right-radius: 30px;
+            }
+            .partners p { font-size: 1.5rem; margin-bottom: 2.5rem; }
             .partners-logos {
-                grid-template-columns: repeat(2, 1fr);  /* zawsze 2 kolumny na tabletach/telefonach */
+                grid-template-columns: repeat(2, 1fr);
                 gap: 3rem 2.5rem;
             }
             .partners-logos a { height: 100px; }
@@ -142,42 +151,29 @@
         }
         @media (max-width: 576px) {
             .partners-logos {
-                grid-template-columns: 1fr;     /* 1 kolumna na małych telefonach */
+                grid-template-columns: 1fr;
                 gap: 3rem 1.5rem;
             }
             .partners-logos a { height: 90px; }
             .partners-logos img { max-height: 70px; }
         }
 
-        /* Profesjonalny footer */
+        /* Footer */
         footer {
             background: #1a3a5f;
             color: #ffffff;
             padding: 3rem 0 1.5rem;
             flex-shrink: 0;
         }
-        footer a {
-            color: #a8c7e6;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        footer a:hover {
-            color: #ffffff;
-        }
-        footer h5 {
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            color: white;
-        }
+        footer a { color: #a8c7e6; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: #ffffff; }
+        footer h5 { font-weight: 700; margin-bottom: 1.5rem; font-size: 1.2rem; color: white; }
         footer .social-links a {
             font-size: 1.8rem;
             margin: 0 0.8rem;
             transition: transform 0.3s;
         }
-        footer .social-links a:hover {
-            transform: translateY(-3px);
-        }
+        footer .social-links a:hover { transform: translateY(-3px); }
         footer .copyright {
             margin-top: 2rem;
             padding-top: 1.5rem;
@@ -207,31 +203,37 @@
             </div>
         </div>
     </nav>
-    <!-- Hero Section -->
+
+    <!-- Hero Section – kończy się pod przyciskiem -->
     <section class="hero">
         <div>
             <h1>Wspieramy innowacje w medycynie</h1>
             <p>Jesteśmy firmą specjalizującą się w dystrybucji nowoczesnych rozwiązań w sektorze dostępów naczyniowych. Oferujemy produkty najwyższej jakości, które zwiększają bezpieczeństwo pacjentów i ułatwiają pracę personelowi medycznemu.</p>
             <a href="oferta.html" class="btn btn-custom btn-lg">Zobacz ofertę</a>
-            <div class="partners">
-                <p>Współpracujemy z wiodącymi producentami:</p>
-                <div class="partners-logos">
-                    <a href="https://medical.hbfuller.com/en" target="_blank">
-                        <img src="assets/hbfuller1-logo.png" alt="H.B. Fuller – SecurePortIV">
-                    </a>
-                    <a href="https://www.flex-grip.com/" target="_blank">
-                        <img src="assets/bedal1-logo.png" alt="Bedal – FlexGrip">
-                    </a>
-                    <a href="https://districlass.com/" target="_blank">
-                        <img src="assets/districath1-logo.png" alt="Districlass Medical – DistricAth">
-                    </a>
-                    <a href="https://www.emodial.it/" target="_blank">
-                        <img src="assets/emodial-logo.png" alt="Emodial">
-                    </a>
-                </div>
+        </div>
+    </section>
+
+    <!-- Sekcja partnerzy – jasne tło, zaczyna się od razu po hero -->
+    <section class="partners-section">
+        <div class="container">
+            <p>Współpracujemy z wiodącymi producentami:</p>
+            <div class="partners-logos">
+                <a href="https://medical.hbfuller.com/en" target="_blank">
+                    <img src="assets/hbfuller1-logo.png" alt="H.B. Fuller – SecurePortIV">
+                </a>
+                <a href="https://www.flex-grip.com/" target="_blank">
+                    <img src="assets/bedal1-logo.png" alt="Bedal – FlexGrip">
+                </a>
+                <a href="https://districlass.com/" target="_blank">
+                    <img src="assets/districath1-logo.png" alt="Districlass Medical – DistricAth">
+                </a>
+                <a href="https://www.emodial.it/" target="_blank">
+                    <img src="assets/emodial-logo.png" alt="Emodial">
+                </a>
             </div>
         </div>
     </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
