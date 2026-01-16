@@ -43,13 +43,12 @@
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
                         url('assets/hero-background.png') center top / cover no-repeat;
             background-color: #0a1f3a;
             color: white;
             text-align: center;
-            padding: 120px 20px 60px; /* kończymy wcześniej – pod przyciskiem */
-            margin-bottom: 0;
+            padding: 140px 20px 80px;   /* kończymy pod przyciskiem */
         }
         .hero h1 {
             font-size: 3.8rem;
@@ -80,22 +79,18 @@
             transform: translateY(-5px);
             box-shadow: 0 12px 30px rgba(37, 167, 223, 0.6);
         }
-        /* Sekcja partnerzy – jasne tło, zaczyna się od razu po hero */
+        /* Sekcja partnerzy – czyste białe tło, bez zaokrągleń */
         .partners-section {
-            background: #ffffff; /* jasne tło */
+            background: #ffffff;
             padding: 60px 20px 80px;
-            margin-top: -40px; /* delikatne nałożenie na hero, ładny efekt */
-            border-top-left-radius: 40px;
-            border-top-right-radius: 40px;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
         }
-        .partners p {
-            font-size: 1.8rem;               /* jeszcze większy i ładniejszy napis */
+        .partners-section p {
+            font-size: 2rem;                  /* większy i czystszy napis */
             font-weight: 700;
             color: #1a3a5f;
+            text-align: center;
             margin-bottom: 3.5rem;
             letter-spacing: -0.5px;
-            text-align: center;
         }
         .partners-logos {
             display: grid;
@@ -123,25 +118,20 @@
             width: auto;
             height: auto;
             object-fit: contain;
-            filter: brightness(1.0) drop-shadow(0 4px 12px rgba(0,0,0,0.12));
+            filter: brightness(1.0) drop-shadow(0 4px 12px rgba(0,0,0,0.10));
             transition: filter 0.3s ease;
         }
         .partners-logos a:hover img {
-            filter: brightness(1.15) drop-shadow(0 8px 20px rgba(0,0,0,0.2));
+            filter: brightness(1.15) drop-shadow(0 8px 20px rgba(0,0,0,0.18));
         }
 
-        /* MOBILNE – spójne z poprzednimi stronami */
+        /* MOBILNA WERSJA – spójna i czysta */
         @media (max-width: 992px) {
-            .hero { padding: 100px 20px 40px; }
+            .hero { padding: 100px 20px 60px; }
             .hero h1 { font-size: 2.8rem; }
             .hero p { font-size: 1.3rem; }
-            .partners-section { 
-                padding: 50px 15px 60px; 
-                margin-top: -30px; 
-                border-top-left-radius: 30px;
-                border-top-right-radius: 30px;
-            }
-            .partners p { font-size: 1.5rem; margin-bottom: 2.5rem; }
+            .partners-section { padding: 50px 15px 60px; }
+            .partners-section p { font-size: 1.7rem; margin-bottom: 2.5rem; }
             .partners-logos {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 3rem 2.5rem;
@@ -204,16 +194,16 @@
         </div>
     </nav>
 
-    <!-- Hero Section – kończy się pod przyciskiem -->
+    <!-- Hero – kończy się pod przyciskiem -->
     <section class="hero">
         <div>
             <h1>Wspieramy innowacje w medycynie</h1>
             <p>Jesteśmy firmą specjalizującą się w dystrybucji nowoczesnych rozwiązań w sektorze dostępów naczyniowych. Oferujemy produkty najwyższej jakości, które zwiększają bezpieczeństwo pacjentów i ułatwiają pracę personelowi medycznemu.</p>
-            <a href="oferta.html" class="btn btn-custom btn-lg">Zobacz ofertę</a>
+            <a href="oferta.html" class="btn-custom btn-lg">Zobacz ofertę</a>
         </div>
     </section>
 
-    <!-- Sekcja partnerzy – jasne tło, zaczyna się od razu po hero -->
+    <!-- Sekcja partnerzy – czyste białe tło, bez zaokrągleń -->
     <section class="partners-section">
         <div class="container">
             <p>Współpracujemy z wiodącymi producentami:</p>
@@ -251,9 +241,9 @@
                 <div class="col-md-4 mb-4">
                     <h5>Social Media</h5>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
             </div>
