@@ -877,3 +877,36 @@ footer a:hover {
     padding: 64px 0;
   }
 }
+.hero-panel h2,
+.hero-panel p,
+.panel-label {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-panel h2 {
+  color: white;
+  margin: 0 0 14px;
+}
+
+.hero-panel p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.hero-metrics {
+  position: relative;
+  z-index: 1;
+}
+
+.panel-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
