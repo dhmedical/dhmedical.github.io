@@ -1561,3 +1561,11 @@ footer a:hover {
 .note-box {
   margin-top: 10px;
 }
+.flex-card-image {
+  background: linear-gradient(145deg, #f3f4f7, #e9ebf0);
+}
+
+.flex-card-image img {
+  max-width: 80%;
+  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.15));
+}
