@@ -55,12 +55,28 @@
       align-items: center;
       justify-content: center;
       margin-bottom: 20px;
+      border-radius: 18px;
+      background: #f4f5f7;
+      overflow: hidden;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .offer-icon:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(29,27,82,0.15);
     }
 
     .offer-icon img {
       max-height: 100%;
       max-width: 100%;
       object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .offer-icon:hover img {
+      transform: scale(1.05);
     }
 
     .offer-card h3 {
@@ -85,6 +101,10 @@
       color: white;
     }
 
+    .offer-card.featured .offer-icon {
+      background: rgba(255,255,255,0.92);
+    }
+
     @media (max-width: 1200px) {
       .offer-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -97,7 +117,6 @@
 
 <body>
 
-<!-- NAV -->
 <header class="site-header">
   <div class="container nav-wrapper">
     <a href="index.html" class="brand">
@@ -113,83 +132,81 @@
   </div>
 </header>
 
-<!-- MAIN -->
 <main>
 <section class="offer-page">
-<div class="container">
+  <div class="container">
 
-<div class="section-header">
-  <div class="section-kicker">Oferta</div>
-  <h1>Nasza oferta</h1>
-  <p>Specjalistyczne rozwiązania dla dostępów naczyniowych i terapii infuzyjnej.</p>
-</div>
+    <div class="section-header">
+      <div class="section-kicker">Oferta</div>
+      <h1>Nasza oferta</h1>
+      <p>Specjalistyczne rozwiązania dla dostępów naczyniowych i terapii infuzyjnej.</p>
+    </div>
 
-<div class="offer-grid">
+    <div class="offer-grid">
 
-<div class="offer-card">
-  <div class="offer-icon">
-    <img src="assets/secureport.png">
+      <div class="offer-card">
+        <a href="secureportiv.html" class="offer-icon" aria-label="SecurePortIV">
+          <img src="assets/secureport.png" alt="SecurePortIV">
+        </a>
+        <h3>SecurePortIV™</h3>
+        <p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p>
+        <a href="secureportiv.html" class="card-link">
+          Zobacz więcej <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="offer-card">
+        <a href="systemy-bezszwowe.html" class="offer-icon" aria-label="FlexGrip">
+          <img src="assets/flexgrip.png" alt="FlexGrip">
+        </a>
+        <h3>FlexGrip®</h3>
+        <p>Systemy bezszwowej stabilizacji cewników.</p>
+        <a href="systemy-bezszwowe.html" class="card-link">
+          Zobacz więcej <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="offer-card">
+        <a href="porty-naczyniowe.html" class="offer-icon" aria-label="Porty naczyniowe">
+          <img src="assets/port.png" alt="Porty naczyniowe">
+        </a>
+        <h3>Porty naczyniowe</h3>
+        <p>Długoterminowy dostęp naczyniowy dla pacjentów.</p>
+        <a href="porty-naczyniowe.html" class="card-link">
+          Zobacz więcej <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="offer-card">
+        <a href="exitpocket.html" class="offer-icon" aria-label="ExitPocket">
+          <img src="assets/exitpocket.png" alt="ExitPocket">
+        </a>
+        <h3>ExitPocket</h3>
+        <p>Wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego.</p>
+        <a href="exitpocket.html" class="card-link">
+          Zobacz więcej <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="offer-card featured">
+        <a href="kontakt.html" class="offer-icon" aria-label="Zestawy infuzyjne">
+          <img src="assets/infusion.png" alt="Zestawy infuzyjne">
+        </a>
+        <h3>Zestawy infuzyjne</h3>
+        <p>Nowy produkt w ofercie DH Medical. Przeznaczone dla pacjentów neonatologicznych.</p>
+        <a href="kontakt.html" class="card-link">
+          Zobacz więcej <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+    </div>
   </div>
-  <h3>SecurePortIV™</h3>
-  <p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p>
-  <a href="secureportiv.html" class="card-link">
-    Zobacz więcej <i class="bi bi-arrow-right"></i>
-  </a>
-</div>
-
-<div class="offer-card">
-  <div class="offer-icon">
-    <img src="assets/flexgrip.png">
-  </div>
-  <h3>FlexGrip®</h3>
-  <p>Systemy bezszwowej stabilizacji cewników.</p>
-  <a href="systemy-bezszwowe.html" class="card-link">
-    Zobacz więcej <i class="bi bi-arrow-right"></i>
-  </a>
-</div>
-
-<div class="offer-card">
-  <div class="offer-icon">
-    <img src="assets/port.png">
-  </div>
-  <h3>Porty naczyniowe</h3>
-  <p>Długoterminowy dostęp naczyniowy dla pacjentów.</p>
-  <a href="porty-naczyniowe.html" class="card-link">
-    Zobacz więcej <i class="bi bi-arrow-right"></i>
-  </a>
-</div>
-
-<div class="offer-card">
-  <div class="offer-icon">
-    <img src="assets/exitpocket.png">
-  </div>
-  <h3>ExitPocket</h3>
-  <p>Wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego</p>
-  <a href="exitpocket.html" class="card-link">
-    Zobacz więcej <i class="bi bi-arrow-right"></i>
-  </a>
-</div>
-
-<div class="offer-card featured">
-  <div class="offer-icon">
-    <img src="assets/infusion.png">
-  </div>
-  <h3>Zestawy infuzyjne</h3>
-  <p>Nowy produkt w ofercie DH Medical. Przeznaczone dla pacjentów Neonatologicznych.</p>
-  <a href="kontakt.html" class="card-link">
-    Zobacz więcej <i class="bi bi-arrow-right"></i>
-  </a>
-</div>
-
-</div>
-</div>
 </section>
 </main>
 
-  <section class="cta-section">
+<section class="cta-section">
   <div class="container">
     <div class="cta-box">
-      
       <div class="cta-content">
         <h2>Potrzebujesz informacji produktowej lub oferty?</h2>
         <p>
@@ -205,12 +222,10 @@
           Oferta
         </a>
       </div>
-
     </div>
   </div>
 </section>
-  
-<!-- FOOTER -->
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -246,10 +261,10 @@
       <div>
         <h4>Social media</h4>
         <div class="social-links">
-          <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank"><i class="bi bi-youtube"></i></a>
-          <a href="mailto:arkadiuszdynda@dhmedical.org"><i class="bi bi-envelope"></i></a>
+          <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
+          <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
         </div>
       </div>
 
