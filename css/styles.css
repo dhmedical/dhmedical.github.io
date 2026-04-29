@@ -1644,3 +1644,12 @@ body .cta-section {
 .port-card:hover .port-spec-image img {
   transform: scale(1.04);
 }
+.port-spec-image {
+  height: 300px !important;
+}
+
+.port-spec-image img {
+  max-width: 96% !important;
+  max-height: 96% !important;
+  padding: 10px !important;
+}
