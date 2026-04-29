@@ -1175,3 +1175,55 @@ footer a:hover {
 .footer-grid {
   align-items: start !important;
 }
+.footer-grid {
+  display: grid !important;
+  grid-template-columns: 1.25fr 1fr 1fr 0.9fr !important;
+  gap: 48px !important;
+  align-items: start !important;
+}
+
+.footer-brand-row {
+  display: grid !important;
+  grid-template-columns: 74px 1fr !important;
+  column-gap: 18px !important;
+  align-items: start !important;
+}
+
+.footer-brand-row .footer-logo-box {
+  grid-column: 1 !important;
+  grid-row: 1 / span 3 !important;
+  width: 74px !important;
+  height: 74px !important;
+  margin: 0 !important;
+}
+
+.footer-brand-row > div:last-child {
+  grid-column: 2 !important;
+}
+
+.footer-brand-row h4 {
+  margin: 0 0 18px !important;
+}
+
+.footer-brand-row p {
+  max-width: 260px !important;
+  margin: 0 0 24px !important;
+}
+
+.footer-grid > div:not(:first-child) {
+  padding-top: 0 !important;
+}
+
+.footer-grid h4 {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 980px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-brand-row {
+    grid-template-columns: 74px 1fr !important;
+  }
+}
