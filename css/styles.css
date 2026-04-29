@@ -1141,3 +1141,13 @@ footer a:hover {
     padding-top: 0;
   }
 }
+.footer-brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.footer-brand-text h4 {
+  margin: 8px 0 0;
+}
