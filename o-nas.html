@@ -17,70 +17,59 @@
 
   <style>
     .about-page {
-      padding: 90px 0 80px;
+      padding: 84px 0 76px;
     }
 
-    .about-hero {
-      max-width: 900px;
-      margin-bottom: 56px;
-    }
-
-    .about-hero h1 {
-      margin: 0;
-      color: var(--navy);
-      font-size: clamp(2.6rem, 5vw, 4.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.05em;
-    }
-
-    .about-hero p {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 760px;
-    }
-
-    .about-grid {
+    .about-top-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 26px;
       align-items: stretch;
     }
 
-    .about-card-large,
-    .about-highlight {
-      background: white;
-      border-radius: 24px;
-      padding: 34px;
-      box-shadow: 0 16px 45px rgba(29,27,82,0.07);
+    .about-panel,
+    .about-news {
+      border-radius: 26px;
+      padding: 38px;
+      box-shadow: 0 18px 45px rgba(29,27,82,0.08);
     }
 
-    .about-card-large h2,
-    .about-highlight h2,
+    .about-panel {
+      background: white;
+    }
+
+    .about-panel h1,
+    .about-news h2,
     .team-section h2,
     .about-partners h2 {
       color: var(--navy);
-      margin-top: 0;
-      letter-spacing: -0.035em;
+      margin: 0;
+      letter-spacing: -0.045em;
+      line-height: 1.08;
     }
 
-    .about-card-large p,
-    .about-highlight p {
+    .about-panel h1 {
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+      margin-bottom: 22px;
+    }
+
+    .about-panel p {
       color: var(--muted);
       line-height: 1.75;
       font-size: 1rem;
+      margin: 0 0 18px;
     }
 
-    .about-highlight {
+    .about-news {
+      position: relative;
+      overflow: hidden;
       background:
         radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 34%),
         var(--navy);
       color: white;
-      position: relative;
-      overflow: hidden;
     }
 
-    .about-highlight::after {
+    .about-news::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -89,18 +78,21 @@
       opacity: 0.18;
     }
 
-    .about-highlight > * {
+    .about-news > * {
       position: relative;
       z-index: 1;
     }
 
-    .about-highlight h2,
-    .about-highlight p {
+    .about-news h2 {
       color: white;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 18px;
     }
 
-    .about-highlight p {
+    .about-news p {
       color: rgba(255,255,255,0.78);
+      line-height: 1.75;
+      margin: 0 0 18px;
     }
 
     .highlight-badge {
@@ -113,7 +105,7 @@
       color: white;
       font-weight: 800;
       font-size: 0.82rem;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .value-grid {
@@ -126,9 +118,10 @@
     .value-card {
       background: white;
       border-radius: 22px;
-      padding: 28px;
+      padding: 30px;
       border: 1px solid rgba(29,27,82,0.08);
       transition: all 0.25s ease;
+      min-height: 220px;
     }
 
     .value-card:hover {
@@ -137,8 +130,8 @@
     }
 
     .value-card i {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       display: grid;
       place-items: center;
       border-radius: 18px;
@@ -151,6 +144,7 @@
     .value-card h3 {
       color: var(--navy);
       margin: 0 0 10px;
+      font-size: 1.22rem;
     }
 
     .value-card p {
@@ -161,43 +155,70 @@
     }
 
     .team-section {
-      padding: 20px 0 80px;
+      padding: 8px 0 82px;
+    }
+
+    .team-section .section-header {
+      margin-bottom: 30px;
     }
 
     .team-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      margin-top: 28px;
+      gap: 26px;
     }
 
     .team-card {
       background: white;
-      border-radius: 24px;
-      padding: 30px;
+      border-radius: 26px;
+      padding: 28px;
       display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 24px;
+      grid-template-columns: 190px 1fr;
+      gap: 28px;
       align-items: center;
-      box-shadow: 0 16px 45px rgba(29,27,82,0.07);
+      box-shadow: 0 18px 45px rgba(29,27,82,0.08);
+      border: 1px solid rgba(29,27,82,0.06);
     }
 
-    .team-card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 24px;
+    .team-photo {
+      width: 190px;
+      height: 220px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #f4f5f7;
+    }
+
+    .team-photo img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      object-position: center top;
     }
 
     .team-card h3 {
       color: var(--navy);
-      margin: 0 0 10px;
+      font-size: 1.45rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.035em;
     }
 
     .team-card p {
       color: var(--muted);
-      margin: 0;
+      margin: 0 0 18px;
       line-height: 1.65;
+    }
+
+    .team-contact {
+      display: grid;
+      gap: 8px;
+    }
+
+    .team-contact a {
+      color: var(--navy);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .about-partners {
@@ -209,7 +230,7 @@
     }
 
     @media (max-width: 980px) {
-      .about-grid,
+      .about-top-grid,
       .team-grid {
         grid-template-columns: 1fr;
       }
@@ -220,6 +241,11 @@
 
       .team-card {
         grid-template-columns: 1fr;
+      }
+
+      .team-photo {
+        width: 100%;
+        height: 320px;
       }
     }
   </style>
@@ -247,17 +273,10 @@
 <section class="about-page">
   <div class="container">
 
-    <div class="about-hero">
-      <div class="section-kicker">O nas</div>
-      <h1>Dystrybutor innowacyjnych rozwiązań medycznych.</h1>
-      <p>
-        Specjalizujemy się w dostarczaniu produktów dla sektora dostępów naczyniowych oraz terapii infuzyjnej, wspierając placówki medyczne w doborze bezpiecznych i sprawdzonych rozwiązań.
-      </p>
-    </div>
-
-    <div class="about-grid">
-      <div class="about-card-large">
-        <h2>Kim jesteśmy?</h2>
+    <div class="about-top-grid">
+      <div class="about-panel">
+        <div class="section-kicker">O nas</div>
+        <h1>Kim jesteśmy?</h1>
         <p>
           DH Medical to dynamicznie rozwijająca się firma specjalizująca się w dystrybucji innowacyjnych rozwiązań medycznych w sektorze dostępów naczyniowych.
         </p>
@@ -266,7 +285,7 @@
         </p>
       </div>
 
-      <div class="about-highlight">
+      <div class="about-news">
         <div class="highlight-badge">
           <i class="bi bi-stars"></i>
           Nowa współpraca
@@ -276,7 +295,7 @@
           Poszerzamy ofertę o zestawy infuzyjne Impromediform — rozwiązania niemieckiego producenta dla obszaru terapii infuzyjnej i codziennej pracy klinicznej.
         </p>
         <p>
-          Dzięki temu możemy wspierać placówki medyczne jeszcze szerzej, dostarczając produkty dopasowane do realnych potrzeb personelu i działów zamówień.
+          Dzięki temu możemy jeszcze szerzej wspierać placówki medyczne, dostarczając produkty dopasowane do potrzeb personelu i działów zamówień.
         </p>
       </div>
     </div>
@@ -314,26 +333,30 @@
 
     <div class="team-grid">
       <div class="team-card">
-        <img src="assets/arkadiusz.png" alt="Arkadiusz Dynda">
+        <div class="team-photo">
+          <img src="assets/arkadiusz.png" alt="Arkadiusz Dynda">
+        </div>
         <div>
           <h3>Arkadiusz Dynda</h3>
-          <p>
-            Szalowa 385, 38-331 Szalowa<br>
-            Tel: <a href="tel:+48883480355">+48 883 480 355</a><br>
-            Email: <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a>
-          </p>
+          <p>Szalowa 385, 38-331 Szalowa</p>
+          <div class="team-contact">
+            <a href="tel:+48883480355"><i class="bi bi-telephone"></i> +48 883 480 355</a>
+            <a href="mailto:arkadiuszdynda@dhmedical.org"><i class="bi bi-envelope"></i> arkadiuszdynda@dhmedical.org</a>
+          </div>
         </div>
       </div>
 
       <div class="team-card">
-        <img src="assets/slawomir.png" alt="Sławomir Hutek">
+        <div class="team-photo">
+          <img src="assets/slawomir.png" alt="Sławomir Hutek">
+        </div>
         <div>
           <h3>Sławomir Hutek</h3>
-          <p>
-            ul. Masarska 7/17, 31-534 Kraków<br>
-            Tel: <a href="tel:+48507687927">+48 507 687 927</a><br>
-            Email: <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a>
-          </p>
+          <p>ul. Masarska 7/17, 31-534 Kraków</p>
+          <div class="team-contact">
+            <a href="tel:+48507687927"><i class="bi bi-telephone"></i> +48 507 687 927</a>
+            <a href="mailto:slawomirhutek@dhmedical.org"><i class="bi bi-envelope"></i> slawomirhutek@dhmedical.org</a>
+          </div>
         </div>
       </div>
     </div>
