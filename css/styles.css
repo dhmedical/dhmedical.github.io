@@ -1653,3 +1653,37 @@ body .cta-section {
   max-height: 96% !important;
   padding: 10px !important;
 }
+.variant-image {
+  height: 190px !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, #f7f8fb, #eef0f5) !important;
+  border: 1px solid rgba(29,27,82,0.08);
+  padding: 14px !important;
+}
+
+.variant-image img {
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 18px;
+  max-width: 92% !important;
+  max-height: 92% !important;
+  object-fit: contain;
+  box-shadow: 0 14px 32px rgba(29,27,82,0.10);
+  transition: transform 0.3s ease;
+}
+
+.variant-card:hover .variant-image img {
+  transform: scale(1.04);
+}
+
+.exit-visual {
+  background: linear-gradient(145deg, #f7f8fb, #eef0f5) !important;
+  border: 1px solid rgba(29,27,82,0.08);
+}
+
+.exit-visual img {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 22px;
+  box-shadow: 0 14px 32px rgba(29,27,82,0.10);
+}
