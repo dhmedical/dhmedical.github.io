@@ -7,9 +7,8 @@
   <title>DH Medical | Oferta</title>
 
   <meta name="description" content="Oferta DH Medical – SecurePortIV, FlexGrip, porty naczyniowe, ExitPocket oraz zestawy infuzyjne Impromediform." />
-  <meta name="keywords" content="DH Medical, SecurePortIV, FlexGrip, porty naczyniowe, ExitPocket, zestawy infuzyjne, Impromediform, dostęp naczyniowy, terapia infuzyjna" />
+  <meta name="keywords" content="DH Medical, SecurePortIV, FlexGrip, porty naczyniowe, ExitPocket, zestawy infuzyjne, Impromediform" />
   <meta name="author" content="DH Medical" />
-  <meta name="theme-color" content="#1d1b52" />
 
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link href="css/styles.css" rel="stylesheet" />
@@ -17,67 +16,108 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
-    .page-hero {
-      padding: 86px 0 64px;
-      background:
-        radial-gradient(circle at 82% 16%, rgba(29, 27, 82, 0.10), transparent 30%),
-        linear-gradient(135deg, #ffffff 0%, #f7f7f8 48%, #f2f1f1 100%);
+    .offer-page {
+      padding: 90px 0 100px;
     }
 
-    .page-hero h1 {
+    .section-header {
+      max-width: 860px;
+      margin-bottom: 48px;
+    }
+
+    .section-header h1 {
       margin: 0;
       color: var(--navy);
       font-size: clamp(2.6rem, 5vw, 4.4rem);
-      line-height: 1.02;
-      letter-spacing: -0.065em;
-      max-width: 820px;
+      line-height: 1.05;
+      letter-spacing: -0.05em;
     }
 
-    .page-hero p {
-      max-width: 720px;
-      margin: 22px 0 0;
+    .section-header p {
+      margin-top: 16px;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.05rem;
     }
 
-    .offer-page {
-      padding-top: 24px;
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 22px;
     }
 
-    .offer-page .offer-card {
-      min-height: 360px;
+    .offer-card {
+      background: white;
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+      transition: all 0.25s ease;
+      border: 1px solid rgba(0,0,0,0.04);
     }
 
-    .offer-page .offer-card a {
-      margin-top: auto;
+    .offer-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    }
+
+    .offer-icon {
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .offer-icon img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .offer-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
       color: var(--navy);
-      font-weight: 800;
+    }
+
+    .offer-card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .offer-card a {
+      margin-top: auto;
+      font-weight: 700;
+      color: var(--navy);
       display: inline-flex;
       align-items: center;
       gap: 8px;
     }
 
-    .offer-page .offer-card.featured a {
+    .offer-card.featured {
+      background: var(--navy);
       color: white;
     }
 
-    .offer-page .offer-card {
-      display: flex;
-      flex-direction: column;
+    .offer-card.featured h3,
+    .offer-card.featured p {
+      color: white;
     }
 
-    .offer-page .offer-card p {
-      margin-bottom: 22px;
+    .offer-card.featured a {
+      color: white;
     }
 
-    @media (max-width: 1180px) {
-      .offer-page .offer-grid {
+    @media (max-width: 1200px) {
+      .offer-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
 
-    @media (max-width: 720px) {
-      .offer-page .offer-grid {
+    @media (max-width: 700px) {
+      .offer-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -85,13 +125,15 @@
 </head>
 
 <body>
+
+  <!-- NAV -->
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="index.html" class="brand" aria-label="DH Medical - strona główna">
+      <a href="index.html" class="brand">
         <img src="assets/logo.png" alt="DH Medical">
       </a>
 
-      <nav class="nav-links" aria-label="Główna nawigacja">
+      <nav class="nav-links">
         <a href="index.html">Strona główna</a>
         <a href="oferta.html">Oferta</a>
         <a href="o-nas.html">O nas</a>
@@ -100,129 +142,78 @@
     </div>
   </header>
 
+  <!-- MAIN -->
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <div class="eyebrow">
-          <i class="bi bi-clipboard2-pulse"></i>
-          Oferta DH Medical
-        </div>
-
-        <h1>Specjalistyczne produkty dla dostępów naczyniowych i terapii infuzyjnej.</h1>
-
-        <p>
-          Dobieramy innowacyjne rozwiązania dla placówek medycznych, personelu klinicznego oraz działów zamówień — z naciskiem na jakość, bezpieczeństwo i praktyczne zastosowanie.
-        </p>
-      </div>
-    </section>
-
     <section class="offer-page">
       <div class="container">
+
         <div class="section-header">
-          <div class="section-kicker">Kategorie produktów</div>
-          <h2>Nasza oferta</h2>
+          <div class="section-kicker">Oferta</div>
+          <h1>Nasza oferta</h1>
           <p>
-            Wybierz kategorię produktu, aby zobaczyć szczegóły lub skontaktuj się z nami w sprawie oferty.
+            Specjalistyczne rozwiązania dla dostępów naczyniowych, stabilizacji cewników oraz terapii infuzyjnej.
           </p>
         </div>
 
         <div class="offer-grid">
 
-          <article class="offer-card">
+          <!-- 1 -->
+          <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/secureport.png" alt="SecurePortIV">
+              <img src="assets/secureport.png">
             </div>
             <h3>SecurePortIV™</h3>
-            <p>
-              Klej medyczny wspierający zabezpieczenie dostępów naczyniowych i stabilność mocowania.
-            </p>
-            <a href="secureportiv.html">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </article>
+            <p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p>
+            <a href="secureportiv.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+          </div>
 
-          <article class="offer-card">
+          <!-- 2 -->
+          <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/flexgrip.png" alt="FlexGrip">
+              <img src="assets/flexgrip.png">
             </div>
             <h3>FlexGrip®</h3>
-            <p>
-              Systemy bezszwowej stabilizacji cewników, zaprojektowane z myślą o komforcie pracy personelu.
-            </p>
-            <a href="systemy-bezszwowe.html">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </article>
+            <p>Systemy bezszwowej stabilizacji cewników.</p>
+            <a href="systemy-bezszwowe.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+          </div>
 
-          <article class="offer-card">
+          <!-- 3 -->
+          <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/port.png" alt="Porty naczyniowe">
+              <img src="assets/port.png">
             </div>
             <h3>Porty naczyniowe</h3>
-            <p>
-              Rozwiązania do długoterminowego dostępu naczyniowego dla pacjentów wymagających terapii.
-            </p>
-            <a href="porty-naczyniowe.html">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </article>
+            <p>Długoterminowy dostęp naczyniowy dla pacjentów.</p>
+            <a href="porty-naczyniowe.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+          </div>
 
-          <article class="offer-card">
+          <!-- 4 -->
+          <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/exitpocket.png" alt="ExitPocket">
+              <img src="assets/exitpocket.png">
             </div>
             <h3>ExitPocket</h3>
-            <p>
-              Rozwiązanie wspierające bezpieczną organizację i ochronę miejsca wyjścia cewnika.
-            </p>
-            <a href="exitpocket.html">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </article>
+            <p>Bezpieczna organizacja i ochrona miejsca wyjścia cewnika.</p>
+            <a href="exitpocket.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+          </div>
 
-          <article class="offer-card featured">
+          <!-- 5 -->
+          <div class="offer-card featured">
             <div class="offer-icon">
-              <img src="assets/infusion.png" alt="Zestawy infuzyjne Impromediform">
+              <img src="assets/infusion.png">
             </div>
             <h3>Zestawy infuzyjne Impromediform</h3>
-            <p>
-              Nowy produkt w ofercie DH Medical dla obszaru terapii infuzyjnej i codziennej pracy klinicznej.
-            </p>
-            <a href="kontakt.html">
-              Zapytaj o ofertę
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <div class="cta-box">
-          <div>
-            <h2>Potrzebujesz informacji produktowej lub oferty?</h2>
-            <p>
-              Skontaktuj się z nami — pomożemy dobrać odpowiednie rozwiązania dla Twojej placówki.
-            </p>
+            <p>Nowy produkt w ofercie DH Medical.</p>
+            <a href="kontakt.html">Zapytaj o ofertę <i class="bi bi-arrow-right"></i></a>
           </div>
 
-          <div class="cta-actions">
-            <a href="kontakt.html" class="btn-light">
-              Kontakt
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
         </div>
+
       </div>
     </section>
   </main>
 
+  <!-- FOOTER (TEN SAM CO INDEX) -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -230,17 +221,14 @@
         <div>
           <div class="footer-brand-row">
             <div class="footer-logo-box">
-              <img src="assets/logo.png" alt="DH Medical">
+              <img src="assets/logo.png">
             </div>
-
             <div>
               <p>
-                Dystrybutor specjalistycznych rozwiązań medycznych dla obszaru dostępów naczyniowych i terapii infuzyjnej.
+                Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.
               </p>
-
               <a href="kontakt.html" class="footer-mini-cta">
-                Zapytaj o ofertę
-                <i class="bi bi-arrow-right"></i>
+                Zapytaj o ofertę <i class="bi bi-arrow-right"></i>
               </a>
             </div>
           </div>
@@ -248,55 +236,33 @@
 
         <div>
           <h4>DH Medical Arkadiusz Dynda</h4>
-          <p>
-            Szalowa 385<br>
-            38-331 Szalowa<br>
-            NIP: 7382168824
-          </p>
-          <p>
-            <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>
-            <a href="tel:+48883480355">+48 883 480 355</a>
-          </p>
+          <p>Szalowa 385<br>38-331 Szalowa</p>
+          <p><a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>+48 883 480 355</p>
         </div>
 
         <div>
           <h4>DH Medical Sławomir Hutek</h4>
-          <p>
-            ul. Masarska 7/17<br>
-            31-534 Kraków<br>
-            NIP: 7343623098
-          </p>
-          <p>
-            <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>
-            <a href="tel:+48507687927">+48 507 687 927</a>
-          </p>
+          <p>ul. Masarska 7/17<br>31-534 Kraków</p>
+          <p><a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>+48 507 687 927</p>
         </div>
 
         <div>
           <h4>Social media</h4>
-          <p>Śledź nas i zobacz materiały produktowe.</p>
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek">
-              <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical">
-              <i class="bi bi-youtube"></i>
-            </a>
-            <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical">
-              <i class="bi bi-envelope"></i>
-            </a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-envelope"></i></a>
           </div>
         </div>
 
       </div>
 
       <div class="copyright">
-        © 2025 DH Medical. Wszelkie prawa zastrzeżone.
+        © 2025 DH Medical
       </div>
     </div>
   </footer>
+
 </body>
 </html>
