@@ -1,380 +1,635 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="ExitPocket – wodoodporne kieszonki na cewnik dializacyjny | DH Medical" />
-    <meta name="keywords" content="ExitPocket, osłonki cewnik dializacyjny, ochrona miejsca wyjścia cewnika, hemodializa, DH Medical" />
-    <meta name="author" content="DH Medical" />
-    <meta name="theme-color" content="#25a7df" />
-    <meta property="og:title" content="ExitPocket – Osłonki na cewnik dializacyjny | DH Medical" />
-    <meta property="og:description" content="Specjalistyczne, wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego i nie tylko – popraw swój komfort!" />
-    <meta property="og:image" content="https://www.dhmedical.org/assets/logo.png" />
-    <meta property="og:url" content="https://www.dhmedical.org/exitpocket.html" />
-    <meta property="og:type" content="website" />
-    <title>DH Medical – ExitPocket</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X61LH4MCGX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-X61LH4MCGX');
-    </script>
-    <style>
-        body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background: #f8f9fa; }
-        .navbar { position: sticky; top: 0; z-index: 1000; background: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .product-header {
-            background: linear-gradient(rgba(0,0,0,0.50), rgba(0,0,0,0.50)),
-                        url('assets/exitpocket-bg.png') center/cover no-repeat fixed;
-            padding: 140px 15px 80px; /* mniejszy padding na mobile */
-            text-align: center;
-            color: white;
-        }
-        .product-header h1 { font-size: 3rem; font-weight: 700; text-shadow: 0 4px 15px rgba(0,0,0,0.7); margin-bottom: 0.5rem; }
-        .product-header p { font-size: 1.3rem; max-width: 800px; margin: 0 auto; }
-        .product-section { padding: 60px 15px; max-width: 1200px; margin: 0 auto; }
-        .product-image-main { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        /* TABELKA – responsywna */
-        .variant-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 1.5rem;
-            margin: 30px 0 50px;
-        }
-        .variant-table thead tr { background: #25a7df; color: white; }
-        .variant-table th {
-            padding: 1rem 0.8rem;
-            text-align: center;
-            font-weight: 600;
-            border: none;
-            white-space: nowrap;
-        }
-        .variant-table tbody tr {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .variant-table td {
-            padding: 1.4rem 0.8rem;
-            text-align: center;
-            vertical-align: middle;
-            border: none;
-            font-size: 0.95rem;
-        }
-        .variant-table td div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-        .variant-table td:nth-child(3) { line-height: 1.5; white-space: normal; }
-        .variant-image { max-width: 140px; height: auto; border-radius: 8px; }
-        .price-btn {
-            width: 100%;
-            margin: 0.4rem 0;
-            background: #25a7df;
-            color: white;
-            border: none;
-            padding: 0.7rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-        }
-        .price-btn:hover { background: #1e90c2; transform: translateY(-2px); }
+  <title>ExitPocket | DH Medical</title>
 
-        /* Sekcja media – responsywna */
-        .media-section {
-            margin: 3rem 0;
-            background: white;
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .media-section h3 { text-align: center; color: #1a3a5f; margin-bottom: 1.8rem; font-size: 1.6rem; }
-        .media-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-        }
-        .media-item {
-            flex: 1 1 320px;
-            max-width: 500px;
-        }
-        .media-item img, .media-item iframe {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-        }
-        .media-item iframe { border: none; }
+  <meta name="description" content="ExitPocket – wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego." />
+  <meta name="keywords" content="ExitPocket, osłonki cewnik dializacyjny, ochrona miejsca wyjścia cewnika, hemodializa, DH Medical" />
+  <meta name="author" content="DH Medical" />
 
-        /* Formularz zamówienia */
-        .order-form {
-            margin-top: 3rem;
-            background: white;
-            border-radius: 12px;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        .order-form label { font-weight: 500; margin-bottom: 0.5rem; display: block; }
-        .order-form input, .order-form textarea {
-            width: 100%;
-            padding: 0.7rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ced4da;
-            border-radius: 6px;
-            font-size: 0.95rem;
-        }
-        .btn-order {
-            background: #25a7df;
-            color: white;
-            border: none;
-            padding: 0.9rem 2rem;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            transition: all 0.3s;
-        }
-        .btn-order:hover {
-            background: #1e90c2;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(37,167,223,0.4);
-        }
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-        footer { background: #1a3a5f; color: #ffffff; padding: 3rem 1rem 1.5rem; text-align: center; }
-        footer a { color: #a8c7e6; text-decoration: none; }
-        footer a:hover { color: white; }
-        footer .social-links a {
-            font-size: 1.8rem;
-            margin: 0 0.8rem;
-            transition: transform 0.3s;
-        }
-        footer .social-links a:hover { transform: translateY(-3px); }
+  <style>
+    .exit-page {
+      padding: 86px 0 72px;
+    }
 
-        /* MOBILNE POPRAWKI */
-        @media (max-width: 992px) {
-            .product-header { padding: 120px 15px 60px; background-attachment: scroll; }
-            .product-header h1 { font-size: 2.6rem; }
-            .product-header p { font-size: 1.2rem; }
-            .product-section { padding: 50px 15px; }
-            .variant-table {
-                border-spacing: 0 1.2rem;
-                margin: 20px 0 40px;
-            }
-            .variant-table th { padding: 0.9rem 0.6rem; font-size: 0.9rem; }
-            .variant-table td { padding: 1.2rem 0.6rem; font-size: 0.9rem; }
-            .variant-image { max-width: 110px; }
-            .price-btn { padding: 0.6rem; font-size: 0.9rem; }
-            .media-section { padding: 1.5rem; margin: 2rem 0; }
-            .media-item img, .media-item iframe { height: 220px; }
-            .order-form { padding: 1.8rem 1.2rem; }
-        }
-        @media (max-width: 576px) {
-            .product-header h1 { font-size: 2.2rem; }
-            .product-header p { font-size: 1.1rem; }
-            .variant-table td { font-size: 0.85rem; padding: 1rem 0.5rem; }
-            .variant-image { max-width: 90px; }
-            .price-btn { font-size: 0.85rem; padding: 0.55rem; }
-            .media-item img, .media-item iframe { height: 180px; }
-            .btn-order { font-size: 1rem; padding: 0.8rem 1.8rem; }
-        }
-    </style>
+    .exit-hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .exit-copy h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.7rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .exit-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .exit-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .exit-visual {
+      background: white;
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: 0 20px 55px rgba(29,27,82,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .exit-visual img {
+      max-height: 360px;
+      width: 100%;
+      object-fit: contain;
+      border-radius: 22px;
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 14px 35px rgba(29,27,82,0.07);
+      border: 1px solid rgba(29,27,82,0.06);
+    }
+
+    .benefit-card i {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(29,27,82,0.08);
+      color: var(--navy);
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+
+    .benefit-card h3 {
+      color: var(--navy);
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.55;
+      font-size: 0.92rem;
+    }
+
+    .exit-section {
+      padding: 62px 0;
+    }
+
+    .variant-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .variant-card {
+      background: white;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 16px 45px rgba(29,27,82,0.08);
+      border: 1px solid rgba(29,27,82,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+
+    .variant-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 55px rgba(29,27,82,0.12);
+    }
+
+    .variant-image {
+      height: 170px;
+      border-radius: 20px;
+      background: #f4f5f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .variant-image img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      filter: drop-shadow(0 12px 22px rgba(29,27,82,0.12));
+    }
+
+    .variant-card h3 {
+      color: var(--navy);
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+      letter-spacing: -0.035em;
+    }
+
+    .variant-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+      line-height: 1.6;
+      font-size: 0.94rem;
+    }
+
+    .price-options {
+      display: grid;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .price-btn {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      border-radius: 999px;
+      padding: 11px 14px;
+      background: rgba(29,27,82,0.08);
+      color: var(--navy);
+      font-weight: 800;
+      transition: all 0.22s ease;
+    }
+
+    .price-btn:hover {
+      background: var(--navy);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .media-card {
+      background: white;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 16px 45px rgba(29,27,82,0.08);
+      border: 1px solid rgba(29,27,82,0.06);
+    }
+
+    .media-card img,
+    .media-card iframe {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border: 0;
+      border-radius: 20px;
+    }
+
+    .order-panel {
+      background: white;
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: 0 20px 55px rgba(29,27,82,0.10);
+      border: 1px solid rgba(29,27,82,0.06);
+    }
+
+    .order-panel h2 {
+      color: var(--navy);
+      margin: 0 0 10px;
+      letter-spacing: -0.04em;
+    }
+
+    .order-panel p {
+      color: var(--muted);
+      margin: 0 0 26px;
+      line-height: 1.65;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .form-field.full {
+      grid-column: 1 / -1;
+    }
+
+    .form-field label {
+      display: block;
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 0.92rem;
+      margin-bottom: 8px;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      border: 1px solid rgba(29,27,82,0.14);
+      border-radius: 16px;
+      padding: 14px 16px;
+      font: inherit;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--navy);
+      box-shadow: 0 0 0 4px rgba(29,27,82,0.08);
+    }
+
+    .form-field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .submit-button {
+      border: 0;
+      cursor: pointer;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 1100px) {
+      .variant-grid,
+      .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .exit-hero,
+      .media-grid,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-field.full {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .variant-grid,
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .media-card img,
+      .media-card iframe {
+        height: 230px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-        <div class="container px-4">
-            <a class="navbar-brand" href="index.html"><img src="assets/logo.png" alt="DH Medical" style="height: 70px; width: 70px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="oferta.html">Oferta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="o-nas.html">O nas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </div>
-        </div>
+
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="DH Medical">
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Strona główna</a>
+      <a href="oferta.html">Oferta</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html" class="nav-cta">Kontakt</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero -->
-    <header class="product-header">
-        <h1>Exit Pocket</h1>
-        <p>Specjalistyczne, wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego i nie tylko – popraw swój komfort!</p>
-    </header>
+<main>
 
-    <!-- Główna treść -->
-    <section class="product-section">
-        <div class="row g-4">
-            <div class="col-lg-6">
-                <img src="assets/exitpocket-main.jpg" alt="ExitPocket – osłonka na cewnik dializacyjny" class="product-image-main">
-            </div>
-            <div class="col-lg-6">
-                <h2 class="mb-4" style="color: #1a3a5f;">Dlaczego Exit Pocket?</h2>
-                <ul class="list-unstyled fs-5">
-                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Zwiększa higienę i zmniejsza ryzyko infekcji</li>
-                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Łatwy w aplikacji i wygodny dla pacjenta</li>
-                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Trwały i wodoodporny materiał</li>
-                    <li class="mb-3"><i class="bi bi-check-circle-fill text-primary me-2"></i>Poprawia jakość i komfort twojego codziennego życia</li>
-                </ul>
-                <p class="mt-4 fs-5">Dostępne warianty dostosowane do różnych typów cewników i potrzeb klinicznych.</p>
-            </div>
+<section class="exit-page">
+  <div class="container exit-hero">
+    <div class="exit-copy">
+      <div class="section-kicker">ExitPocket</div>
+      <h1>Wodoodporna ochrona miejsca wyjścia cewnika.</h1>
+      <p>
+        ExitPocket to specjalistyczne, wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego podczas kąpieli, prysznica i aktywności.
+      </p>
+      <p>
+        Rozwiązanie wspiera komfort pacjenta, higienę oraz codzienne funkcjonowanie z cewnikiem.
+      </p>
+
+      <div class="exit-actions">
+        <a href="#orderForm" class="btn-primary">
+          Zamów / zapytaj <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="oferta.html" class="btn-secondary">
+          Wróć do oferty
+        </a>
+      </div>
+    </div>
+
+    <div class="exit-visual">
+      <img src="assets/exitpocket-main.jpg" alt="ExitPocket">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="bi bi-droplet"></i>
+        <h3>Wodoodporna ochrona</h3>
+        <p>Pomaga chronić miejsce wyjścia cewnika podczas kontaktu z wodą.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="bi bi-shield-check"></i>
+        <h3>Higiena i bezpieczeństwo</h3>
+        <p>Wspiera ograniczanie ryzyka związanego z ekspozycją miejsca wyjścia.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="bi bi-hand-thumbs-up"></i>
+        <h3>Komfort pacjenta</h3>
+        <p>Ułatwia codzienne funkcjonowanie i poprawia poczucie swobody.</p>
+      </div>
+
+      <div class="benefit-card">
+        <i class="bi bi-rulers"></i>
+        <h3>Różne warianty</h3>
+        <p>Dostępne rozmiary dopasowane do różnych potrzeb pacjentów.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="exit-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Warianty</div>
+      <h2>Dostępne warianty ExitPocket</h2>
+      <p>Kliknij wybraną opcję cenową — formularz zamówienia uzupełni się automatycznie.</p>
+    </div>
+
+    <div class="variant-grid">
+
+      <article class="variant-card">
+        <div class="variant-image">
+          <img src="assets/exitpocket-s2013hl.png" alt="S2013HL/WP">
+        </div>
+        <h3>S2013HL/WP</h3>
+        <p>
+          Rozmiar Standard 1.<br>
+          Otwór 13×11 cm.<br>
+          Szerokość 17,6 cm, długość 30,0 cm.
+        </p>
+        <div class="price-options">
+          <button class="price-btn" onclick="selectOrder('S2013HL/WP', '10 szt.', '350,00 zł')">350,00 zł – 10 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2013HL/WP', '20 szt.', '700,00 zł')">700,00 zł – 20 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2013HL/WP', '50 szt.', '1550,00 zł')">1550,00 zł – 50 szt.</button>
+        </div>
+      </article>
+
+      <article class="variant-card">
+        <div class="variant-image">
+          <img src="assets/exitpocket-s2013h-ver2.png" alt="S2013H/WP">
+        </div>
+        <h3>S2013H/WP</h3>
+        <p>
+          Rozmiar Standard 2.<br>
+          Otwór 11×13 cm.<br>
+          Szerokość 15,6 cm, długość 30,0 cm.
+        </p>
+        <div class="price-options">
+          <button class="price-btn" onclick="selectOrder('S2013H/WP', '10 szt.', '350,00 zł')">350,00 zł – 10 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2013H/WP', '20 szt.', '700,00 zł')">700,00 zł – 20 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2013H/WP', '50 szt.', '1550,00 zł')">1550,00 zł – 50 szt.</button>
+        </div>
+      </article>
+
+      <article class="variant-card">
+        <div class="variant-image">
+          <img src="assets/exitpocket-s2011h.png" alt="S2011H/WP">
+        </div>
+        <h3>S2011H/WP</h3>
+        <p>
+          Rozmiar Mały.<br>
+          Otwór 10×9 cm.<br>
+          Szerokość 13,0 cm, długość 26,0 cm.
+        </p>
+        <div class="price-options">
+          <button class="price-btn" onclick="selectOrder('S2011H/WP', '10 szt.', '300,00 zł')">300,00 zł – 10 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2011H/WP', '20 szt.', '600,00 zł')">600,00 zł – 20 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2011H/WP', '50 szt.', '1350,00 zł')">1350,00 zł – 50 szt.</button>
+        </div>
+      </article>
+
+      <article class="variant-card">
+        <div class="variant-image">
+          <img src="assets/exitpocket-s2005h-mini.png" alt="S2005H/WP">
+        </div>
+        <h3>S2005H/WP</h3>
+        <p>
+          Rozmiar Mini.<br>
+          Otwór o średnicy 5 cm.<br>
+          Szerokość 11,0 cm, długość 22,0 cm.
+        </p>
+        <div class="price-options">
+          <button class="price-btn" onclick="selectOrder('S2005H/WP', '10 szt.', '280,00 zł')">280,00 zł – 10 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2005H/WP', '20 szt.', '560,00 zł')">560,00 zł – 20 szt.</button>
+          <button class="price-btn" onclick="selectOrder('S2005H/WP', '50 szt.', '1250,00 zł')">1250,00 zł – 50 szt.</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="exit-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Materiały</div>
+      <h2>ExitPocket w praktyce</h2>
+      <p>Zobacz demonstrację produktu i materiał wideo.</p>
+    </div>
+
+    <div class="media-grid">
+      <div class="media-card">
+        <img src="assets/exitpocket-demonstracja.jpg" alt="Demonstracja użycia ExitPocket">
+      </div>
+
+      <div class="media-card">
+        <iframe src="https://www.youtube.com/embed/HkqLn8Dda74"
+                title="ExitPocket - instrukcja użycia"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="exit-section" id="orderForm">
+  <div class="container">
+    <div class="order-panel">
+      <h2>Zamów ExitPocket</h2>
+      <p>
+        Wybierz wariant i ilość powyżej — formularz uzupełni się automatycznie.
+      </p>
+
+      <form action="https://formspree.io/f/movdyplp" method="POST">
+        <input type="hidden" name="_cc" value="slawomirhutek@dhmedical.org">
+        <input type="hidden" name="_subject" value="Nowe zamówienie ExitPocket ze strony">
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="variant">Wariant (REF)</label>
+            <input type="text" id="variant" name="variant" readonly required>
+          </div>
+
+          <div class="form-field">
+            <label for="quantity">Ilość</label>
+            <input type="text" id="quantity" name="quantity" readonly required>
+          </div>
+
+          <div class="form-field">
+            <label for="price">Cena wybranej opcji</label>
+            <input type="text" id="price" name="price" readonly>
+          </div>
+
+          <div class="form-field">
+            <label for="name">Imię i nazwisko / Firma</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Adres e-mail</label>
+            <input type="email" id="email" name="_replyto" required>
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Telefon kontaktowy</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+
+          <div class="form-field full">
+            <label for="address">Adres dostawy / dane do faktury</label>
+            <textarea id="address" name="address" required placeholder="Ulica, kod pocztowy, miasto, NIP jeśli firma, ewentualne uwagi"></textarea>
+          </div>
         </div>
 
-        <!-- Tabela -->
-        <div class="variant-table">
-            <table class="table mb-0">
-                <thead>
-                    <tr>
-                        <th>Zdjęcie</th>
-                        <th>Wariant / REF</th>
-                        <th>Opis i wymiary</th>
-                        <th>10 szt.</th>
-                        <th>20 szt.</th>
-                        <th>50 szt.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="assets/exitpocket-s2013hl.png" alt="S2013HL/WP" class="variant-image"></td>
-                        <td><strong>S2013HL/WP</strong></td>
-                        <td>Rozmiar Standard 1.<br>Otwór 13×11 cm.<br>Szerokość 17,6 cm, Długość 30,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 10)">350,00 zł – 10 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 25)">700,00 zł – 20 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013HL/WP', 50)">1550,00 zł – 50 szt.</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/exitpocket-s2013h-ver2.png" alt="S2013H/WP wersja 2" class="variant-image"></td>
-                        <td><strong>S2013H/WP</strong></td>
-                        <td>Rozmiar Standard 2.<br>Otwór 11×13 cm.<br>Szerokość 15,6 cm, Długość 30,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 10)">350,00 zł – 10 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 25)">700,00 zł – 20 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2013H/WP', 50)">1550,00 zł – 50 szt.</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/exitpocket-s2011h.png" alt="S2011H/WP mały" class="variant-image"></td>
-                        <td><strong>S2011H/WP</strong></td>
-                        <td>Rozmiar Mały.<br>Otwór 10×9 cm.<br>Szerokość 13,0 cm, Długość 26,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
-                        <td><button class="price-btn" onclick="selectOrder('S2011H/WP', 10)">300,00 zł – 10 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2011H/WP', 25)">600,00 zł – 20 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2011H/WP', 50)">1350,00 zł – 50 szt.</button></td>
-                    </tr>
-                    <tr>
-                        <td><img src="assets/exitpocket-s2005h-mini.png" alt="S2005H/WP Mini" class="variant-image"></td>
-                        <td><strong>S2005H/WP</strong></td>
-                        <td>Rozmiar Mini.<br>Otwór o średnicy 5 cm.<br>Szerokość 11,0 cm, Długość 22,0 cm.<br>Kąpiel / Prysznic / Pływanie</td>
-                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 10)">280,00 zł – 10 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 25)">560,00 zł – 20 szt.</button></td>
-                        <td><button class="price-btn" onclick="selectOrder('S2005H/WP', 50)">1250,00 zł – 50 szt.</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+        <button type="submit" class="btn-primary submit-button">
+          Wyślij zapytanie ofertowe <i class="bi bi-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
 
-        <!-- Sekcja z filmem i zdjęciem -->
-        <div class="media-section">
-            <h3>Exit Pocket - popraw swój komfort</h3>
-            <div class="media-wrapper">
-                <div class="media-item">
-                    <img src="assets/exitpocket-demonstracja.jpg" alt="Demonstracja użycia ExitPocket">
-                </div>
-                <div class="media-item">
-                    <iframe src="https://www.youtube.com/embed/HkqLn8Dda74" 
-                            title="ExitPocket - instrukcja użycia" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <h2>Masz pytania dotyczące ExitPocket?</h2>
+        <p>Skontaktuj się z nami — pomożemy dobrać odpowiedni wariant i ilość.</p>
+      </div>
 
-        <!-- Formularz zamówienia -->
-        <div class="order-form">
-            <h3 class="mb-4 text-center">Zamów Exit Pocket</h3>
-            <form action="https://formspree.io/f/movdyplp" method="POST">
-                <input type="hidden" name="_cc" value="slawomirhutek@dhmedical.org">
-                <div class="row">
-                    <div class="col-md-6">
-                        <label for="variant">Wariant (REF)</label>
-                        <input type="text" id="variant" name="variant" class="form-control" readonly required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="quantity">Ilość paczek / sztuk</label>
-                        <input type="text" id="quantity" name="quantity" class="form-control" readonly required>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <label for="name">Imię i nazwisko / Firma</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email">Adres e-mail</label>
-                        <input type="email" id="email" name="_replyto" class="form-control" required>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-6">
-                        <label for="phone">Telefon kontaktowy</label>
-                        <input type="tel" id="phone" name="phone" class="form-control" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="address">Adres dostawy / dane do faktury</label>
-                        <textarea id="address" name="address" rows="3" class="form-control" required placeholder="Ulica, kod pocztowy, miasto, NIP (jeśli firma), ewentualne uwagi"></textarea>
-                    </div>
-                </div>
-                <input type="hidden" name="_subject" value="Nowe zamówienie ExitPocket ze strony">
-                <div class="text-center mt-4">
-                    <button type="submit" class="btn-order">Wyślij zapytanie ofertowe</button>
-                </div>
-            </form>
-            <p class="text-center mt-3 text-muted small">Skontaktujemy się w ciągu 24h w celu potwierdzenia zamówienia, informacji o dostępności oraz czasu wysyłki.</p>
-        </div>
-    </section>
+      <div class="cta-actions">
+        <a href="kontakt.html" class="btn-cta-primary">
+          Kontakt <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="oferta.html" class="btn-cta-secondary">
+          Oferta
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row justify-content-center text-center text-md-start">
-                <div class="col-md-4 mb-4">
-                    <h5>DH Medical Arkadiusz Dynda</h5>
-                    <p>Szalowa 385<br>38-331 Szalowa<br>NIP: 7382168824</p>
-                    <p>Email: <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>Tel: +48 883 480 355</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>DH Medical Sławomir Hutek</h5>
-                    <p>ul. Masarska 7/17<br>31-534 Kraków<br>NIP: 7343623098</p>
-                    <p>Email: <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>Tel: +48 507 687 927</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Social Media</h5>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank"><i class="bi bi-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright text-center">
-                © 2025 DH Medical. Wszelkie prawa zastrzeżone.
-            </div>
-        </div>
-    </footer>
+</main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function selectOrder(variant, qty) {
-            document.getElementById('variant').value = variant;
-            document.getElementById('quantity').value = qty + ' sztuk';
-            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-row">
+          <div class="footer-logo-box">
+            <img src="assets/logo.png" alt="DH Medical">
+          </div>
+          <div>
+            <p>
+              Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.
+            </p>
+            <a href="kontakt.html" class="footer-mini-cta">
+              Zapytaj o ofertę <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4>DH Medical Arkadiusz Dynda</h4>
+        <p>Szalowa 385<br>38-331 Szalowa</p>
+        <p><a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>+48 883 480 355</p>
+      </div>
+
+      <div>
+        <h4>DH Medical Sławomir Hutek</h4>
+        <p>ul. Masarska 7/17<br>31-534 Kraków</p>
+        <p><a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>+48 507 687 927</p>
+      </div>
+
+      <div>
+        <h4>Social media</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
+          <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2025 DH Medical. Wszelkie prawa zastrzeżone.
+    </div>
+  </div>
+</footer>
+
+<script>
+  function selectOrder(variant, quantity, price) {
+    document.getElementById('variant').value = variant;
+    document.getElementById('quantity').value = quantity;
+    document.getElementById('price').value = price;
+
+    document.getElementById('orderForm').scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  }
+</script>
+
 </body>
 </html>
