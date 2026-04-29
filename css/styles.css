@@ -1495,3 +1495,41 @@ footer a:hover {
   background: rgba(255,255,255,0.2);
   transform: translateY(-2px);
 }
+/* === CTA BUTTONS HORIZONTAL FIX === */
+
+.cta-box .cta-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 14px !important;
+  flex-wrap: nowrap !important;
+}
+
+.cta-box .btn-cta-primary,
+.cta-box .btn-cta-secondary {
+  width: auto !important;
+  min-width: 118px !important;
+  height: 50px !important;
+  padding: 0 24px !important;
+  border-radius: 999px !important;
+  white-space: nowrap !important;
+}
+
+.cta-box .btn-cta-secondary {
+  background: rgba(255,255,255,0.14) !important;
+  color: white !important;
+}
+
+@media (max-width: 768px) {
+  .cta-box .cta-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  .cta-box .btn-cta-primary,
+  .cta-box .btn-cta-secondary {
+    width: 100% !important;
+  }
+}
