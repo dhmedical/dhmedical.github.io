@@ -1569,3 +1569,16 @@ footer a:hover {
   max-width: 80%;
   filter: drop-shadow(0 12px 20px rgba(0,0,0,0.15));
 }
+/* === FLEXGRIP SPACING FIX === */
+
+.flex-section {
+  padding-bottom: 24px !important;
+}
+
+.note-box {
+  margin-bottom: 28px !important;
+}
+
+.cta-section {
+  padding-top: 24px !important;
+}
