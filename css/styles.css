@@ -1544,3 +1544,20 @@ footer a:hover {
   background: rgba(255, 255, 255, 0.22) !important;
   transform: translateY(-2px);
 }
+.flex-card-image img {
+  mix-blend-mode: multiply;
+}
+.flex-card:hover .flex-card-image img {
+  transform: scale(1.05);
+}
+
+.flex-card-image img {
+  transition: transform 0.3s ease;
+}
+.flex-section {
+  padding: 40px 0; /* było 56 */
+}
+
+.note-box {
+  margin-top: 10px;
+}
