@@ -1,280 +1,474 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="SecurePortIV™ - innowacyjny klej do mocowania cewników naczyniowych - DH Medical" />
-    <meta name="keywords" content="porty naczyniowe, DistricAth, SecurePortIV, FlexGrip, mocowanie cewników, klej cyjanoakrylanowy, DH Medical, dostęp naczyniowy" />
-    <meta name="author" content="DH Medical" />
-    <meta name="theme-color" content="#25a7df" />
-    <meta property="og:title" content="DH Medical - Innowacyjne rozwiązania w dostępie naczyniowym" />
-    <meta property="og:description" content="Dystrybutor portów DistricAth®, kleju SecurePortIV™ i systemów FlexGrip®." />
-    <meta property="og:image" content="https://www.dhmedical.org/assets/logo.png" />
-    <meta property="og:url" content="https://www.dhmedical.org" />
-    <meta property="og:type" content="website" />
-    <title>SecurePortIV™ - DH Medical</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X61LH4MCGX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  gtag('config', 'G-X61LH4MCGX');
-</script>
-    <style>
-        body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background: #f8f9fa; }
-        .navbar { position: sticky; top: 0; z-index: 1000; background: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .page-header { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/hero-background.png') center/cover no-repeat; padding: 150px 20px; text-align: center; color: white; }
-        .page-header h1 { font-size: 3.5rem; font-weight: 700; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
-        .intro-section { padding: 80px 20px; background: white; }
-        .intro-row { max-width: 1200px; margin: 0 auto; }
-        .intro-img { border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-        .benefits, .comparison, .how-to, .materials { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
-        .section-title { font-size: 2.4rem; font-weight: 700; color: #1a3a5f; text-align: center; margin-bottom: 3rem; }
-        .benefit-card { text-align: center; padding: 2rem; }
-        .benefit-card h5 { color: #25a7df; font-size: 1.4rem; }
-        table { box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .step-card img { border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .material-card { height: 100%; display: flex; flex-direction: column; }
-        .material-card .btn { margin-top: auto; background: #25a7df; border: none; }
-        .material-card .btn:hover { background: #1e90c2; }
-        .cta-section { padding: 80px 20px; text-align: center; background: #1a3a5f; color: white; }
-        .cta-section h2 { font-size: 2.8rem; margin-bottom: 1.5rem; }
-        .cta-section .btn { background: #25a7df; padding: 1rem 3rem; font-size: 1.3rem; border-radius: 50px; }
-        .cta-section .btn:hover { background: #1e90c2; transform: translateY(-5px); box-shadow: 0 10px 25px rgba(37,167,223,0.4); }
-        footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
-        footer a { color: #a8c7e6; text-decoration: none; transition: color 0.3s; }
-        footer a:hover { color: white; }
-        @media (max-width: 768px) { .page-header h1 { font-size: 2.8rem; } .section-title { font-size: 2rem; } }
-            footer .social-links a {
-        font-size: 1.8rem;
-        margin: 0 0.8rem;
-        transition: transform 0.3s;
+  <title>SecurePortIV™ | DH Medical</title>
+
+  <meta name="description" content="SecurePortIV™ - klej cyjanoakrylanowy do mocowania urządzeń dostępu naczyniowego." />
+  <meta name="keywords" content="SecurePortIV, klej cyjanoakrylanowy, mocowanie cewników, dostęp naczyniowy, DH Medical" />
+  <meta name="author" content="DH Medical" />
+
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    .product-page {
+      padding: 86px 0 90px;
     }
-    footer .social-links a:hover {
-        transform: translateY(-3px);
+
+    .product-hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
     }
-    </style>
+
+    .product-copy h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.7rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .product-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .product-visual {
+      background: white;
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: 0 20px 55px rgba(29,27,82,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-visual img {
+      max-height: 360px;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 30px rgba(29,27,82,0.18));
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .product-section {
+      padding: 80px 0;
+    }
+
+    .product-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      padding: 30px;
+      border: 1px solid rgba(29,27,82,0.08);
+      box-shadow: 0 16px 40px rgba(29,27,82,0.06);
+    }
+
+    .product-card i {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(29,27,82,0.08);
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+
+    .product-card h3 {
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .comparison-box {
+      background: white;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(29,27,82,0.08);
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 18px;
+      text-align: left;
+      border-bottom: 1px solid rgba(29,27,82,0.08);
+    }
+
+    .comparison-table th {
+      background: var(--navy);
+      color: white;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .step-card {
+      background: white;
+      border-radius: 22px;
+      padding: 20px;
+      box-shadow: 0 14px 35px rgba(29,27,82,0.07);
+    }
+
+    .step-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: contain;
+      border-radius: 18px;
+      background: #f4f5f7;
+      margin-bottom: 16px;
+    }
+
+    .step-card strong {
+      color: var(--navy);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .material-card {
+      background: white;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 14px 35px rgba(29,27,82,0.07);
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+    }
+
+    .material-card h3 {
+      color: var(--navy);
+      margin: 0 0 12px;
+    }
+
+    .material-card p {
+      color: var(--muted);
+      margin: 0 0 24px;
+      line-height: 1.6;
+    }
+
+    .material-card a {
+      margin-top: auto;
+    }
+
+    @media (max-width: 980px) {
+      .product-hero,
+      .product-grid-3,
+      .steps-grid,
+      .materials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-        <div class="container px-5">
-            <a class="navbar-brand" href="index.html"><img src="assets/logo.png" alt="DH Medical" style="height: 80px; width: 80px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
-                    <li class="nav-item"><a class="nav-link" href="oferta.html">Oferta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="o-nas.html">O nas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </div>
-        </div>
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="DH Medical">
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Strona główna</a>
+      <a href="oferta.html">Oferta</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html" class="nav-cta">Kontakt</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Header -->
-    <header class="page-header">
-        <h1>SecurePortIV™</h1>
-    </header>
+<main>
 
-    <!-- Wstęp z zdjęciem -->
-    <section class="intro-section">
-        <div class="container intro-row">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6 text-center">
-                    <img src="assets/klej.png" alt="SecurePortIV – klej do mocowania cewników" class="img-fluid intro-img">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="fw-bold mb-4">Innowacja w mocowaniu cewników!</h2>
-                    <p><strong>SecurePortIV™</strong> to pierwszy i jedyny klej cyjanoakrylanowy zatwierdzony przez FDA do mocowania urządzeń dostępu naczyniowego.</p>
-                    <p>Łatwy w użyciu, skuteczny i bezpieczny – oferuje znaczną przewagę nad tradycyjnymi metodami mocowania.</p>
-                    <p>Od 2024 roku stosowanie klejów tkankowych, takich jak SecurePortIV™, zostało oficjalnie uwzględnione w zaktualizowanych standardach <strong>Infusion Nurses Society (INS)</strong>.</p>
-                    <p>Produkt stabilizuje cewnik, zmniejsza ryzyko przemieszczenia i stanowi barierę mikrobiologiczną. Może być stosowany u dorosłych i dzieci – nawet u <strong>wcześniaków</strong>.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="product-page">
+  <div class="container product-hero">
+    <div class="product-copy">
+      <div class="section-kicker">SecurePortIV™</div>
+      <h1>Klej do mocowania urządzeń dostępu naczyniowego.</h1>
+      <p>
+        SecurePortIV™ to klej cyjanoakrylanowy przeznaczony do mocowania urządzeń dostępu naczyniowego. Wspiera stabilizację cewnika, ogranicza ryzyko przemieszczenia oraz pomaga tworzyć barierę mikrobiologiczną.
+      </p>
+      <p>
+        Produkt może być stosowany u dorosłych i dzieci, również u bardzo małych pacjentów.
+      </p>
 
-    <!-- Zalety -->
-    <section class="benefits bg-light">
-        <div class="container">
-            <h2 class="section-title">Dlaczego SecurePortIV?</h2>
-            <div class="row text-center g-5">
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <h5>✅ Mniej infekcji</h5>
-                        <p>Redukuje ryzyko zakażeń związanych z dostępem naczyniowym.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <h5>✅ Bezpieczny dla skóry</h5>
-                        <p>Formuła opracowana specjalnie do bezpiecznego mocowania dostępu naczyniowego.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="benefit-card">
-                        <h5>✅ Łatwy w aplikacji</h5>
-                        <p>Nie wymaga specjalistycznego przeszkolenia personelu.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tabela porównawcza -->
-    <section class="comparison">
-        <div class="container">
-            <h2 class="section-title">Porównanie metod fiksacji dostępu naczyniowego</h2>
-            <div class="table-responsive">
-                <table class="table table-bordered text-center">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>Cecha</th>
-                            <th>SecurePortIV</th>
-                            <th>Szycie</th>
-                            <th>Plaster mocujący</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Ryzyko infekcji</td>
-                            <td>✅ Niskie</td>
-                            <td>❌ Wysokie</td>
-                            <td>⚠️ Średnie</td>
-                        </tr>
-                        <tr>
-                            <td>Czas aplikacji</td>
-                            <td>✅ Krótki</td>
-                            <td>❌ Dłuższy</td>
-                            <td>✅ Krótki</td>
-                        </tr>
-                        <tr>
-                            <td>Komfort pacjenta</td>
-                            <td>✅ Wysoki</td>
-                            <td>❌ Niski</td>
-                            <td>⚠️ Średni</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Jak stosować -->
-    <section class="how-to bg-light">
-        <div class="container">
-            <h2 class="section-title">Jak stosować?</h2>
-            <div class="row g-4 text-center">
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <img src="assets/krok1.png" alt="Krok 1" class="img-fluid mb-3">
-                        <p>Krok 1: Oczyść i wysusz skórę przed aplikacją.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <img src="assets/krok2.png" alt="Krok 2" class="img-fluid mb-3">
-                        <p>Krok 2: Nałóż 1-2 kropelki kleju centralnie na miejsce wkłucia.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <img src="assets/krok3.png" alt="Krok 3" class="img-fluid mb-3">
-                        <p>Krok 3: Opcjonalnie nałóż klej pod skrzydełka lub obok cewnika.</p>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="step-card">
-                        <img src="assets/krok4.png" alt="Krok 4" class="img-fluid mb-3">
-                        <p>Krok 4: Nałóż przezroczysty opatrunek typu Tegaderm.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Materiały dodatkowe -->
-    <section class="materials">
-        <div class="container">
-            <h2 class="section-title">Materiały dodatkowe</h2>
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="card material-card shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">🎥 Prezentacja Pełna</h5>
-                            <p class="card-text">Szczegółowe omówienie działania SecurePortIV.</p>
-                            <a href="https://www.youtube.com/watch?v=HHFnkImlRpM&rco=1" target="_blank" class="btn btn-product mt-auto">Obejrzyj</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card material-card shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">🎥 Prezentacja Krótka</h5>
-                            <p class="card-text">Szybki przegląd zalet produktu.</p>
-                            <a href="https://www.youtube.com/watch?v=LFHP9gRy9yc" target="_blank" class="btn btn-product mt-auto">Obejrzyj</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="card material-card shadow-sm">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">🎥 Aplikacja - Wcześniak 590g</h5>
-                            <p class="card-text">Zastosowanie u bardzo małych pacjentów.</p>
-                            <a href="https://www.youtube.com/watch?v=D8utPMIWCtQ" target="_blank" class="btn btn-product mt-auto">Obejrzyj</a>
-           </div>
-                </div>
-            </div>
-        </div>
+      <div class="product-actions">
+        <a href="kontakt.html" class="btn-primary">
+          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="oferta.html" class="btn-secondary">
+          Wróć do oferty
+        </a>
+      </div>
     </div>
+
+    <div class="product-visual">
+      <img src="assets/klej.png" alt="SecurePortIV - klej do mocowania cewników">
+    </div>
+  </div>
 </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Chcesz wypróbować SecurePortIV?</h2>
-            <p class="lead mb-4">Skontaktuj się z nami, aby otrzymać próbkę lub prezentację produktu.</p>
-            <a href="kontakt.html" class="btn btn-product btn-lg">Skontaktuj się</a>
-        </div>
-    </section>
+<section class="product-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Korzyści</div>
+      <h2>Dlaczego SecurePortIV?</h2>
+      <p>Rozwiązanie zaprojektowane z myślą o stabilizacji dostępu naczyniowego i komforcie pracy personelu.</p>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row justify-content-center text-center text-md-start">
-                <div class="col-md-4 mb-4">
-                    <h5>DH Medical Arkadiusz Dynda</h5>
-                    <p>Szalowa 385<br>38-331 Szalowa<br>NIP: 7382168824</p>
-                    <p>Email: <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>Tel: +48 883 480 355</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>DH Medical Sławomir Hutek</h5>
-                    <p>ul. Masarska 7/17<br>31-534 Kraków<br>NIP: 7343623098</p>
-                    <p>Email: <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>Tel: +48 507 687 927</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Social Media</h5>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank"><i class="bi bi-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright text-center">
-                &copy; 2025 DH Medical. Wszelkie prawa zastrzeżone.
-            </div>
-        </div>
-    </footer>
+    <div class="product-grid-3">
+      <div class="product-card">
+        <i class="bi bi-shield-check"></i>
+        <h3>Stabilizacja dostępu</h3>
+        <p>Pomaga ograniczyć ryzyko przemieszczenia cewnika i wspiera utrzymanie dostępu naczyniowego.</p>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="product-card">
+        <i class="bi bi-droplet"></i>
+        <h3>Bariera mikrobiologiczna</h3>
+        <p>Wspiera ochronę miejsca wkłucia i może pomagać w ograniczaniu ryzyka zakażeń związanych z dostępem.</p>
+      </div>
+
+      <div class="product-card">
+        <i class="bi bi-hand-index"></i>
+        <h3>Łatwa aplikacja</h3>
+        <p>Prosty sposób użycia wspiera codzienną pracę personelu medycznego przy zabezpieczaniu cewników.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Porównanie</div>
+      <h2>Porównanie metod fiksacji</h2>
+      <p>Zestawienie wybranych cech SecurePortIV™ i tradycyjnych metod mocowania dostępu naczyniowego.</p>
+    </div>
+
+    <div class="comparison-box">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Cecha</th>
+            <th>SecurePortIV™</th>
+            <th>Szycie</th>
+            <th>Plaster mocujący</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ryzyko infekcji</td>
+            <td>Niskie</td>
+            <td>Wyższe</td>
+            <td>Średnie</td>
+          </tr>
+          <tr>
+            <td>Czas aplikacji</td>
+            <td>Krótki</td>
+            <td>Dłuższy</td>
+            <td>Krótki</td>
+          </tr>
+          <tr>
+            <td>Komfort pacjenta</td>
+            <td>Wysoki</td>
+            <td>Niższy</td>
+            <td>Średni</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Aplikacja</div>
+      <h2>Jak stosować?</h2>
+      <p>Przykładowy przebieg aplikacji produktu SecurePortIV™.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <img src="assets/krok1.png" alt="Krok 1">
+        <strong>Krok 1</strong>
+        <p>Oczyść i wysusz skórę przed aplikacją.</p>
+      </div>
+
+      <div class="step-card">
+        <img src="assets/krok2.png" alt="Krok 2">
+        <strong>Krok 2</strong>
+        <p>Nałóż 1–2 krople kleju centralnie na miejsce wkłucia.</p>
+      </div>
+
+      <div class="step-card">
+        <img src="assets/krok3.png" alt="Krok 3">
+        <strong>Krok 3</strong>
+        <p>Opcjonalnie nałóż klej pod skrzydełka lub obok cewnika.</p>
+      </div>
+
+      <div class="step-card">
+        <img src="assets/krok4.png" alt="Krok 4">
+        <strong>Krok 4</strong>
+        <p>Nałóż przezroczysty opatrunek zgodnie z procedurą placówki.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Materiały</div>
+      <h2>Materiały dodatkowe</h2>
+      <p>Zobacz materiały wideo dotyczące produktu SecurePortIV™.</p>
+    </div>
+
+    <div class="materials-grid">
+      <div class="material-card">
+        <h3>Prezentacja pełna</h3>
+        <p>Szczegółowe omówienie działania SecurePortIV™.</p>
+        <a href="https://www.youtube.com/watch?v=HHFnkImlRpM&rco=1" target="_blank" rel="noopener" class="card-link">
+          Obejrzyj <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="material-card">
+        <h3>Prezentacja krótka</h3>
+        <p>Szybki przegląd zalet produktu.</p>
+        <a href="https://www.youtube.com/watch?v=LFHP9gRy9yc" target="_blank" rel="noopener" class="card-link">
+          Obejrzyj <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+
+      <div class="material-card">
+        <h3>Aplikacja u wcześniaka</h3>
+        <p>Zastosowanie u bardzo małych pacjentów.</p>
+        <a href="https://www.youtube.com/watch?v=D8utPMIWCtQ" target="_blank" rel="noopener" class="card-link">
+          Obejrzyj <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <h2>Chcesz dowiedzieć się więcej o SecurePortIV™?</h2>
+        <p>Skontaktuj się z nami — przygotujemy informacje produktowe lub prezentację dla Twojej placówki.</p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="kontakt.html" class="btn-cta-primary">
+          Kontakt <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="oferta.html" class="btn-cta-secondary">
+          Oferta
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-row">
+          <div class="footer-logo-box">
+            <img src="assets/logo.png" alt="DH Medical">
+          </div>
+          <div>
+            <p>
+              Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.
+            </p>
+            <a href="kontakt.html" class="footer-mini-cta">
+              Zapytaj o ofertę <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4>DH Medical Arkadiusz Dynda</h4>
+        <p>Szalowa 385<br>38-331 Szalowa</p>
+        <p><a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>+48 883 480 355</p>
+      </div>
+
+      <div>
+        <h4>DH Medical Sławomir Hutek</h4>
+        <p>ul. Masarska 7/17<br>31-534 Kraków</p>
+        <p><a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>+48 507 687 927</p>
+      </div>
+
+      <div>
+        <h4>Social media</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
+          <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2025 DH Medical. Wszelkie prawa zastrzeżone.
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
