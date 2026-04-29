@@ -1227,3 +1227,11 @@ footer a:hover {
     grid-template-columns: 74px 1fr !important;
   }
 }
+.footer-brand-row .footer-logo-box {
+  width: 90px !important;
+  height: 90px !important;
+}
+
+.footer-brand-row {
+  grid-template-columns: 90px 1fr !important;
+}
