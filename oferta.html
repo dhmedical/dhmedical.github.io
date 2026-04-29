@@ -87,15 +87,6 @@
       margin-bottom: 24px;
     }
 
-    .offer-card a {
-      margin-top: auto;
-      font-weight: 700;
-      color: var(--navy);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-
     .offer-card.featured {
       background: var(--navy);
       color: white;
@@ -106,8 +97,36 @@
       color: white;
     }
 
-    .offer-card.featured a {
+    .card-button {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 11px 16px;
+      border-radius: 999px;
+      background: rgba(29, 27, 82, 0.08);
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 0.9rem;
+      transition: all 0.22s ease;
+    }
+
+    .card-button:hover {
+      background: var(--navy);
       color: white;
+      transform: translateY(-2px);
+    }
+
+    .offer-card.featured .card-button {
+      background: white;
+      color: var(--navy);
+    }
+
+    .offer-card.featured .card-button:hover {
+      background: #f2f1f1;
+      transform: translateY(-2px);
     }
 
     @media (max-width: 1200px) {
@@ -126,7 +145,6 @@
 
 <body>
 
-  <!-- NAV -->
   <header class="site-header">
     <div class="container nav-wrapper">
       <a href="index.html" class="brand">
@@ -142,7 +160,6 @@
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
     <section class="offer-page">
       <div class="container">
@@ -157,54 +174,64 @@
 
         <div class="offer-grid">
 
-          <!-- 1 -->
           <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/secureport.png">
+              <img src="assets/secureport.png" alt="SecurePortIV">
             </div>
             <h3>SecurePortIV™</h3>
             <p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p>
-            <a href="secureportiv.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+            <a href="secureportiv.html" class="card-button">
+              Dowiedz się więcej
+              <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
 
-          <!-- 2 -->
           <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/flexgrip.png">
+              <img src="assets/flexgrip.png" alt="FlexGrip">
             </div>
             <h3>FlexGrip®</h3>
             <p>Systemy bezszwowej stabilizacji cewników.</p>
-            <a href="systemy-bezszwowe.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+            <a href="systemy-bezszwowe.html" class="card-button">
+              Dowiedz się więcej
+              <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
 
-          <!-- 3 -->
           <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/port.png">
+              <img src="assets/port.png" alt="Porty naczyniowe">
             </div>
             <h3>Porty naczyniowe</h3>
             <p>Długoterminowy dostęp naczyniowy dla pacjentów.</p>
-            <a href="porty-naczyniowe.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+            <a href="porty-naczyniowe.html" class="card-button">
+              Dowiedz się więcej
+              <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
 
-          <!-- 4 -->
           <div class="offer-card">
             <div class="offer-icon">
-              <img src="assets/exitpocket.png">
+              <img src="assets/exitpocket.png" alt="ExitPocket">
             </div>
             <h3>ExitPocket</h3>
             <p>Bezpieczna organizacja i ochrona miejsca wyjścia cewnika.</p>
-            <a href="exitpocket.html">Dowiedz się więcej <i class="bi bi-arrow-right"></i></a>
+            <a href="exitpocket.html" class="card-button">
+              Dowiedz się więcej
+              <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
 
-          <!-- 5 -->
           <div class="offer-card featured">
             <div class="offer-icon">
-              <img src="assets/infusion.png">
+              <img src="assets/infusion.png" alt="Zestawy infuzyjne Impromediform">
             </div>
             <h3>Zestawy infuzyjne Impromediform</h3>
             <p>Nowy produkt w ofercie DH Medical.</p>
-            <a href="kontakt.html">Zapytaj o ofertę <i class="bi bi-arrow-right"></i></a>
+            <a href="kontakt.html" class="card-button">
+              Dowiedz się więcej
+              <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
 
         </div>
@@ -213,7 +240,6 @@
     </section>
   </main>
 
-  <!-- FOOTER (TEN SAM CO INDEX) -->
   <footer>
     <div class="container">
       <div class="footer-grid">
@@ -221,7 +247,7 @@
         <div>
           <div class="footer-brand-row">
             <div class="footer-logo-box">
-              <img src="assets/logo.png">
+              <img src="assets/logo.png" alt="DH Medical">
             </div>
             <div>
               <p>
@@ -249,17 +275,17 @@
         <div>
           <h4>Social media</h4>
           <div class="social-links">
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            <a href="#"><i class="bi bi-linkedin"></i></a>
-            <a href="#"><i class="bi bi-youtube"></i></a>
-            <a href="#"><i class="bi bi-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
+            <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
           </div>
         </div>
 
       </div>
 
       <div class="copyright">
-        © 2025 DH Medical
+        © 2025 DH Medical. Wszelkie prawa zastrzeżone.
       </div>
     </div>
   </footer>
