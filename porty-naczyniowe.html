@@ -1,180 +1,448 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Porty naczyniowe DistricAth® - tytanowe, plastikowo-tytanowe i junior" />
-    <meta name="keywords" content="porty naczyniowe, DistricAth, SecurePortIV, FlexGrip, mocowanie cewników, klej cyjanoakrylanowy, DH Medical, dostęp naczyniowy" />
-    <meta name="author" content="DH Medical" />
-    <meta name="theme-color" content="#25a7df" />
-    <meta property="og:title" content="DH Medical - Innowacyjne rozwiązania w dostępie naczyniowym" />
-    <meta property="og:description" content="Dystrybutor portów DistricAth®, kleju SecurePortIV™ i systemów FlexGrip®." />
-    <meta property="og:image" content="https://www.dhmedical.org/assets/logo.png" />
-    <meta property="og:url" content="https://www.dhmedical.org" />
-    <meta property="og:type" content="website" />
-    <title>DH Medical - Porty naczyniowe</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-X61LH4MCGX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  gtag('config', 'G-X61LH4MCGX');
-</script>
-    <style>
-        body { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; background: #f8f9fa; }
-        .navbar { position: sticky; top: 0; z-index: 1000; background: white !important; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .page-header { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/hero-background.png') center/cover no-repeat; padding: 150px 20px; text-align: center; color: white; }
-        .page-header h1 { font-size: 3.5rem; font-weight: 700; text-shadow: 0 4px 15px rgba(0,0,0,0.8); }
-        .products { padding: 80px 20px; max-width: 1400px; margin: 0 auto; }
-        .section-title { font-size: 2.2rem; font-weight: 700; color: #1a3a5f; margin-bottom: 3rem; text-align: center; }
-        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s ease; height: 100%; display: flex; flex-direction: column; }
-        .card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
-        .card img { width: 100%; height: 280px; object-fit: cover; }
-        .card-body { padding: 2rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .card-title { font-size: 1.6rem; font-weight: 700; color: #1a3a5f; margin-bottom: 1rem; }
-        .card-text { font-size: 1.1rem; color: #555; flex-grow: 1; }
-        .btn-product { background: #25a7df; color: white; padding: 0.8rem 2rem; font-size: 1.1rem; border-radius: 50px; align-self: flex-start; margin-top: auto; transition: all 0.3s; }
-        .btn-product:hover { background: #1e90c2; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(37,167,223,0.3); color: white; }
-        footer { background: #1a3a5f; color: #ffffff; padding: 3rem 0 1.5rem; }
-        footer a { color: #a8c7e6; text-decoration: none; transition: color 0.3s; }
-        footer a:hover { color: white; }
-        @media (max-width: 768px) { .page-header h1 { font-size: 2.8rem; } .card img { height: 220px; } .section-title { font-size: 1.9rem; } }
-            footer .social-links a {
-        font-size: 1.8rem;
-        margin: 0 0.8rem;
-        transition: transform 0.3s;
+  <title>Porty naczyniowe | DH Medical</title>
+
+  <meta name="description" content="Porty naczyniowe DistricAth® – porty tytanowe, plastikowo-tytanowe oraz porty Junior." />
+  <meta name="keywords" content="porty naczyniowe, DistricAth, port tytanowy, port plastikowo-tytanowy, port Junior, DH Medical" />
+  <meta name="author" content="DH Medical" />
+
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link href="css/styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    .product-page {
+      padding: 86px 0 72px;
     }
-    footer .social-links a:hover {
-        transform: translateY(-3px);
+
+    .product-hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
     }
-    </style>
+
+    .product-copy h1 {
+      margin: 0;
+      color: var(--navy);
+      font-size: clamp(2.7rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.055em;
+    }
+
+    .product-copy p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 14px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .product-visual {
+      background: white;
+      border-radius: 28px;
+      padding: 38px;
+      box-shadow: 0 20px 55px rgba(29,27,82,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-visual img {
+      max-height: 360px;
+      object-fit: contain;
+      filter: drop-shadow(0 18px 30px rgba(29,27,82,0.18));
+    }
+
+    .port-section {
+      padding: 52px 0;
+    }
+
+    .category-head {
+      margin-bottom: 28px;
+    }
+
+    .category-head h2 {
+      color: var(--navy);
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+    }
+
+    .category-head p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      max-width: 680px;
+      line-height: 1.7;
+    }
+
+    .port-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .port-grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .port-grid.one {
+      grid-template-columns: minmax(0, 0.5fr);
+    }
+
+    .port-card {
+      background: white;
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: 0 16px 45px rgba(29,27,82,0.08);
+      border: 1px solid rgba(29,27,82,0.06);
+      display: flex;
+      flex-direction: column;
+      min-height: 430px;
+      transition: all 0.25s ease;
+    }
+
+    .port-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 55px rgba(29,27,82,0.12);
+    }
+
+    .port-card-image {
+      height: 200px;
+      border-radius: 22px;
+      background: #f4f5f7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+      overflow: hidden;
+    }
+
+    .port-card-image img {
+      max-width: 92%;
+      max-height: 92%;
+      object-fit: contain;
+      filter: drop-shadow(0 14px 24px rgba(29,27,82,0.14));
+      transition: transform 0.3s ease;
+    }
+
+    .port-card:hover .port-card-image img {
+      transform: scale(1.05);
+    }
+
+    .port-card h3 {
+      color: var(--navy);
+      font-size: 1.35rem;
+      margin: 0 0 12px;
+      letter-spacing: -0.035em;
+    }
+
+    .port-card p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0 0 24px;
+    }
+
+    .port-card .card-link {
+      margin-top: auto;
+    }
+
+    .note-box {
+      margin-top: 26px;
+      background:
+        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 34%),
+        var(--navy);
+      color: white;
+      border-radius: 26px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 30px;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .note-box::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);
+      background-size: 22px 22px;
+      opacity: 0.18;
+    }
+
+    .note-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .note-box h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .note-box p {
+      color: rgba(255,255,255,0.78);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 980px) {
+      .product-hero,
+      .port-grid.two,
+      .port-grid.one,
+      .note-box {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
-        <div class="container px-5">
-            <a class="navbar-brand" href="index.html"><img src="assets/logo.png" alt="DH Medical" style="height: 80px; width: 80px;"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Strona główna</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="oferta.html">Oferta</a></li>
-                    <li class="nav-item"><a class="nav-link" href="o-nas.html">O nas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="kontakt.html">Kontakt</a></li>
-                </ul>
-            </div>
-        </div>
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="DH Medical">
+    </a>
+
+    <nav class="nav-links">
+      <a href="index.html">Strona główna</a>
+      <a href="oferta.html">Oferta</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html" class="nav-cta">Kontakt</a>
     </nav>
+  </div>
+</header>
 
-    <!-- Header -->
-    <header class="page-header">
-        <h1>Porty naczyniowe</h1>
-    </header>
+<main>
 
-    <!-- Produkty -->
-    <section class="products">
-        <!-- Porty całkowicie tytanowe -->
-        <h2 class="section-title">Porty całkowicie tytanowe</h2>
-        <div class="row g-5 mb-5">
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="assets/porttytan1.png" alt="DistricAth Titanium – standard">
-                    <div class="card-body">
-                        <h3 class="card-title">DistricAth® Titanium – Klasyczny</h3>
-                        <p class="card-text">Port w całości wykonany z tytanu. Do wyboru z cewnikiem silikonowym i poliuretanowym.</p>
-                        <a href="kontakt.html" class="btn-product">Zamów</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="assets/porttytan2.png" alt="DistricAth Titanium – Mały">
-                    <div class="card-body">
-                        <h3 class="card-title">DistricAth® Titanium – Kompaktowy</h3>
-                        <p class="card-text">Port w całości wykonany z tytanu w wersji kompaktowej. Do wyboru z cewnikiem silikonowym i poliuretanowym.</p>
-                        <a href="kontakt.html" class="btn-product">Zamów</a>
-                    </div>
-                </div>
-            </div>
+<section class="product-page">
+  <div class="container product-hero">
+    <div class="product-copy">
+      <div class="section-kicker">Porty naczyniowe</div>
+      <h1>Rozwiązania do długoterminowego dostępu naczyniowego.</h1>
+      <p>
+        Porty naczyniowe DistricAth® to rozwiązania przeznaczone dla pacjentów wymagających długoterminowego dostępu naczyniowego.
+      </p>
+      <p>
+        Oferta obejmuje porty całkowicie tytanowe, porty z obudową z tworzywa i tytanową komorą oraz wersję pediatryczną Junior.
+      </p>
+
+      <div class="product-actions">
+        <a href="kontakt.html" class="btn-primary">
+          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="oferta.html" class="btn-secondary">
+          Wróć do oferty
+        </a>
+      </div>
+    </div>
+
+    <div class="product-visual">
+      <img src="assets/port.png" alt="Porty naczyniowe DistricAth">
+    </div>
+  </div>
+</section>
+
+<section class="port-section">
+  <div class="container">
+    <div class="category-head">
+      <div class="section-kicker">Tytanowe</div>
+      <h2>Porty całkowicie tytanowe</h2>
+      <p>
+        Porty wykonane w całości z tytanu, dostępne w wariantach klasycznym i kompaktowym.
+      </p>
+    </div>
+
+    <div class="port-grid two">
+      <article class="port-card">
+        <div class="port-card-image">
+          <img src="assets/porttytan1.png" alt="DistricAth Titanium Klasyczny">
         </div>
+        <h3>DistricAth® Titanium – Klasyczny</h3>
+        <p>
+          Port w całości wykonany z tytanu. Dostępny z cewnikiem silikonowym lub poliuretanowym.
+        </p>
+        <a href="kontakt.html" class="card-link">
+          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
+        </a>
+      </article>
 
-        <!-- Porty z tworzywa i tytanową komorą -->
-        <h2 class="section-title">Porty z obudową z tworzywa i tytanową komorą</h2>
-        <div class="row g-5 mb-5">
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="assets/portplastik1.png" alt="DistricAth Plastic Standard">
-                    <div class="card-body">
-                        <h3 class="card-title">DistricAth® Plastic – Klasyczny</h3>
-                        <p class="card-text">Port z obudową z tworzywa sztucznego z tytanową komorą. Do wyboru z cewnikiem silikonowym i poliuretanowym.</p>
-                        <a href="kontakt.html" class="btn-product">Zamów</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <img src="assets/portplastik2.png" alt="DistricAth Plastic Low Profile">
-                    <div class="card-body">
-                        <h3 class="card-title">DistricAth® Plastic – Kompaktowy</h3>
-                        <p class="card-text">Port z obudową z tworzywa sztucznego z tytanową komorą w wersji kompaktowej. Do wyboru z cewnikiem silikonowym i poliuretanowym.</p>
-                        <a href="kontakt.html" class="btn-product">Zamów</a>
-                    </div>
-                </div>
-            </div>
+      <article class="port-card">
+        <div class="port-card-image">
+          <img src="assets/porttytan2.png" alt="DistricAth Titanium Kompaktowy">
         </div>
+        <h3>DistricAth® Titanium – Kompaktowy</h3>
+        <p>
+          Kompaktowa wersja portu wykonanego w całości z tytanu. Dostępna z cewnikiem silikonowym lub poliuretanowym.
+        </p>
+        <a href="kontakt.html" class="card-link">
+          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
 
-        <!-- Porty Junior -->
-        <h2 class="section-title">Porty Junior (pediatryczne)</h2>
-        <div class="row g-5 justify-content-center">
-            <div class="col-md-6 col-lg-5">
-                <div class="card">
-                   <img src="assets/portjunior.png" alt="DistricAth Junior">
-                    <div class="card-body">
-                        <h3 class="card-title">DistricAth® Junior</h3>
-                        <p class="card-text">Port w całości wykonany z tytanu w wersji dziecięcej Do wyboru z cewnikiem silikonowym i poliuretanowym.</p>
-                        <a href="kontakt.html" class="btn-product">Zamów</a>
-                    </div>
-                </div>
-            </div>
+<section class="port-section">
+  <div class="container">
+    <div class="category-head">
+      <div class="section-kicker">Tworzywo + tytan</div>
+      <h2>Porty z obudową z tworzywa i tytanową komorą</h2>
+      <p>
+        Lżejsze rozwiązania z obudową z tworzywa sztucznego oraz tytanową komorą.
+      </p>
+    </div>
+
+    <div class="port-grid two">
+      <article class="port-card">
+        <div class="port-card-image">
+          <img src="assets/portplastik1.png" alt="DistricAth Plastic Klasyczny">
         </div>
-    </section>
+        <h3>DistricAth® Plastic – Klasyczny</h3>
+        <p>
+          Port z obudową z tworzywa sztucznego i tytanową komorą. Dostępny z cewnikiem silikonowym lub poliuretanowym.
+        </p>
+        <a href="kontakt.html" class="card-link">
+          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
+        </a>
+      </article>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row justify-content-center text-center text-md-start">
-                <div class="col-md-4 mb-4">
-                    <h5>DH Medical Arkadiusz Dynda</h5>
-                    <p>Szalowa 385<br>38-331 Szalowa<br>NIP: 7382168824</p>
-                    <p>Email: <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>Tel: +48 883 480 355</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>DH Medical Sławomir Hutek</h5>
-                    <p>ul. Masarska 7/17<br>31-534 Kraków<br>NIP: 7343623098</p>
-                    <p>Email: <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>Tel: +48 507 687 927</p>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>Social Media</h5>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank"><i class="bi bi-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright text-center">
-                &copy; 2025 DH Medical. Wszelkie prawa zastrzeżone.
-            </div>
+      <article class="port-card">
+        <div class="port-card-image">
+          <img src="assets/portplastik2.png" alt="DistricAth Plastic Kompaktowy">
         </div>
-    </footer>
+        <h3>DistricAth® Plastic – Kompaktowy</h3>
+        <p>
+          Kompaktowa wersja portu z obudową z tworzywa sztucznego i tytanową komorą. Dostępna z cewnikiem silikonowym lub poliuretanowym.
+        </p>
+        <a href="kontakt.html" class="card-link">
+          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
+        </a>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<section class="port-section">
+  <div class="container">
+    <div class="category-head">
+      <div class="section-kicker">Pediatria</div>
+      <h2>Porty Junior</h2>
+      <p>
+        Rozwiązanie pediatryczne do zastosowań u pacjentów dziecięcych.
+      </p>
+    </div>
+
+    <div class="port-grid one">
+      <article class="port-card">
+        <div class="port-card-image">
+          <img src="assets/portjunior.png" alt="DistricAth Junior">
+        </div>
+        <h3>DistricAth® Junior</h3>
+        <p>
+          Port w całości wykonany z tytanu w wersji dziecięcej. Dostępny z cewnikiem silikonowym lub poliuretanowym.
+        </p>
+        <a href="kontakt.html" class="card-link">
+          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
+        </a>
+      </article>
+    </div>
+
+    <div class="note-box">
+      <h3>Dobór portu do pacjenta</h3>
+      <p>
+        W przypadku pytań dotyczących wariantu portu, rodzaju cewnika lub doboru rozwiązania do procedury, skontaktuj się z nami — pomożemy dobrać odpowiedni produkt.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-content">
+        <h2>Chcesz dowiedzieć się więcej o portach naczyniowych?</h2>
+        <p>Skontaktuj się z nami — przygotujemy informacje produktowe lub ofertę dla Twojej placówki.</p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="kontakt.html" class="btn-cta-primary">
+          Kontakt <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="oferta.html" class="btn-cta-secondary">
+          Oferta
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand-row">
+          <div class="footer-logo-box">
+            <img src="assets/logo.png" alt="DH Medical">
+          </div>
+          <div>
+            <p>
+              Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.
+            </p>
+            <a href="kontakt.html" class="footer-mini-cta">
+              Zapytaj o ofertę <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4>DH Medical Arkadiusz Dynda</h4>
+        <p>Szalowa 385<br>38-331 Szalowa</p>
+        <p><a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>+48 883 480 355</p>
+      </div>
+
+      <div>
+        <h4>DH Medical Sławomir Hutek</h4>
+        <p>ul. Samotna 8<br>33-300 Nowy Sącz</p>
+        <p><a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>+48 507 687 927</p>
+      </div>
+
+      <div>
+        <h4>Social media</h4>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
+          <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2025 DH Medical. Wszelkie prawa zastrzeżone.
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>
