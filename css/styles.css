@@ -1155,3 +1155,23 @@ footer a:hover {
   width: 80px;
   height: 80px;
 }
+.footer-brand-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.footer-brand-row .footer-logo-box {
+  flex: 0 0 82px;
+  width: 82px;
+  height: 82px;
+  margin-bottom: 0;
+}
+
+.footer-brand-row p {
+  max-width: 280px;
+}
+
+.footer-grid {
+  align-items: start !important;
+}
