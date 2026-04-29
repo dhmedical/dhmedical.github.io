@@ -16,89 +16,22 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
-    .product-page {
-      padding: 86px 0 72px;
-    }
+    .product-page { padding: 86px 0 72px; }
+    .product-hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 42px; align-items: center; }
+    .product-copy h1 { margin: 0; color: var(--navy); font-size: clamp(2.7rem, 5vw, 4.4rem); line-height: 1.05; letter-spacing: -0.055em; }
+    .product-copy p { color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
+    .product-actions { display: flex; gap: 14px; margin-top: 28px; flex-wrap: wrap; }
+    .product-visual { background: white; border-radius: 28px; padding: 38px; box-shadow: 0 20px 55px rgba(29,27,82,0.10); display: flex; align-items: center; justify-content: center; }
+    .product-visual img { max-height: 360px; object-fit: contain; filter: drop-shadow(0 18px 30px rgba(29,27,82,0.18)); }
 
-    .product-hero {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 42px;
-      align-items: center;
-    }
+    .port-section { padding: 52px 0; }
+    .category-head { margin-bottom: 28px; }
+    .category-head h2 { color: var(--navy); margin: 0; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.045em; line-height: 1.08; }
+    .category-head p { margin: 12px 0 0; color: var(--muted); max-width: 680px; line-height: 1.7; }
 
-    .product-copy h1 {
-      margin: 0;
-      color: var(--navy);
-      font-size: clamp(2.7rem, 5vw, 4.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-    }
-
-    .product-copy p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
-    }
-
-    .product-actions {
-      display: flex;
-      gap: 14px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-
-    .product-visual {
-      background: white;
-      border-radius: 28px;
-      padding: 38px;
-      box-shadow: 0 20px 55px rgba(29,27,82,0.10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .product-visual img {
-      max-height: 360px;
-      object-fit: contain;
-      filter: drop-shadow(0 18px 30px rgba(29,27,82,0.18));
-    }
-
-    .port-section {
-      padding: 52px 0;
-    }
-
-    .category-head {
-      margin-bottom: 28px;
-    }
-
-    .category-head h2 {
-      color: var(--navy);
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.045em;
-      line-height: 1.08;
-    }
-
-    .category-head p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      max-width: 680px;
-      line-height: 1.7;
-    }
-
-    .port-grid {
-      display: grid;
-      gap: 22px;
-    }
-
-    .port-grid.two {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .port-grid.one {
-      grid-template-columns: minmax(0, 0.5fr);
-    }
+    .port-grid { display: grid; gap: 22px; }
+    .port-grid.two { grid-template-columns: repeat(2, 1fr); }
+    .port-grid.one { grid-template-columns: minmax(0, 0.5fr); }
 
     .port-card {
       background: white;
@@ -117,29 +50,6 @@
       box-shadow: 0 22px 55px rgba(29,27,82,0.12);
     }
 
-    .port-card-image {
-      height: 200px;
-      border-radius: 22px;
-      background: #f4f5f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 22px;
-      overflow: hidden;
-    }
-
-    .port-card-image img {
-      max-width: 92%;
-      max-height: 92%;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 24px rgba(29,27,82,0.14));
-      transition: transform 0.3s ease;
-    }
-
-    .port-card:hover .port-card-image img {
-      transform: scale(1.05);
-    }
-
     .port-card h3 {
       color: var(--navy);
       font-size: 1.35rem;
@@ -153,15 +63,11 @@
       margin: 0 0 24px;
     }
 
-    .port-card .card-link {
-      margin-top: auto;
-    }
+    .port-card .card-link { margin-top: auto; }
 
     .note-box {
       margin-top: 26px;
-      background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 34%),
-        var(--navy);
+      background: radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 34%), var(--navy);
       color: white;
       border-radius: 26px;
       padding: 34px;
@@ -182,23 +88,9 @@
       opacity: 0.18;
     }
 
-    .note-box > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .note-box h3 {
-      margin: 0;
-      font-size: 1.8rem;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-    }
-
-    .note-box p {
-      color: rgba(255,255,255,0.78);
-      margin: 0;
-      line-height: 1.7;
-    }
+    .note-box > * { position: relative; z-index: 1; }
+    .note-box h3 { margin: 0; font-size: 1.8rem; letter-spacing: -0.04em; line-height: 1.1; }
+    .note-box p { color: rgba(255,255,255,0.78); margin: 0; line-height: 1.7; }
 
     @media (max-width: 980px) {
       .product-hero,
@@ -235,20 +127,12 @@
     <div class="product-copy">
       <div class="section-kicker">Porty naczyniowe</div>
       <h1>Rozwiązania do długoterminowego dostępu naczyniowego.</h1>
-      <p>
-        Porty naczyniowe DistricAth® to rozwiązania przeznaczone dla pacjentów wymagających długoterminowego dostępu naczyniowego.
-      </p>
-      <p>
-        Oferta obejmuje porty całkowicie tytanowe, porty z obudową z tworzywa i tytanową komorą oraz wersję pediatryczną Junior.
-      </p>
+      <p>Porty naczyniowe DistricAth® to rozwiązania przeznaczone dla pacjentów wymagających długoterminowego dostępu naczyniowego.</p>
+      <p>Oferta obejmuje porty całkowicie tytanowe, porty z obudową z tworzywa i tytanową komorą oraz wersję pediatryczną Junior.</p>
 
       <div class="product-actions">
-        <a href="kontakt.html" class="btn-primary">
-          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
-        <a href="oferta.html" class="btn-secondary">
-          Wróć do oferty
-        </a>
+        <a href="kontakt.html" class="btn-primary">Zapytaj o produkt <i class="bi bi-arrow-right"></i></a>
+        <a href="oferta.html" class="btn-secondary">Wróć do oferty</a>
       </div>
     </div>
 
@@ -263,36 +147,26 @@
     <div class="category-head">
       <div class="section-kicker">Tytanowe</div>
       <h2>Porty całkowicie tytanowe</h2>
-      <p>
-        Porty wykonane w całości z tytanu, dostępne w wariantach klasycznym i kompaktowym.
-      </p>
+      <p>Porty wykonane w całości z tytanu, dostępne w wariantach klasycznym i kompaktowym.</p>
     </div>
 
     <div class="port-grid two">
       <article class="port-card">
-        <div class="port-card-image">
+        <div class="port-card-image port-spec-image">
           <img src="assets/porttytan1.png" alt="DistricAth Titanium Klasyczny">
         </div>
         <h3>DistricAth® Titanium – Klasyczny</h3>
-        <p>
-          Port w całości wykonany z tytanu. Dostępny z cewnikiem silikonowym lub poliuretanowym.
-        </p>
-        <a href="kontakt.html" class="card-link">
-          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
+        <p>Port w całości wykonany z tytanu. Dostępny z cewnikiem silikonowym lub poliuretanowym.</p>
+        <a href="kontakt.html" class="card-link">Zapytaj o produkt <i class="bi bi-arrow-right"></i></a>
       </article>
 
       <article class="port-card">
-        <div class="port-card-image">
+        <div class="port-card-image port-spec-image">
           <img src="assets/porttytan2.png" alt="DistricAth Titanium Kompaktowy">
         </div>
         <h3>DistricAth® Titanium – Kompaktowy</h3>
-        <p>
-          Kompaktowa wersja portu wykonanego w całości z tytanu. Dostępna z cewnikiem silikonowym lub poliuretanowym.
-        </p>
-        <a href="kontakt.html" class="card-link">
-          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
+        <p>Kompaktowa wersja portu wykonanego w całości z tytanu. Dostępna z cewnikiem silikonowym lub poliuretanowym.</p>
+        <a href="kontakt.html" class="card-link">Zapytaj o produkt <i class="bi bi-arrow-right"></i></a>
       </article>
     </div>
   </div>
@@ -303,36 +177,26 @@
     <div class="category-head">
       <div class="section-kicker">Tworzywo + tytan</div>
       <h2>Porty z obudową z tworzywa i tytanową komorą</h2>
-      <p>
-        Lżejsze rozwiązania z obudową z tworzywa sztucznego oraz tytanową komorą.
-      </p>
+      <p>Lżejsze rozwiązania z obudową z tworzywa sztucznego oraz tytanową komorą.</p>
     </div>
 
     <div class="port-grid two">
       <article class="port-card">
-        <div class="port-card-image">
+        <div class="port-card-image port-spec-image">
           <img src="assets/portplastik1.png" alt="DistricAth Plastic Klasyczny">
         </div>
         <h3>DistricAth® Plastic – Klasyczny</h3>
-        <p>
-          Port z obudową z tworzywa sztucznego i tytanową komorą. Dostępny z cewnikiem silikonowym lub poliuretanowym.
-        </p>
-        <a href="kontakt.html" class="card-link">
-          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
+        <p>Port z obudową z tworzywa sztucznego i tytanową komorą. Dostępny z cewnikiem silikonowym lub poliuretanowym.</p>
+        <a href="kontakt.html" class="card-link">Zapytaj o produkt <i class="bi bi-arrow-right"></i></a>
       </article>
 
       <article class="port-card">
-        <div class="port-card-image">
+        <div class="port-card-image port-spec-image">
           <img src="assets/portplastik2.png" alt="DistricAth Plastic Kompaktowy">
         </div>
         <h3>DistricAth® Plastic – Kompaktowy</h3>
-        <p>
-          Kompaktowa wersja portu z obudową z tworzywa sztucznego i tytanową komorą. Dostępna z cewnikiem silikonowym lub poliuretanowym.
-        </p>
-        <a href="kontakt.html" class="card-link">
-          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
+        <p>Kompaktowa wersja portu z obudową z tworzywa sztucznego i tytanową komorą. Dostępna z cewnikiem silikonowym lub poliuretanowym.</p>
+        <a href="kontakt.html" class="card-link">Zapytaj o produkt <i class="bi bi-arrow-right"></i></a>
       </article>
     </div>
   </div>
@@ -343,31 +207,23 @@
     <div class="category-head">
       <div class="section-kicker">Pediatria</div>
       <h2>Porty Junior</h2>
-      <p>
-        Rozwiązanie pediatryczne do zastosowań u pacjentów dziecięcych.
-      </p>
+      <p>Rozwiązanie pediatryczne do zastosowań u pacjentów dziecięcych.</p>
     </div>
 
     <div class="port-grid one">
       <article class="port-card">
-        <div class="port-card-image">
+        <div class="port-card-image port-spec-image">
           <img src="assets/portjunior.png" alt="DistricAth Junior">
         </div>
         <h3>DistricAth® Junior</h3>
-        <p>
-          Port w całości wykonany z tytanu w wersji dziecięcej. Dostępny z cewnikiem silikonowym lub poliuretanowym.
-        </p>
-        <a href="kontakt.html" class="card-link">
-          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
+        <p>Port w całości wykonany z tytanu w wersji dziecięcej. Dostępny z cewnikiem silikonowym lub poliuretanowym.</p>
+        <a href="kontakt.html" class="card-link">Zapytaj o produkt <i class="bi bi-arrow-right"></i></a>
       </article>
     </div>
 
     <div class="note-box">
       <h3>Dobór portu do pacjenta</h3>
-      <p>
-        W przypadku pytań dotyczących wariantu portu, rodzaju cewnika lub doboru rozwiązania do procedury, skontaktuj się z nami — pomożemy dobrać odpowiedni produkt.
-      </p>
+      <p>W przypadku pytań dotyczących wariantu portu, rodzaju cewnika lub doboru rozwiązania do procedury, skontaktuj się z nami — pomożemy dobrać odpowiedni produkt.</p>
     </div>
   </div>
 </section>
@@ -381,12 +237,8 @@
       </div>
 
       <div class="cta-actions">
-        <a href="kontakt.html" class="btn-cta-primary">
-          Kontakt <i class="bi bi-arrow-right"></i>
-        </a>
-        <a href="oferta.html" class="btn-cta-secondary">
-          Oferta
-        </a>
+        <a href="kontakt.html" class="btn-cta-primary">Kontakt <i class="bi bi-arrow-right"></i></a>
+        <a href="oferta.html" class="btn-cta-secondary">Oferta</a>
       </div>
     </div>
   </div>
@@ -397,19 +249,14 @@
 <footer>
   <div class="container">
     <div class="footer-grid">
-
       <div>
         <div class="footer-brand-row">
           <div class="footer-logo-box">
             <img src="assets/logo.png" alt="DH Medical">
           </div>
           <div>
-            <p>
-              Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.
-            </p>
-            <a href="kontakt.html" class="footer-mini-cta">
-              Zapytaj o ofertę <i class="bi bi-arrow-right"></i>
-            </a>
+            <p>Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.</p>
+            <a href="kontakt.html" class="footer-mini-cta">Zapytaj o ofertę <i class="bi bi-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -435,7 +282,6 @@
           <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
         </div>
       </div>
-
     </div>
 
     <div class="copyright">
