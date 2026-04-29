@@ -1602,3 +1602,17 @@ body .note-box {
 body .cta-section {
   padding-top: 18px !important;
 }
+.port-card-image {
+  background: linear-gradient(145deg, #f7f8fb, #eef0f5) !important;
+  padding: 22px !important;
+  border: 1px solid rgba(29,27,82,0.08);
+}
+
+.port-card-image img {
+  background: white;
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 14px 32px rgba(29,27,82,0.10);
+  max-width: 88% !important;
+  max-height: 88% !important;
+}
