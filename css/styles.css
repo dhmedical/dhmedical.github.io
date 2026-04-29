@@ -1356,3 +1356,108 @@ footer a:hover {
 .offer-card.featured .card-link:hover::after {
   background: white;
 }
+/* CTA SECTION */
+
+.cta-section {
+  padding: 60px 0 40px;
+}
+
+.cta-box {
+  background: linear-gradient(135deg, #1d1b52, #2a276f);
+  border-radius: 26px;
+  padding: 48px 56px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle pattern */
+.cta-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.25;
+}
+
+.cta-content {
+  max-width: 560px;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-content h2 {
+  color: white;
+  font-size: 2.1rem;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.cta-content p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+/* BUTTONS */
+
+.btn-cta-primary {
+  background: white;
+  color: var(--navy);
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.25s;
+}
+
+.btn-cta-primary:hover {
+  transform: translateY(-2px);
+  background: #f3f3f3;
+}
+
+.btn-cta-secondary {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: 0.25s;
+}
+
+.btn-cta-secondary:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .cta-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
+
+  .btn-cta-primary,
+  .btn-cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
