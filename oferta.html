@@ -6,37 +6,26 @@
 
   <title>DH Medical | Oferta</title>
 
-  <meta name="description" content="Oferta DH Medical – SecurePortIV, FlexGrip, porty naczyniowe, ExitPocket oraz zestawy infuzyjne Impromediform." />
-  <meta name="keywords" content="DH Medical, SecurePortIV, FlexGrip, porty naczyniowe, ExitPocket, zestawy infuzyjne, Impromediform" />
-  <meta name="author" content="DH Medical" />
-
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link href="css/styles.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
-    .offer-page {
-      padding: 90px 0 100px;
-    }
+    .offer-page { padding: 90px 0 100px; }
 
-    .section-header {
-      max-width: 860px;
-      margin-bottom: 48px;
-    }
+    .section-header { max-width: 860px; margin-bottom: 48px; }
 
     .section-header h1 {
       margin: 0;
       color: var(--navy);
       font-size: clamp(2.6rem, 5vw, 4.4rem);
       line-height: 1.05;
-      letter-spacing: -0.05em;
     }
 
     .section-header p {
       margin-top: 16px;
       color: var(--muted);
-      font-size: 1.05rem;
     }
 
     .offer-grid {
@@ -53,7 +42,6 @@
       flex-direction: column;
       min-height: 420px;
       transition: all 0.25s ease;
-      border: 1px solid rgba(0,0,0,0.04);
     }
 
     .offer-card:hover {
@@ -97,198 +85,109 @@
       color: white;
     }
 
-    .card-button {
-      margin-top: auto;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: fit-content;
-      padding: 11px 16px;
-      border-radius: 999px;
-      background: rgba(29, 27, 82, 0.08);
-      color: var(--navy);
-      font-weight: 800;
-      font-size: 0.9rem;
-      transition: all 0.22s ease;
-    }
-
-    .card-button:hover {
-      background: var(--navy);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .offer-card.featured .card-button {
-      background: white;
-      color: var(--navy);
-    }
-
-    .offer-card.featured .card-button:hover {
-      background: #f2f1f1;
-      transform: translateY(-2px);
-    }
-
     @media (max-width: 1200px) {
-      .offer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .offer-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 700px) {
-      .offer-grid {
-        grid-template-columns: 1fr;
-      }
+      .offer-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 
 <body>
 
-  <header class="site-header">
-    <div class="container nav-wrapper">
-      <a href="index.html" class="brand">
-        <img src="assets/logo.png" alt="DH Medical">
-      </a>
+<header class="site-header">
+  <div class="container nav-wrapper">
+    <a href="index.html" class="brand">
+      <img src="assets/logo.png" alt="DH Medical">
+    </a>
 
-      <nav class="nav-links">
-        <a href="index.html">Strona główna</a>
-        <a href="oferta.html">Oferta</a>
-        <a href="o-nas.html">O nas</a>
-        <a href="kontakt.html" class="nav-cta">Kontakt</a>
-      </nav>
-    </div>
-  </header>
+    <nav class="nav-links">
+      <a href="index.html">Strona główna</a>
+      <a href="oferta.html">Oferta</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="kontakt.html" class="nav-cta">Kontakt</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <section class="offer-page">
-      <div class="container">
+<main>
+<section class="offer-page">
+<div class="container">
 
-        <div class="section-header">
-          <div class="section-kicker">Oferta</div>
-          <h1>Nasza oferta</h1>
-          <p>
-            Specjalistyczne rozwiązania dla dostępów naczyniowych, stabilizacji cewników oraz terapii infuzyjnej.
-          </p>
-        </div>
+<div class="section-header">
+  <div class="section-kicker">Oferta</div>
+  <h1>Nasza oferta</h1>
+  <p>Specjalistyczne rozwiązania dla dostępów naczyniowych i terapii infuzyjnej.</p>
+</div>
 
-        <div class="offer-grid">
+<div class="offer-grid">
 
-          <div class="offer-card">
-            <div class="offer-icon">
-              <img src="assets/secureport.png" alt="SecurePortIV">
-            </div>
-            <h3>SecurePortIV™</h3>
-            <p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p>
-            <a href="secureportiv.html" class="card-button">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+<!-- 1 -->
+<div class="offer-card">
+  <div class="offer-icon">
+    <img src="assets/secureport.png">
+  </div>
+  <h3>SecurePortIV™</h3>
+  <p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p>
+  <a href="secureportiv.html" class="card-link">
+    Zobacz więcej <i class="bi bi-arrow-right"></i>
+  </a>
+</div>
 
-          <div class="offer-card">
-            <div class="offer-icon">
-              <img src="assets/flexgrip.png" alt="FlexGrip">
-            </div>
-            <h3>FlexGrip®</h3>
-            <p>Systemy bezszwowej stabilizacji cewników.</p>
-            <a href="systemy-bezszwowe.html" class="card-button">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+<!-- 2 -->
+<div class="offer-card">
+  <div class="offer-icon">
+    <img src="assets/flexgrip.png">
+  </div>
+  <h3>FlexGrip®</h3>
+  <p>Systemy bezszwowej stabilizacji cewników.</p>
+  <a href="systemy-bezszwowe.html" class="card-link">
+    Zobacz więcej <i class="bi bi-arrow-right"></i>
+  </a>
+</div>
 
-          <div class="offer-card">
-            <div class="offer-icon">
-              <img src="assets/port.png" alt="Porty naczyniowe">
-            </div>
-            <h3>Porty naczyniowe</h3>
-            <p>Długoterminowy dostęp naczyniowy dla pacjentów.</p>
-            <a href="porty-naczyniowe.html" class="card-button">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+<!-- 3 -->
+<div class="offer-card">
+  <div class="offer-icon">
+    <img src="assets/port.png">
+  </div>
+  <h3>Porty naczyniowe</h3>
+  <p>Długoterminowy dostęp naczyniowy dla pacjentów.</p>
+  <a href="porty-naczyniowe.html" class="card-link">
+    Zobacz więcej <i class="bi bi-arrow-right"></i>
+  </a>
+</div>
 
-          <div class="offer-card">
-            <div class="offer-icon">
-              <img src="assets/exitpocket.png" alt="ExitPocket">
-            </div>
-            <h3>ExitPocket</h3>
-            <p>Bezpieczna organizacja i ochrona miejsca wyjścia cewnika.</p>
-            <a href="exitpocket.html" class="card-button">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+<!-- 4 -->
+<div class="offer-card">
+  <div class="offer-icon">
+    <img src="assets/exitpocket.png">
+  </div>
+  <h3>ExitPocket</h3>
+  <p>Specjalistyczne, wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego.</p>
+  <a href="exitpocket.html" class="card-link">
+    Zobacz więcej <i class="bi bi-arrow-right"></i>
+  </a>
+</div>
 
-          <div class="offer-card featured">
-            <div class="offer-icon">
-              <img src="assets/infusion.png" alt="Zestawy infuzyjne Impromediform">
-            </div>
-            <h3>Zestawy infuzyjne Impromediform</h3>
-            <p>Nowy produkt w ofercie DH Medical.</p>
-            <a href="kontakt.html" class="card-button">
-              Dowiedz się więcej
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+<!-- 5 -->
+<div class="offer-card featured">
+  <div class="offer-icon">
+    <img src="assets/infusion.png">
+  </div>
+  <h3>Zestawy infuzyjne</h3>
+  <p>Nowy produkt w ofercie DH Medical.Przeznaczone dla pacjentów Neonatologicznych.</p>
+  <a href="kontakt.html" class="card-link">
+    Zobacz więcej <i class="bi bi-arrow-right"></i>
+  </a>
+</div>
 
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-
-        <div>
-          <div class="footer-brand-row">
-            <div class="footer-logo-box">
-              <img src="assets/logo.png" alt="DH Medical">
-            </div>
-            <div>
-              <p>
-                Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.
-              </p>
-              <a href="kontakt.html" class="footer-mini-cta">
-                Zapytaj o ofertę <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h4>DH Medical Arkadiusz Dynda</h4>
-          <p>Szalowa 385<br>38-331 Szalowa</p>
-          <p><a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>+48 883 480 355</p>
-        </div>
-
-        <div>
-          <h4>DH Medical Sławomir Hutek</h4>
-          <p>ul. Masarska 7/17<br>31-534 Kraków</p>
-          <p><a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>+48 507 687 927</p>
-        </div>
-
-        <div>
-          <h4>Social media</h4>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
-            <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
-            <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="copyright">
-        © 2025 DH Medical. Wszelkie prawa zastrzeżone.
-      </div>
-    </div>
-  </footer>
+</div>
+</div>
+</section>
+</main>
 
 </body>
 </html>
