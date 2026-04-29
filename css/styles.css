@@ -1687,3 +1687,11 @@ body .cta-section {
   border-radius: 22px;
   box-shadow: 0 14px 32px rgba(29,27,82,0.10);
 }
+.infusion-visual {
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.infusion-visual:hover {
+  transform: scale(1.03);
+}
