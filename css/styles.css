@@ -1798,3 +1798,112 @@ body .cta-section {
     text-align: left !important;
   }
 }
+.offer-card,
+.audience-card,
+.flex-card,
+.port-card,
+.info-card,
+.variant-card,
+.benefit-card,
+.product-card,
+.material-card,
+.team-card,
+.about-card,
+.value-card,
+.category-card {
+  transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+
+.offer-card:hover,
+.audience-card:hover,
+.flex-card:hover,
+.port-card:hover,
+.info-card:hover,
+.variant-card:hover,
+.benefit-card:hover,
+.product-card:hover,
+.material-card:hover,
+.team-card:hover,
+.about-card:hover,
+.value-card:hover,
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(29,27,82,0.12);
+  border-color: rgba(29,27,82,0.10);
+}
+
+.offer-card img,
+.flex-card img,
+.port-card img,
+.info-card img,
+.variant-card img,
+.product-card img,
+.material-card img {
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.offer-card:hover img,
+.flex-card:hover img,
+.port-card:hover img,
+.info-card:hover img,
+.variant-card:hover img,
+.product-card:hover img,
+.material-card:hover img {
+  transform: scale(1.04);
+}
+
+.card-link i,
+.btn-primary i,
+.btn-cta-primary i,
+.footer-mini-cta i {
+  transition: transform 0.25s ease;
+}
+
+.card-link:hover i,
+.btn-primary:hover i,
+.btn-cta-primary:hover i,
+.footer-mini-cta:hover i {
+  transform: translateX(4px);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-cta-primary,
+.btn-cta-secondary {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn-primary:hover,
+.btn-cta-primary:hover {
+  box-shadow: 0 16px 34px rgba(29,27,82,0.16);
+}
+
+.btn-secondary:hover,
+.btn-cta-secondary:hover {
+  box-shadow: 0 12px 28px rgba(29,27,82,0.10);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .offer-card:hover,
+  .audience-card:hover,
+  .flex-card:hover,
+  .port-card:hover,
+  .info-card:hover,
+  .variant-card:hover,
+  .benefit-card:hover,
+  .product-card:hover,
+  .material-card:hover,
+  .team-card:hover,
+  .about-card:hover,
+  .value-card:hover,
+  .category-card:hover {
+    transform: translateY(-3px);
+  }
+}
