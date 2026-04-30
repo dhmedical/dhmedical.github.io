@@ -1944,3 +1944,13 @@ body .cta-section {
   opacity: 1;
   transform: translateY(0);
 }
+.brand img {
+  height: 65px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.brand:hover img {
+  transform: scale(1.05);
+}
