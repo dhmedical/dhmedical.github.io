@@ -290,5 +290,20 @@
   </div>
 </footer>
 
+  <script>
+document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(card => {
+  card.style.cursor = "pointer";
+
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+
+    const link = card.querySelector('a');
+    if (link) {
+      window.location = link.href;
+    }
+  });
+});
+</script>
+  
 </body>
 </html>
