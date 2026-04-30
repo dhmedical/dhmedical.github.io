@@ -1695,3 +1695,106 @@ body .cta-section {
 .infusion-visual:hover {
   transform: scale(1.03);
 }
+@media (max-width: 768px) {
+  section,
+  .product-page,
+  .infusion-page,
+  .exit-page,
+  .offer-page,
+  .about-page,
+  .contact-page {
+    padding-top: 46px !important;
+    padding-bottom: 46px !important;
+  }
+
+  .hero {
+    padding-top: 54px !important;
+    padding-bottom: 46px !important;
+  }
+
+  .hero h1,
+  .product-copy h1,
+  .infusion-copy h1,
+  .exit-copy h1,
+  .contact-header h1,
+  .section-header h1 {
+    font-size: 2.25rem !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.04em !important;
+  }
+
+  .hero-lead,
+  .product-copy p,
+  .infusion-copy p,
+  .exit-copy p,
+  .section-header p {
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .section-header {
+    margin-bottom: 28px !important;
+  }
+
+  .section-header h2,
+  .category-head h2 {
+    font-size: 2rem !important;
+    line-height: 1.12 !important;
+  }
+
+  .offer-card,
+  .audience-card,
+  .product-card,
+  .flex-card,
+  .port-card,
+  .info-card,
+  .variant-card,
+  .benefit-card {
+    padding: 22px !important;
+    border-radius: 22px !important;
+    min-height: auto !important;
+  }
+
+  .offer-icon,
+  .flex-card-image,
+  .port-card-image,
+  .variant-image {
+    height: 170px !important;
+  }
+
+  .cta-box,
+  .custom-box,
+  .note-box,
+  .order-panel,
+  .contact-card,
+  .contact-info-panel {
+    padding: 28px !important;
+    border-radius: 24px !important;
+  }
+
+  .hero-actions,
+  .product-actions,
+  .infusion-actions,
+  .exit-actions,
+  .cta-actions {
+    width: 100%;
+  }
+
+  .hero-actions a,
+  .product-actions a,
+  .infusion-actions a,
+  .exit-actions a,
+  .cta-actions a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trust-grid {
+    gap: 12px !important;
+  }
+
+  .trust-item {
+    justify-content: flex-start !important;
+    text-align: left !important;
+  }
+}
