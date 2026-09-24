@@ -1965,3 +1965,511 @@ body .cta-section {
   transform: translateY(-6px) !important;
   box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
+```css
+/* =========================================
+   VIDEO SHOWCASE — MEDICAL TECH
+========================================= */
+
+.video-showcase {
+  position: relative;
+  padding: 110px 0 120px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(29, 27, 82, 0.055),
+      transparent 48%
+    );
+}
+
+.video-showcase-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 48px;
+}
+
+.video-showcase-header .section-kicker {
+  margin-bottom: 12px;
+}
+
+
+/* -----------------------------------------
+   SLIDER
+----------------------------------------- */
+
+.video-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.video-slider-track {
+  position: relative;
+  width: 100%;
+  height: 610px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+/* -----------------------------------------
+   SLIDES
+----------------------------------------- */
+
+.video-slide {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 300px;
+  height: 534px;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.78);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition:
+    transform 0.65s cubic-bezier(.22, .61, .36, 1),
+    opacity 0.5s ease,
+    filter 0.5s ease;
+
+  filter: blur(1px);
+}
+
+.video-slide.is-active {
+  width: 350px;
+  height: 622px;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  opacity: 1;
+  z-index: 5;
+  pointer-events: auto;
+
+  filter: blur(0);
+}
+
+.video-slide.is-prev {
+  transform:
+    translate(calc(-50% - 390px), -50%)
+    scale(0.78);
+
+  opacity: 0.52;
+  z-index: 2;
+  pointer-events: auto;
+
+  filter: blur(0.6px);
+}
+
+.video-slide.is-next {
+  transform:
+    translate(calc(-50% + 390px), -50%)
+    scale(0.78);
+
+  opacity: 0.52;
+  z-index: 2;
+  pointer-events: auto;
+
+  filter: blur(0.6px);
+}
+
+
+/* -----------------------------------------
+   VIDEO CARD
+----------------------------------------- */
+
+.video-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  border-radius: 24px;
+
+  background: #111;
+
+  border: 1px solid rgba(29, 27, 82, 0.12);
+
+  box-shadow:
+    0 25px 70px rgba(20, 18, 65, 0.16),
+    0 8px 25px rgba(20, 18, 65, 0.08);
+
+  transition:
+    box-shadow 0.5s ease,
+    border-color 0.5s ease;
+}
+
+.video-slide.is-active .video-card {
+  border-color: rgba(29, 27, 82, 0.25);
+
+  box-shadow:
+    0 35px 90px rgba(20, 18, 65, 0.24),
+    0 12px 35px rgba(20, 18, 65, 0.12);
+}
+
+
+/* -----------------------------------------
+   VIDEO
+----------------------------------------- */
+
+.video-element {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  background: #111;
+}
+
+
+/* -----------------------------------------
+   OVERLAY
+----------------------------------------- */
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 24px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(10, 9, 35, 0.48),
+      transparent 27%,
+      transparent 62%,
+      rgba(10, 9, 35, 0.75)
+    );
+
+  pointer-events: none;
+}
+
+
+/* -----------------------------------------
+   PRODUCT LABEL
+----------------------------------------- */
+
+.video-product-label {
+  align-self: flex-start;
+
+  display: inline-flex;
+  align-items: center;
+
+  padding: 8px 13px;
+
+  border-radius: 999px;
+
+  color: #fff;
+  background: rgba(29, 27, 82, 0.82);
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+
+/* -----------------------------------------
+   PLAY BUTTON
+----------------------------------------- */
+
+.video-play {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 68px;
+  height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 50%;
+
+  color: #fff;
+  background: rgba(29, 27, 82, 0.72);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  font-size: 27px;
+
+  cursor: pointer;
+
+  pointer-events: auto;
+
+  opacity: 0;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    opacity 0.3s ease;
+}
+
+.video-slide.is-active .video-play {
+  opacity: 1;
+}
+
+.video-play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  background: rgba(29, 27, 82, 0.92);
+}
+
+
+/* -----------------------------------------
+   BOTTOM LABEL
+----------------------------------------- */
+
+.video-card-bottom {
+  color: rgba(255, 255, 255, 0.94);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  letter-spacing: 0.01em;
+}
+
+
+/* -----------------------------------------
+   ARROWS
+----------------------------------------- */
+
+.video-slider-arrow {
+  position: absolute;
+
+  top: 50%;
+  z-index: 10;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border: 1px solid rgba(29, 27, 82, 0.13);
+  border-radius: 50%;
+
+  color: #1d1b52;
+  background: rgba(255, 255, 255, 0.9);
+
+  box-shadow: 0 8px 25px rgba(20, 18, 65, 0.1);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.video-slider-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+
+  background: #fff;
+
+  box-shadow:
+    0 12px 30px rgba(20, 18, 65, 0.16);
+}
+
+.video-slider-prev {
+  left: 0;
+}
+
+.video-slider-next {
+  right: 0;
+}
+
+
+/* -----------------------------------------
+   DOTS
+----------------------------------------- */
+
+.video-slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+.video-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(29, 27, 82, 0.22);
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background 0.3s ease;
+}
+
+.video-dot.is-active {
+  width: 24px;
+  border-radius: 999px;
+
+  background: #1d1b52;
+}
+
+
+/* -----------------------------------------
+   TABLET
+----------------------------------------- */
+
+@media (max-width: 1000px) {
+
+  .video-slider-track {
+    height: 570px;
+  }
+
+  .video-slide.is-active {
+    width: 320px;
+    height: 569px;
+  }
+
+  .video-slide.is-prev {
+    transform:
+      translate(calc(-50% - 320px), -50%)
+      scale(0.72);
+  }
+
+  .video-slide.is-next {
+    transform:
+      translate(calc(-50% + 320px), -50%)
+      scale(0.72);
+  }
+
+  .video-slider-prev {
+    left: 8px;
+  }
+
+  .video-slider-next {
+    right: 8px;
+  }
+}
+
+
+/* -----------------------------------------
+   MOBILE
+----------------------------------------- */
+
+@media (max-width: 700px) {
+
+  .video-showcase {
+    padding: 80px 0 90px;
+  }
+
+  .video-showcase-header {
+    padding: 0 10px;
+    margin-bottom: 30px;
+  }
+
+  .video-slider {
+    width: 100%;
+  }
+
+  .video-slider-track {
+    height: min(135vw, 620px);
+  }
+
+  .video-slide,
+  .video-slide.is-active {
+    width: min(78vw, 350px);
+    height: calc(min(78vw, 350px) * 1.7778);
+  }
+
+  .video-slide.is-active {
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+  }
+
+  .video-slide.is-prev {
+    transform:
+      translate(calc(-50% - 95vw), -50%)
+      scale(0.8);
+    opacity: 0;
+  }
+
+  .video-slide.is-next {
+    transform:
+      translate(calc(-50% + 95vw), -50%)
+      scale(0.8);
+    opacity: 0;
+  }
+
+  .video-slider-arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .video-slider-prev {
+    left: 4px;
+  }
+
+  .video-slider-next {
+    right: 4px;
+  }
+
+  .video-overlay {
+    padding: 18px;
+  }
+
+  .video-play {
+    width: 62px;
+    height: 62px;
+  }
+}
+
+
+/* -----------------------------------------
+   REDUCED MOTION
+----------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .video-slide,
+  .video-slider-arrow,
+  .video-play,
+  .video-dot {
+    transition: none;
+  }
+}
