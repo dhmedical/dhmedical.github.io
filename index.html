@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -5,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>DH Medical | Rozwiązania dla dostępów naczyniowych</title>
-
   <meta name="description" content="DH Medical - specjalistyczne rozwiązania dla dostępów naczyniowych i terapii infuzyjnej dla placówek medycznych." />
   <meta name="keywords" content="DH Medical, dostęp naczyniowy, porty naczyniowe, SecurePortIV, FlexGrip, ExitPocket, zestawy infuzyjne, Impromediform" />
   <meta name="author" content="DH Medical" />
@@ -13,8 +13,228 @@
 
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link href="css/styles.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <style>
+    /* DH Medical — nowy slider wideo */
+    .dhv-section {
+      padding: 85px 0 95px;
+      overflow: hidden;
+      background: radial-gradient(ellipse at center, #f0f4fb 0%, #fff 70%);
+    }
+
+    .dhv-heading {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 40px;
+      padding: 0 16px;
+    }
+
+    .dhv-heading h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      font-weight: 800;
+      color: #1d1b52;
+      margin: 0 0 14px;
+    }
+
+    .dhv-heading p {
+      color: #68748a;
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .dhv-carousel {
+      max-width: 1100px;
+      margin: auto;
+      position: relative;
+    }
+
+    .dhv-stage {
+      position: relative;
+      height: 600px;
+      max-width: 960px;
+      margin: auto;
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .dhv-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 320px;
+      aspect-ratio: 9 / 16;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #0b1532;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(-50%, -50%) scale(.7);
+      transition:
+        transform .55s cubic-bezier(.22,.61,.36,1),
+        opacity .4s ease,
+        visibility .4s ease;
+      box-shadow: 0 15px 45px rgba(20,28,70,.13);
+    }
+
+    .dhv-item video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dhv-item.dhv-active {
+      z-index: 3;
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, -50%) scale(1);
+      box-shadow: 0 24px 65px rgba(20,28,70,.23);
+    }
+
+    .dhv-item.dhv-prev {
+      z-index: 1;
+      opacity: .65;
+      visibility: visible;
+      transform: translate(calc(-50% - 300px), -50%) scale(.78);
+      cursor: pointer;
+    }
+
+    .dhv-item.dhv-next {
+      z-index: 1;
+      opacity: .65;
+      visibility: visible;
+      transform: translate(calc(-50% + 300px), -50%) scale(.78);
+      cursor: pointer;
+    }
+
+    .dhv-item.dhv-active video {
+      cursor: pointer;
+    }
+
+    .dhv-sound {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 4;
+      display: none;
+      width: 42px;
+      height: 42px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #ffffff66;
+      border-radius: 50%;
+      color: #fff;
+      background: #101b3cbb;
+      backdrop-filter: blur(10px);
+      cursor: pointer;
+    }
+
+    .dhv-active .dhv-sound {
+      display: flex;
+    }
+
+    .dhv-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border: 1px solid #dce3f0;
+      border-radius: 50%;
+      background: #fff;
+      color: #1d1b52;
+      box-shadow: 0 5px 20px #14204a18;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .dhv-arrow:hover {
+      background: #eef3ff;
+    }
+
+    .dhv-arrow.dhv-prev {
+      left: 0;
+    }
+
+    .dhv-arrow.dhv-next {
+      right: 0;
+    }
+
+    .dhv-dots {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 22px;
+    }
+
+    .dhv-dots button {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 10px;
+      background: #c8cede;
+      cursor: pointer;
+      transition: width .3s, background .3s;
+    }
+
+    .dhv-dots button.dhv-selected {
+      width: 26px;
+      background: #1d1b52;
+    }
+
+    @media (max-width: 760px) {
+      .dhv-section {
+        padding: 65px 0 75px;
+      }
+
+      .dhv-heading {
+        margin-bottom: 28px;
+      }
+
+      .dhv-stage {
+        height: min(125vw, 590px);
+      }
+
+      .dhv-item {
+        width: min(69vw, 310px);
+      }
+
+      .dhv-item.dhv-prev {
+        transform: translate(calc(-50% - 65vw), -50%) scale(.82);
+      }
+
+      .dhv-item.dhv-next {
+        transform: translate(calc(-50% + 65vw), -50%) scale(.82);
+      }
+
+      .dhv-arrow {
+        width: 38px;
+        height: 38px;
+      }
+
+      .dhv-arrow.dhv-prev {
+        left: 5px;
+      }
+
+      .dhv-arrow.dhv-next {
+        right: 5px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .dhv-item,
+      .dhv-dots button {
+        transition: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -127,6 +347,7 @@
       </div>
     </div>
 
+    <!-- OFERTA -->
     <section>
       <div class="container">
         <div class="section-header">
@@ -171,175 +392,69 @@
           </article>
 
           <article class="offer-card featured">
-  <a href="zestawy-infuzyjne.html" class="offer-icon">
-    <img src="assets/infusion.png" alt="Zestawy infuzyjne">
-  </a>
-  <h3>Zestawy infuzyjne</h3>
-  <p>Linie infuzyjne, filtry oraz rozwiązania custom dla terapii dożylnej.</p>
-  <a href="zestawy-infuzyjne.html" class="card-link">
-    Zobacz więcej <i class="bi bi-arrow-right"></i>
-  </a>
-</article>
+            <a href="zestawy-infuzyjne.html" class="offer-icon">
+              <img src="assets/infusion.png" alt="Zestawy infuzyjne">
+            </a>
+            <h3>Zestawy infuzyjne</h3>
+            <p>Linie infuzyjne, filtry oraz rozwiązania custom dla terapii dożylnej.</p>
+            <a href="zestawy-infuzyjne.html" class="card-link">
+              Zobacz więcej <i class="bi bi-arrow-right"></i>
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
-<section class="video-showcase">
-  <div class="container">
+    <!-- NOWY SLIDER WIDEO -->
+    <section class="dhv-section" aria-label="Filmy produktowe DH Medical">
+      <div class="container">
+        <div class="dhv-heading">
+          <h2>Zobacz nasze rozwiązania w praktyce.</h2>
+          <p>Krótkie materiały produktowe DH Medical.</p>
+        </div>
 
-    <div class="section-header video-showcase-header">
-      <div class="section-kicker">Medical technology</div>
+        <div class="dhv-carousel">
+          <button class="dhv-arrow dhv-prev" type="button" aria-label="Poprzedni film">
+            <i class="bi bi-chevron-left"></i>
+          </button>
 
-      <h2>Zobacz nasze rozwiązania w praktyce.</h2>
-
-      <p>
-        Krótkie materiały produktowe przedstawiające rozwiązania
-        dostępne w ofercie DH Medical.
-      </p>
-    </div>
-
-    <div class="video-slider" aria-label="Materiały produktowe">
-
-      <!-- Previous -->
-      <button
-        class="video-slider-arrow video-slider-prev"
-        type="button"
-        aria-label="Poprzedni materiał"
-      >
-        <i class="bi bi-arrow-left"></i>
-      </button>
-
-      <div class="video-slider-track">
-
-        <!-- VIDEO 1 -->
-        <article class="video-slide is-active" data-index="0">
-          <div class="video-card">
-
-            <video
-              class="video-element"
-              src="assets/secureportvid.mp4"
-              playsinline
-              muted
-              loop
-              preload="metadata"
-            ></video>
-
-            <div class="video-overlay">
-              <span class="video-product-label">
-                SecurePortIV™
-              </span>
-
-              <button
-                class="video-play"
-                type="button"
-                aria-label="Odtwórz film SecurePortIV"
-              >
-                <i class="bi bi-play-fill"></i>
+          <div class="dhv-stage" aria-roledescription="karuzela">
+            <div class="dhv-item" data-index="0">
+              <video src="assets/secureportvid.mp4" playsinline muted loop preload="metadata"></video>
+              <button class="dhv-sound" type="button" aria-label="Włącz dźwięk">
+                <i class="bi bi-volume-mute"></i>
               </button>
-
-              <div class="video-card-bottom">
-                <span>Stabilizacja dostępu naczyniowego</span>
-              </div>
             </div>
 
-          </div>
-        </article>
-
-
-        <!-- VIDEO 2 -->
-        <article class="video-slide" data-index="1">
-          <div class="video-card">
-
-            <video
-              class="video-element"
-              src="assets/alphavid.mp4"
-              playsinline
-              muted
-              loop
-              preload="metadata"
-            ></video>
-
-            <div class="video-overlay">
-              <span class="video-product-label">
-                FlexGrip® Alpha
-              </span>
-
-              <button
-                class="video-play"
-                type="button"
-                aria-label="Odtwórz film FlexGrip Alpha"
-              >
-                <i class="bi bi-play-fill"></i>
+            <div class="dhv-item" data-index="1">
+              <video src="assets/alphavid.mp4" playsinline muted loop preload="metadata"></video>
+              <button class="dhv-sound" type="button" aria-label="Włącz dźwięk">
+                <i class="bi bi-volume-mute"></i>
               </button>
-
-              <div class="video-card-bottom">
-                <span>Bezszwowa stabilizacja cewników</span>
-              </div>
             </div>
 
-          </div>
-        </article>
-
-
-        <!-- VIDEO 3 -->
-        <article class="video-slide" data-index="2">
-          <div class="video-card">
-
-            <video
-              class="video-element"
-              src="assets/exitpocketvid.mp4"
-              playsinline
-              muted
-              loop
-              preload="metadata"
-            ></video>
-
-            <div class="video-overlay">
-              <span class="video-product-label">
-                ExitPocket WP
-              </span>
-
-              <button
-                class="video-play"
-                type="button"
-                aria-label="Odtwórz film ExitPocket"
-              >
-                <i class="bi bi-play-fill"></i>
+            <div class="dhv-item" data-index="2">
+              <video src="assets/exitpocketvid.mp4" playsinline muted loop preload="metadata"></video>
+              <button class="dhv-sound" type="button" aria-label="Włącz dźwięk">
+                <i class="bi bi-volume-mute"></i>
               </button>
-
-              <div class="video-card-bottom">
-                <span>Ochrona miejsca wyjścia cewnika</span>
-              </div>
             </div>
-
           </div>
-        </article>
 
+          <button class="dhv-arrow dhv-next" type="button" aria-label="Następny film">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="dhv-dots" aria-label="Wybierz film">
+          <button type="button" aria-label="SecurePortIV"></button>
+          <button type="button" aria-label="FlexGrip Alpha"></button>
+          <button type="button" aria-label="ExitPocket"></button>
+        </div>
       </div>
+    </section>
 
-
-      <!-- Next -->
-      <button
-        class="video-slider-arrow video-slider-next"
-        type="button"
-        aria-label="Następny materiał"
-      >
-        <i class="bi bi-arrow-right"></i>
-      </button>
-
-    </div>
-
-
-    <!-- Dots -->
-    <div class="video-slider-dots" aria-label="Nawigacja materiałów">
-      <button class="video-dot is-active" data-slide="0" aria-label="Materiał 1"></button>
-      <button class="video-dot" data-slide="1" aria-label="Materiał 2"></button>
-      <button class="video-dot" data-slide="2" aria-label="Materiał 3"></button>
-    </div>
-
-  </div>
-</section>
-
+    <!-- DLA KOGO -->
     <section class="audience">
       <div class="container">
         <div class="section-header">
@@ -372,6 +487,7 @@
       </div>
     </section>
 
+    <!-- PARTNERZY -->
     <section class="partners">
       <div class="container">
         <div class="section-header">
@@ -406,6 +522,7 @@
       </div>
     </section>
 
+    <!-- KONTAKT CTA -->
     <section class="cta">
       <div class="container">
         <div class="cta-box">
@@ -430,10 +547,10 @@
     </section>
   </main>
 
+  <!-- STOPKA -->
   <footer>
     <div class="container">
       <div class="footer-grid">
-
         <div>
           <div class="footer-brand-row">
             <div class="footer-logo-box">
@@ -486,18 +603,20 @@
             <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda">
               <i class="bi bi-linkedin"></i>
             </a>
+
             <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek">
               <i class="bi bi-linkedin"></i>
             </a>
+
             <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical">
               <i class="bi bi-youtube"></i>
             </a>
+
             <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical">
               <i class="bi bi-envelope"></i>
             </a>
           </div>
         </div>
-
       </div>
 
       <div class="copyright">
@@ -506,49 +625,215 @@
     </div>
   </footer>
 
-<script>
-document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(card => {
-  card.style.position = "relative";
-  card.style.overflow = "hidden";
-  card.style.cursor = "pointer";
+  <!-- EFEKT KLIKNIĘCIA KART OFERTY -->
+  <script>
+    document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(card => {
+      card.style.position = "relative";
+      card.style.overflow = "hidden";
+      card.style.cursor = "pointer";
 
-  card.addEventListener('click', function(e) {
-    if (e.target.closest('a')) return;
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('a')) return;
 
-    const ripple = document.createElement('span');
-    ripple.classList.add('ripple');
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
 
-    const rect = card.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
+        const rect = card.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
 
-    ripple.style.width = ripple.style.height = size + "px";
-    ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
-    ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+        ripple.style.width = ripple.style.height = size + "px";
+        ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+        ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
 
-    card.appendChild(ripple);
+        card.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
 
-    setTimeout(() => ripple.remove(), 600);
+        const link = card.querySelector('a');
+        if (link) window.location = link.href;
+      });
+    });
+  </script>
 
-    const link = card.querySelector('a');
-    if (link) window.location = link.href;
-  });
-});
-</script>
+  <!-- ANIMACJA KART OFERTY -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
 
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
+    document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(el => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+  </script>
 
-document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
-</script>
-  
+  <!-- OBSŁUGA SLIDERA -->
+  <script>
+    (function() {
+      const root = document.querySelector('.dhv-section');
+      if (!root) return;
+
+      const slides = [...root.querySelectorAll('.dhv-item')];
+      const dots = [...root.querySelectorAll('.dhv-dots button')];
+      const stage = root.querySelector('.dhv-stage');
+
+      let current = 0;
+      let inView = false;
+      let touchStart = null;
+
+      function stopAll() {
+        slides.forEach(slide => {
+          const video = slide.querySelector('video');
+          video.pause();
+          video.muted = true;
+
+          const button = slide.querySelector('.dhv-sound');
+          button.innerHTML = '<i class="bi bi-volume-mute"></i>';
+          button.setAttribute('aria-label', 'Włącz dźwięk');
+        });
+      }
+
+      function render() {
+        stopAll();
+
+        slides.forEach((slide, index) => {
+          slide.classList.remove(
+            'dhv-active',
+            'dhv-prev',
+            'dhv-next'
+          );
+
+          if (index === current) {
+            slide.classList.add('dhv-active');
+          } else if (
+            index === (current - 1 + slides.length) % slides.length
+          ) {
+            slide.classList.add('dhv-prev');
+          } else {
+            slide.classList.add('dhv-next');
+          }
+
+          slide.setAttribute(
+            'aria-current',
+            index === current ? 'true' : 'false'
+          );
+        });
+
+        dots.forEach((dot, index) => {
+          dot.classList.toggle(
+            'dhv-selected',
+            index === current
+          );
+
+          dot.setAttribute(
+            'aria-current',
+            index === current ? 'true' : 'false'
+          );
+        });
+
+        if (inView) {
+          slides[current]
+            .querySelector('video')
+            .play()
+            .catch(() => {});
+        }
+      }
+
+      function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        render();
+      }
+
+      root.querySelector('.dhv-arrow.dhv-prev')
+        .addEventListener('click', () => goTo(current - 1));
+
+      root.querySelector('.dhv-arrow.dhv-next')
+        .addEventListener('click', () => goTo(current + 1));
+
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => goTo(index));
+      });
+
+      slides.forEach((slide, index) => {
+        const video = slide.querySelector('video');
+        const sound = slide.querySelector('.dhv-sound');
+
+        slide.addEventListener('click', event => {
+          if (event.target.closest('.dhv-sound')) return;
+
+          if (index !== current) {
+            goTo(index);
+            return;
+          }
+
+          if (video.paused) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+
+        sound.addEventListener('click', event => {
+          event.stopPropagation();
+
+          video.muted = !video.muted;
+
+          sound.innerHTML = video.muted
+            ? '<i class="bi bi-volume-mute"></i>'
+            : '<i class="bi bi-volume-up"></i>';
+
+          sound.setAttribute(
+            'aria-label',
+            video.muted ? 'Włącz dźwięk' : 'Wycisz'
+          );
+
+          if (video.paused) {
+            video.play().catch(() => {});
+          }
+        });
+      });
+
+      stage.addEventListener('touchstart', event => {
+        touchStart = event.touches[0].clientX;
+      }, { passive: true });
+
+      stage.addEventListener('touchend', event => {
+        if (touchStart === null) return;
+
+        const difference =
+          event.changedTouches[0].clientX - touchStart;
+
+        touchStart = null;
+
+        if (Math.abs(difference) > 45) {
+          goTo(current + (difference < 0 ? 1 : -1));
+        }
+      }, { passive: true });
+
+      if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver(entries => {
+          inView = entries[0].isIntersecting;
+
+          if (inView) {
+            slides[current]
+              .querySelector('video')
+              .play()
+              .catch(() => {});
+          } else {
+            stopAll();
+          }
+        }, { threshold: .3 });
+
+        videoObserver.observe(root);
+      } else {
+        inView = true;
+      }
+
+      render();
+    })();
+  </script>
 </body>
 </html>
