@@ -1,4 +1,5 @@
-<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DH Medical | Oferta</title><meta name="description" content="Specjalistyczne rozwiązania DH Medical dla dostępów naczyniowych i terapii infuzyjnej."><link rel="icon" href="assets/favicon.png" type="image/png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"><style>
+<!DOCTYPE html>
+<html lang="pl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>DH Medical | Oferta</title><meta content="Specjalistyczne rozwiązania DH Medical dla dostępów naczyniowych i terapii infuzyjnej." name="description"/><link href="assets/favicon.png" rel="icon" type="image/png"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/><style>
 :root{--navy:#071827;--blue:#45b8f4;--ink:#152c40;--muted:#607488;--line:#d7e5f0}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font:15px/1.7 'DM Sans',sans-serif;overflow-x:hidden}h1,h2,h3,h4{font-family:Manrope,sans-serif;letter-spacing:-.045em;line-height:1.18}a{color:inherit;text-decoration:none}button{font:inherit}img{max-width:100%}.container{width:min(1200px,calc(100% - 48px));margin-inline:auto}:focus-visible{outline:3px solid var(--blue);outline-offset:4px}
 /* Header: ten sam duży znak na białej zakładce co w index */
@@ -15,33 +16,254 @@ footer{background:#071827;color:#a9c0d0;padding:47px 0 25px}.footer-grid{display
 @media(max-width:1000px){.offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.offer-card,.offer-card.primary{grid-column:span 1}.footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px}.cta-box{flex-direction:column;align-items:flex-start}.nav-links{gap:17px}}
 @media(max-width:700px){.container{width:calc(100% - 36px)}.site-header{height:80px}.brand{width:162px;min-width:162px;padding:0 9px;border-radius:0 0 13px 13px}.brand img{width:150px;height:75px;transform:scale(1.12)}.brand:hover img{transform:scale(1.16)}.mobile-toggle{display:block}.nav-links{display:none;position:absolute;top:80px;left:0;right:0;padding:23px 22px 27px;background:#071827;flex-direction:column;align-items:stretch;gap:20px;box-shadow:0 20px 35px #0004}.nav-links.open{display:flex}.page-hero{padding:48px 0 52px}.page-hero h1{font-size:clamp(40px,10vw,56px)}.hero-rule{margin-top:28px}.offer-page{padding:30px 0 55px}.offer-grid{grid-template-columns:minmax(0,1fr);gap:15px}.offer-card,.offer-card.primary{grid-column:1/-1;width:100%;min-width:0}.offer-visual,.primary .offer-visual{height:185px;padding:22px}.offer-body,.primary .offer-body{padding:19px 22px 22px}.offer-body h2,.primary .offer-body h2{font-size:24px}.offer-body p,.primary .offer-body p{font-size:13px}.cta-section{padding:48px 0}.cta-box{padding:34px 25px;gap:24px}.cta-box h2{font-size:clamp(26px,7vw,33px)}.cta-actions{width:100%}.cta-actions .btn{flex:1;min-width:0;padding:0 12px}.footer-grid{grid-template-columns:minmax(0,1fr);gap:27px}.copyright{margin-top:30px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*,*:before,*:after{animation:none!important;transition:none!important}}
+
+/* SHARED HEADER AND FOOTER — COPIED FROM APPROVED INDEX */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:30;border-bottom:1px solid #ffffff2b;background:#07182745;backdrop-filter:blur(13px)}
+.nav-wrapper{height:86px;display:flex;align-items:center;justify-content:space-between;gap:38px}
+.brand{flex-shrink:0}
+.brand img{height:48px;max-width:210px;object-fit:contain;filter:brightness(0) invert(1)}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{color:#e7f1f9;font-size:13px;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:#73ccff}
+.nav-links .nav-cta{background:var(--blue);color:#072038;padding:13px 24px;border-radius:40px}
+.nav-links .nav-cta:hover{color:#072038;background:#8ad9ff}
+.mobile-toggle{display:none;color:white;background:none;border:0;font-size:28px}
+footer{background:#061521;color:#a7bfd0;padding:68px 0 30px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr .8fr;gap:42px}
+.footer-brand-row{display:flex;flex-direction:column;gap:12px}
+.footer-logo-box img{max-width:175px;max-height:85px;object-fit:contain;filter:brightness(0) invert(1)}
+.footer-grid h4{font-size:13px;color:white;letter-spacing:-.01em;margin:0 0 17px}
+.footer-grid p,.footer-grid a{font-size:12px;line-height:1.95}
+.footer-grid a:hover{color:#70c6ff}
+.footer-mini-cta{color:#74caff!important;font-weight:700}
+.social-links{display:flex;gap:15px}
+.social-links a{font-size:20px}
+.copyright{border-top:1px solid #ffffff25;margin-top:60px;padding-top:25px;font-size:12px;color:#7896ab}
+@media (max-width:1050px){
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+.nav-links{gap:17px}
+}
+@media (max-width:700px){
+.nav-wrapper{height:70px}
+.brand img{height:39px}
+.mobile-toggle{display:block}
+.nav-links{display:none;position:absolute;left:0;right:0;top:70px;background:#071827;padding:22px 18px 28px;flex-direction:column;align-items:stretch;gap:20px;box-shadow:0 20px 35px #0615255c}
+.nav-links.open{display:flex}
+.footer-grid{grid-template-columns:1fr;gap:28px}
+.copyright{margin-top:35px}
+}
+.brand,.footer-logo-box{display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid rgba(225,238,248,.95);border-radius:999px;padding:11px 24px;box-shadow:0 8px 32px #03132328;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.brand:hover,.footer-logo-box:hover{transform:translateY(-3px);box-shadow:0 14px 38px #03132350;border-color:#74caff}
+.brand:focus-visible,.footer-logo-box:focus-visible{outline:3px solid #55b9f0;outline-offset:4px}
+.brand img{height:53px;max-width:172px;width:auto;filter:none!important}
+.footer-logo-box{width:max-content;padding:13px 25px;margin-bottom:8px;text-decoration:none}
+.footer-logo-box img{width:155px;max-width:155px;max-height:95px;height:auto;filter:none!important}
+.nav-wrapper{height:100px}
+@media (max-width:700px){
+.nav-wrapper{height:82px}
+.nav-links{top:82px}
+.brand{padding:8px 16px;border-radius:999px}
+.brand img{height:43px;max-width:140px}
+}
+.site-header{background:rgba(5,20,34,.42);border-bottom:1px solid rgba(255,255,255,.10);backdrop-filter:blur(18px)}
+.nav-wrapper{height:104px;align-items:stretch}
+.brand{align-self:stretch;display:flex;align-items:center;justify-content:center;background:#fff!important;border:0!important;border-radius:0 0 17px 17px!important;padding:0 25px!important;box-shadow:none!important;transform:none!important;position:relative;transition:background .2s ease!important}
+.brand::after{content:"";position:absolute;bottom:0;left:24px;right:24px;height:3px;background:#25a7df;opacity:0;transform:scaleX(.45);transition:opacity .25s,transform .25s}
+.brand:hover{background:#f3f9fd!important;box-shadow:none!important;transform:none!important}
+.brand:hover::after,.brand:focus-visible::after{opacity:1;transform:scaleX(1)}
+.brand img{width:auto!important;height:53px!important;max-width:170px!important;filter:none!important}
+.nav-links{align-self:center}
+.mobile-toggle{align-self:center}
+.footer-logo-box{background:#fff!important;border:0!important;border-radius:12px!important;box-shadow:none!important;transform:none!important;padding:17px 23px!important}
+.footer-logo-box:hover{background:#f3f9fd!important;box-shadow:none!important;transform:none!important}
+@media (max-width:700px){
+.nav-wrapper{height:80px}
+.nav-links{top:80px}
+.brand{padding:0 16px!important;border-radius:0 0 13px 13px!important}
+.brand img{height:42px!important;max-width:137px!important}
+}
+.site-header{transition:background .35s,border-color .35s,box-shadow .35s}
+.site-header.is-scrolled{background:rgba(5,19,32,.94);border-color:rgba(149,200,230,.16);box-shadow:0 12px 40px rgba(0,8,20,.18)}
+.brand{isolation:isolate}
+.brand img{transition:transform .3s}
+.brand:hover img{transform:scale(1.035)}
+.nav-links a:not(.nav-cta){position:relative}
+.nav-links a:not(.nav-cta):after{content:"";position:absolute;bottom:-9px;left:0;width:100%;height:2px;background:#55c4ff;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav-links a:not(.nav-cta):hover:after{transform:scaleX(1)}
+.btn-primary,.btn-cta-primary,.nav-links .nav-cta{box-shadow:0 10px 25px rgba(27,155,224,.12);transition:transform .25s,background .25s,box-shadow .25s}
+.btn-primary:hover,.btn-cta-primary:hover,.nav-links .nav-cta:hover{box-shadow:0 14px 32px rgba(45,170,235,.28);background:#79d0ff}
+.footer-logo-box{transition:background .25s!important}
+.footer-logo-box:hover{background:#eef8fe!important}
+.footer-grid a{transition:color .2s}
+@media (max-width:700px){
+.nav-links a:not(.nav-cta):after{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+.offer-icon img,.offer-card,.metric-card,.hero-panel,.brand img{transition:none!important}
+}
+.brand{width:214px;min-width:214px;padding:0 16px!important;overflow:hidden}
+.brand img{display:block!important;width:190px!important;max-width:none!important;height:96px!important;max-height:none!important;object-fit:contain!important;transform:scale(1.17);transform-origin:center;filter:none!important}
+.brand:hover img{transform:scale(1.22)}
+.footer-logo-box{width:235px;min-height:130px;display:flex!important;align-items:center;justify-content:center;overflow:hidden;padding:12px!important}
+.footer-logo-box img{display:block!important;width:205px!important;max-width:none!important;height:115px!important;max-height:none!important;object-fit:contain!important;transform:scale(1.12);filter:none!important}
+@media (max-width:700px){
+.brand{width:162px;min-width:162px;padding:0 9px!important}
+.brand img{width:150px!important;height:75px!important;max-width:none!important;transform:scale(1.12)}
+.brand:hover img{transform:scale(1.16)}
+.footer-logo-box{width:215px;min-height:115px}
+.footer-logo-box img{width:195px!important;height:105px!important}
+}
+footer .footer-grid {
+  grid-template-columns: minmax(230px, 1.25fr) minmax(175px, 1fr) minmax(175px, 1fr) minmax(145px, .8fr);
+  gap: clamp(22px, 2.5vw, 40px);
+  align-items: start;
+}
+footer .footer-grid > div { min-width: 0; }
+footer .footer-brand-row { align-items: flex-start; gap: 18px; }
+footer .footer-logo-box {
+  box-sizing: border-box;
+  width: 184px !important;
+  height: 100px !important;
+  min-height: 0 !important;
+  max-width: 100%;
+  margin: 0 0 2px !important;
+  padding: 9px 15px !important;
+  border-radius: 13px !important;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+footer .footer-logo-box img {
+  display: block !important;
+  width: 160px !important;
+  height: 82px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  transform: scale(1.28) !important;
+  filter: none !important;
+}
+footer .footer-brand-row p { max-width: 315px; margin: 8px 0 12px; }
+footer .footer-grid h4 { margin-top: 3px; }
+@media  (max-width: 1050px) {
+footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+}
+@media  (max-width: 700px) {
+footer .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+footer .footer-logo-box { width: 184px !important; height: 100px !important; }
+footer .footer-logo-box img { width: 160px !important; height: 82px !important; }
+}
+.offer-grid,.offer-card,.offer-icon,.hero-grid,.hero-panel,.footer-grid{min-width:0}
+@media (max-width:700px){
+footer{padding-top:52px}
+}
+/* On internal pages the same header stays above content, not over the hero. */
+.site-header{position:relative;top:auto;left:auto;right:auto;height:auto}
 </style></head><body>
-<header class="site-header"><div class="container nav-wrapper"><a href="index.html" class="brand" aria-label="DH Medical — strona główna"><img src="assets/logo.svg" alt="DH Medical"></a><button class="mobile-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="main-nav"><i class="bi bi-list"></i></button><nav class="nav-links" id="main-nav" aria-label="Główna nawigacja"><a href="index.html">Strona główna</a><a href="oferta.html" aria-current="page">Oferta</a><a href="o-nas.html">O nas</a><a href="kontakt.html" class="nav-cta">Kontakt</a></nav></div></header>
+<header class="site-header">
+<div class="container nav-wrapper">
+<a aria-label="DH Medical - strona główna" class="brand" href="index.html">
+<img alt="DH Medical" src="assets/logo.svg"/>
+</a>
+<button aria-expanded="false" aria-label="Otwórz menu" class="mobile-toggle" type="button"><i class="bi bi-list"></i></button>
+<nav aria-label="Główna nawigacja" class="nav-links">
+<a href="index.html">Strona główna</a>
+<a aria-current="page" href="oferta.html">Oferta</a>
+<a href="o-nas.html">O nas</a>
+<a class="nav-cta" href="kontakt.html">Kontakt</a>
+</nav>
+</div>
+</header>
 <main>
 <section class="page-hero"><div class="container"><div class="eyebrow">Oferta</div><h1>Nasza oferta</h1><p>Specjalistyczne rozwiązania dla dostępów naczyniowych i terapii infuzyjnej.</p><div class="hero-rule"></div></div></section>
 <section class="offer-page"><div class="container"><div class="offer-grid">
-<article class="offer-card primary reveal"><a href="secureportiv.html" class="offer-visual" aria-label="SecurePortIV"><img src="assets/secureport.png" alt="SecurePortIV"><span class="arrow" aria-hidden="true">↗</span></a><div class="offer-body"><h2>SecurePortIV™</h2><p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p><a class="card-link" href="secureportiv.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
-<article class="offer-card primary reveal"><a href="systemy-bezszwowe.html" class="offer-visual" aria-label="FlexGrip"><img src="assets/flexgrip.png" alt="FlexGrip"><span class="arrow" aria-hidden="true">↗</span></a><div class="offer-body"><h2>FlexGrip®</h2><p>Systemy bezszwowej stabilizacji cewników.</p><a class="card-link" href="systemy-bezszwowe.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
-<article class="offer-card reveal"><a href="porty-naczyniowe.html" class="offer-visual" aria-label="Porty naczyniowe"><img src="assets/port.png" alt="Porty naczyniowe"><span class="arrow" aria-hidden="true">↗</span></a><div class="offer-body"><h2>Porty naczyniowe</h2><p>Długoterminowy dostęp naczyniowy dla pacjentów.</p><a class="card-link" href="porty-naczyniowe.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
-<article class="offer-card reveal"><a href="exitpocket.html" class="offer-visual" aria-label="ExitPocket"><img src="assets/exitpocket.png" alt="ExitPocket"><span class="arrow" aria-hidden="true">↗</span></a><div class="offer-body"><h2>ExitPocket</h2><p>Wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego.</p><a class="card-link" href="exitpocket.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
-<article class="offer-card reveal"><a href="zestawy-infuzyjne.html" class="offer-visual" aria-label="Zestawy infuzyjne"><img src="assets/infusion.png" alt="Zestawy infuzyjne"><span class="arrow" aria-hidden="true">↗</span></a><div class="offer-body"><h2>Zestawy infuzyjne</h2><p>Linie infuzyjne, filtry oraz zestawy TPN. Możliwość konfiguracji indywidualnej.</p><a class="card-link" href="zestawy-infuzyjne.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
+<article class="offer-card primary reveal"><a aria-label="SecurePortIV" class="offer-visual" href="secureportiv.html"><img alt="SecurePortIV" src="assets/secureport.png"/><span aria-hidden="true" class="arrow">↗</span></a><div class="offer-body"><h2>SecurePortIV™</h2><p>Klej medyczny do zabezpieczenia dostępów naczyniowych.</p><a class="card-link" href="secureportiv.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
+<article class="offer-card primary reveal"><a aria-label="FlexGrip" class="offer-visual" href="systemy-bezszwowe.html"><img alt="FlexGrip" src="assets/flexgrip.png"/><span aria-hidden="true" class="arrow">↗</span></a><div class="offer-body"><h2>FlexGrip®</h2><p>Systemy bezszwowej stabilizacji cewników.</p><a class="card-link" href="systemy-bezszwowe.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
+<article class="offer-card reveal"><a aria-label="Porty naczyniowe" class="offer-visual" href="porty-naczyniowe.html"><img alt="Porty naczyniowe" src="assets/port.png"/><span aria-hidden="true" class="arrow">↗</span></a><div class="offer-body"><h2>Porty naczyniowe</h2><p>Długoterminowy dostęp naczyniowy dla pacjentów.</p><a class="card-link" href="porty-naczyniowe.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
+<article class="offer-card reveal"><a aria-label="ExitPocket" class="offer-visual" href="exitpocket.html"><img alt="ExitPocket" src="assets/exitpocket.png"/><span aria-hidden="true" class="arrow">↗</span></a><div class="offer-body"><h2>ExitPocket</h2><p>Wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego.</p><a class="card-link" href="exitpocket.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
+<article class="offer-card reveal"><a aria-label="Zestawy infuzyjne" class="offer-visual" href="zestawy-infuzyjne.html"><img alt="Zestawy infuzyjne" src="assets/infusion.png"/><span aria-hidden="true" class="arrow">↗</span></a><div class="offer-body"><h2>Zestawy infuzyjne</h2><p>Linie infuzyjne, filtry oraz zestawy TPN. Możliwość konfiguracji indywidualnej.</p><a class="card-link" href="zestawy-infuzyjne.html">Zobacz więcej <i class="bi bi-arrow-right"></i></a></div></article>
 </div></div></section>
 </main>
 <section class="cta-section">
-  <div class="container">
-    <div class="cta-box">
-      <div class="cta-content">
-        <h2>Potrzebujesz informacji produktowej lub oferty?</h2>
-        <p>Skontaktuj się z nami — pomożemy dobrać odpowiednie rozwiązania dla Twojej placówki i przygotować informacje pod proces zakupowy.</p>
-      </div>
-      <div class="cta-actions">
-        <a href="kontakt.html" class="btn btn-blue">Kontakt <i class="bi bi-arrow-right"></i></a>
-        <a href="oferta.html" class="btn btn-outline">Oferta</a>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="cta-box">
+<div class="cta-content">
+<h2>Potrzebujesz informacji produktowej lub oferty?</h2>
+<p>Skontaktuj się z nami — pomożemy dobrać odpowiednie rozwiązania dla Twojej placówki i przygotować informacje pod proces zakupowy.</p>
+</div>
+<div class="cta-actions">
+<a class="btn btn-blue" href="kontakt.html">Kontakt <i class="bi bi-arrow-right"></i></a>
+<a class="btn btn-outline" href="oferta.html">Oferta</a>
+</div>
+</div>
+</div>
 </section>
-<footer><div class="container"><div class="footer-grid"><div><a class="footer-logo-box" href="index.html" aria-label="DH Medical — strona główna"><img src="assets/logo.png" alt="DH Medical"></a><p>Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.</p><a href="kontakt.html" class="footer-mini-cta">Zapytaj o ofertę <i class="bi bi-arrow-right"></i></a></div><div><h4>DH Medical Arkadiusz Dynda</h4><p>Szalowa 385<br>38-331 Szalowa</p><p><a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br><a href="tel:+48883480355">+48 883 480 355</a></p></div><div><h4>DH Medical Sławomir Hutek</h4><p>ul. Samotna 8<br>33-300 Nowy Sącz</p><p><a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br><a href="tel:+48507687927">+48 507 687 927</a></p></div><div><h4>Social media</h4><div class="social-links"><a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a><a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a><a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener noreferrer" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a><a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a></div></div></div><div class="copyright">© 2025 DH Medical. Wszelkie prawa zastrzeżone.</div></div></footer>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand-row">
+<a aria-label="DH Medical — strona główna" class="footer-logo-box" href="index.html">
+<img alt="DH Medical" src="assets/logo.svg"/>
+</a>
+<div>
+<p>
+                Dystrybutor specjalistycznych rozwiązań medycznych dla obszaru dostępów naczyniowych i terapii infuzyjnej.
+              </p>
+<a class="footer-mini-cta" href="kontakt.html">
+                Zapytaj o ofertę
+                <i class="bi bi-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div>
+<h4>DH Medical Arkadiusz Dynda</h4>
+<p>
+            Szalowa 385<br/>
+            38-331 Szalowa<br/>
+            NIP: 7382168824
+          </p>
+<p>
+<a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br/>
+<a href="tel:+48883480355">+48 883 480 355</a>
+</p>
+</div>
+<div>
+<h4>DH Medical Sławomir Hutek</h4>
+<p>
+            ul. Samotna 8<br/>
+            33-300 Nowy Sącz<br/>
+            NIP: 7343623098
+          </p>
+<p>
+<a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br/>
+<a href="tel:+48507687927">+48 507 687 927</a>
+</p>
+</div>
+<div>
+<h4>Social media</h4>
+<p>Śledź nas i zobacz materiały produktowe.</p>
+<div class="social-links">
+<a aria-label="LinkedIn Arkadiusz Dynda" href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" rel="noopener" target="_blank">
+<i class="bi bi-linkedin"></i>
+</a>
+<a aria-label="LinkedIn Sławomir Hutek" href="https://www.linkedin.com/in/dhmedical00slawomirhutek" rel="noopener" target="_blank">
+<i class="bi bi-linkedin"></i>
+</a>
+<a aria-label="YouTube DH Medical" href="https://www.youtube.com/@DHMedicalKRK" rel="noopener" target="_blank">
+<i class="bi bi-youtube"></i>
+</a>
+<a aria-label="Email DH Medical" href="mailto:arkadiuszdynda@dhmedical.org">
+<i class="bi bi-envelope"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="copyright">
+        © 2025 DH Medical. Wszelkie prawa zastrzeżone.
+      </div>
+</div>
+</footer>
 <script>
 (function(){const button=document.querySelector('.mobile-toggle'),nav=document.querySelector('.nav-links');button.addEventListener('click',()=>{const open=nav.classList.toggle('open');button.setAttribute('aria-expanded',String(open));button.setAttribute('aria-label',open?'Zamknij menu':'Otwórz menu');button.innerHTML=open?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>'});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){nav.classList.remove('open');button.setAttribute('aria-expanded','false');button.innerHTML='<i class="bi bi-list"></i>';button.focus()}});const cards=document.querySelectorAll('.reveal');if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target)}}),{threshold:.08});cards.forEach(card=>io.observe(card))}else cards.forEach(card=>card.classList.add('visible'))})();
 </script>
