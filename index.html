@@ -180,6 +180,59 @@ body{font-feature-settings:"kern" 1,"liga" 1}
  .offer-icon img,.offer-card,.metric-card,.hero-panel,.brand img{transition:none!important}
 }
 
+
+/* LOGO — większe i proporcjonalne w nagłówku oraz stopce */
+.brand{width:214px;min-width:214px;padding:0 16px!important;overflow:hidden}
+.brand img{display:block!important;width:190px!important;max-width:none!important;height:96px!important;max-height:none!important;object-fit:contain!important;transform:scale(1.17);transform-origin:center;filter:none!important}
+.brand:hover img{transform:scale(1.22)}
+.footer-logo-box{width:235px;min-height:130px;display:flex!important;align-items:center;justify-content:center;overflow:hidden;padding:12px!important}
+.footer-logo-box img{display:block!important;width:205px!important;max-width:none!important;height:115px!important;max-height:none!important;object-fit:contain!important;transform:scale(1.12);filter:none!important}
+@media(max-width:700px){
+ .brand{width:162px;min-width:162px;padding:0 9px!important}
+ .brand img{width:150px!important;height:75px!important;max-width:none!important;transform:scale(1.12)}
+ .brand:hover img{transform:scale(1.16)}
+ .footer-logo-box{width:215px;min-height:115px}
+ .footer-logo-box img{width:195px!important;height:105px!important}
+}
+
+/* FINAL: kompaktowa oferta — 2 wyróżnione produkty + 3 mniejsze w jednym widoku */
+@media (min-width: 1051px) {
+  main > section:has(.offer-grid) { padding: 68px 0 76px !important; }
+  main > section:has(.offer-grid) .section-header { margin-bottom: 28px; max-width: 900px; }
+  main > section:has(.offer-grid) .section-header h2 { font-size: clamp(30px, 3vw, 41px); line-height: 1.16; margin: 10px 0 12px; }
+  main > section:has(.offer-grid) .section-header p { font-size: 15px; line-height: 1.6; }
+  .offer-grid { gap: 16px; }
+  .offer-card { padding-bottom: 16px; border-radius: 15px; }
+  .offer-card--flagship .offer-icon { height: 210px; padding: 20px 38px; margin-bottom: 16px; }
+  .offer-card--flagship .offer-icon img { max-height: 174px; }
+  .offer-card--flagship h3 { font-size: 28px; margin: 0 23px 7px; }
+  .offer-card--flagship p { font-size: 13px; line-height: 1.5; margin: 0 23px; max-width: none; }
+  .offer-card:not(.offer-card--flagship) .offer-icon { height: 118px; padding: 13px 28px; margin-bottom: 13px; }
+  .offer-card:not(.offer-card--flagship) .offer-icon img { max-height: 95px; }
+  .offer-card:not(.offer-card--flagship) h3 { font-size: 19px; margin: 0 18px 5px; }
+  .offer-card:not(.offer-card--flagship) p { font-size: 12px; line-height: 1.45; margin: 0 18px; min-height: 0; }
+  .offer-icon:after { width: 29px; height: 29px; font-size: 16px; right: 12px; top: 11px; }
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  main > section:has(.offer-grid) { padding: 75px 0 !important; }
+  .offer-grid { grid-template-columns: repeat(6,minmax(0,1fr)); gap: 16px; }
+  .offer-card--flagship { grid-column: span 3 !important; }
+  .offer-card:not(.offer-card--flagship) { grid-column: span 2 !important; }
+  .offer-card--flagship .offer-icon { height: 220px; padding: 24px; }
+  .offer-card:not(.offer-card--flagship) .offer-icon { height: 150px; padding: 15px; }
+  .offer-card--flagship h3 { font-size: 26px; }
+  .offer-card:not(.offer-card--flagship) h3 { font-size: 19px; }
+}
+@media (max-width: 700px) {
+  .offer-grid { gap: 14px; }
+  .offer-card--flagship .offer-icon { height: 210px; padding: 20px; margin-bottom: 15px; }
+  .offer-card:not(.offer-card--flagship) .offer-icon { height: 145px; padding: 17px; margin-bottom: 14px; }
+  .offer-card--flagship h3 { font-size: 25px; }
+  .offer-card--flagship p { font-size: 13px; }
+  .offer-card:not(.offer-card--flagship) h3 { font-size: 20px; }
+  .offer-card { padding-bottom: 19px; }
+}
+
 </style>
 </head>
 
