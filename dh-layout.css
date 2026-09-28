@@ -1,50 +1,33 @@
-/* DH Medical — etap 1: wspólny header/footer, odstępy i przyciski.
-   Ładowany po stylach podstrony; dotychczasowa zawartość pozostaje bez zmian. */
+/* DH Medical | wspólny layout v3 | zachowuje zatwierdzony wygląd */
 :root{--dh-header:104px;--dh-hero-top:190px;--dh-hero-bottom:86px;--dh-blue:#45b8f4;--dh-navy:#071827}
 html{scroll-padding-top:var(--dh-header)}
-.site-header{position:absolute!important;inset:0 0 auto!important;background:#071827!important;border-bottom:1px solid rgba(255,255,255,.13)!important;z-index:100!important;backdrop-filter:none!important}
-.site-header .nav-wrapper{height:var(--dh-header)!important;align-items:stretch!important}
-.site-header .brand{align-self:stretch!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#fff!important;border:0!important;border-radius:0 0 17px 17px!important;width:214px!important;min-width:214px!important;padding:0 16px!important;overflow:hidden!important;box-shadow:none!important;flex-shrink:0!important}
+.site-header{position:absolute!important;inset:0 0 auto!important;height:var(--dh-header)!important;min-height:var(--dh-header)!important;max-height:var(--dh-header)!important;background:#071827!important;border-bottom:1px solid rgba(255,255,255,.13)!important;z-index:100!important;backdrop-filter:none!important}
+.site-header .nav-wrapper{height:var(--dh-header)!important;min-height:var(--dh-header)!important;max-height:var(--dh-header)!important;align-items:stretch!important}
+.site-header .brand{align-self:stretch!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#fff!important;border:0!important;border-radius:0 0 17px 17px!important;width:214px!important;min-width:214px!important;height:var(--dh-header)!important;max-height:var(--dh-header)!important;padding:0 16px!important;overflow:hidden!important;box-shadow:none!important;flex-shrink:0!important;transform:none!important}
 .site-header .brand img{display:block!important;width:190px!important;max-width:none!important;height:96px!important;max-height:none!important;object-fit:contain!important;transform:scale(1.17)!important;transform-origin:center!important;filter:none!important}
 .site-header .nav-links{align-self:center!important;align-items:center!important}
 .site-header .mobile-toggle{align-self:center!important}
-/* Jawny selektor pierwszej sekcji usuwa konflikt z ogólnym main>section:not(...). */
+/* Podstrony: jeden odstęp, bez wyjątku ExitPocket. */
 main>section:first-child:not(.hero){padding-top:var(--dh-hero-top)!important;padding-bottom:var(--dh-hero-bottom)!important}
-
-/* Wspólne przyciski drugorzędne na ciemnym tle. */
+/* Strona główna ma osobną kompozycję. */
+main>section.hero .hero-grid{padding-top:var(--dh-hero-top)!important}
+/* Przyciski na ciemnym tle. */
 main .product-actions .btn-secondary,main .infusion-actions .btn-secondary,main .hero-actions .btn-secondary,main .cta-actions .btn-cta-secondary,main .exit-actions .btn-secondary{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:53px!important;padding:0 25px!important;border:1px solid rgba(255,255,255,.65)!important;border-radius:999px!important;background:rgba(255,255,255,.035)!important;color:#fff!important;font:700 13px 'DM Sans',sans-serif!important;text-decoration:none!important;white-space:normal!important;transition:background .2s,transform .2s,border-color .2s!important}
 main .product-actions .btn-secondary:hover,main .infusion-actions .btn-secondary:hover,main .hero-actions .btn-secondary:hover,main .cta-actions .btn-cta-secondary:hover,main .exit-actions .btn-secondary:hover{background:rgba(255,255,255,.14)!important;border-color:#fff!important;transform:translateY(-2px)!important}
 main .product-actions,main .infusion-actions{align-items:center!important;gap:14px!important}
 main .cta-actions{display:flex!important;align-items:center!important;gap:12px!important;flex-wrap:wrap!important}
-/* Jeden wzorzec stopki. */
+/* Stopka. */
 footer .footer-logo-box{background:#fff!important;border:0!important;border-radius:12px!important;padding:17px 23px!important;box-shadow:none!important;transform:none!important}
 footer .footer-logo-box img{width:155px!important;max-width:155px!important;height:auto!important;max-height:95px!important;filter:none!important;object-fit:contain!important}
 @media(max-width:1000px){:root{--dh-hero-top:165px;--dh-hero-bottom:75px}}
-@media(max-width:700px){:root{--dh-header:80px;--dh-hero-top:142px;--dh-hero-bottom:62px}.site-header .nav-wrapper{height:80px!important}.site-header .brand{width:162px!important;min-width:162px!important;padding:0 9px!important;border-radius:0 0 13px 13px!important}.site-header .brand img{width:150px!important;height:75px!important;max-width:none!important;transform:scale(1.12)!important}.site-header .nav-links{top:80px!important;align-self:auto!important}.site-header .mobile-toggle{display:block!important}main .cta-actions a{flex:1 1 130px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
-
-/* ETAP 1 FINAL — spójny nagłówek i pierwszy ekran na każdej stronie. */
-:root{--dh-header:104px;--dh-hero-top:190px;--dh-hero-bottom:86px}
-.site-header{height:var(--dh-header)!important;min-height:var(--dh-header)!important;max-height:var(--dh-header)!important}
-.site-header .nav-wrapper{height:var(--dh-header)!important;min-height:var(--dh-header)!important;max-height:var(--dh-header)!important}
-.site-header .brand{height:var(--dh-header)!important;max-height:var(--dh-header)!important;transform:none!important}
-.site-header .brand img{width:190px!important;height:96px!important;max-width:none!important;max-height:none!important;transform:scale(1.17)!important}
-/* Wszystkie podstrony: ten sam padding pierwszej sekcji, bez wyjątków dla ExitPocket. */
-main>section:first-child:not(.hero){padding-top:var(--dh-hero-top)!important;padding-bottom:var(--dh-hero-bottom)!important}
-/* Strona główna ma osobną kompozycję, ale identyczną linię startową treści. */
-main>section.hero .hero-grid{padding-top:var(--dh-hero-top)!important}
-@media(max-width:1000px){
- :root{--dh-hero-top:165px;--dh-hero-bottom:75px}
-}
 @media(max-width:700px){
  :root{--dh-header:80px;--dh-hero-top:142px;--dh-hero-bottom:62px}
- .site-header .brand{width:162px!important;min-width:162px!important;height:80px!important;max-height:80px!important;padding:0 9px!important}
+ .site-header .nav-wrapper{height:80px!important}
+ .site-header .brand{width:162px!important;min-width:162px!important;height:80px!important;max-height:80px!important;padding:0 9px!important;border-radius:0 0 13px 13px!important}
  .site-header .brand img{width:150px!important;height:75px!important;max-width:none!important;max-height:none!important;transform:scale(1.12)!important}
-}
-
-/* Menu mobilne: jawne stany widoczności ponad starymi regułami. */
-@media(max-width:700px){
  .site-header .nav-links{display:none!important;position:absolute!important;left:0!important;right:0!important;top:var(--dh-header)!important;z-index:120!important;background:#071827!important;flex-direction:column!important;align-items:stretch!important;gap:18px!important;padding:24px max(22px,5vw) 30px!important;box-shadow:0 20px 36px rgba(3,16,28,.25)!important;max-height:calc(100dvh - var(--dh-header))!important;overflow-y:auto!important}
  .site-header .nav-links.open{display:flex!important}
  .site-header .mobile-toggle{display:block!important;position:relative!important;z-index:121!important;cursor:pointer!important}
+ main .cta-actions a{flex:1 1 130px}
 }
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
