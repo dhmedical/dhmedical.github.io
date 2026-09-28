@@ -380,6 +380,51 @@ main>section.exit-block{padding:74px 0}
 main>section.exit-hero{padding:158px 0 78px}
 main>section.exit-cta{padding:65px 0}
 @media(max-width:700px){main>section.exit-block{padding:48px 0}main>section.exit-hero{padding:124px 0 48px}main>section.exit-cta{padding:50px 0}}
+
+/* ExitPocket — refinement: spacing and non-transparent source photographs.
+   Header and footer deliberately remain unchanged from the approved index. */
+@media(min-width:1001px){
+  main>section.exit-hero{padding-top:250px;padding-bottom:96px}
+  .exit-hero-grid{gap:clamp(45px,5vw,80px);align-items:center}
+  .exit-hero h1{font-size:clamp(38px,3.9vw,56px);line-height:1.14;max-width:610px}
+  .exit-visual{min-height:370px}
+}
+@media(min-width:701px) and (max-width:1000px){
+  main>section.exit-hero{padding-top:220px;padding-bottom:72px}
+  .exit-hero-grid{gap:32px}
+}
+/* The product JPG/PNG files already have a white background, so use a
+   consistent white presentation surface instead of a blue gradient. */
+.exit-visual{background:#fff;border:1px solid #e0eaf1;box-shadow:0 22px 60px rgba(0,12,27,.20);padding:clamp(22px,3.2vw,40px)}
+.exit-visual img{filter:none;mix-blend-mode:normal;object-fit:contain}
+.variant-image{background:#fff;border-bottom:1px solid #e8eef3;padding:16px;height:175px}
+.variant-image img{width:100%;height:100%;object-fit:contain;filter:none;mix-blend-mode:normal}
+.variant-card{box-shadow:0 6px 22px rgba(18,57,83,.035)}
+.variant-card:hover{box-shadow:0 14px 36px rgba(18,57,83,.11)}
+@media(max-width:700px){
+  main>section.exit-hero{padding-top:180px;padding-bottom:58px}
+  .exit-hero-grid{gap:28px}
+  .exit-hero h1{font-size:clamp(32px,8vw,43px);line-height:1.14}
+  .exit-visual{min-height:235px;padding:18px}
+  .exit-visual img{height:235px}
+  .variant-image{height:165px;padding:15px}
+}
+
+/* FINAL: visible breathing room between fixed top navigation and hero image.
+   Scoped to ExitPocket hero only; shared header/footer untouched. */
+@media (min-width:1001px){
+  main>section.exit-hero{padding-top:285px!important;padding-bottom:110px!important}
+  .exit-hero-grid{align-items:start!important}
+  .exit-visual{margin-top:110px!important}
+}
+@media (min-width:701px) and (max-width:1000px){
+  main>section.exit-hero{padding-top:235px!important;padding-bottom:85px!important}
+  .exit-visual{margin-top:55px!important}
+}
+@media (max-width:700px){
+  main>section.exit-hero{padding-top:205px!important;padding-bottom:75px!important}
+  .exit-visual{margin-top:55px!important}
+}
 </style></head><body>
 <header class="site-header">
 <div class="container nav-wrapper">
