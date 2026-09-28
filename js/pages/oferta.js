@@ -1,0 +1,2 @@
+/* Skrypty strony oferta.html; zachowana kolejność wykonywania */
+(function(){const cards=document.querySelectorAll('.reveal');if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');io.unobserve(entry.target)}}),{threshold:.08});cards.forEach(card=>io.observe(card))}else cards.forEach(card=>card.classList.add('visible'))})();
