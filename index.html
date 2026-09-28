@@ -275,6 +275,72 @@ footer .footer-grid h4 { margin-top: 3px; }
   footer .footer-logo-box img { width: 160px !important; height: 82px !important; }
 }
 
+
+/* FINAL: RESPONSYWNOŚĆ I PROPORCJE — reguły na końcu, aby nie były nadpisywane */
+html,body{max-width:100%;overflow-x:clip}
+.offer-grid,.offer-card,.offer-icon,.hero-grid,.hero-panel,.footer-grid{min-width:0}
+.offer-card h3,.offer-card p{overflow-wrap:break-word}
+/* Zwarta kompozycja całej strony na desktopie */
+@media(min-width:1051px){
+  .hero{min-height:650px}
+  .hero-grid{padding-top:128px;padding-bottom:85px;gap:5%}
+  .hero h1{font-size:clamp(43px,4.4vw,66px)}
+  .hero-panel{padding:27px}
+  .hero-metrics{margin-top:18px}
+  .metric-card{padding:13px}
+  .hero-actions{margin:26px 0 32px}
+  .dhv-section{padding-top:65px;padding-bottom:72px}
+  .dhv-stage{height:550px}
+  .audience,.partners{padding-top:72px;padding-bottom:72px}
+  .section-header{margin-bottom:34px}
+  .cta{padding:66px 0}
+  .cta-box{padding:48px 55px}
+}
+/* Tablet: dwie duże karty, trzy mniejsze poniżej */
+@media(min-width:701px) and (max-width:1050px){
+  .offer-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
+  .offer-card.offer-card--flagship{grid-column:span 3!important}
+  .offer-card:not(.offer-card--flagship){grid-column:span 2!important}
+  .offer-card--flagship .offer-icon{height:195px;padding:20px}
+  .offer-card:not(.offer-card--flagship) .offer-icon{height:125px;padding:15px}
+  .offer-card--flagship h3{font-size:25px}
+  .offer-card:not(.offer-card--flagship) h3{font-size:18px}
+  .offer-card p{line-height:1.5}
+  .hero-grid{padding-top:120px;padding-bottom:65px}
+}
+/* Telefon: jedna czytelna kolumna; żadnych pięciu wąskich kafelków */
+@media(max-width:700px){
+  .container{width:calc(100% - 36px);max-width:540px}
+  main>section:has(.offer-grid){padding:54px 0 60px!important}
+  .section-header{margin-bottom:24px}
+  .section-header h2{font-size:clamp(27px,7.1vw,36px);line-height:1.18;letter-spacing:-.045em;margin:11px 0}
+  .section-header p{font-size:14px;line-height:1.65}
+  .offer-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:15px!important}
+  .offer-grid>.offer-card,.offer-grid>.offer-card.offer-card--flagship,.offer-grid>.offer-card:not(.offer-card--flagship){grid-column:1/-1!important;width:100%!important;min-width:0!important;margin:0!important}
+  .offer-card{padding-bottom:19px!important;border-radius:15px}
+  .offer-card .offer-icon,.offer-card.offer-card--flagship .offer-icon{height:185px!important;padding:20px!important;margin-bottom:15px!important}
+  .offer-card:not(.offer-card--flagship) .offer-icon{height:145px!important;padding:17px!important}
+  .offer-icon img{width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain}
+  .offer-card h3,.offer-card.offer-card--flagship h3,.offer-card:not(.offer-card--flagship) h3{font-size:clamp(21px,5.5vw,26px)!important;line-height:1.22;margin:0 20px 8px!important}
+  .offer-card p,.offer-card.offer-card--flagship p,.offer-card:not(.offer-card--flagship) p{font-size:13px!important;line-height:1.55!important;margin:0 20px!important;min-height:0!important;max-width:none!important}
+  .hero-grid{padding-top:115px;padding-bottom:55px;gap:25px}
+  .hero h1{font-size:clamp(34px,8.5vw,48px);line-height:1.12}
+  .hero-panel{padding:20px}
+  .hero-panel h2{font-size:25px}
+  .hero-actions{margin:24px 0 28px}
+  .dhv-section{padding:54px 0 65px!important}
+  .dhv-heading h2{font-size:clamp(27px,7vw,36px)}
+  .audience,.partners{padding-top:60px;padding-bottom:60px}
+  .cta{padding:55px 0}
+  .cta-box{padding:31px 22px}
+  footer{padding-top:52px}
+}
+@media(max-width:380px){
+  .container{width:calc(100% - 28px)}
+  .offer-card .offer-icon,.offer-card.offer-card--flagship .offer-icon{height:155px!important}
+  .offer-card:not(.offer-card--flagship) .offer-icon{height:125px!important}
+}
+
 </style>
 </head>
 
