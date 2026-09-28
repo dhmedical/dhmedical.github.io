@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -6,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>DH Medical | Rozwiązania dla dostępów naczyniowych</title>
+
   <meta name="description" content="DH Medical - specjalistyczne rozwiązania dla dostępów naczyniowych i terapii infuzyjnej dla placówek medycznych." />
   <meta name="keywords" content="DH Medical, dostęp naczyniowy, porty naczyniowe, SecurePortIV, FlexGrip, ExitPocket, zestawy infuzyjne, Impromediform" />
   <meta name="author" content="DH Medical" />
@@ -13,15 +13,19 @@
 
   <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link href="css/styles.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <style>
-    /* DH Medical — nowy slider wideo */
+    /* Karuzela wideo DH Medical */
     .dhv-section {
       padding: 85px 0 95px;
       overflow: hidden;
-      background: radial-gradient(ellipse at center, #f0f4fb 0%, #fff 70%);
+      background: radial-gradient(
+        ellipse at center,
+        #f0f4fb 0%,
+        #fff 70%
+      );
     }
 
     .dhv-heading {
@@ -74,8 +78,8 @@
       transform: translate(-50%, -50%) scale(.7);
       transition:
         transform .55s cubic-bezier(.22,.61,.36,1),
-        opacity .4s ease,
-        visibility .4s ease;
+        opacity .4s,
+        visibility .4s;
       box-shadow: 0 15px 45px rgba(20,28,70,.13);
     }
 
@@ -158,11 +162,11 @@
       background: #eef3ff;
     }
 
-    .dhv-arrow.dhv-prev {
+    .dhv-prev.dhv-arrow {
       left: 0;
     }
 
-    .dhv-arrow.dhv-next {
+    .dhv-next.dhv-arrow {
       right: 0;
     }
 
@@ -207,11 +211,15 @@
       }
 
       .dhv-item.dhv-prev {
-        transform: translate(calc(-50% - 65vw), -50%) scale(.82);
+        transform:
+          translate(calc(-50% - 65vw), -50%)
+          scale(.82);
       }
 
       .dhv-item.dhv-next {
-        transform: translate(calc(-50% + 65vw), -50%) scale(.82);
+        transform:
+          translate(calc(-50% + 65vw), -50%)
+          scale(.82);
       }
 
       .dhv-arrow {
@@ -219,11 +227,11 @@
         height: 38px;
       }
 
-      .dhv-arrow.dhv-prev {
+      .dhv-prev.dhv-arrow {
         left: 5px;
       }
 
-      .dhv-arrow.dhv-next {
+      .dhv-next.dhv-arrow {
         right: 5px;
       }
     }
@@ -254,6 +262,7 @@
   </header>
 
   <main>
+    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
         <div>
@@ -284,7 +293,9 @@
             </div>
             <div>
               Partner dla sektora ochrony zdrowia
-              <span>Oferta tworzona z myślą o ułatwieniu pracy klinicznej zespołów medycznych i sprawnych procesach zakupowych.</span>
+              <span>
+                Oferta tworzona z myślą o ułatwieniu pracy klinicznej zespołów medycznych i sprawnych procesach zakupowych.
+              </span>
             </div>
           </div>
         </div>
@@ -330,16 +341,19 @@
       </div>
     </section>
 
+    <!-- PASEK ZALET -->
     <div class="trust-strip">
       <div class="container trust-grid">
         <div class="trust-item">
           <i class="bi bi-hospital"></i>
           Produkty dla placówek medycznych
         </div>
+
         <div class="trust-item">
           <i class="bi bi-clipboard2-check"></i>
           Wsparcie w doborze rozwiązań
         </div>
+
         <div class="trust-item">
           <i class="bi bi-people"></i>
           Komunikacja z działami zamówień
@@ -405,51 +419,120 @@
       </div>
     </section>
 
-    <!-- NOWY SLIDER WIDEO -->
+    <!-- KARUZELA: CZTERY FILMY -->
     <section class="dhv-section" aria-label="Filmy produktowe DH Medical">
       <div class="container">
         <div class="dhv-heading">
           <h2>Zobacz nasze rozwiązania w praktyce.</h2>
-          <p>Krótkie materiały produktowe DH Medical.</p>
+          <p>
+            Krótkie materiały produktowe przedstawiające rozwiązania dostępne w ofercie DH Medical.
+          </p>
         </div>
 
         <div class="dhv-carousel">
-          <button class="dhv-arrow dhv-prev" type="button" aria-label="Poprzedni film">
+          <button
+            class="dhv-arrow dhv-prev"
+            type="button"
+            aria-label="Poprzedni film"
+          >
             <i class="bi bi-chevron-left"></i>
           </button>
 
           <div class="dhv-stage" aria-roledescription="karuzela">
+
+            <!-- FILM 1: SECUREPORTIV -->
             <div class="dhv-item" data-index="0">
-              <video src="assets/secureportvid.mp4" playsinline muted loop preload="metadata"></video>
-              <button class="dhv-sound" type="button" aria-label="Włącz dźwięk">
+              <video
+                src="assets/secureportvid.mp4"
+                playsinline
+                muted
+                loop
+                preload="metadata"
+              ></video>
+
+              <button
+                class="dhv-sound"
+                type="button"
+                aria-label="Włącz dźwięk"
+              >
                 <i class="bi bi-volume-mute"></i>
               </button>
             </div>
 
+            <!-- FILM 2: FLEXGRIP ALPHA -->
             <div class="dhv-item" data-index="1">
-              <video src="assets/alphavid.mp4" playsinline muted loop preload="metadata"></video>
-              <button class="dhv-sound" type="button" aria-label="Włącz dźwięk">
+              <video
+                src="assets/alphavid.mp4"
+                playsinline
+                muted
+                loop
+                preload="metadata"
+              ></video>
+
+              <button
+                class="dhv-sound"
+                type="button"
+                aria-label="Włącz dźwięk"
+              >
                 <i class="bi bi-volume-mute"></i>
               </button>
             </div>
 
+            <!-- FILM 3: EXITPOCKET -->
             <div class="dhv-item" data-index="2">
-              <video src="assets/exitpocketvid.mp4" playsinline muted loop preload="metadata"></video>
-              <button class="dhv-sound" type="button" aria-label="Włącz dźwięk">
+              <video
+                src="assets/exitpocketvid.mp4"
+                playsinline
+                muted
+                loop
+                preload="metadata"
+              ></video>
+
+              <button
+                class="dhv-sound"
+                type="button"
+                aria-label="Włącz dźwięk"
+              >
                 <i class="bi bi-volume-mute"></i>
               </button>
             </div>
+
+            <!-- FILM 4: FLEXGRIP PICC NEO -->
+            <div class="dhv-item" data-index="3">
+              <video
+                src="assets/piccneovid.mp4"
+                playsinline
+                muted
+                loop
+                preload="metadata"
+              ></video>
+
+              <button
+                class="dhv-sound"
+                type="button"
+                aria-label="Włącz dźwięk"
+              >
+                <i class="bi bi-volume-mute"></i>
+              </button>
+            </div>
+
           </div>
 
-          <button class="dhv-arrow dhv-next" type="button" aria-label="Następny film">
+          <button
+            class="dhv-arrow dhv-next"
+            type="button"
+            aria-label="Następny film"
+          >
             <i class="bi bi-chevron-right"></i>
           </button>
         </div>
 
+        <!-- CZTERY KROPKI NAWIGACYJNE -->
         <div class="dhv-dots" aria-label="Wybierz film">
           <button type="button" aria-label="SecurePortIV"></button>
           <button type="button" aria-label="FlexGrip Alpha"></button>
           <button type="button" aria-label="ExitPocket"></button>
+          <button type="button" aria-label="FlexGrip PICC Neo"></button>
         </div>
       </div>
     </section>
@@ -515,14 +598,20 @@
             <img src="assets/emodial-logo.png" alt="Emodial">
           </a>
 
-          <a class="partner-logo" href="https://www.imf.de/en/produkte/compounding" target="_blank" rel="noopener" aria-label="Impromediform">
+          <a
+            class="partner-logo"
+            href="https://www.imf.de/en/produkte/compounding"
+            target="_blank"
+            rel="noopener"
+            aria-label="Impromediform"
+          >
             <img src="assets/impromediform-logo.png" alt="Impromediform">
           </a>
         </div>
       </div>
     </section>
 
-    <!-- KONTAKT CTA -->
+    <!-- CTA -->
     <section class="cta">
       <div class="container">
         <div class="cta-box">
@@ -551,6 +640,7 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
+
         <div>
           <div class="footer-brand-row">
             <div class="footer-logo-box">
@@ -578,7 +668,9 @@
             NIP: 7382168824
           </p>
           <p>
-            <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>
+            <a href="mailto:arkadiuszdynda@dhmedical.org">
+              arkadiuszdynda@dhmedical.org
+            </a><br>
             <a href="tel:+48883480355">+48 883 480 355</a>
           </p>
         </div>
@@ -591,7 +683,9 @@
             NIP: 7343623098
           </p>
           <p>
-            <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>
+            <a href="mailto:slawomirhutek@dhmedical.org">
+              slawomirhutek@dhmedical.org
+            </a><br>
             <a href="tel:+48507687927">+48 507 687 927</a>
           </p>
         </div>
@@ -599,24 +693,44 @@
         <div>
           <h4>Social media</h4>
           <p>Śledź nas i zobacz materiały produktowe.</p>
+
           <div class="social-links">
-            <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda">
+            <a
+              href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn Arkadiusz Dynda"
+            >
               <i class="bi bi-linkedin"></i>
             </a>
 
-            <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek">
+            <a
+              href="https://www.linkedin.com/in/dhmedical00slawomirhutek"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn Sławomir Hutek"
+            >
               <i class="bi bi-linkedin"></i>
             </a>
 
-            <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical">
+            <a
+              href="https://www.youtube.com/@DHMedicalKRK"
+              target="_blank"
+              rel="noopener"
+              aria-label="YouTube DH Medical"
+            >
               <i class="bi bi-youtube"></i>
             </a>
 
-            <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical">
+            <a
+              href="mailto:arkadiuszdynda@dhmedical.org"
+              aria-label="Email DH Medical"
+            >
               <i class="bi bi-envelope"></i>
             </a>
           </div>
         </div>
+
       </div>
 
       <div class="copyright">
@@ -625,9 +739,11 @@
     </div>
   </footer>
 
-  <!-- EFEKT KLIKNIĘCIA KART OFERTY -->
+  <!-- EFEKT KLIKNIĘCIA KART -->
   <script>
-    document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(card => {
+    document.querySelectorAll(
+      '.offer-card, .flex-card, .port-card'
+    ).forEach(card => {
       card.style.position = "relative";
       card.style.overflow = "hidden";
       card.style.cursor = "pointer";
@@ -642,10 +758,13 @@
         const size = Math.max(rect.width, rect.height);
 
         ripple.style.width = ripple.style.height = size + "px";
-        ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
-        ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+        ripple.style.left =
+          (e.clientX - rect.left - size / 2) + "px";
+        ripple.style.top =
+          (e.clientY - rect.top - size / 2) + "px";
 
         card.appendChild(ripple);
+
         setTimeout(() => ripple.remove(), 600);
 
         const link = card.querySelector('a');
@@ -654,7 +773,7 @@
     });
   </script>
 
-  <!-- ANIMACJA KART OFERTY -->
+  <!-- ANIMACJE KART -->
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -664,20 +783,29 @@
       });
     });
 
-    document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(el => {
+    document.querySelectorAll(
+      '.offer-card, .flex-card, .port-card'
+    ).forEach(el => {
       el.classList.add('fade-in');
       observer.observe(el);
     });
   </script>
 
-  <!-- OBSŁUGA SLIDERA -->
+  <!-- OBSŁUGA KARUZELI CZTERECH FILMÓW -->
   <script>
     (function() {
       const root = document.querySelector('.dhv-section');
+
       if (!root) return;
 
-      const slides = [...root.querySelectorAll('.dhv-item')];
-      const dots = [...root.querySelectorAll('.dhv-dots button')];
+      const slides = [
+        ...root.querySelectorAll('.dhv-item')
+      ];
+
+      const dots = [
+        ...root.querySelectorAll('.dhv-dots button')
+      ];
+
       const stage = root.querySelector('.dhv-stage');
 
       let current = 0;
@@ -687,12 +815,18 @@
       function stopAll() {
         slides.forEach(slide => {
           const video = slide.querySelector('video');
+          const button = slide.querySelector('.dhv-sound');
+
           video.pause();
           video.muted = true;
 
-          const button = slide.querySelector('.dhv-sound');
-          button.innerHTML = '<i class="bi bi-volume-mute"></i>';
-          button.setAttribute('aria-label', 'Włącz dźwięk');
+          button.innerHTML =
+            '<i class="bi bi-volume-mute"></i>';
+
+          button.setAttribute(
+            'aria-label',
+            'Włącz dźwięk'
+          );
         });
       }
 
@@ -709,10 +843,14 @@
           if (index === current) {
             slide.classList.add('dhv-active');
           } else if (
-            index === (current - 1 + slides.length) % slides.length
+            index ===
+            (current - 1 + slides.length) % slides.length
           ) {
             slide.classList.add('dhv-prev');
-          } else {
+          } else if (
+            index ===
+            (current + 1) % slides.length
+          ) {
             slide.classList.add('dhv-next');
           }
 
@@ -743,26 +881,40 @@
       }
 
       function goTo(index) {
-        current = (index + slides.length) % slides.length;
+        current =
+          (index + slides.length) % slides.length;
+
         render();
       }
 
+      // Strzałka w lewo
       root.querySelector('.dhv-arrow.dhv-prev')
-        .addEventListener('click', () => goTo(current - 1));
+        .addEventListener('click', () => {
+          goTo(current - 1);
+        });
 
+      // Strzałka w prawo
       root.querySelector('.dhv-arrow.dhv-next')
-        .addEventListener('click', () => goTo(current + 1));
+        .addEventListener('click', () => {
+          goTo(current + 1);
+        });
 
+      // Kropki nawigacyjne
       dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => goTo(index));
+        dot.addEventListener('click', () => {
+          goTo(index);
+        });
       });
 
+      // Klikanie filmów i sterowanie dźwiękiem
       slides.forEach((slide, index) => {
         const video = slide.querySelector('video');
         const sound = slide.querySelector('.dhv-sound');
 
         slide.addEventListener('click', event => {
-          if (event.target.closest('.dhv-sound')) return;
+          if (event.target.closest('.dhv-sound')) {
+            return;
+          }
 
           if (index !== current) {
             goTo(index);
@@ -796,36 +948,52 @@
         });
       });
 
-      stage.addEventListener('touchstart', event => {
-        touchStart = event.touches[0].clientX;
-      }, { passive: true });
+      // Przesuwanie palcem na telefonie
+      stage.addEventListener(
+        'touchstart',
+        event => {
+          touchStart = event.touches[0].clientX;
+        },
+        { passive: true }
+      );
 
-      stage.addEventListener('touchend', event => {
-        if (touchStart === null) return;
+      stage.addEventListener(
+        'touchend',
+        event => {
+          if (touchStart === null) return;
 
-        const difference =
-          event.changedTouches[0].clientX - touchStart;
+          const difference =
+            event.changedTouches[0].clientX -
+            touchStart;
 
-        touchStart = null;
+          touchStart = null;
 
-        if (Math.abs(difference) > 45) {
-          goTo(current + (difference < 0 ? 1 : -1));
-        }
-      }, { passive: true });
-
-      if ('IntersectionObserver' in window) {
-        const videoObserver = new IntersectionObserver(entries => {
-          inView = entries[0].isIntersecting;
-
-          if (inView) {
-            slides[current]
-              .querySelector('video')
-              .play()
-              .catch(() => {});
-          } else {
-            stopAll();
+          if (Math.abs(difference) > 45) {
+            goTo(
+              current + (difference < 0 ? 1 : -1)
+            );
           }
-        }, { threshold: .3 });
+        },
+        { passive: true }
+      );
+
+      // Automatyczne odtwarzanie widocznego filmu
+      if ('IntersectionObserver' in window) {
+        const videoObserver =
+          new IntersectionObserver(entries => {
+            inView = entries[0].isIntersecting;
+
+            if (inView) {
+              slides[current]
+                .querySelector('video')
+                .play()
+                .catch(() => {});
+            } else {
+              stopAll();
+            }
+          }, {
+            threshold: .3
+          });
 
         videoObserver.observe(root);
       } else {
