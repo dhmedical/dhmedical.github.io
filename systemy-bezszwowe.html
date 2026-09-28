@@ -1,486 +1,580 @@
 <!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="pl"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>FlexGrip® | DH Medical</title><meta content="Systemy bezszwowe FlexGrip®: Alpha, EPI oraz rozwiązania neonatologiczne PICC, Umbilical i Neo Alpha." name="description"/><link href="assets/favicon.png" rel="icon" type="image/png"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/><style>
+/* Nowa karuzela: odrębne klasy, niezależne od poprzednich stylów video-slider */
+.dhv-section{padding:85px 0 95px;overflow:hidden;background:radial-gradient(ellipse at center,#f0f4fb 0%,#fff 70%)}
+.dhv-heading{text-align:center;max-width:750px;margin:0 auto 40px;padding:0 16px}
+.dhv-heading h2{font-size:clamp(28px,4vw,40px);line-height:1.2;font-weight:800;color:#1d1b52;margin:0 0 14px}
+.dhv-heading p{color:#68748a;font-size:15px;margin:0}
+.dhv-carousel{max-width:1100px;margin:auto;position:relative}
+.dhv-stage{position:relative;height:600px;max-width:960px;margin:auto;overflow:hidden;touch-action:pan-y}
+.dhv-item{position:absolute;top:50%;left:50%;width:320px;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#0b1532;opacity:0;visibility:hidden;transform:translate(-50%,-50%) scale(.7);transition:transform .55s cubic-bezier(.22,.61,.36,1),opacity .4s,visibility .4s;box-shadow:0 15px 45px rgba(20,28,70,.13)}
+.dhv-item video{display:block;width:100%;height:100%;object-fit:cover}
+.dhv-item.dhv-active{z-index:3;opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1);box-shadow:0 24px 65px rgba(20,28,70,.23)}
+.dhv-item.dhv-prev{z-index:1;opacity:.65;visibility:visible;transform:translate(calc(-50% - 300px),-50%) scale(.78);cursor:pointer}
+.dhv-item.dhv-next{z-index:1;opacity:.65;visibility:visible;transform:translate(calc(-50% + 300px),-50%) scale(.78);cursor:pointer}
+.dhv-item.dhv-active video{cursor:pointer}
+.dhv-sound{position:absolute;right:14px;bottom:14px;z-index:4;display:none;width:42px;height:42px;align-items:center;justify-content:center;border:1px solid #ffffff66;border-radius:50%;color:#fff;background:#101b3cbb;backdrop-filter:blur(10px);cursor:pointer}
+.dhv-active .dhv-sound{display:flex}
+.dhv-arrow{position:absolute;top:50%;z-index:5;display:flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #dce3f0;border-radius:50%;background:#fff;color:#1d1b52;box-shadow:0 5px 20px #14204a18;transform:translateY(-50%);cursor:pointer}
+.dhv-arrow:hover{background:#eef3ff}
+.dhv-prev.dhv-arrow{left:0}.dhv-next.dhv-arrow{right:0}
+.dhv-dots{display:flex;justify-content:center;gap:9px;margin-top:22px}
+.dhv-dots button{width:8px;height:8px;padding:0;border:0;border-radius:10px;background:#c8cede;cursor:pointer;transition:width .3s,background .3s}
+.dhv-dots button.dhv-selected{width:26px;background:#1d1b52}
+@media(max-width:760px){.dhv-section{padding:65px 0 75px}.dhv-heading{margin-bottom:28px}.dhv-stage{height:min(125vw,590px)}.dhv-item{width:min(69vw,310px)}.dhv-item.dhv-prev{transform:translate(calc(-50% - 65vw),-50%) scale(.82)}.dhv-item.dhv-next{transform:translate(calc(-50% + 65vw),-50%) scale(.82)}.dhv-arrow{width:38px;height:38px}.dhv-prev.dhv-arrow{left:5px}.dhv-next.dhv-arrow{right:5px}}
+@media(prefers-reduced-motion:reduce){.dhv-item,.dhv-dots button{transition:none}}
 
-  <title>FlexGrip® | DH Medical</title>
+/* DH MEDICAL — REDESIGN PREMIUM. Treści oryginalne, nowa oprawa. */
+:root{--navy:#071827;--navy2:#0e2c49;--blue:#35a9ef;--ink:#142c42;--muted:#64768a;--line:#e1eaf1;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:white;color:var(--ink);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}h1,h2,h3,h4{font-family:Manrope,sans-serif;letter-spacing:-.045em}p{line-height:1.8}a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}img{max-width:100%;display:block}.container{width:min(1240px,calc(100% - 76px));margin:auto}
+/* Top navigation */
+.site-header{position:absolute;top:0;left:0;right:0;z-index:30;border-bottom:1px solid #ffffff2b;background:#07182745;backdrop-filter:blur(13px)}.nav-wrapper{height:86px;display:flex;align-items:center;justify-content:space-between;gap:38px}.brand{flex-shrink:0}.brand img{height:48px;max-width:210px;object-fit:contain;filter:brightness(0) invert(1)}.nav-links{display:flex;align-items:center;gap:34px}.nav-links a{color:#e7f1f9;font-size:13px;font-weight:600;transition:color .2s}.nav-links a:hover{color:#73ccff}.nav-links .nav-cta{background:var(--blue);color:#072038;padding:13px 24px;border-radius:40px}.nav-links .nav-cta:hover{color:#072038;background:#8ad9ff}.mobile-toggle{display:none;color:white;background:none;border:0;font-size:28px}
+/* Hero: original text, cinematic treatment */
+.hero{min-height:790px;position:relative;isolation:isolate;display:flex;align-items:center;color:white;overflow:hidden;background:radial-gradient(circle at 78% 45%,#2b6284 0%,#12334e 40%,#071827 85%)}.hero:before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,#071827 3%,#071827f2 29%,#09233ba6 63%,#0b294570),url('assets/hero-clinical.jpg') center/cover no-repeat}.hero:after{content:"";position:absolute;right:-190px;top:110px;width:680px;height:680px;border:1px solid #ffffff20;border-radius:50%;box-shadow:0 0 0 125px #ffffff08,0 0 0 250px #ffffff05;z-index:-1}.hero-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:8%;align-items:center;padding-top:150px;padding-bottom:115px}.eyebrow,.section-kicker,.panel-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}.eyebrow{color:#91d7ff;display:flex;gap:12px;align-items:center}.hero h1{font-size:clamp(44px,5.1vw,76px);line-height:1.09;letter-spacing:-.06em;max-width:770px;margin:23px 0 24px}.hero-lead{font-size:clamp(15px,1.5vw,18px);color:#d3e2ef;max-width:600px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:35px 0 45px}.btn-primary,.btn-secondary,.btn-cta-primary,.btn-cta-secondary{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:53px;padding:0 25px;border-radius:32px;font-size:13px;font-weight:800;transition:transform .2s,background .2s}.btn-primary,.btn-cta-primary{background:var(--blue);color:#062039}.btn-secondary,.btn-cta-secondary{border:1px solid #ffffff80;color:white}.btn-primary:hover,.btn-secondary:hover,.btn-cta-primary:hover,.btn-cta-secondary:hover{transform:translateY(-3px)}.hero-proof{display:flex;align-items:center;gap:18px;border-top:1px solid #ffffff35;padding-top:24px;max-width:540px;font-size:13px;font-weight:800;color:white}.hero-proof span{display:block;margin-top:5px;font-size:12px;line-height:1.65;font-weight:400;color:#b7ccdf}.proof-icon{width:46px;height:46px;display:grid;place-items:center;border:1px solid #ffffff50;border-radius:50%;font-size:20px;flex-shrink:0}.hero-panel{border:1px solid #ffffff37;background:#092039c7;backdrop-filter:blur(20px);border-radius:18px;padding:35px;box-shadow:0 25px 80px #020f204f}.panel-label{color:#8bd2ff}.hero-panel h2{font-size:clamp(24px,2.5vw,35px);line-height:1.22;margin:17px 0}.hero-panel>p{color:#d1deeb;font-size:13px}.hero-metrics{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:26px}.metric-card{border:1px solid #ffffff24;border-radius:10px;padding:17px;background:#ffffff09;display:flex;flex-direction:column;gap:8px}.metric-card i{color:#6bc8ff;font-size:21px}.metric-card strong{font-size:12px;line-height:1.5}.metric-card span{font-size:11px;line-height:1.5;color:#a7c2d6}
+/* Value strip */
+.trust-strip{background:#f4f8fc;border-bottom:1px solid var(--line)}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr)}.trust-item{display:flex;gap:15px;align-items:center;padding:26px 25px;border-right:1px solid #dce7ef;font-size:13px;font-weight:700}.trust-item:first-child{padding-left:0}.trust-item:last-child{border:0}.trust-item i{font-size:24px;color:#248fce}
+/* Product portfolio */
+main>section:not(.hero):not(.dhv-section):not(.audience):not(.partners):not(.cta){padding:115px 0 105px}.section-header{max-width:800px;margin-bottom:50px}.section-kicker{color:#218ac6}.section-header h2{font-size:clamp(31px,3.6vw,50px);line-height:1.17;margin:17px 0}.section-header p{font-size:16px;color:var(--muted);max-width:710px}.offer-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px}.offer-card{grid-column:span 2;border:1px solid var(--line);background:white;border-radius:13px;overflow:hidden;padding:0 0 26px;transition:transform .3s,box-shadow .3s,border-color .3s;position:relative}.offer-card:hover{transform:translateY(-7px);box-shadow:0 23px 55px #12355419;border-color:#bdd8eb}.offer-card:nth-child(n+4){grid-column:span 3}.offer-icon{height:300px;background:linear-gradient(145deg,#f3f7fb,#e6edf6);display:flex;align-items:center;justify-content:center;padding:36px;margin-bottom:25px;position:relative;overflow:hidden}.offer-icon:after{content:'↗';position:absolute;right:18px;top:15px;font-size:23px;color:#357eaf}.offer-icon img{max-height:100%;max-width:100%;object-fit:contain;filter:drop-shadow(0 18px 22px #19385420);transition:transform .4s}.offer-card:hover img{transform:scale(1.06)}.offer-card h3{font-size:24px;margin:0 26px 7px}.offer-card p{font-size:13px;color:var(--muted);margin:0 26px;min-height:55px}.offer-card .card-link{display:inline-flex;gap:12px;color:#1679b8;font-weight:800;font-size:13px;margin:15px 26px 0}
+/* Videos — retain four-film original carousel behavior */
+.dhv-section{padding:95px 0 110px!important;background:radial-gradient(ellipse at 50% 35%,#163956 0%,#071827 70%)!important;color:white}.dhv-heading h2{color:white!important;font-size:clamp(33px,4vw,53px)!important;letter-spacing:-.05em}.dhv-heading p{color:#a9c7dd!important}.dhv-item{border:1px solid #ffffff2c;box-shadow:0 22px 75px #0007}.dhv-item.dhv-active{box-shadow:0 35px 90px #0009}.dhv-item.dhv-prev,.dhv-item.dhv-next{opacity:.5}.dhv-arrow{background:#0b2b46!important;color:white!important;border-color:#ffffff45!important}.dhv-arrow:hover{background:#164a71!important}.dhv-dots button{background:#607b92!important}.dhv-dots button.dhv-selected{background:#56baff!important}
+/* Audience */
+.audience{padding:110px 0;background:#f5f8fb}.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.audience-card{padding:35px 31px;border:1px solid #dfebf3;border-radius:12px;background:white;min-height:270px;transition:transform .25s}.audience-card:hover{transform:translateY(-5px)}.audience-card>i{font-size:34px;color:#268fcf}.audience-card h3{font-size:24px;margin:28px 0 12px}.audience-card p{font-size:14px;color:var(--muted);margin:0}
+/* Partners */
+.partners{padding:100px 0}.partners .section-header{text-align:center;margin-left:auto;margin-right:auto}.partners-logos{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px}.partner-logo{height:100px;width:calc(20% - 17px);min-width:150px;border:1px solid var(--line);border-radius:10px;display:grid;place-items:center;padding:20px;background:white}.partner-logo img{max-width:100%;max-height:55px;object-fit:contain;filter:grayscale(1);opacity:.75;transition:filter .25s,opacity .25s}.partner-logo:hover img{filter:none;opacity:1}
+/* CTA/footer */
+.cta{padding:95px 0;background:#0b2236}.cta-box{background:linear-gradient(120deg,#103858,#071827 78%);color:white;padding:65px 75px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;gap:50px;transform:none;position:relative;z-index:1;box-shadow:0 20px 65px #061d3540}.cta-box h2{font-size:clamp(29px,3.3vw,44px);line-height:1.15;max-width:630px;margin:0 0 15px}.cta-box p{color:#b8d0e2;max-width:600px;font-size:14px;margin:0}.cta-actions{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0}footer{background:#061521;color:#a7bfd0;padding:68px 0 30px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr .8fr;gap:42px}.footer-brand-row{display:flex;flex-direction:column;gap:12px}.footer-logo-box img{max-width:175px;max-height:85px;object-fit:contain;filter:brightness(0) invert(1)}.footer-grid h4{font-size:13px;color:white;letter-spacing:-.01em;margin:0 0 17px}.footer-grid p,.footer-grid a{font-size:12px;line-height:1.95}.footer-grid a:hover{color:#70c6ff}.footer-mini-cta{color:#74caff!important;font-weight:700}.social-links{display:flex;gap:15px}.social-links a{font-size:20px}.copyright{border-top:1px solid #ffffff25;margin-top:60px;padding-top:25px;font-size:12px;color:#7896ab}
+/* Interaction */
+.ripple{position:absolute;pointer-events:none;border-radius:50%;background:#35a9ef33;transform:scale(0);animation:ripple .6s ease-out}@keyframes ripple{to{transform:scale(2);opacity:0}}.fade-in{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1050px){.hero-grid{grid-template-columns:1fr;gap:35px}.hero-panel{max-width:720px}.hero{min-height:auto}.offer-grid{grid-template-columns:repeat(2,1fr)}.offer-card,.offer-card:nth-child(n+4){grid-column:span 1}.offer-icon{height:250px}.footer-grid{grid-template-columns:repeat(2,1fr)}.cta-box{flex-direction:column;align-items:flex-start}.nav-links{gap:17px}}
+@media(max-width:700px){.cta{padding:64px 0}.container{width:calc(100% - 36px)}.nav-wrapper{height:70px}.brand img{height:39px}.mobile-toggle{display:block}.nav-links{display:none;position:absolute;left:0;right:0;top:70px;background:#071827;padding:22px 18px 28px;flex-direction:column;align-items:stretch;gap:20px;box-shadow:0 20px 35px #0615255c}.nav-links.open{display:flex}.hero-grid{padding-top:125px;padding-bottom:70px}.hero h1{font-size:clamp(39px,10vw,59px)}.hero-panel{padding:23px}.hero-metrics{gap:9px}.metric-card{padding:12px}.hero-proof{align-items:flex-start}.trust-grid{grid-template-columns:1fr}.trust-item,.trust-item:first-child{padding:17px 0;border-right:0;border-bottom:1px solid #dce7ef}.trust-item:last-child{border:0}main>section:not(.hero):not(.dhv-section):not(.audience):not(.partners):not(.cta){padding:72px 0}.section-header{margin-bottom:30px}.offer-grid{grid-template-columns:1fr;gap:22px}.offer-icon{height:280px}.offer-card p{min-height:0}.dhv-section{padding:70px 0 80px!important}.audience{padding:75px 0}.audience-grid{grid-template-columns:1fr}.audience-card{min-height:0}.partners{padding:75px 0}.partner-logo{width:calc(50% - 10px);min-width:0;height:90px}.cta-box{padding:38px 26px;gap:25px}.cta-actions{width:100%}.cta-actions a{flex:1}.footer-grid{grid-template-columns:1fr;gap:28px}.copyright{margin-top:35px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.fade-in{opacity:1;transform:none}}
 
-  <meta name="description" content="Systemy mocujące FlexGrip® dla dorosłych i neonatologii – DH Medical." />
-  <meta name="keywords" content="FlexGrip, systemy mocujące, systemy bezszwowe, cewniki, neonatologia, FlexGrip Alpha, FlexGrip EPI, FlexGrip PICC, FlexGrip Umbilical, FlexGrip Neo Alpha" />
-  <meta name="author" content="DH Medical" />
+/* Większe karty SecurePortIV i FlexGrip oraz klikalne logo */
+.offer-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:24px}
+.offer-card--flagship{grid-column:span 3!important;border-color:#c9e0f1;box-shadow:0 18px 45px #14395612;background:linear-gradient(180deg,#fff,#fafdff)}
+.offer-card--flagship .offer-icon{height:390px;background:radial-gradient(circle at 50% 45%,#fff 0%,#eef6fc 68%,#e2eff8 100%);padding:55px}
+.offer-card--flagship h3{font-size:clamp(29px,3vw,37px);margin:0 32px 11px}
+.offer-card--flagship p{font-size:15px;margin:0 32px 27px;min-height:0;max-width:470px}
 
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
-  <link href="css/styles.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+.offer-card:not(.offer-card--flagship){grid-column:span 2!important}
+.offer-card:not(.offer-card--flagship) .offer-icon{height:245px}
+.offer-card:not(.offer-card--flagship) h3{font-size:22px}
+/* Jasna, klikalna kapsuła z oryginalnym logo na ciemnym tle */
+.brand,.footer-logo-box{display:inline-flex;align-items:center;justify-content:center;background:#fff;border:1px solid rgba(225,238,248,.95);border-radius:999px;padding:11px 24px;box-shadow:0 8px 32px #03132328;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.brand:hover,.footer-logo-box:hover{transform:translateY(-3px);box-shadow:0 14px 38px #03132350;border-color:#74caff}
+.brand:focus-visible,.footer-logo-box:focus-visible{outline:3px solid #55b9f0;outline-offset:4px}
+.brand img{height:53px;max-width:172px;width:auto;filter:none!important}
+.footer-logo-box{width:max-content;padding:13px 25px;margin-bottom:8px;text-decoration:none}
+.footer-logo-box img{width:155px;max-width:155px;max-height:95px;height:auto;filter:none!important}
+.nav-wrapper{height:100px}
+@media(max-width:1050px){.offer-card--flagship{grid-column:span 1!important}.offer-card:not(.offer-card--flagship){grid-column:span 1!important}.offer-card--flagship .offer-icon{height:310px}}
+@media(max-width:700px){.nav-wrapper{height:82px}.nav-links{top:82px}.brand{padding:8px 16px;border-radius:999px}.brand img{height:43px;max-width:140px}.offer-card--flagship,.offer-card:not(.offer-card--flagship){grid-column:span 1!important}.offer-card--flagship .offer-icon{height:330px;padding:38px}.offer-card--flagship h3{margin-left:25px}.offer-card--flagship p{margin-left:25px;margin-right:25px}}
 
-  <style>
-    .product-page {
-      padding: 86px 0 72px;
-    }
+/* Wariant: jednolity gradient jak przy filmach, bez okręgu i zdjęcia w hero */
+.hero{background:radial-gradient(ellipse at 50% 35%,#163956 0%,#071827 70%)!important}
+.hero::before{display:none!important}
+.hero::after{display:none!important}
+.site-header{background:rgba(5,20,34,.42);border-bottom:1px solid rgba(255,255,255,.10);backdrop-filter:blur(18px)}
+/* Logo osadzone w nagłówku: prosta, jasna zakładka zamiast kapsuły */
+.nav-wrapper{height:104px;align-items:stretch}
+.brand{align-self:stretch;display:flex;align-items:center;justify-content:center;background:#fff!important;border:0!important;border-radius:0 0 17px 17px!important;padding:0 25px!important;box-shadow:none!important;transform:none!important;position:relative;transition:background .2s ease!important}
+.brand::after{content:'';position:absolute;bottom:0;left:24px;right:24px;height:3px;background:#25a7df;opacity:0;transform:scaleX(.45);transition:opacity .25s,transform .25s}
+.brand:hover{background:#f3f9fd!important;box-shadow:none!important;transform:none!important}
+.brand:hover::after,.brand:focus-visible::after{opacity:1;transform:scaleX(1)}
+.brand img{width:auto!important;height:53px!important;max-width:170px!important;filter:none!important}
+.nav-links{align-self:center}
+.mobile-toggle{align-self:center}
+/* W stopce logo jest czytelne na jasnym, prostym panelu */
+.footer-logo-box{background:#fff!important;border:0!important;border-radius:12px!important;box-shadow:none!important;transform:none!important;padding:17px 23px!important}
+.footer-logo-box:hover{background:#f3f9fd!important;box-shadow:none!important;transform:none!important}
+@media(max-width:700px){.nav-wrapper{height:80px}.nav-links{top:80px}.brand{padding:0 16px!important;border-radius:0 0 13px 13px!important}.brand img{height:42px!important;max-width:137px!important}}
 
-    .product-hero {
-      display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
-      gap: 42px;
-      align-items: center;
-    }
 
-    .product-copy h1 {
-      margin: 0;
-      color: var(--navy);
-      font-size: clamp(2.7rem, 5vw, 4.4rem);
-      line-height: 1.05;
-      letter-spacing: -0.055em;
-    }
+/* FINAL POLISH — estetyka, bez zmian merytorycznych */
+:root{--blue:#45b8f4;--navy:#071827}
+body{font-feature-settings:"kern" 1,"liga" 1}
+::selection{background:#69c9fa;color:#08243c}
+:focus-visible{outline:3px solid #5dc5ff;outline-offset:4px}
+/* Wspólny rytm i typografia: Manrope w nagłówkach, DM Sans w treści */
+.hero h1{font-weight:800;letter-spacing:-.065em;text-wrap:balance}
+.section-header h2,.dhv-heading h2,.cta-box h2{text-wrap:balance;font-weight:800}
+.hero-lead,.section-header p{letter-spacing:-.012em}
+.section-kicker{display:inline-flex;align-items:center;gap:12px}
+.section-kicker:before{content:"";display:inline-block;width:24px;height:2px;background:#35a9ef;border-radius:3px}
+/* Gradient jak w karuzeli: bez okręgu, bez dodatkowego zdjęcia */
+.hero{background:radial-gradient(ellipse at 50% 35%,#163956 0%,#071827 70%)!important}
+.hero:before,.hero:after{display:none!important}
+.hero-panel{background:linear-gradient(145deg,rgba(20,58,86,.74),rgba(6,24,42,.83));border:1px solid rgba(171,220,248,.21);box-shadow:0 30px 95px rgba(0,9,22,.24);transition:border-color .35s,box-shadow .35s}
+.hero-panel:hover{border-color:rgba(132,207,252,.44);box-shadow:0 36px 100px rgba(0,9,22,.34)}
+.metric-card{transition:background .3s,border-color .3s,transform .3s}
+.metric-card:hover{background:rgba(112,192,240,.10);border-color:rgba(120,206,255,.35);transform:translateY(-3px)}
+/* Jasna zakładka logo wkomponowana w granatowy pasek */
+.site-header{transition:background .35s,border-color .35s,box-shadow .35s}
+.site-header.is-scrolled{background:rgba(5,19,32,.94);border-color:rgba(149,200,230,.16);box-shadow:0 12px 40px rgba(0,8,20,.18)}
+.brand{isolation:isolate}
+.brand img{transition:transform .3s}
+.brand:hover img{transform:scale(1.035)}
+.nav-links a:not(.nav-cta){position:relative}
+.nav-links a:not(.nav-cta):after{content:"";position:absolute;bottom:-9px;left:0;width:100%;height:2px;background:#55c4ff;transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav-links a:not(.nav-cta):hover:after{transform:scaleX(1)}
+/* Wyraźniejsze, lecz dyskretne CTA */
+.btn-primary,.btn-cta-primary,.nav-links .nav-cta{box-shadow:0 10px 25px rgba(27,155,224,.12);transition:transform .25s,background .25s,box-shadow .25s}
+.btn-primary:hover,.btn-cta-primary:hover,.nav-links .nav-cta:hover{box-shadow:0 14px 32px rgba(45,170,235,.28);background:#79d0ff}
+.btn-secondary:hover,.btn-cta-secondary:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.95)}
+/* Dwa największe produkty: zachowaj rozmiar, wzmocnij detal */
+.offer-card{isolation:isolate;transition:transform .38s cubic-bezier(.2,.7,.2,1),box-shadow .38s,border-color .38s}
+.offer-card--flagship{border-color:#d6e7f2;box-shadow:0 15px 45px rgba(15,53,83,.075)}
+.offer-card--flagship:hover{border-color:#8cc8ed;box-shadow:0 27px 75px rgba(11,69,111,.15)}
+.offer-icon:after{width:35px;height:35px;display:grid;place-items:center;border:1px solid rgba(41,126,177,.18);border-radius:50%;font-size:18px;transition:background .25s,color .25s,transform .25s}
+.offer-card:hover .offer-icon:after{background:#198cc9;color:white;transform:rotate(45deg)}
+.offer-icon img{transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s}
+.offer-card:hover .offer-icon img{transform:scale(1.065);filter:drop-shadow(0 24px 25px rgba(19,56,84,.17))}
+/* Partnerzy: logo wyraźne, bez szarości w stanie spoczynku */
+.partner-logo{transition:transform .3s,border-color .3s,box-shadow .3s}
+.partner-logo img{filter:grayscale(.45);opacity:.85}
+.partner-logo:hover{transform:translateY(-5px);border-color:#b4d6eb;box-shadow:0 12px 35px rgba(18,67,103,.09)}
+/* Galeria — zachowaj swipe i odtwarzanie, podbij jakość elementów */
+.dhv-item{transition:transform .6s cubic-bezier(.2,.75,.25,1),opacity .5s,visibility .5s}
+.dhv-arrow{transition:background .2s,transform .2s,border-color .2s}
+.dhv-arrow:hover{transform:translateY(-50%) scale(1.07);border-color:#8bd9ff!important}
+.dhv-sound{transition:background .2s,transform .2s}
+.dhv-sound:hover{background:#176395e8;transform:scale(1.07)}
+/* Jednolity finał: CTA i stopka bez nakładania się */
+.cta{background:linear-gradient(180deg,#0b2236,#081b2c)}
+.cta-box{border:1px solid rgba(133,202,241,.16);box-shadow:0 22px 70px rgba(0,10,25,.19)}
+.footer-logo-box{transition:background .25s!important}
+.footer-logo-box:hover{background:#eef8fe!important}
+.footer-grid a{transition:color .2s}
+/* Animacje pojawiania, tylko gdy JS potwierdzi gotowość */
+.js-motion .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}
+.js-motion .reveal.is-visible{opacity:1;transform:none}
+.js-motion .reveal-delay-1{transition-delay:.08s}
+.js-motion .reveal-delay-2{transition-delay:.16s}
+.js-motion .reveal-delay-3{transition-delay:.24s}
+@media(max-width:700px){
+ .hero h1{letter-spacing:-.05em}
+ .hero-panel:hover,.metric-card:hover{transform:none}
+ .offer-card--flagship .offer-icon{height:310px}
+ .offer-card--flagship h3{font-size:29px}
+ .dhv-arrow:hover{transform:translateY(-50%)}
+ .nav-links a:not(.nav-cta):after{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+ .js-motion .reveal{opacity:1;transform:none;transition:none}
+ .offer-icon img,.offer-card,.metric-card,.hero-panel,.brand img{transition:none!important}
+}
 
-    .product-copy p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.75;
-    }
 
-    .product-actions {
-      display: flex;
-      gap: 14px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
+/* LOGO — większe i proporcjonalne w nagłówku oraz stopce */
+.brand{width:214px;min-width:214px;padding:0 16px!important;overflow:hidden}
+.brand img{display:block!important;width:190px!important;max-width:none!important;height:96px!important;max-height:none!important;object-fit:contain!important;transform:scale(1.17);transform-origin:center;filter:none!important}
+.brand:hover img{transform:scale(1.22)}
+.footer-logo-box{width:235px;min-height:130px;display:flex!important;align-items:center;justify-content:center;overflow:hidden;padding:12px!important}
+.footer-logo-box img{display:block!important;width:205px!important;max-width:none!important;height:115px!important;max-height:none!important;object-fit:contain!important;transform:scale(1.12);filter:none!important}
+@media(max-width:700px){
+ .brand{width:162px;min-width:162px;padding:0 9px!important}
+ .brand img{width:150px!important;height:75px!important;max-width:none!important;transform:scale(1.12)}
+ .brand:hover img{transform:scale(1.16)}
+ .footer-logo-box{width:215px;min-height:115px}
+ .footer-logo-box img{width:195px!important;height:105px!important}
+}
 
-    .product-visual {
-      background: white;
-      border-radius: 28px;
-      padding: 38px;
-      box-shadow: 0 20px 55px rgba(29,27,82,0.10);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+/* FINAL: kompaktowa oferta — 2 wyróżnione produkty + 3 mniejsze w jednym widoku */
+@media (min-width: 1051px) {
+  main > section:has(.offer-grid) { padding: 68px 0 76px !important; }
+  main > section:has(.offer-grid) .section-header { margin-bottom: 28px; max-width: 900px; }
+  main > section:has(.offer-grid) .section-header h2 { font-size: clamp(30px, 3vw, 41px); line-height: 1.16; margin: 10px 0 12px; }
+  main > section:has(.offer-grid) .section-header p { font-size: 15px; line-height: 1.6; }
+  .offer-grid { gap: 16px; }
+  .offer-card { padding-bottom: 16px; border-radius: 15px; }
+  .offer-card--flagship .offer-icon { height: 210px; padding: 20px 38px; margin-bottom: 16px; }
+  .offer-card--flagship .offer-icon img { max-height: 174px; }
+  .offer-card--flagship h3 { font-size: 28px; margin: 0 23px 7px; }
+  .offer-card--flagship p { font-size: 13px; line-height: 1.5; margin: 0 23px; max-width: none; }
+  .offer-card:not(.offer-card--flagship) .offer-icon { height: 118px; padding: 13px 28px; margin-bottom: 13px; }
+  .offer-card:not(.offer-card--flagship) .offer-icon img { max-height: 95px; }
+  .offer-card:not(.offer-card--flagship) h3 { font-size: 19px; margin: 0 18px 5px; }
+  .offer-card:not(.offer-card--flagship) p { font-size: 12px; line-height: 1.45; margin: 0 18px; min-height: 0; }
+  .offer-icon:after { width: 29px; height: 29px; font-size: 16px; right: 12px; top: 11px; }
+}
+@media (min-width: 701px) and (max-width: 1050px) {
+  main > section:has(.offer-grid) { padding: 75px 0 !important; }
+  .offer-grid { grid-template-columns: repeat(6,minmax(0,1fr)); gap: 16px; }
+  .offer-card--flagship { grid-column: span 3 !important; }
+  .offer-card:not(.offer-card--flagship) { grid-column: span 2 !important; }
+  .offer-card--flagship .offer-icon { height: 220px; padding: 24px; }
+  .offer-card:not(.offer-card--flagship) .offer-icon { height: 150px; padding: 15px; }
+  .offer-card--flagship h3 { font-size: 26px; }
+  .offer-card:not(.offer-card--flagship) h3 { font-size: 19px; }
+}
+@media (max-width: 700px) {
+  .offer-grid { gap: 14px; }
+  .offer-card--flagship .offer-icon { height: 210px; padding: 20px; margin-bottom: 15px; }
+  .offer-card:not(.offer-card--flagship) .offer-icon { height: 145px; padding: 17px; margin-bottom: 14px; }
+  .offer-card--flagship h3 { font-size: 25px; }
+  .offer-card--flagship p { font-size: 13px; }
+  .offer-card:not(.offer-card--flagship) h3 { font-size: 20px; }
+  .offer-card { padding-bottom: 19px; }
+}
 
-    .product-visual img {
-      max-height: 360px;
-      object-fit: contain;
-      filter: drop-shadow(0 18px 30px rgba(29,27,82,0.18));
-    }
 
-    .flex-section {
-      padding: 56px 0;
-    }
+/* POPRAWKA STOPKI — kompaktowe logo i równe kolumny; reszta strony bez zmian */
+footer .footer-grid {
+  grid-template-columns: minmax(230px, 1.25fr) minmax(175px, 1fr) minmax(175px, 1fr) minmax(145px, .8fr);
+  gap: clamp(22px, 2.5vw, 40px);
+  align-items: start;
+}
+footer .footer-grid > div { min-width: 0; }
+footer .footer-brand-row { align-items: flex-start; gap: 18px; }
+footer .footer-logo-box {
+  box-sizing: border-box;
+  width: 184px !important;
+  height: 100px !important;
+  min-height: 0 !important;
+  max-width: 100%;
+  margin: 0 0 2px !important;
+  padding: 9px 15px !important;
+  border-radius: 13px !important;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+footer .footer-logo-box img {
+  display: block !important;
+  width: 160px !important;
+  height: 82px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  transform: scale(1.28) !important;
+  filter: none !important;
+}
+footer .footer-brand-row p { max-width: 315px; margin: 8px 0 12px; }
+footer .footer-grid h4 { margin-top: 3px; }
+@media (max-width: 1050px) {
+  footer .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 36px; }
+}
+@media (max-width: 700px) {
+  footer .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  footer .footer-logo-box { width: 184px !important; height: 100px !important; }
+  footer .footer-logo-box img { width: 160px !important; height: 82px !important; }
+}
 
-    .category-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 28px;
-    }
 
-    .category-head h2 {
-      color: var(--navy);
-      margin: 0;
-      font-size: clamp(2rem, 4vw, 3rem);
-      letter-spacing: -0.045em;
-      line-height: 1.08;
-    }
+/* FINAL: RESPONSYWNOŚĆ I PROPORCJE — reguły na końcu, aby nie były nadpisywane */
+html,body{max-width:100%;overflow-x:clip}
+.offer-grid,.offer-card,.offer-icon,.hero-grid,.hero-panel,.footer-grid{min-width:0}
+.offer-card h3,.offer-card p{overflow-wrap:break-word}
+/* Zwarta kompozycja całej strony na desktopie */
+@media(min-width:1051px){
+  .hero{min-height:650px}
+  .hero-grid{padding-top:128px;padding-bottom:85px;gap:5%}
+  .hero h1{font-size:clamp(43px,4.4vw,66px)}
+  .hero-panel{padding:27px}
+  .hero-metrics{margin-top:18px}
+  .metric-card{padding:13px}
+  .hero-actions{margin:26px 0 32px}
+  .dhv-section{padding-top:65px;padding-bottom:72px}
+  .dhv-stage{height:550px}
+  .audience,.partners{padding-top:72px;padding-bottom:72px}
+  .section-header{margin-bottom:34px}
+  .cta{padding:66px 0}
+  .cta-box{padding:48px 55px}
+}
+/* Tablet: dwie duże karty, trzy mniejsze poniżej */
+@media(min-width:701px) and (max-width:1050px){
+  .offer-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:15px}
+  .offer-card.offer-card--flagship{grid-column:span 3!important}
+  .offer-card:not(.offer-card--flagship){grid-column:span 2!important}
+  .offer-card--flagship .offer-icon{height:195px;padding:20px}
+  .offer-card:not(.offer-card--flagship) .offer-icon{height:125px;padding:15px}
+  .offer-card--flagship h3{font-size:25px}
+  .offer-card:not(.offer-card--flagship) h3{font-size:18px}
+  .offer-card p{line-height:1.5}
+  .hero-grid{padding-top:120px;padding-bottom:65px}
+}
+/* Telefon: jedna czytelna kolumna; żadnych pięciu wąskich kafelków */
+@media(max-width:700px){
+  .container{width:calc(100% - 36px);max-width:540px}
+  main>section:has(.offer-grid){padding:54px 0 60px!important}
+  .section-header{margin-bottom:24px}
+  .section-header h2{font-size:clamp(27px,7.1vw,36px);line-height:1.18;letter-spacing:-.045em;margin:11px 0}
+  .section-header p{font-size:14px;line-height:1.65}
+  .offer-grid{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:15px!important}
+  .offer-grid>.offer-card,.offer-grid>.offer-card.offer-card--flagship,.offer-grid>.offer-card:not(.offer-card--flagship){grid-column:1/-1!important;width:100%!important;min-width:0!important;margin:0!important}
+  .offer-card{padding-bottom:19px!important;border-radius:15px}
+  .offer-card .offer-icon,.offer-card.offer-card--flagship .offer-icon{height:185px!important;padding:20px!important;margin-bottom:15px!important}
+  .offer-card:not(.offer-card--flagship) .offer-icon{height:145px!important;padding:17px!important}
+  .offer-icon img{width:auto!important;height:auto!important;max-width:100%!important;max-height:100%!important;object-fit:contain}
+  .offer-card h3,.offer-card.offer-card--flagship h3,.offer-card:not(.offer-card--flagship) h3{font-size:clamp(21px,5.5vw,26px)!important;line-height:1.22;margin:0 20px 8px!important}
+  .offer-card p,.offer-card.offer-card--flagship p,.offer-card:not(.offer-card--flagship) p{font-size:13px!important;line-height:1.55!important;margin:0 20px!important;min-height:0!important;max-width:none!important}
+  .hero-grid{padding-top:115px;padding-bottom:55px;gap:25px}
+  .hero h1{font-size:clamp(34px,8.5vw,48px);line-height:1.12}
+  .hero-panel{padding:20px}
+  .hero-panel h2{font-size:25px}
+  .hero-actions{margin:24px 0 28px}
+  .dhv-section{padding:54px 0 65px!important}
+  .dhv-heading h2{font-size:clamp(27px,7vw,36px)}
+  .audience,.partners{padding-top:60px;padding-bottom:60px}
+  .cta{padding:55px 0}
+  .cta-box{padding:31px 22px}
+  footer{padding-top:52px}
+}
+@media(max-width:380px){
+  .container{width:calc(100% - 28px)}
+  .offer-card .offer-icon,.offer-card.offer-card--flagship .offer-icon{height:155px!important}
+  .offer-card:not(.offer-card--flagship) .offer-icon{height:125px!important}
+}
 
-    .category-head p {
-      margin: 12px 0 0;
-      color: var(--muted);
-      max-width: 680px;
-      line-height: 1.7;
-    }
 
-    .product-grid {
-      display: grid;
-      gap: 22px;
-    }
 
-    .product-grid.adults {
-      grid-template-columns: repeat(2, 1fr);
-    }
+/* PORTY — scoped styles; desktop/mobile spacing intentionally accounts for absolute header */
+.site-header,.site-header.is-scrolled{background:#071827!important}
+body{background:#f5f9fc}
+main>section.product-page{background:radial-gradient(ellipse at 32% 27%,#1a3c59 0%,#102a40 49%,#0a2032 100%);padding:190px 0 98px!important;color:#fff}
+.product-hero{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:center}
+.product-copy .section-kicker{color:#83d6ff}.product-copy h1{font-family:Manrope,sans-serif;font-size:clamp(36px,4.6vw,64px);line-height:1.11;letter-spacing:-.055em;color:#fff;margin:17px 0 24px;max-width:680px}
+.product-copy p{color:#c2d6e6;line-height:1.8;font-size:15px;max-width:610px;margin:0 0 16px}
+.product-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
+.product-visual{min-height:420px;border-radius:22px;background:#fff;display:flex;justify-content:center;align-items:center;padding:36px;box-shadow:0 28px 65px #03152560}
+.product-visual img{max-width:100%;max-height:355px;object-fit:contain}
+main>section.port-section{padding:85px 0!important;background:#f5f9fc}
+main>section.port-section:nth-of-type(3){background:#edf4f9}
+.category-head{max-width:780px;margin-bottom:32px}.category-head h2{font:800 clamp(29px,3.6vw,45px)/1.17 Manrope,sans-serif;letter-spacing:-.045em;color:#0b263d;margin:12px 0}.category-head p{color:#60778a;font-size:15px;line-height:1.8}
+.port-grid{display:grid;gap:24px}.port-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}.port-grid.one{grid-template-columns:minmax(0,calc(50% - 12px))}
+.port-card{display:flex;flex-direction:column;background:#fff;border:1px solid #dce8f0;border-radius:20px;padding:27px;min-width:0;box-shadow:0 12px 34px #0c2b4610;transition:transform .3s,box-shadow .3s}
+.port-card:hover{transform:translateY(-5px);box-shadow:0 23px 48px #0c2b4620}
+.port-card-image{background:#fff;border:1px solid #e8eff4;border-radius:15px;height:265px;display:flex;align-items:center;justify-content:center;margin-bottom:25px;padding:22px;overflow:hidden}
+.port-card-image img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .35s}.port-card:hover img{transform:scale(1.045)}
+.port-card h3{font:800 21px/1.3 Manrope,sans-serif;color:#102d43;letter-spacing:-.03em;margin:0 0 13px}.port-card p{color:#64798a;font-size:14px;line-height:1.8;margin:0 0 25px}.port-card .card-link{margin-top:auto;color:#087bb5;font-size:14px;font-weight:800;display:inline-flex;align-items:center;gap:9px}
+.note-box{margin-top:28px;background:linear-gradient(120deg,#17425f,#0b263d);border-radius:20px;padding:34px 40px;display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:center;color:#fff}.note-box h3{font:800 26px/1.2 Manrope,sans-serif;margin:0}.note-box p{color:#c8d9e7;line-height:1.8;margin:0;font-size:14px}
+@media(max-width:1000px){main>section.product-page{padding:160px 0 80px!important}.product-hero{gap:35px}.product-visual{min-height:340px}}
+@media(max-width:760px){main>section.product-page{padding:148px 0 72px!important}.product-hero{grid-template-columns:1fr;gap:36px}.product-copy h1{font-size:clamp(36px,8.5vw,51px)}.product-visual{min-height:270px;padding:24px}.product-visual img{max-height:280px}.port-grid.two,.port-grid.one{grid-template-columns:1fr}.port-card-image{height:250px}main>section.port-section{padding:65px 0!important}.note-box{grid-template-columns:1fr;padding:29px;gap:15px}}
+@media(max-width:420px){main>section.product-page{padding-top:140px!important}.product-actions .btn{width:100%;justify-content:center}.port-card{padding:19px}.port-card-image{height:225px}}
 
-    .product-grid.neo {
-      grid-template-columns: repeat(3, 1fr);
-    }
+/* Secondary actions: visible pill buttons on navy backgrounds */
+.product-actions .btn-outline,.cta-actions .btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:53px;padding:0 25px;border:1px solid rgba(195,227,247,.66);border-radius:999px;color:#fff!important;background:rgba(255,255,255,.065);font-size:13px;font-weight:800;line-height:1.3;text-decoration:none;transition:background .2s,border-color .2s,transform .2s}
+.product-actions .btn-outline:hover,.cta-actions .btn-outline:hover{background:rgba(255,255,255,.16);border-color:#fff;transform:translateY(-2px)}
+@media(max-width:420px){.product-actions .btn-outline{width:100%}}
 
-    .flex-card {
-      background: white;
-      border-radius: 26px;
-      padding: 28px;
-      box-shadow: 0 16px 45px rgba(29,27,82,0.08);
-      border: 1px solid rgba(29,27,82,0.06);
-      display: flex;
-      flex-direction: column;
-      min-height: 440px;
-      transition: all 0.25s ease;
-    }
-
-    .flex-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 22px 55px rgba(29,27,82,0.12);
-    }
-
-    .flex-card-image {
-      height: 190px;
-      border-radius: 22px;
-      background: #f4f5f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 22px;
-      overflow: hidden;
-      text-decoration: none;
-    }
-
-    .flex-card-image img {
-      max-width: 92%;
-      max-height: 92%;
-      object-fit: contain;
-      filter: drop-shadow(0 14px 24px rgba(29,27,82,0.14));
-    }
-
-    .flex-card h3 {
-      color: var(--navy);
-      font-size: 1.35rem;
-      margin: 0 0 12px;
-      letter-spacing: -0.035em;
-    }
-
-    .flex-card p {
-      color: var(--muted);
-      line-height: 1.65;
-      margin: 0 0 24px;
-    }
-
-    .flex-card .card-link {
-      margin-top: auto;
-    }
-
-    .note-box {
-      margin-top: 26px;
-      background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 34%),
-        var(--navy);
-      color: white;
-      border-radius: 26px;
-      padding: 34px;
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 30px;
-      align-items: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .note-box::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px);
-      background-size: 22px 22px;
-      opacity: 0.18;
-    }
-
-    .note-box > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .note-box h3 {
-      margin: 0;
-      font-size: 1.8rem;
-      letter-spacing: -0.04em;
-      line-height: 1.1;
-    }
-
-    .note-box p {
-      color: rgba(255,255,255,0.78);
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    @media (max-width: 980px) {
-      .product-hero,
-      .product-grid.adults,
-      .product-grid.neo,
-      .note-box {
-        grid-template-columns: 1fr;
-      }
-
-      .category-head {
-        display: block;
-      }
-    }
-  </style>
-</head>
-
-<body>
-
-<header class="site-header">
-  <div class="container nav-wrapper">
-    <a href="index.html" class="brand">
-      <img src="assets/logo.svg" alt="DH Medical">
-    </a>
-
-    <nav class="nav-links">
-      <a href="index.html">Strona główna</a>
-      <a href="oferta.html">Oferta</a>
-      <a href="o-nas.html">O nas</a>
-      <a href="kontakt.html" class="nav-cta">Kontakt</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-
+/* FlexGrip — spójne karty produktowe i wyraźny odstęp od nagłówka */
+main > .product-page {padding-top: 176px !important; padding-bottom: 95px !important;}
+.flex-section{padding:86px 0;background:#f5f9fc;}
+.flex-section:nth-of-type(3){background:#fff;}
+.flex-section .category-head{margin-bottom:34px;max-width:810px;}
+.flex-section .category-head h2{font-family:Manrope,sans-serif;font-size:clamp(2rem,3.7vw,3.15rem);letter-spacing:-.045em;line-height:1.13;color:#102b42;margin:8px 0 16px;}
+.flex-section .category-head p{color:#607488;font-size:1.05rem;line-height:1.75;margin:0;}
+.product-grid{display:grid;gap:24px;}
+.product-grid.adults{grid-template-columns:repeat(2,minmax(0,1fr));}
+.product-grid.neo{grid-template-columns:repeat(3,minmax(0,1fr));}
+.flex-card{display:flex;flex-direction:column;min-width:0;padding:27px;border-radius:24px;background:#fff;border:1px solid #e2edf4;box-shadow:0 12px 35px rgba(12,42,65,.055);transition:transform .25s,box-shadow .25s;}
+.flex-card:hover{transform:translateY(-5px);box-shadow:0 20px 45px rgba(12,42,65,.12);}
+.flex-card-image{height:255px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #edf2f6;border-radius:18px;overflow:hidden;padding:16px;margin-bottom:25px;}
+.flex-card-image img{width:100%;height:100%;object-fit:contain;transition:transform .3s;}
+.flex-card:hover .flex-card-image img{transform:scale(1.035);}
+.flex-card h3{font:800 clamp(1.25rem,2vw,1.55rem)/1.25 Manrope,sans-serif;color:#102b42;letter-spacing:-.03em;margin:0 0 12px;}
+.flex-card p{color:#607488;line-height:1.72;margin:0 0 26px;flex:1;}
+.flex-card .card-link{display:inline-flex;align-items:center;gap:9px;color:#126e9f;font-weight:800;text-decoration:none;margin-top:auto;}
+.flex-card .card-link:hover{color:#0b4f76;}
+.note-box{display:grid;grid-template-columns:.75fr 1.25fr;gap:28px;align-items:center;margin-top:26px;padding:34px 38px;background:linear-gradient(120deg,#193c57,#0d263b);color:#fff;border-radius:24px;}
+.note-box h3{color:#fff;font:800 1.75rem/1.22 Manrope,sans-serif;letter-spacing:-.04em;margin:0;}
+.note-box p{color:#d0e1eb;line-height:1.7;margin:0;}
+/* secondary buttons have their own visual styling, independent of shared stylesheet */
+.product-actions .btn-outline,.cta a.btn-outline,.cta .btn-secondary,.cta .btn-cta-secondary{display:inline-flex!important;align-items:center;justify-content:center;min-height:52px;padding:13px 23px!important;border:1px solid rgba(255,255,255,.65)!important;border-radius:100px!important;color:#fff!important;text-decoration:none!important;font-weight:700!important;background:rgba(255,255,255,.055)!important;transition:background .2s,border-color .2s;}
+.product-actions .btn-outline:hover,.cta a.btn-outline:hover,.cta .btn-secondary:hover,.cta .btn-cta-secondary:hover{background:rgba(255,255,255,.16)!important;border-color:#fff!important;}
+@media(max-width:1000px){main>.product-page{padding-top:160px!important}.product-grid.neo{grid-template-columns:repeat(2,minmax(0,1fr));}.note-box{grid-template-columns:1fr;}}
+@media(max-width:700px){main>.product-page{padding-top:145px!important;padding-bottom:65px!important}.flex-section{padding:62px 0}.product-grid.adults,.product-grid.neo{grid-template-columns:1fr}.flex-card{padding:20px}.flex-card-image{height:215px}.note-box{padding:28px 24px}}
+</style></head><body><header class="site-header">
+<div class="container nav-wrapper">
+<a aria-label="DH Medical - strona główna" class="brand" href="index.html">
+<img alt="DH Medical" src="assets/logo.svg"/>
+</a>
+<button aria-expanded="false" aria-label="Otwórz menu" class="mobile-toggle" type="button"><i class="bi bi-list"></i></button>
+<nav aria-label="Główna nawigacja" class="nav-links">
+<a href="index.html">Strona główna</a>
+<a href="oferta.html">Oferta</a>
+<a href="o-nas.html">O nas</a>
+<a class="nav-cta" href="kontakt.html">Kontakt</a>
+</nav>
+</div>
+</header><main>
 <section class="product-page">
-  <div class="container product-hero">
-    <div class="product-copy">
-      <div class="section-kicker">FlexGrip®</div>
-      <h1>Systemy mocujące dla dorosłych i neonatologii.</h1>
-      <p>
-        FlexGrip® to rodzina bezszwowych systemów mocujących zaprojektowanych z myślą o stabilizacji cewników oraz komforcie pracy personelu medycznego.
-      </p>
-      <p>
-        Oferta obejmuje rozwiązania dla pacjentów dorosłych oraz dedykowane systemy neonatologiczne.
-      </p>
-
-      <div class="product-actions">
-        <a href="kontakt.html" class="btn-primary">
-          Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
-        <a href="oferta.html" class="btn-secondary">
-          Wróć do oferty
-        </a>
-      </div>
-    </div>
-
-    <div class="product-visual">
-      <img src="assets/flexgrip.png" alt="FlexGrip - systemy mocujące">
-    </div>
-  </div>
+<div class="container product-hero">
+<div class="product-copy">
+<div class="section-kicker">FlexGrip®</div>
+<h1>Systemy mocujące dla dorosłych i neonatologii.</h1>
+<p>FlexGrip® to rodzina bezszwowych systemów mocujących zaprojektowanych z myślą o stabilizacji cewników oraz komforcie pracy personelu medycznego.</p>
+<p>Oferta obejmuje rozwiązania dla pacjentów dorosłych oraz dedykowane systemy neonatologiczne.</p>
+<div class="product-actions">
+<a class="btn btn-primary" href="kontakt.html">Zapytaj o produkt <i class="bi bi-arrow-right"></i></a>
+<a class="btn btn-outline" href="oferta.html">Wróć do oferty</a>
+</div>
+</div>
+<div class="product-visual">
+<img alt="FlexGrip — systemy mocujące" src="assets/flexgrip.png"/>
+</div>
+</div>
 </section>
 
+
+
 <section class="flex-section">
-  <div class="container">
-    <div class="category-head">
-      <div>
-        <div class="section-kicker">Dla dorosłych</div>
-        <h2>Systemy mocujące dla dorosłych</h2>
-        <p>
+<div class="container">
+<div class="category-head">
+<div>
+<div class="section-kicker">Dla dorosłych</div>
+<h2>Systemy mocujące dla dorosłych</h2>
+<p>
           Rozwiązania do stabilizacji cewników stosowanych u pacjentów dorosłych, zaprojektowane z myślą o prostocie aplikacji i bezpieczeństwie mocowania.
         </p>
-      </div>
-    </div>
-
-    <div class="product-grid adults">
-      <article class="flex-card">
-        <a href="https://www.flex-grip.com/products/flexgrip-alpha" target="_blank" rel="noopener" class="flex-card-image" aria-label="FlexGrip Alpha - strona producenta">
-          <img src="assets/flexgrip-alpha.png" alt="FlexGrip Alpha">
-        </a>
-        <h3>FlexGrip Alpha</h3>
-        <p>
+</div>
+</div>
+<div class="product-grid adults">
+<article class="flex-card">
+<a aria-label="FlexGrip Alpha - strona producenta" class="flex-card-image" href="https://www.flex-grip.com/products/flexgrip-alpha" rel="noopener" target="_blank">
+<img alt="FlexGrip Alpha" src="assets/flexgrip-alpha.png"/>
+</a>
+<h3>FlexGrip Alpha</h3>
+<p>
           System mocujący do bezszwowej stabilizacji cewników z motylkiem, takich jak cewniki centralne, PICC, Midline oraz dializacyjne.
         </p>
-        <a href="kontakt.html" class="card-link">
+<a class="card-link" href="kontakt.html">
           Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
-      </article>
-
-      <article class="flex-card">
-        <a href="https://www.flex-grip.com/products/flexgrip-epi-pnb" target="_blank" rel="noopener" class="flex-card-image" aria-label="FlexGrip EPI - strona producenta">
-          <img src="assets/flexgrip-epi.png" alt="FlexGrip EPI">
-        </a>
-        <h3>FlexGrip EPI</h3>
-        <p>
+</a>
+</article>
+<article class="flex-card">
+<a aria-label="FlexGrip EPI - strona producenta" class="flex-card-image" href="https://www.flex-grip.com/products/flexgrip-epi-pnb" rel="noopener" target="_blank">
+<img alt="FlexGrip EPI" src="assets/flexgrip-epi.png"/>
+</a>
+<h3>FlexGrip EPI</h3>
+<p>
           System bezszwowy przeznaczony do stabilizacji cewników zewnątrzoponowych.
         </p>
-        <a href="kontakt.html" class="card-link">
+<a class="card-link" href="kontakt.html">
           Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="flex-section">
-  <div class="container">
-    <div class="category-head">
-      <div>
-        <div class="section-kicker">Neonatologia</div>
-        <h2>Systemy mocujące neonatologiczne</h2>
-        <p>
+</a>
+</article>
+</div>
+</div>
+</section><section class="flex-section">
+<div class="container">
+<div class="category-head">
+<div>
+<div class="section-kicker">Neonatologia</div>
+<h2>Systemy mocujące neonatologiczne</h2>
+<p>
           Delikatne i funkcjonalne rozwiązania do stabilizacji cewników u najmłodszych pacjentów.
         </p>
-      </div>
-    </div>
-
-    <div class="product-grid neo">
-      <article class="flex-card">
-        <a href="https://www.flex-grip.com/products/flexgrip-neo-picc" target="_blank" rel="noopener" class="flex-card-image" aria-label="FlexGrip PICC - strona producenta">
-          <img src="assets/flexgrip-picc.png" alt="FlexGrip PICC">
-        </a>
-        <h3>FlexGrip PICC</h3>
-        <p>
+</div>
+</div>
+<div class="product-grid neo">
+<article class="flex-card">
+<a aria-label="FlexGrip PICC - strona producenta" class="flex-card-image" href="https://www.flex-grip.com/products/flexgrip-neo-picc" rel="noopener" target="_blank">
+<img alt="FlexGrip PICC" src="assets/flexgrip-picc.png"/>
+</a>
+<h3>FlexGrip PICC</h3>
+<p>
           Neonatologiczny system mocujący do cewników PICC oraz CVC, zaprojektowany z myślą o delikatnej skórze pacjenta.
         </p>
-        <a href="kontakt.html" class="card-link">
+<a class="card-link" href="kontakt.html">
           Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
-      </article>
-
-      <article class="flex-card">
-        <a href="https://www.flex-grip.com/products/flexgrip-neo-umbilical" target="_blank" rel="noopener" class="flex-card-image" aria-label="FlexGrip Umbilical - strona producenta">
-          <img src="assets/flexgrip-umbilical.png" alt="FlexGrip Umbilical">
-        </a>
-        <h3>FlexGrip Umbilical</h3>
-        <p>
+</a>
+</article>
+<article class="flex-card">
+<a aria-label="FlexGrip Umbilical - strona producenta" class="flex-card-image" href="https://www.flex-grip.com/products/flexgrip-neo-umbilical" rel="noopener" target="_blank">
+<img alt="FlexGrip Umbilical" src="assets/flexgrip-umbilical.png"/>
+</a>
+<h3>FlexGrip Umbilical</h3>
+<p>
           System mocujący przeznaczony do stabilizacji cewników pępowinowych w zastosowaniach neonatologicznych.
         </p>
-        <a href="kontakt.html" class="card-link">
+<a class="card-link" href="kontakt.html">
           Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
-      </article>
-
-      <article class="flex-card">
-        <a href="https://www.flex-grip.com/products/flexgrip-neo-alpha" target="_blank" rel="noopener" class="flex-card-image" aria-label="FlexGrip Neo Alpha - strona producenta">
-          <img src="assets/flexgrip-neo-alpha.png" alt="FlexGrip Neo Alpha">
-        </a>
-        <h3>FlexGrip Neo Alpha</h3>
-        <p>
+</a>
+</article>
+<article class="flex-card">
+<a aria-label="FlexGrip Neo Alpha - strona producenta" class="flex-card-image" href="https://www.flex-grip.com/products/flexgrip-neo-alpha" rel="noopener" target="_blank">
+<img alt="FlexGrip Neo Alpha" src="assets/flexgrip-neo-alpha.png"/>
+</a>
+<h3>FlexGrip Neo Alpha</h3>
+<p>
           Neonatologiczna wersja systemu Alpha do stabilizacji cewników z motylkiem.
         </p>
-        <a href="kontakt.html" class="card-link">
+<a class="card-link" href="kontakt.html">
           Zapytaj o produkt <i class="bi bi-arrow-right"></i>
-        </a>
-      </article>
-    </div>
-
-    <div class="note-box">
-      <h3>Dobór systemu do procedury</h3>
-      <p>
+</a>
+</article>
+</div>
+<div class="note-box">
+<h3>Dobór systemu do procedury</h3>
+<p>
         W przypadku pytań dotyczących doboru odpowiedniego wariantu FlexGrip® do konkretnego zastosowania, skontaktuj się z nami — pomożemy dobrać rozwiązanie do potrzeb placówki.
       </p>
-    </div>
-  </div>
-</section>
-
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-box">
-      <div class="cta-content">
-        <h2>Chcesz dowiedzieć się więcej o FlexGrip®?</h2>
-        <p>Skontaktuj się z nami — przygotujemy informacje produktowe lub prezentację dla Twojej placówki.</p>
+</div>
+</div>
+</section><section class="cta"><div class="container"><div class="cta-box"><div><h2>Chcesz dowiedzieć się więcej o FlexGrip®?</h2><p>Skontaktuj się z nami — przygotujemy informacje produktowe lub prezentację dla Twojej placówki.</p></div><div class="cta-actions"><a class="btn btn-primary" href="kontakt.html">Kontakt <i class="bi bi-arrow-right"></i></a><a class="btn btn-outline" href="oferta.html">Oferta</a></div></div></div></section></main><footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="footer-brand-row">
+<a aria-label="DH Medical — strona główna" class="footer-logo-box" href="index.html">
+<img alt="DH Medical" src="assets/logo.svg"/>
+</a>
+<div>
+<p>
+                Dystrybutor specjalistycznych rozwiązań medycznych dla obszaru dostępów naczyniowych i terapii infuzyjnej.
+              </p>
+<a class="footer-mini-cta" href="kontakt.html">
+                Zapytaj o ofertę
+                <i class="bi bi-arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+<div>
+<h4>DH Medical Arkadiusz Dynda</h4>
+<p>
+            Szalowa 385<br/>
+            38-331 Szalowa<br/>
+            NIP: 7382168824
+          </p>
+<p>
+<a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br/>
+<a href="tel:+48883480355">+48 883 480 355</a>
+</p>
+</div>
+<div>
+<h4>DH Medical Sławomir Hutek</h4>
+<p>
+            ul. Samotna 8<br/>
+            33-300 Nowy Sącz<br/>
+            NIP: 7343623098
+          </p>
+<p>
+<a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br/>
+<a href="tel:+48507687927">+48 507 687 927</a>
+</p>
+</div>
+<div>
+<h4>Social media</h4>
+<p>Śledź nas i zobacz materiały produktowe.</p>
+<div class="social-links">
+<a aria-label="LinkedIn Arkadiusz Dynda" href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" rel="noopener" target="_blank">
+<i class="bi bi-linkedin"></i>
+</a>
+<a aria-label="LinkedIn Sławomir Hutek" href="https://www.linkedin.com/in/dhmedical00slawomirhutek" rel="noopener" target="_blank">
+<i class="bi bi-linkedin"></i>
+</a>
+<a aria-label="YouTube DH Medical" href="https://www.youtube.com/@DHMedicalKRK" rel="noopener" target="_blank">
+<i class="bi bi-youtube"></i>
+</a>
+<a aria-label="Email DH Medical" href="mailto:arkadiuszdynda@dhmedical.org">
+<i class="bi bi-envelope"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="copyright">
+        © 2025 DH Medical. Wszelkie prawa zastrzeżone.
       </div>
-
-      <div class="cta-actions">
-        <a href="kontakt.html" class="btn-cta-primary">
-          Kontakt <i class="bi bi-arrow-right"></i>
-        </a>
-        <a href="oferta.html" class="btn-cta-secondary">
-          Oferta
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <div class="footer-grid">
-
-      <div>
-        <div class="footer-brand-row">
-          <div class="footer-logo-box">
-            <img src="assets/logo.png" alt="DH Medical">
-          </div>
-          <div>
-            <p>
-              Dystrybutor specjalistycznych rozwiązań medycznych dla dostępów naczyniowych i terapii infuzyjnej.
-            </p>
-            <a href="kontakt.html" class="footer-mini-cta">
-              Zapytaj o ofertę <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h4>DH Medical Arkadiusz Dynda</h4>
-        <p>Szalowa 385<br>38-331 Szalowa</p>
-        <p><a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>+48 883 480 355</p>
-      </div>
-
-      <div>
-        <h4>DH Medical Sławomir Hutek</h4>
-        <p>ul. Samotna 8<br>33-300 Nowy Sącz</p>
-        <p><a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>+48 507 687 927</p>
-      </div>
-
-      <div>
-        <h4>Social media</h4>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek"><i class="bi bi-linkedin"></i></a>
-          <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical"><i class="bi bi-youtube"></i></a>
-          <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical"><i class="bi bi-envelope"></i></a>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="copyright">
-      © 2025 DH Medical. Wszelkie prawa zastrzeżone.
-    </div>
-  </div>
-</footer>
-
-<script>
-document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(card => {
-  card.style.position = "relative";
-  card.style.overflow = "hidden";
-  card.style.cursor = "pointer";
-
-  card.addEventListener('click', function(e) {
-    if (e.target.closest('a')) return;
-
-    const ripple = document.createElement('span');
-    ripple.classList.add('ripple');
-
-    const rect = card.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-
-    ripple.style.width = ripple.style.height = size + "px";
-    ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
-    ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
-
-    card.appendChild(ripple);
-
-    setTimeout(() => ripple.remove(), 600);
-
-    const link = card.querySelector('a');
-    if (link) window.location = link.href;
-  });
-});
-</script>
-
-<script>
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
-
-document.querySelectorAll('.offer-card, .flex-card, .port-card').forEach(el => {
-  el.classList.add('fade-in');
-  observer.observe(el);
-});
-</script>
-  
-</body>
-</html>
+</div>
+</footer><script>(function(){const b=document.querySelector('.mobile-toggle'),n=document.querySelector('.nav-links');if(b&&n)b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Zamknij menu':'Otwórz menu');b.innerHTML=open?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>';});const h=document.querySelector('.site-header');window.addEventListener('scroll',()=>h&&h.classList.toggle('is-scrolled',window.scrollY>28),{passive:true});})();</script></body></html>
