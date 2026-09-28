@@ -210,4 +210,25 @@ footer { border-top:0; }
 </script>
 <script>/* Menu na podstronach — jeden wzorzec zachowania */
 (function(){const b=document.querySelector('.mobile-toggle'),n=document.querySelector('.nav-links');if(!b||!n)return;if(b.dataset.dhMenuBound)return;b.dataset.dhMenuBound='1';b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Zamknij menu':'Otwórz menu')});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));})();</script>
+<script>/* DH Medical: jeden nadrzędny kontroler menu mobilnego. */
+(function(){
+ const button=document.querySelector('.mobile-toggle');
+ const nav=document.querySelector('.site-header .nav-links');
+ if(!button||!nav)return;
+ function setMenu(open){
+  nav.classList.toggle('open',open);
+  button.setAttribute('aria-expanded',String(open));
+  button.setAttribute('aria-label',open?'Zamknij menu':'Otwórz menu');
+  button.innerHTML=open?'<i class="bi bi-x-lg" aria-hidden="true"></i>':'<i class="bi bi-list" aria-hidden="true"></i>';
+ }
+ // Faza capture wyklucza konflikt ze starymi skryptami w podstronach.
+ button.addEventListener('click',function(event){
+  event.stopImmediatePropagation();
+  setMenu(!nav.classList.contains('open'));
+ },true);
+ nav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>setMenu(false),true));
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')setMenu(false)});
+ setMenu(false);
+})();
+</script>
 </body></html>
