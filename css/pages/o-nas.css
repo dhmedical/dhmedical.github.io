@@ -397,3 +397,11 @@ main > section.about-hero { padding: 205px 0 90px !important; }
 @media (max-width: 780px) {
   .about-section.alt { padding-bottom: 20px; }
 }
+
+/* FIX: generic main > section selector previously overrode the local spacing. */
+main > section.about-section.alt { padding-bottom: 28px !important; }
+main > section.about-cta-wrap { padding-top: 0 !important; padding-bottom: 64px !important; }
+@media (max-width: 780px) {
+  main > section.about-section.alt { padding-bottom: 22px !important; }
+  main > section.about-cta-wrap { padding-top: 0 !important; padding-bottom: 48px !important; }
+}
