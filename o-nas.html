@@ -390,20 +390,22 @@ html,body{max-width:100%;overflow-x:clip}
 main > section.about-hero { padding: 205px 0 90px !important; }
 @media (max-width:780px) { main > section.about-hero { padding: 185px 0 72px !important; } }
 @media (max-width:520px) { main > section.about-hero { padding: 165px 0 58px !important; } }
-</style></head><body><header class="site-header">
-<div class="container nav-wrapper">
-<a aria-label="DH Medical - strona główna" class="brand" href="index.html">
-<img alt="DH Medical" src="assets/logo.svg"/>
-</a>
-<button aria-expanded="false" aria-label="Otwórz menu" class="mobile-toggle" type="button"><i class="bi bi-list"></i></button>
-<nav aria-label="Główna nawigacja" class="nav-links">
-<a href="index.html">Strona główna</a>
-<a href="oferta.html">Oferta</a>
-<a href="o-nas.html">O nas</a>
-<a class="nav-cta" href="kontakt.html">Kontakt</a>
-</nav>
-</div>
-</header><main>
+</style><link rel="stylesheet" href="dh-layout.css?v=1">
+</head><body><header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand" aria-label="DH Medical - strona główna">
+        <img src="assets/logo.svg" alt="DH Medical">
+      </a>
+
+      <button class="mobile-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false"><i class="bi bi-list"></i></button>
+      <nav class="nav-links" aria-label="Główna nawigacja">
+        <a href="index.html">Strona główna</a>
+        <a href="oferta.html">Oferta</a>
+        <a href="o-nas.html">O nas</a>
+        <a href="kontakt.html" class="nav-cta">Kontakt</a>
+      </nav>
+    </div>
+  </header><main>
 <section class="about-hero"><div class="container"><div class="section-kicker">O nas</div><h1>Kim jesteśmy?</h1><p>DH Medical to dynamicznie rozwijająca się firma specjalizująca się w dystrybucji innowacyjnych rozwiązań medycznych w sektorze dostępów naczyniowych.</p><p>Naszą misją jest dostarczanie najwyższej jakości produktów, które zwiększają bezpieczeństwo pacjentów i ułatwiają codzienną pracę personelu medycznego.</p></div></section>
 <section class="about-main"><div class="container"><div class="about-intro">
 
@@ -426,69 +428,79 @@ main > section.about-hero { padding: 205px 0 90px !important; }
 </div></div></section>
 <section class="about-cta-wrap"><div class="container"><div class="about-cta"><div><h2>Chcesz dowiedzieć się więcej?</h2><p>Skontaktuj się z nami — pomożemy dobrać rozwiązania dla Twojej placówki.</p></div><div class="about-cta-actions"><a href="kontakt.html" class="about-cta-primary">Kontakt <i class="bi bi-arrow-right"></i></a><a href="oferta.html" class="about-cta-secondary">Oferta</a></div></div></div></section>
 </main><footer>
-<div class="container">
-<div class="footer-grid">
-<div>
-<div class="footer-brand-row">
-<a aria-label="DH Medical — strona główna" class="footer-logo-box" href="index.html">
-<img alt="DH Medical" src="assets/logo.svg"/>
-</a>
-<div>
-<p>
+    <div class="container">
+      <div class="footer-grid">
+
+        <div>
+          <div class="footer-brand-row">
+            <a class="footer-logo-box" href="index.html" aria-label="DH Medical — strona główna">
+              <img src="assets/logo.svg" alt="DH Medical">
+            </a>
+
+            <div>
+              <p>
                 Dystrybutor specjalistycznych rozwiązań medycznych dla obszaru dostępów naczyniowych i terapii infuzyjnej.
               </p>
-<a class="footer-mini-cta" href="kontakt.html">
+
+              <a href="kontakt.html" class="footer-mini-cta">
                 Zapytaj o ofertę
                 <i class="bi bi-arrow-right"></i>
-</a>
-</div>
-</div>
-</div>
-<div>
-<h4>DH Medical Arkadiusz Dynda</h4>
-<p>
-            Szalowa 385<br/>
-            38-331 Szalowa<br/>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4>DH Medical Arkadiusz Dynda</h4>
+          <p>
+            Szalowa 385<br>
+            38-331 Szalowa<br>
             NIP: 7382168824
           </p>
-<p>
-<a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br/>
-<a href="tel:+48883480355">+48 883 480 355</a>
-</p>
-</div>
-<div>
-<h4>DH Medical Sławomir Hutek</h4>
-<p>
-            ul. Samotna 8<br/>
-            33-300 Nowy Sącz<br/>
+          <p>
+            <a href="mailto:arkadiuszdynda@dhmedical.org">arkadiuszdynda@dhmedical.org</a><br>
+            <a href="tel:+48883480355">+48 883 480 355</a>
+          </p>
+        </div>
+
+        <div>
+          <h4>DH Medical Sławomir Hutek</h4>
+          <p>
+            ul. Samotna 8<br>
+            33-300 Nowy Sącz<br>
             NIP: 7343623098
           </p>
-<p>
-<a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br/>
-<a href="tel:+48507687927">+48 507 687 927</a>
-</p>
-</div>
-<div>
-<h4>Social media</h4>
-<p>Śledź nas i zobacz materiały produktowe.</p>
-<div class="social-links">
-<a aria-label="LinkedIn Arkadiusz Dynda" href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" rel="noopener" target="_blank">
-<i class="bi bi-linkedin"></i>
-</a>
-<a aria-label="LinkedIn Sławomir Hutek" href="https://www.linkedin.com/in/dhmedical00slawomirhutek" rel="noopener" target="_blank">
-<i class="bi bi-linkedin"></i>
-</a>
-<a aria-label="YouTube DH Medical" href="https://www.youtube.com/@DHMedicalKRK" rel="noopener" target="_blank">
-<i class="bi bi-youtube"></i>
-</a>
-<a aria-label="Email DH Medical" href="mailto:arkadiuszdynda@dhmedical.org">
-<i class="bi bi-envelope"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="copyright">
+          <p>
+            <a href="mailto:slawomirhutek@dhmedical.org">slawomirhutek@dhmedical.org</a><br>
+            <a href="tel:+48507687927">+48 507 687 927</a>
+          </p>
+        </div>
+
+        <div>
+          <h4>Social media</h4>
+          <p>Śledź nas i zobacz materiały produktowe.</p>
+          <div class="social-links">
+            <a href="https://www.linkedin.com/in/arkadiusz-dynda-4b990b208" target="_blank" rel="noopener" aria-label="LinkedIn Arkadiusz Dynda">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/dhmedical00slawomirhutek" target="_blank" rel="noopener" aria-label="LinkedIn Sławomir Hutek">
+              <i class="bi bi-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/@DHMedicalKRK" target="_blank" rel="noopener" aria-label="YouTube DH Medical">
+              <i class="bi bi-youtube"></i>
+            </a>
+            <a href="mailto:arkadiuszdynda@dhmedical.org" aria-label="Email DH Medical">
+              <i class="bi bi-envelope"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">
         © 2025 DH Medical. Wszelkie prawa zastrzeżone.
       </div>
-</div>
-</footer><script>(function(){const b=document.querySelector('.mobile-toggle'),n=document.querySelector('.nav-links');if(b&&n)b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Zamknij menu':'Otwórz menu');b.innerHTML=open?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>';});const h=document.querySelector('.site-header');window.addEventListener('scroll',()=>h&&h.classList.toggle('is-scrolled',window.scrollY>28),{passive:true});})();</script></body></html>
+    </div>
+  </footer><script>(function(){const b=document.querySelector('.mobile-toggle'),n=document.querySelector('.nav-links');if(b&&n)b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Zamknij menu':'Otwórz menu');b.innerHTML=open?'<i class="bi bi-x-lg"></i>':'<i class="bi bi-list"></i>';});const h=document.querySelector('.site-header');window.addEventListener('scroll',()=>h&&h.classList.toggle('is-scrolled',window.scrollY>28),{passive:true});})();</script><script>/* Menu na podstronach — jeden wzorzec zachowania */
+(function(){const b=document.querySelector('.mobile-toggle'),n=document.querySelector('.nav-links');if(!b||!n)return;if(b.dataset.dhMenuBound)return;b.dataset.dhMenuBound='1';b.addEventListener('click',()=>{const open=n.classList.toggle('open');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Zamknij menu':'Otwórz menu')});n.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')}));})();</script>
+</body></html>
