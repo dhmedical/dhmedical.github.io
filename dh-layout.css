@@ -10,7 +10,7 @@ html{scroll-padding-top:var(--dh-header)}
 .site-header .mobile-toggle{align-self:center!important}
 /* Jawny selektor pierwszej sekcji usuwa konflikt z ogólnym main>section:not(...). */
 main>section:first-child:not(.hero){padding-top:var(--dh-hero-top)!important;padding-bottom:var(--dh-hero-bottom)!important}
-main>section:first-child.exit-hero{padding-top:205px!important;padding-bottom:85px!important}
+
 /* Wspólne przyciski drugorzędne na ciemnym tle. */
 main .product-actions .btn-secondary,main .infusion-actions .btn-secondary,main .hero-actions .btn-secondary,main .cta-actions .btn-cta-secondary,main .exit-actions .btn-secondary{display:inline-flex!important;align-items:center!important;justify-content:center!important;min-height:53px!important;padding:0 25px!important;border:1px solid rgba(255,255,255,.65)!important;border-radius:999px!important;background:rgba(255,255,255,.035)!important;color:#fff!important;font:700 13px 'DM Sans',sans-serif!important;text-decoration:none!important;white-space:normal!important;transition:background .2s,transform .2s,border-color .2s!important}
 main .product-actions .btn-secondary:hover,main .infusion-actions .btn-secondary:hover,main .hero-actions .btn-secondary:hover,main .cta-actions .btn-cta-secondary:hover,main .exit-actions .btn-secondary:hover{background:rgba(255,255,255,.14)!important;border-color:#fff!important;transform:translateY(-2px)!important}
@@ -19,6 +19,25 @@ main .cta-actions{display:flex!important;align-items:center!important;gap:12px!i
 /* Jeden wzorzec stopki. */
 footer .footer-logo-box{background:#fff!important;border:0!important;border-radius:12px!important;padding:17px 23px!important;box-shadow:none!important;transform:none!important}
 footer .footer-logo-box img{width:155px!important;max-width:155px!important;height:auto!important;max-height:95px!important;filter:none!important;object-fit:contain!important}
-@media(max-width:1000px){:root{--dh-hero-top:165px;--dh-hero-bottom:75px}main>section:first-child.exit-hero{padding-top:185px!important;padding-bottom:75px!important}}
-@media(max-width:700px){:root{--dh-header:80px;--dh-hero-top:142px;--dh-hero-bottom:62px}.site-header .nav-wrapper{height:80px!important}.site-header .brand{width:162px!important;min-width:162px!important;padding:0 9px!important;border-radius:0 0 13px 13px!important}.site-header .brand img{width:150px!important;height:75px!important;max-width:none!important;transform:scale(1.12)!important}.site-header .nav-links{top:80px!important;align-self:auto!important}.site-header .mobile-toggle{display:block!important}main>section:first-child.exit-hero{padding-top:162px!important;padding-bottom:65px!important}main .cta-actions a{flex:1 1 130px}}
+@media(max-width:1000px){:root{--dh-hero-top:165px;--dh-hero-bottom:75px}}
+@media(max-width:700px){:root{--dh-header:80px;--dh-hero-top:142px;--dh-hero-bottom:62px}.site-header .nav-wrapper{height:80px!important}.site-header .brand{width:162px!important;min-width:162px!important;padding:0 9px!important;border-radius:0 0 13px 13px!important}.site-header .brand img{width:150px!important;height:75px!important;max-width:none!important;transform:scale(1.12)!important}.site-header .nav-links{top:80px!important;align-self:auto!important}.site-header .mobile-toggle{display:block!important}main .cta-actions a{flex:1 1 130px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+
+/* ETAP 1 FINAL — spójny nagłówek i pierwszy ekran na każdej stronie. */
+:root{--dh-header:104px;--dh-hero-top:190px;--dh-hero-bottom:86px}
+.site-header{height:var(--dh-header)!important;min-height:var(--dh-header)!important;max-height:var(--dh-header)!important}
+.site-header .nav-wrapper{height:var(--dh-header)!important;min-height:var(--dh-header)!important;max-height:var(--dh-header)!important}
+.site-header .brand{height:var(--dh-header)!important;max-height:var(--dh-header)!important;transform:none!important}
+.site-header .brand img{width:190px!important;height:96px!important;max-width:none!important;max-height:none!important;transform:scale(1.17)!important}
+/* Wszystkie podstrony: ten sam padding pierwszej sekcji, bez wyjątków dla ExitPocket. */
+main>section:first-child:not(.hero){padding-top:var(--dh-hero-top)!important;padding-bottom:var(--dh-hero-bottom)!important}
+/* Strona główna ma osobną kompozycję, ale identyczną linię startową treści. */
+main>section.hero .hero-grid{padding-top:var(--dh-hero-top)!important}
+@media(max-width:1000px){
+ :root{--dh-hero-top:165px;--dh-hero-bottom:75px}
+}
+@media(max-width:700px){
+ :root{--dh-header:80px;--dh-hero-top:142px;--dh-hero-bottom:62px}
+ .site-header .brand{width:162px!important;min-width:162px!important;height:80px!important;max-height:80px!important;padding:0 9px!important}
+ .site-header .brand img{width:150px!important;height:75px!important;max-width:none!important;max-height:none!important;transform:scale(1.12)!important}
+}
