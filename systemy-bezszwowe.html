@@ -8,6 +8,33 @@
 }
 </style>
   <link rel="canonical" href="https://www.dhmedical.org/systemy-bezszwowe.html">
+<style id="fg-feature-styles">
+/* Interaktywna sekcja FlexGrip — izolowana od pozostałych stylów strony */
+.fg-feature-section{padding:76px 0 82px;background:#f7fbff;color:#112b46}
+.fg-feature-section .fg-kicker{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#0875b9;margin-bottom:13px}
+.fg-feature-section h2{font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.4vw,43px);line-height:1.18;margin:0 0 14px;color:#102b47}
+.fg-feature-section .fg-intro{font-size:15px;color:#566e85;margin:0 0 34px;max-width:760px}
+.fg-feature-stage{position:relative;min-height:525px;border:1px solid #d1e4f7;border-radius:27px;background:radial-gradient(ellipse at 50% 48%,#fff 8%,#f0f8ff 79%);box-shadow:0 18px 50px rgba(24,77,118,.045);overflow:hidden;isolation:isolate}
+.fg-feature-lines{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.fg-feature-lines polyline{fill:none;stroke:#a8cdec;stroke-width:1.35;stroke-dasharray:5 7;transition:stroke .22s,stroke-width .22s}
+.fg-feature-lines circle{fill:#fff;stroke:#a8cdec;stroke-width:1.6;transition:fill .22s,stroke .22s}
+.fg-feature-stage[data-active='comfort'] [data-line='comfort'],.fg-feature-stage[data-active='security'] [data-line='security'],.fg-feature-stage[data-active='strength'] [data-line='strength'],.fg-feature-stage[data-active='skin'] [data-line='skin']{stroke:#1597de;stroke-width:2.4}
+.fg-feature-stage[data-active='comfort'] circle[data-line='comfort'],.fg-feature-stage[data-active='security'] circle[data-line='security'],.fg-feature-stage[data-active='strength'] circle[data-line='strength'],.fg-feature-stage[data-active='skin'] circle[data-line='skin']{fill:#1597de;stroke:#1597de}
+.fg-render-wrap{position:absolute;z-index:2;left:50%;top:51%;width:min(49%,590px);transform:translate(-50%,-50%);pointer-events:none;filter:drop-shadow(0 17px 19px rgba(29,77,110,.10))}
+.fg-render-wrap img{display:block;width:100%;height:auto;object-fit:contain}
+.fg-feature-card{position:absolute;z-index:3;width:285px;min-height:76px;padding:17px 18px;border:1px solid #d0e1f3;border-radius:18px;background:#fff;box-shadow:0 9px 23px rgba(23,70,106,.035);font:inherit;text-align:left;color:#102b47;cursor:pointer;transition:border-color .2s,background .2s,box-shadow .2s}
+.fg-feature-card:hover,.fg-feature-card:focus-visible,.fg-feature-card[aria-expanded='true']{background:#edf8ff;border-color:#1697ec;box-shadow:0 10px 26px rgba(14,130,208,.10);outline:none}
+.fg-feature-card .fg-card-head{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:800;line-height:1.3}
+.fg-feature-card .fg-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:50%;background:#eaf5ff;color:#0784cc;font-size:18px;flex:none}
+.fg-feature-card .fg-detail{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .23s,opacity .23s}
+.fg-feature-card .fg-detail-inner{overflow:hidden;font-size:13px;line-height:1.6;color:#426079}
+.fg-feature-card[aria-expanded='true'] .fg-detail{grid-template-rows:1fr;opacity:1;margin-top:9px}
+.fg-feature-card.fg-tl{top:42px;left:3.5%}.fg-feature-card.fg-tr{top:42px;right:3.5%}.fg-feature-card.fg-bl{bottom:42px;left:3.5%}.fg-feature-card.fg-br{bottom:42px;right:3.5%}
+@media(max-width:900px){.fg-feature-stage{min-height:470px}.fg-feature-card{width:235px;padding:13px}.fg-feature-card .fg-card-head{font-size:14px}.fg-feature-card.fg-tl,.fg-feature-card.fg-bl{left:2%}.fg-feature-card.fg-tr,.fg-feature-card.fg-br{right:2%}.fg-render-wrap{width:49%}}
+@media(max-width:700px){.fg-feature-section{padding:54px 0 62px}.fg-feature-section .fg-intro{margin-bottom:23px}.fg-feature-stage{min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:22px 14px 17px;overflow:visible}.fg-feature-lines{display:none}.fg-render-wrap{position:relative;grid-column:1/-1;grid-row:1;left:auto;top:auto;width:min(100%,440px);margin:0 auto 7px;transform:none}.fg-feature-card{position:relative!important;inset:auto!important;width:100%;min-height:82px;padding:12px 10px}.fg-feature-card .fg-card-head{gap:7px;font-size:12px}.fg-feature-card .fg-icon{width:29px;height:29px;font-size:15px}.fg-feature-card .fg-detail-inner{font-size:12px}.fg-feature-card.fg-tl{grid-column:1;grid-row:2}.fg-feature-card.fg-tr{grid-column:2;grid-row:2}.fg-feature-card.fg-bl{grid-column:1;grid-row:3}.fg-feature-card.fg-br{grid-column:2;grid-row:3}}
+@media(max-width:360px){.fg-feature-stage{grid-template-columns:1fr}.fg-feature-card.fg-tl,.fg-feature-card.fg-tr,.fg-feature-card.fg-bl,.fg-feature-card.fg-br{grid-column:1;grid-row:auto}}
+@media(prefers-reduced-motion:reduce){.fg-feature-card,.fg-feature-lines polyline,.fg-feature-lines circle,.fg-feature-card .fg-detail{transition:none}}
+</style>
 </head><body><header class="site-header">
     <div class="container nav-wrapper">
       <a href="index.html" class="brand" aria-label="DH Medical - strona główna">
@@ -41,7 +68,26 @@
 </div>
 </section>
 
-
+<section class="fg-feature-section" aria-labelledby="fg-feature-heading">
+ <div class="container">
+  <div class="fg-kicker">DLACZEGO FLEXGRIP®</div>
+  <h2 id="fg-feature-heading">FlexGrip. Stabilizacja, która robi różnicę.</h2>
+  <p class="fg-intro">Poznaj cztery cechy systemów mocujących FlexGrip®.</p>
+  <div class="fg-feature-stage" id="fg-feature-stage" data-active="comfort">
+   <svg class="fg-feature-lines" viewBox="0 0 1200 525" preserveAspectRatio="none" aria-hidden="true">
+    <polyline data-line="comfort" points="318,101 430,101 506,205"/><circle data-line="comfort" cx="506" cy="205" r="5"/>
+    <polyline data-line="security" points="882,101 770,101 694,205"/><circle data-line="security" cx="694" cy="205" r="5"/>
+    <polyline data-line="strength" points="318,424 430,424 506,321"/><circle data-line="strength" cx="506" cy="321" r="5"/>
+    <polyline data-line="skin" points="882,424 770,424 694,321"/><circle data-line="skin" cx="694" cy="321" r="5"/>
+   </svg>
+   <div class="fg-render-wrap"><img src="assets/flexgriprender.png" alt="System mocujący FlexGrip z elastycznymi skrzydełkami" width="2000" height="1200" loading="lazy" decoding="async"/></div>
+   <button type="button" class="fg-feature-card fg-tl" data-feature="comfort" aria-expanded="true"><span class="fg-card-head"><span class="fg-icon"><i class="bi bi-heart" aria-hidden="true"></i></span><span>Komfort pacjenta</span></span><span class="fg-detail"><span class="fg-detail-inner">Miękki, elastyczny materiał amortyzuje cewnik i sprzyja swobodzie codziennych aktywności.</span></span></button>
+   <button type="button" class="fg-feature-card fg-tr" data-feature="security" aria-expanded="false"><span class="fg-card-head"><span class="fg-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span><span>Bezpieczne mocowanie</span></span><span class="fg-detail"><span class="fg-detail-inner">System bezszwowy pomaga stabilizować cewnik bez konieczności zakładania szwów.</span></span></button>
+   <button type="button" class="fg-feature-card fg-bl" data-feature="strength" aria-expanded="false"><span class="fg-card-head"><span class="fg-icon"><i class="bi bi-link-45deg" aria-hidden="true"></i></span><span>Trwała stabilizacja</span></span><span class="fg-detail"><span class="fg-detail-inner">Mocowanie zaprojektowane, by ograniczać przemieszczanie i przypadkowe wysunięcie cewnika.</span></span></button>
+   <button type="button" class="fg-feature-card fg-br" data-feature="skin" aria-expanded="false"><span class="fg-card-head"><span class="fg-icon"><i class="bi bi-bandaid" aria-hidden="true"></i></span><span>Przyjazny dla skóry</span></span><span class="fg-detail"><span class="fg-detail-inner">Warstwy przylepne opracowane z myślą o ograniczaniu urazów skóry związanych z klejami medycznymi.</span></span></button>
+  </div>
+ </div>
+</section>
 
 <section class="flex-section">
 <div class="container">
@@ -249,6 +295,15 @@
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
+})();
+</script>
+
+<script id="fg-feature-interaction">
+(function(){
+ var stage=document.getElementById('fg-feature-stage');if(!stage)return;
+ var cards=Array.from(stage.querySelectorAll('[data-feature]'));
+ function activate(card){stage.dataset.active=card.dataset.feature;cards.forEach(function(item){item.setAttribute('aria-expanded',String(item===card));});}
+ cards.forEach(function(card){card.addEventListener('click',function(){activate(card);});card.addEventListener('mouseenter',function(){if(window.matchMedia('(hover:hover)').matches)activate(card);});card.addEventListener('focus',function(){activate(card);});});
 })();
 </script>
 </body></html>
