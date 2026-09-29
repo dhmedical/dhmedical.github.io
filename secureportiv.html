@@ -9,27 +9,63 @@
   <link rel="canonical" href="https://www.dhmedical.org/secureportiv.html">
 
 <style id="secureportiv-step-image-size">
-/* Only the four application illustrations: retain card sizes and existing layout. */
+/* Four application illustrations only. The 120px source frames remain at native size. */
 .sp-steps .step-card .step-image {
-  background: #f7fafc !important;
-  padding: 14px !important;
+  position: relative !important;
+  isolation: isolate;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  aspect-ratio: 1.36 !important;
+  height: auto !important;
+  padding: 16px !important;
+  margin-bottom: 22px !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  background: #edf5fb !important;
+  box-shadow: none !important;
   overflow: hidden !important;
 }
+/* The same frame, blurred, fills the backdrop instead of leaving a blank square. */
+.sp-steps .step-card .step-image::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  z-index: -2;
+  background-image: var(--step-image);
+  background-position: center;
+  background-size: cover;
+  filter: blur(19px) saturate(.72);
+  opacity: .40;
+  transform: scale(1.15);
+}
+.sp-steps .step-card .step-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(237,245,251,.40);
+}
 .sp-steps .step-card .step-image img {
-  width: 74% !important;
-  height: 74% !important;
-  max-width: 74% !important;
-  max-height: 74% !important;
+  display: block !important;
+  position: relative !important;
+  z-index: 1;
+  width: min(120px, 67%) !important;
+  height: auto !important;
+  max-width: 120px !important;
+  max-height: none !important;
+  aspect-ratio: 1 !important;
   object-fit: contain !important;
   object-position: center !important;
+  border-radius: 13px !important;
   clip-path: none !important;
-  border-radius: 10px !important;
+  box-shadow: 0 8px 24px rgba(13,39,64,.09) !important;
+  margin: 0 !important;
 }
 @media (max-width: 600px) {
-  .sp-steps .step-card .step-image img {
-    width: 80% !important; height: 80% !important;
-    max-width: 80% !important; max-height: 80% !important;
-  }
+  .sp-steps .step-card .step-image { aspect-ratio: 1.5 !important; }
+  .sp-steps .step-card .step-image img { width: min(120px, 60%) !important; }
 }
 </style>
 </head><body><header class="site-header">
@@ -75,7 +111,7 @@
 <td>Średni</td>
 </tr>
 </tbody>
-</table></div><p class="comparison-note">Porównanie ma charakter ogólny; wyniki kliniczne zależą od rodzaju dostępu, zastosowanej procedury i populacji pacjentów.</p></div></div></section><section class="sp-section sp-steps"><div class="container"><div class="category-head"><div class="section-kicker">Aplikacja</div><h2>Jak stosować?</h2><p>Przykładowy przebieg aplikacji produktu SecurePortIV™.</p></div><div class="sp-grid four"><article class="step-card"><div class="step-image"><img src="assets/krok1.png" alt="Aplikacja SecurePortIV — krok 1" loading="lazy"></div><h3>Krok 1</h3><p>Oczyść i wysusz skórę przed aplikacją.</p></article><article class="step-card"><div class="step-image"><img src="assets/krok2.png" alt="Aplikacja SecurePortIV — krok 2" loading="lazy"></div><h3>Krok 2</h3><p>Nałóż 1–2 krople kleju centralnie na miejsce wkłucia.</p></article><article class="step-card"><div class="step-image"><img src="assets/krok3.png" alt="Aplikacja SecurePortIV — krok 3" loading="lazy"></div><h3>Krok 3</h3><p>Opcjonalnie nałóż klej pod skrzydełka lub obok cewnika.</p></article><article class="step-card"><div class="step-image"><img src="assets/krok4.png" alt="Aplikacja SecurePortIV — krok 4" loading="lazy"></div><h3>Krok 4</h3><p>Nałóż przezroczysty opatrunek zgodnie z procedurą placówki.</p></article></div></div></section><section class="sp-section sp-materials"><div class="container"><div class="category-head"><div class="section-kicker">Materiały</div><h2>Materiały dodatkowe</h2><p>Zobacz materiały wideo dotyczące produktu SecurePortIV™.</p></div><div class="sp-grid three"><article class="sp-card material-card"><div class="sp-icon"><i class="bi bi-play-circle"></i></div><h3>Prezentacja pełna</h3><p>Szczegółowe omówienie działania SecurePortIV™.</p><a href="https://www.youtube.com/watch?v=HHFnkImlRpM&amp;rco=1" target="_blank" rel="noopener" class="sp-link">Obejrzyj film <i class="bi bi-arrow-up-right"></i></a></article><article class="sp-card material-card"><div class="sp-icon"><i class="bi bi-play-circle"></i></div><h3>Prezentacja krótka</h3><p>Szybki przegląd zalet produktu.</p><a href="https://www.youtube.com/watch?v=LFHP9gRy9yc" target="_blank" rel="noopener" class="sp-link">Obejrzyj film <i class="bi bi-arrow-up-right"></i></a></article><article class="sp-card material-card"><div class="sp-icon"><i class="bi bi-play-circle"></i></div><h3>Aplikacja u wcześniaka</h3><p>Zastosowanie u bardzo małych pacjentów.</p><a href="https://www.youtube.com/watch?v=D8utPMIWCtQ" target="_blank" rel="noopener" class="sp-link">Obejrzyj film <i class="bi bi-arrow-up-right"></i></a></article></div></div></section><section class="cta"><div class="container"><div class="cta-box"><div><h2>Chcesz dowiedzieć się więcej o SecurePortIV™?</h2><p>Skontaktuj się z nami — przygotujemy informacje produktowe lub prezentację dla Twojej placówki.</p></div><div class="cta-actions"><a class="btn btn-primary" href="kontakt.html">Kontakt <i class="bi bi-arrow-right"></i></a><a class="btn btn-outline" href="oferta.html">Oferta</a></div></div></div></section></main><footer>
+</table></div><p class="comparison-note">Porównanie ma charakter ogólny; wyniki kliniczne zależą od rodzaju dostępu, zastosowanej procedury i populacji pacjentów.</p></div></div></section><section class="sp-section sp-steps"><div class="container"><div class="category-head"><div class="section-kicker">Aplikacja</div><h2>Jak stosować?</h2><p>Przykładowy przebieg aplikacji produktu SecurePortIV™.</p></div><div class="sp-grid four"><article class="step-card"><div class="step-image" style="--step-image: url(\'assets/krok1.png\')"><img src="assets/krok1.png" alt="Aplikacja SecurePortIV — krok 1" loading="lazy"></div><h3>Krok 1</h3><p>Oczyść i wysusz skórę przed aplikacją.</p></article><article class="step-card"><div class="step-image" style="--step-image: url(\'assets/krok2.png\')"><img src="assets/krok2.png" alt="Aplikacja SecurePortIV — krok 2" loading="lazy"></div><h3>Krok 2</h3><p>Nałóż 1–2 krople kleju centralnie na miejsce wkłucia.</p></article><article class="step-card"><div class="step-image" style="--step-image: url(\'assets/krok3.png\')"><img src="assets/krok3.png" alt="Aplikacja SecurePortIV — krok 3" loading="lazy"></div><h3>Krok 3</h3><p>Opcjonalnie nałóż klej pod skrzydełka lub obok cewnika.</p></article><article class="step-card"><div class="step-image" style="--step-image: url(\'assets/krok4.png\')"><img src="assets/krok4.png" alt="Aplikacja SecurePortIV — krok 4" loading="lazy"></div><h3>Krok 4</h3><p>Nałóż przezroczysty opatrunek zgodnie z procedurą placówki.</p></article></div></div></section><section class="sp-section sp-materials"><div class="container"><div class="category-head"><div class="section-kicker">Materiały</div><h2>Materiały dodatkowe</h2><p>Zobacz materiały wideo dotyczące produktu SecurePortIV™.</p></div><div class="sp-grid three"><article class="sp-card material-card"><div class="sp-icon"><i class="bi bi-play-circle"></i></div><h3>Prezentacja pełna</h3><p>Szczegółowe omówienie działania SecurePortIV™.</p><a href="https://www.youtube.com/watch?v=HHFnkImlRpM&amp;rco=1" target="_blank" rel="noopener" class="sp-link">Obejrzyj film <i class="bi bi-arrow-up-right"></i></a></article><article class="sp-card material-card"><div class="sp-icon"><i class="bi bi-play-circle"></i></div><h3>Prezentacja krótka</h3><p>Szybki przegląd zalet produktu.</p><a href="https://www.youtube.com/watch?v=LFHP9gRy9yc" target="_blank" rel="noopener" class="sp-link">Obejrzyj film <i class="bi bi-arrow-up-right"></i></a></article><article class="sp-card material-card"><div class="sp-icon"><i class="bi bi-play-circle"></i></div><h3>Aplikacja u wcześniaka</h3><p>Zastosowanie u bardzo małych pacjentów.</p><a href="https://www.youtube.com/watch?v=D8utPMIWCtQ" target="_blank" rel="noopener" class="sp-link">Obejrzyj film <i class="bi bi-arrow-up-right"></i></a></article></div></div></section><section class="cta"><div class="container"><div class="cta-box"><div><h2>Chcesz dowiedzieć się więcej o SecurePortIV™?</h2><p>Skontaktuj się z nami — przygotujemy informacje produktowe lub prezentację dla Twojej placówki.</p></div><div class="cta-actions"><a class="btn btn-primary" href="kontakt.html">Kontakt <i class="bi bi-arrow-right"></i></a><a class="btn btn-outline" href="oferta.html">Oferta</a></div></div></div></section></main><footer>
     <div class="container">
       <div class="footer-grid">
 
