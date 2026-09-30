@@ -27,7 +27,17 @@
   <link rel="canonical" href="https://www.dhmedical.org/">
 
 <style id="dh-regulatory-badges">
-.regulatory-badges{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0 18px}.regulatory-badge{display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;padding:5px 10px;border:1px solid rgba(37,167,223,.30);border-radius:999px;background:rgba(37,167,223,.07);color:#087bb2;font:700 11px/1.2 "DM Sans",sans-serif;letter-spacing:.01em}.offer-body .regulatory-badges{margin:8px 0 0;gap:6px}.offer-body .regulatory-badge{padding:4px 9px;font-size:10.5px}@media(max-width:700px){.regulatory-badges{margin:10px 0 16px}}
+.regulatory-badges{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0 18px}.regulatory-badge{display:inline-flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;padding:5px 10px;border:1px solid rgba(37,167,223,.30);border-radius:999px;background:rgba(37,167,223,.07);color:#087bb2;font:700 11px/1.2 "DM Sans",sans-serif;letter-spacing:.01em}.offer-body .regulatory-badges{margin:8px 0 0;gap:6px}.offer-body .regulatory-badge{padding:4px 9px;font-size:10.5px}@media(max-width:700px){.regulatory-badges{margin:10px 0 16px}}
+</style>
+
+<style id="dh-regulatory-card-alignment">
+/* Regulatory badges: align consistently within each product-card row. */
+.offer-grid .offer-card{display:grid;grid-template-rows:auto auto minmax(3.2em,auto) auto;align-content:start}
+.offer-grid .offer-card>.offer-icon{grid-row:1}
+.offer-grid .offer-card>h3{grid-row:2}
+.offer-grid .offer-card>p{grid-row:3;margin-bottom:0}
+.offer-grid .offer-card>.regulatory-badges{grid-row:4;align-self:start;margin-top:10px}
+@media(max-width:700px){.offer-grid .offer-card{display:block}.offer-grid .offer-card>p{min-height:0}.offer-grid .offer-card>.regulatory-badges{margin-top:10px}}
 </style>
 </head>
 
@@ -158,7 +168,7 @@
               <img src="assets/secureportiv-opakowanie-transparent.webp" alt="SecurePortIV" loading="lazy" decoding="async">
             </a>
             <h3>SecurePortIV™</h3>
-            <p>Klej cyjanoakrylanowy zatwierdzony przez FDA do mocowania urządzeń dostępu naczyniowego.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge">CE</span><span class="regulatory-badge">MDR (UE) 2017/745</span><span class="regulatory-badge">FDA</span></div>
+            <p>Klej cyjanoakrylanowy zatwierdzony przez FDA do mocowania urządzeń dostępu naczyniowego.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge"><i class="bi bi-patch-check" aria-hidden="true"></i>CE</span><span class="regulatory-badge"><i class="bi bi-shield-check" aria-hidden="true"></i>MDR (UE) 2017/745</span><span class="regulatory-badge"><i class="bi bi-check-circle" aria-hidden="true"></i>FDA</span></div>
           </article>
 
           <article class="offer-card offer-card--flagship">
@@ -166,7 +176,7 @@
               <img src="assets/flexgrip.png" alt="FlexGrip" loading="lazy" decoding="async">
             </a>
             <h3>FlexGrip®</h3>
-            <p>Systemy bezszwowej stabilizacji cewników, zaprojektowane z myślą o komforcie pracy.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge">CE</span><span class="regulatory-badge">MDR (UE) 2017/745</span></div>
+            <p>Systemy bezszwowej stabilizacji cewników, zaprojektowane z myślą o komforcie pracy.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge"><i class="bi bi-patch-check" aria-hidden="true"></i>CE</span><span class="regulatory-badge"><i class="bi bi-shield-check" aria-hidden="true"></i>MDR (UE) 2017/745</span></div>
           </article>
 
           <article class="offer-card">
@@ -174,7 +184,7 @@
               <img src="assets/port.png" alt="Porty naczyniowe" loading="lazy" decoding="async">
             </a>
             <h3>Porty naczyniowe</h3>
-            <p>Rozwiązania do długoterminowego dostępu naczyniowego dla pacjentów wymagających terapii.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge">CE</span><span class="regulatory-badge">MDR (UE) 2017/745</span></div>
+            <p>Rozwiązania do długoterminowego dostępu naczyniowego dla pacjentów wymagających terapii.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge"><i class="bi bi-patch-check" aria-hidden="true"></i>CE</span><span class="regulatory-badge"><i class="bi bi-shield-check" aria-hidden="true"></i>MDR (UE) 2017/745</span></div>
           </article>
 
           <article class="offer-card">
@@ -182,7 +192,7 @@
               <img src="assets/exitpocket.png" alt="ExitPocket" loading="lazy" decoding="async">
             </a>
             <h3>ExitPocket WP</h3>
-            <p>Wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego podczas kąpieli.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge">CE</span></div>
+            <p>Wodoodporne kieszonki chroniące miejsce wyjścia cewnika dializacyjnego podczas kąpieli.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge"><i class="bi bi-patch-check" aria-hidden="true"></i>CE</span></div>
           </article>
 
           <article class="offer-card featured">
@@ -190,7 +200,7 @@
     <img src="assets/infusion.png" alt="Zestawy infuzyjne" loading="lazy" decoding="async">
   </a>
   <h3>Zestawy infuzyjne</h3>
-  <p>Linie infuzyjne, filtry oraz rozwiązania custom dla terapii dożylnej.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge">CE</span><span class="regulatory-badge">MDR (UE) 2017/745</span></div>
+  <p>Linie infuzyjne, filtry oraz rozwiązania custom dla terapii dożylnej.</p><div class="regulatory-badges" aria-label="Zgodność regulacyjna"><span class="regulatory-badge"><i class="bi bi-patch-check" aria-hidden="true"></i>CE</span><span class="regulatory-badge"><i class="bi bi-shield-check" aria-hidden="true"></i>MDR (UE) 2017/745</span></div>
 </article>
         </div>
       </div>
