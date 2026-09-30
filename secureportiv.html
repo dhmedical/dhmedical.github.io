@@ -105,6 +105,86 @@
 .product-page .product-visual img {display:block; width:100%; max-width:100%; max-height:385px; height:auto; object-fit:contain; object-position:center;}
 @media(max-width:700px){.product-page .product-visual {padding:12px;}.product-page .product-visual img{max-height:300px;}}
 </style>
+
+<style id="sp-comparison-polish">
+/* Visual refresh of the comparison table only. */
+.sp-comparison .comparison-wrap{
+  overflow:hidden;
+  border:1px solid #d9e8f5;
+  border-radius:22px;
+  background:#fff;
+  box-shadow:0 14px 38px rgba(14,49,80,.065);
+}
+.sp-comparison .comparison-scroll{overflow-x:auto;}
+.sp-comparison .comparison-table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  margin:0;
+}
+.sp-comparison .comparison-table th,
+.sp-comparison .comparison-table td{
+  padding:20px 22px;
+  border:0;
+  border-bottom:1px solid #e2edf5;
+  text-align:left;
+  vertical-align:middle;
+}
+.sp-comparison .comparison-table thead th{
+  background:#173d5b;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.01em;
+}
+.sp-comparison .comparison-table thead th:nth-child(2){
+  background:#12547b;
+  box-shadow:inset 0 4px 0 #25a7df;
+}
+.sp-comparison .comparison-table tbody td{
+  color:#314c63;
+  font-size:14px;
+  background:#fff;
+}
+.sp-comparison .comparison-table tbody td:first-child{
+  color:#17364f;
+  font-weight:600;
+}
+.sp-comparison .comparison-table tbody td:nth-child(2){
+  background:#f0f8fe;
+  color:#087eb8;
+  font-weight:800;
+}
+.sp-comparison .comparison-table tbody tr:last-child td{border-bottom:0;}
+.sp-comparison .comparison-table tbody td:nth-child(2)::before{
+  content:'✓';
+  display:inline-grid;
+  place-items:center;
+  width:22px;
+  height:22px;
+  margin-right:9px;
+  border-radius:999px;
+  background:#dff3fd;
+  color:#078ac7;
+  font-size:12px;
+  font-weight:900;
+}
+.sp-comparison .comparison-note{
+  margin:0;
+  padding:15px 22px 16px;
+  border-top:1px solid #e2edf5;
+  background:#fbfdff;
+  color:#6c8092;
+  font-size:12px;
+  line-height:1.55;
+}
+@media(max-width:700px){
+  .sp-comparison .comparison-wrap{border-radius:18px;}
+  .sp-comparison .comparison-table{min-width:690px;}
+  .sp-comparison .comparison-table th,.sp-comparison .comparison-table td{padding:17px 18px;}
+  .sp-comparison .comparison-note{padding:14px 18px 15px;}
+}
+</style>
 </head><body><header class="site-header">
     <div class="container nav-wrapper">
       <a href="index.html" class="brand" aria-label="DH Medical - strona główna">
