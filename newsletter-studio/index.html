@@ -908,4 +908,56 @@ setTimeout(()=>{renderAll();let s=document.querySelector('.sub');if(s)s.textCont
 })();
 </script>
 
+
+<style id="dhPublicAssetsCss">
+.dh-assets-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:13px 0 7px}
+.dh-assets-head b{font-size:10px;letter-spacing:.8px;text-transform:uppercase}
+.dh-assets-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:390px;overflow:auto;padding-right:2px}
+.dh-asset-tile{height:96px;border:1px solid #d8eaf1;border-radius:11px;overflow:hidden;position:relative;background:#f7fbfd;cursor:pointer}
+.dh-asset-tile:hover{border-color:#25a7df;box-shadow:0 0 0 2px #25a7df18}
+.dh-asset-tile img{width:100%;height:100%;object-fit:contain;padding:5px;background:#fff}
+.dh-asset-tile span{position:absolute;left:4px;right:4px;bottom:4px;background:#082635d9;color:#fff;border-radius:6px;padding:4px 5px;font:8px Arial;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dh-asset-search{margin:0 0 7px!important;padding:7px 8px!important;font-size:10px!important}
+</style>
+<script id="dhPublicAssetsLibrary">
+(function(){
+ const PUBLIC_ASSETS=['alpha1.png','alpha2.png','arkadiusz.png','bedal-logo.png','bedal1-logo.png','bedal1.png','bedal2.png','bedal3.png','districath-logo.png','districath1-logo.png','districlass-logo.png','emodial-logo.png','epi1.png','exitpocket-bg.png','exitpocket-demonstracja.jpg','exitpocket-main.jpg','exitpocket-s2005h-mini.png','exitpocket-s2011h.png','exitpocket-s2013h-ver2.png','exitpocket-s2013hl.png','exitpocket.png','favicon.png','firma.jpg','flexgrip-alpha.png','flexgrip-epi.png','flexgrip-logo.png','flexgrip-neo-alpha.png','flexgrip-picc.png','flexgrip-umbilical.png','flexgrip.png','flexgriprender.png','hbfuller-logo.png','hbfuller1-logo.png','hero-background.png','impromediform-logo.png','infusion.png','klej.png','klej1.png','krok1.png','krok2.png','krok3.png','krok4.png','logo.png','logo.svg','picc1.png','pivc1.png','port.png','portjunior.png','portplastik1.png','portplastik2.png','porttytan1.png','porttytan2.png','porty-naczyniowe.png','secureport.png','secureportiv-aplikator.webp','secureportiv-header.png','secureportiv-opakowanie-transparent.webp','secureportiv-opakowanie.webp','slawomir.png','systemybezszwowe.png'];
+ const BASE='https://www.dhmedical.org/assets/';
+
+ window.setPublicAssetToSelected=function(name){
+   const m=project().modules[state.selected];
+   if(!m){toast('Najpierw wybierz sekcję newslettera.');return;}
+   m.image=BASE+name;
+   m.imageFit=m.imageFit||'contain';
+   persist();renderAll();toast('Dodano grafikę: '+name);
+ };
+
+ window.filterDhAssets=function(q){
+   q=String(q||'').toLowerCase();
+   document.querySelectorAll('.dh-asset-tile').forEach(el=>{
+     el.style.display=el.dataset.name.includes(q)?'block':'none';
+   });
+ };
+
+ function mount(){
+   const brand=document.getElementById('v4brandkit');
+   if(!brand || document.getElementById('dhPublicAssets')) return;
+   const box=document.createElement('div');
+   box.id='dhPublicAssets';
+   box.innerHTML=`
+     <div class="dh-assets-head"><b>Podręczna biblioteka DH Medical</b><span class="badge">60 grafik</span></div>
+     <input class="dh-asset-search" type="text" placeholder="Szukaj: secureport, flexgrip, exitpocket..." oninput="filterDhAssets(this.value)">
+     <div class="dh-assets-grid">
+       ${PUBLIC_ASSETS.map(n=>`<div class="dh-asset-tile" data-name="${n.toLowerCase()}" onclick="setPublicAssetToSelected('${n.replace(/'/g,"\\'")}')" title="${n}"><img loading="lazy" src="${BASE+n}" alt=""><span>${n}</span></div>`).join('')}
+     </div>
+     <div class="v4notice">To są publiczne grafiki z dhmedical.org/assets — będą widoczne również u odbiorców Gmaila. Kliknij grafikę, aby przypisać ją do wybranej sekcji.</div>`;
+   brand.insertAdjacentElement('afterend',box);
+ }
+ const oldAdd=window.addV4UI;
+ window.addV4UI=function(force=false){oldAdd(force);setTimeout(mount,0);};
+ mount();
+ setTimeout(mount,300);
+})();
+</script>
+
 </body></html>
