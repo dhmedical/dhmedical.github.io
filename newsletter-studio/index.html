@@ -846,4 +846,66 @@ setTimeout(()=>{renderAll();let s=document.querySelector('.sub');if(s)s.textCont
 })();
 </script>
 
+
+<style id="dhCreativeBlocks2Css">
+.dh-video-url-hint{font:10px/1.45 Arial;color:#68818d;margin:-5px 0 10px}
+</style>
+<script id="dhCreativeBlocks2">
+(function(){
+ const MORE={
+  youtubeHero:{eyebrow:'WIDEO',title:'Zobacz materiał wideo',text:'Wklej link YouTube — miniatura filmu pojawi się automatycznie.',image:'',button:'Obejrzyj film',url:''},
+  darkHero:{eyebrow:'DH MEDICAL',title:'Rozwiązanie stworzone dla praktyki klinicznej',text:'Krótki, mocny komunikat w ciemnej oprawie.',image:'',button:'Poznaj rozwiązanie',url:'https://www.dhmedical.org'},
+  statementHero:{eyebrow:'NOWOŚĆ',title:'Mniej elementów. Więcej kontroli.',text:'Hero oparty na jednym dużym komunikacie i krótkim rozwinięciu.',image:'',button:'Sprawdź',url:'https://www.dhmedical.org'},
+  imageBandHero:{eyebrow:'DH MEDICAL',title:'Produkt w centrum uwagi',text:'Szeroka grafika jako główny element wizualny newslettera.',image:'',button:'Zobacz produkt',url:'https://www.dhmedical.org'},
+  quoteHero:{eyebrow:'PRAKTYKA KLINICZNA',title:'„Tutaj może znaleźć się krótki cytat lub kluczowa obserwacja.”',text:'Podpis / stanowisko / placówka',image:'',button:'Dowiedz się więcej',url:'https://www.dhmedical.org'}
+ };
+ const stableAdd2=window.add;
+ window.add=function(type){
+   if(!MORE[type])return stableAdd2(type);
+   project().modules.push(Object.assign({type},JSON.parse(JSON.stringify(MORE[type]))));
+   state.selected=project().modules.length-1;renderAll();
+ };
+ const grid=document.querySelector('.module-grid');
+ if(grid && !document.getElementById('dhYoutubeHeroBtn')){
+   [['youtubeHero','▶ YouTube Hero'],['darkHero','◼ Hero Dark'],['statementHero','❝ Statement Hero'],['imageBandHero','▰ Image Band'],['quoteHero','“ Quote Hero']].forEach(([t,label])=>{
+     const b=document.createElement('button');if(t==='youtubeHero')b.id='dhYoutubeHeroBtn';b.className='btn alt';b.textContent=label;b.onclick=()=>add(t);grid.appendChild(b);
+   });
+ }
+ function ytId(u){
+   u=String(u||'').trim();
+   let m=u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|shorts\/|embed\/|live\/))([A-Za-z0-9_-]{11})/i);
+   return m?m[1]:'';
+ }
+ function ytThumb(u){const id=ytId(u);return id?'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg':''}
+ function playThumb(m){
+   const src=ytThumb(m.url);
+   if(!src)return `<div style="height:230px;border:1px dashed #a9dceb;border-radius:16px;background:#f3fbfe;text-align:center;font:13px/230px Arial;color:#72909c">Wklej link YouTube w edytorze</div>`;
+   return `<a href="${esc(m.url)}" target="_blank" style="display:block;position:relative;text-decoration:none"><img class="dh-responsive-image" src="${src}" alt="Miniatura filmu" width="330" style="display:block;width:100%;max-width:330px;height:auto;border:0;border-radius:16px;margin:auto"><span style="display:block;width:62px;height:62px;border-radius:50%;background:#25a7df;color:#fff;font:800 27px/62px Arial;text-align:center;position:absolute;left:50%;top:50%;margin:-31px 0 0 -31px;box-shadow:0 5px 18px rgba(0,0,0,.22)">▶</span></a>`;
+ }
+ const oldEditor2=window.renderEditor;
+ window.renderEditor=function(){
+   const m=project().modules[state.selected];
+   if(!m || !MORE[m.type])return oldEditor2();
+   let h=field('eyebrow','Mały nagłówek')+field('title','Tytuł')+field('text',m.type==='quoteHero'?'Podpis / opis':'Opis',true);
+   if(m.type!=='youtubeHero')h+=imageField();
+   h+=field('button','Tekst przycisku')+field('url',m.type==='youtubeHero'?'Link YouTube':'Link');
+   if(m.type==='youtubeHero')h+=`<div class="dh-video-url-hint">Obsługuje youtube.com/watch, youtu.be, Shorts, Live i linki embed. Nie musisz dodawać miniatury ręcznie.</div>`;
+   $('editor').innerHTML=h;
+   if(m.image && m.type!=='youtubeHero' && typeof v7ImageControls==='function')$('editor').insertAdjacentHTML('beforeend',v7ImageControls());
+ };
+ const oldModule2=window.moduleHtml;
+ window.moduleHtml=function(m,c){
+   const x=v3(); let h='';
+   if(m.type==='youtubeHero') h=`<tr><td bgcolor="#edf9fd" style="padding:0;background:#edf9fd"><table role="presentation" width="100%" cellspacing="0" cellpadding="0"><tr><td class="dh-stack dh-hero-media" width="55%" valign="middle" style="padding:34px 15px 34px 34px">${playThumb(m)}</td><td class="dh-stack dh-hero-copy" width="45%" valign="middle" style="padding:38px 34px 38px 18px"><div style="font:800 10px Arial;letter-spacing:1.5px;color:${c};margin-bottom:12px">${esc(m.eyebrow)}</div><h1 class="dh-h1" style="margin:0 0 14px;font:800 ${x.h1-5}px/1.08 Arial;color:#0b2b3a">${esc(m.title)}</h1><p style="margin:0 0 20px;font:14px/1.65 Arial;color:#58717d">${esc(m.text)}</p>${v4Button(m,c)}</td></tr></table></td></tr>`;
+   else if(m.type==='darkHero') h=`<tr><td bgcolor="#061b28" class="dh-section-pad" style="padding:44px 42px;background:#061b28"><table role="presentation" width="100%"><tr><td class="dh-stack" width="58%" valign="middle" style="padding-right:24px"><div style="font:800 10px Arial;letter-spacing:1.6px;color:#39b6e5;margin-bottom:14px">${esc(m.eyebrow)}</div><h1 class="dh-h1" style="margin:0 0 17px;font:800 ${x.h1}px/1.04 Arial;color:#fff">${esc(m.title)}</h1><p style="margin:0 0 22px;font:14px/1.7 Arial;color:#c1d2d9">${esc(m.text)}</p>${v4Button(m,c)}</td><td class="dh-stack" width="42%" valign="middle">${v72Image(m,280)}</td></tr></table></td></tr>`;
+   else if(m.type==='statementHero') h=`<tr><td bgcolor="#edf9fd" class="dh-section-pad" style="padding:50px 42px;background:#edf9fd"><div style="font:800 10px Arial;letter-spacing:1.7px;color:${c};margin-bottom:18px">${esc(m.eyebrow)}</div><h1 class="dh-h1" style="margin:0 0 20px;max-width:590px;font:800 ${x.h1+10}px/.98 Arial;color:#0b2b3a;letter-spacing:-1.8px">${esc(m.title)}</h1><table role="presentation" width="100%"><tr><td class="dh-stack" width="62%" valign="top"><p style="max-width:410px;margin:0 0 22px;font:15px/1.7 Arial;color:#58717d">${esc(m.text)}</p>${v4Button(m,c)}</td><td class="dh-stack" width="38%" valign="bottom">${m.image?v72Image(m,230):''}</td></tr></table></td></tr>`;
+   else if(m.type==='imageBandHero') h=`<tr><td bgcolor="#ffffff" style="padding:0;background:#fff">${m.image?`<div style="padding:0 30px 26px">${v72Image(m,580)}</div>`:''}<div class="dh-section-pad" style="padding:12px 42px 42px"><div style="font:800 10px Arial;letter-spacing:1.5px;color:${c};margin-bottom:12px">${esc(m.eyebrow)}</div><table role="presentation" width="100%"><tr><td class="dh-stack" width="65%" valign="top"><h1 class="dh-h1" style="margin:0;font:800 ${x.h1-1}px/1.06 Arial;color:#0b2b3a">${esc(m.title)}</h1></td><td class="dh-stack" width="35%" valign="top"><p style="margin:0 0 16px;font:13px/1.6 Arial;color:#617985">${esc(m.text)}</p>${v4Button(m,c)}</td></tr></table></div></td></tr>`;
+   else if(m.type==='quoteHero') h=`<tr><td bgcolor="#f1f9fc" class="dh-section-pad" style="padding:48px 44px;background:#f1f9fc"><div style="font:800 10px Arial;letter-spacing:1.6px;color:${c};margin-bottom:20px">${esc(m.eyebrow)}</div><table role="presentation" width="100%"><tr>${m.image?`<td class="dh-stack" width="30%" valign="top" style="padding-right:26px">${v72Image(m,170)}</td>`:''}<td class="dh-stack" valign="middle"><h1 class="dh-h1" style="margin:0 0 18px;font:700 ${x.h1-4}px/1.18 Georgia,serif;color:#0b2b3a">${esc(m.title)}</h1><p style="margin:0 0 20px;font:12px/1.6 Arial;color:#617985;text-transform:uppercase;letter-spacing:.5px">${esc(m.text)}</p>${v4Button(m,c)}</td></tr></table></td></tr>`;
+   else return oldModule2(m,c);
+   return h;
+ };
+ renderCanvas();renderEditor();renderPreview();
+})();
+</script>
+
 </body></html>
