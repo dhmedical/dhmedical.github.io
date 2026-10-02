@@ -5,7 +5,8 @@
 .v3bar{max-width:760px;margin:0 auto 12px;background:#fff;border:1px solid #dbe9ef;border-radius:14px;padding:10px;display:flex;gap:7px;flex-wrap:wrap;align-items:center}.v3bar button{font-size:11px}.v3panel{max-width:760px;margin:0 auto 12px;background:#fff;border:1px solid #dbe9ef;border-radius:14px;padding:14px}.v3panel summary{font-weight:900;cursor:pointer}.v3cols{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.check-ok{color:#19784b}.check-warn{color:#a66b00}.livecard{background:#fff;border:2px solid transparent;border-radius:13px;padding:14px;margin:8px 0;box-shadow:0 4px 14px #17384810}.livecard:hover{border-color:#bce5f5}.livecard [contenteditable]{outline:0;border-radius:5px}.livecard [contenteditable]:focus{background:#effaff;box-shadow:0 0 0 2px #25a7df33}.pill{display:inline-block;padding:4px 8px;border-radius:20px;background:#eaf8fd;color:#167da9;font-size:10px;font-weight:800}.asset{padding:8px;border:1px solid #dbeaf0;border-radius:9px;margin:5px 0;font-size:11px;cursor:pointer}.score{font-size:28px;font-weight:900}.v3modal{display:none;position:fixed;inset:0;background:#0c2634bb;z-index:80;align-items:center;justify-content:center;padding:20px}.v3modal.show{display:flex}.v3box{background:#fff;width:min(850px,96vw);max-height:90vh;overflow:auto;border-radius:18px;padding:20px}@media(max-width:850px){.v3cols{grid-template-columns:1fr}}
 
 .gmail-ready{background:#0f8f63!important;border-color:#0f8f63!important;color:#fff!important}.gmail-modal-note{padding:12px 14px;border:1px solid #cfe8f1;background:#f3fbfe;border-radius:12px;font-size:12px;line-height:1.55;color:#476672;margin:10px 0}.gmail-warn{border-color:#f1d6a8;background:#fff9ef;color:#78571c}.gmail-ok{border-color:#bfe4d5;background:#f1fbf7;color:#27644e}.gmail-steps{margin:10px 0 0;padding-left:20px;font-size:12px;line-height:1.7;color:#526c78}.gmail-url-row{display:grid;grid-template-columns:1fr auto;gap:6px;margin-top:7px}.gmail-url-row .btn{padding:8px 10px}.gmail-badge{display:inline-flex;align-items:center;gap:5px;border-radius:999px;padding:4px 8px;font:700 10px Arial;background:#e8f7fd;color:#147aa3;margin-left:5px}
-</style></head><body>
+</style><script src="https://accounts.google.com/gsi/client" async defer></script>
+</head><body>
 <header><div><div class="brand">DH <b>Medical</b> <span style="font-weight:500">Studio</span></div><div class="sub">NEWSLETTER BUILDER PRO</div></div><div class="head-actions"><span class="status" id="status">Autozapis aktywny</span><button class="btn ghost small" onclick="openCode()">HTML</button><button class="btn small" onclick="exportHtml()">Eksportuj newsletter</button></div></header>
 <div class="app"><aside class="panel">
 <div class="section"><h2>Projekty</h2><div class="project-row"><select id="projects" onchange="loadProject(this.value)"></select><button class="btn alt small" onclick="newProject()">+ Nowy</button></div><div class="grid2" style="margin-top:7px"><button class="btn ghost small" onclick="renameProject()">Zmień nazwę</button><button class="btn danger small" onclick="deleteProject()">Usuń</button></div></div>
@@ -340,175 +341,61 @@ setTimeout(()=>{renderAll();let s=document.querySelector('.sub');if(s)s.textCont
   window.openGmailSend=function(){oldOpen();setTimeout(()=>{let body=document.getElementById('v3body');if(!body)return;let ls=logoState(),st=gmailImageStats();let box=document.createElement('div');box.className='gmail-modal-note '+(ls.ok?'gmail-ok':'gmail-warn');box.innerHTML='<b>Kontrola wysyłki V8.1</b><br>'+ls.text+'<br>'+(st.local?'⚠ '+st.local+' lokalnych grafik produktowych':'✓ wszystkie grafiki produktowe online / brak grafik lokalnych');body.insertBefore(box,body.firstChild)},0)}
   setTimeout(()=>{optimizeBrandLogoV81(true).then(()=>addV4UI(true));},350);
 })();
-</script>\n<script src="https://accounts.google.com/gsi/client" async defer></script>
-<style id="dhGmailApiCss">
-.gmail-api-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.gmail-api-field{margin-top:9px}
-.gmail-api-field label{display:block;margin-bottom:5px;font:700 10px Arial;color:#536d79}
-.gmail-api-field input,.gmail-api-field textarea{width:100%;box-sizing:border-box;border:1px solid #cfe0e7;border-radius:8px;padding:10px 11px;font:12px Arial;background:#fff;color:#173746}
-.gmail-api-field textarea{min-height:62px;resize:vertical}
-.gmail-api-state{padding:10px 11px;border-radius:9px;margin-bottom:10px;font:700 11px/1.45 Arial}
-.gmail-api-off{background:#fff8e9;color:#7a5b1b}
-.gmail-api-on{background:#effaf5;color:#277052}
-.gmail-api-error{background:#fff0f0;color:#9b2c2c}
-.gmail-api-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-@media(max-width:620px){.gmail-api-grid,.gmail-api-actions{grid-template-columns:1fr}}
+</script>\n<style id="dhGmailApiCss">
+.gmail-api-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.gmail-api-field{margin-top:9px}.gmail-api-field label{display:block;margin-bottom:5px;font:700 10px Arial;color:#536d79}.gmail-api-field input{width:100%;box-sizing:border-box;border:1px solid #cfe0e7;border-radius:8px;padding:10px 11px;font:12px Arial;background:#fff;color:#173746}.gmail-api-state{padding:10px 11px;border-radius:9px;margin-bottom:10px;font:700 11px/1.45 Arial}.gmail-api-off{background:#fff8e9;color:#7a5b1b}.gmail-api-on{background:#effaf5;color:#277052}.gmail-api-error{background:#fff0f0;color:#9b2c2c}.gmail-api-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}@media(max-width:620px){.gmail-api-grid,.gmail-api-actions{grid-template-columns:1fr}}
 </style>
 <script id="dhGmailApiJs">
 (function(){
-  const CLIENT_ID = '33554222811-n0nm3g8ecrc7hph1qhmqfuv2frqvdnkh.apps.googleusercontent.com';
-  const SCOPES = 'https://www.googleapis.com/auth/gmail.send';
-  let tokenClient = null;
-  let accessToken = null;
-  let connectedEmail = '';
-
-  function el(id){ return document.getElementById(id); }
-  function safe(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-  function b64urlUtf8(str){
-    const bytes = new TextEncoder().encode(str);
-    let binary = '';
-    const chunk = 0x8000;
-    for(let i=0;i<bytes.length;i+=chunk) binary += String.fromCharCode.apply(null, bytes.subarray(i,i+chunk));
-    return btoa(binary).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
-  }
-  function encodeHeader(value){
-    if(/^[\x20-\x7E]*$/.test(value)) return value;
-    return '=?UTF-8?B?' + b64urlUtf8(value).replace(/-/g,'+').replace(/_/g,'/') + '?=';
-  }
-  function imageStats(){
-    try { return gmailImageStats(); } catch(e){ return {local:0,total:0,remote:0}; }
-  }
-  function stateBox(kind, html){
-    const box=el('gmailApiState'); if(!box)return;
-    box.className='gmail-api-state gmail-api-'+kind;
-    box.innerHTML=html;
-  }
-  function initGoogle(){
-    if(!window.google || !google.accounts || !google.accounts.oauth2){
-      stateBox('error','Nie udało się załadować logowania Google. Otwórz Studio przez <b>http://localhost:8000</b> i sprawdź połączenie z internetem.');
-      return false;
-    }
-    tokenClient = google.accounts.oauth2.initTokenClient({
-      client_id: CLIENT_ID,
-      scope: SCOPES,
-      callback: async (resp) => {
-        if(resp.error){
-          stateBox('error','Google zwrócił błąd: '+safe(resp.error));
-          return;
-        }
-        accessToken = resp.access_token;
-        try{
-          const r=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/profile',{headers:{Authorization:'Bearer '+accessToken}});
-          const p=await r.json();
-          connectedEmail=p.emailAddress||'konto Google';
-        }catch(_e){ connectedEmail='konto Google'; }
-        stateBox('on','✓ Połączono z Gmail: <b>'+safe(connectedEmail)+'</b>');
-        const btn=el('gmailApiSend'); if(btn)btn.disabled=false;
-      }
-    });
-    return true;
-  }
-  window.connectDhGmail=function(){
-    if(location.protocol==='file:'){
-      stateBox('error','Ta wersja musi działać przez <b>localhost</b>, nie bezpośrednio jako plik. Uruchom dołączony plik <b>URUCHOM_DH_NEWSLETTER.bat</b>.');
-      return;
-    }
-    if(!tokenClient && !initGoogle()) return;
-    tokenClient.requestAccessToken({prompt: accessToken ? '' : 'consent'});
-  };
-  window.disconnectDhGmail=function(){
-    if(accessToken && window.google?.accounts?.oauth2){
-      google.accounts.oauth2.revoke(accessToken,()=>{});
-    }
-    accessToken=null; connectedEmail='';
-    stateBox('off','Niepołączono z Gmail. Kliknij <b>Połącz konto Google</b>.');
-    const btn=el('gmailApiSend'); if(btn)btn.disabled=true;
-  };
-  function validAddressList(s){
-    return String(s||'').split(',').map(x=>x.trim()).filter(Boolean).every(x=>/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(x));
-  }
-  window.sendDhGmail=async function(){
-    if(!accessToken){ connectDhGmail(); return; }
-    const to=(el('gmailApiTo')?.value||'').trim();
-    const cc=(el('gmailApiCc')?.value||'').trim();
-    const bcc=(el('gmailApiBcc')?.value||'').trim();
-    const subject=(el('gmailApiSubject')?.value||'').trim();
-    if(!to || !validAddressList(to)){ stateBox('error','Wpisz poprawny adres odbiorcy w polu <b>Do</b>.'); return; }
-    if(cc && !validAddressList(cc)){ stateBox('error','Sprawdź adresy w polu <b>DW</b>.'); return; }
-    if(bcc && !validAddressList(bcc)){ stateBox('error','Sprawdź adresy w polu <b>UDW</b>.'); return; }
-    if(!subject){ stateBox('error','Wpisz temat wiadomości.'); return; }
-
-    const st=imageStats();
-    if(st.local){
-      stateBox('error','Masz '+st.local+' lokalne grafiki produktowe. Przed wysyłką podmień je na publiczne adresy HTTPS.');
-      return;
-    }
-
-    const sendBtn=el('gmailApiSend');
-    sendBtn.disabled=true; sendBtn.textContent='Wysyłanie…';
-    try{
-      const newsletter = output(); // EXACT V8.2 renderer — no Gmail paste conversion.
-      const headers = [
-        'To: '+to,
-        cc ? 'Cc: '+cc : '',
-        bcc ? 'Bcc: '+bcc : '',
-        'Subject: '+encodeHeader(subject),
-        'MIME-Version: 1.0',
-        'Content-Type: text/html; charset=UTF-8',
-        'Content-Transfer-Encoding: 8bit',
-        '',
-        newsletter
-      ].filter((x,i,a)=>x!=='' || i>=a.findIndex(y=>y==='')).join('\r\n');
-
-      const raw=b64urlUtf8(headers);
-      const r=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{
-        method:'POST',
-        headers:{Authorization:'Bearer '+accessToken,'Content-Type':'application/json'},
-        body:JSON.stringify({raw})
-      });
-      const data=await r.json();
-      if(!r.ok) throw new Error(data?.error?.message || ('HTTP '+r.status));
-      stateBox('on','✓ Wysłano przez Gmail z konta <b>'+safe(connectedEmail||'Google')+'</b>. ID wiadomości: '+safe(data.id||'—'));
-      if(typeof toast==='function') toast('Newsletter wysłany przez Gmail API.');
-    }catch(err){
-      const msg=String(err?.message||err);
-      if(/401|invalid credentials|auth/i.test(msg)) accessToken=null;
-      stateBox('error','Nie udało się wysłać: '+safe(msg)+(accessToken?'':'<br>Połącz konto Google ponownie.'));
-    }finally{
-      sendBtn.disabled=!accessToken; sendBtn.textContent='Wyślij newsletter przez Gmail';
-    }
-  };
-
-  window.openGmailSend=function(){
-    const st=imageStats();
-    const modal=el('v3modal'); if(!modal)return;
-    el('v3title').textContent='Wyślij przez Gmail API';
-    const imageInfo=st.local
-      ? '<div class="gmail-modal-note gmail-warn"><b>⚠ '+st.local+' lokalne grafiki.</b><br>Podmień je na publiczne URL HTTPS przed wysyłką.</div>'
-      : '<div class="gmail-modal-note gmail-ok"><b>✓ Newsletter gotowy do wysyłki.</b><br>Pełny HTML V8.2 zostanie wysłany bez Ctrl+V, razem z responsywnym CSS.</div>';
-    el('v3body').innerHTML=
-      imageInfo+
-      '<div id="gmailApiState" class="gmail-api-state gmail-api-off">Niepołączono z Gmail. Kliknij <b>Połącz konto Google</b>.</div>'+
-      '<button class="btn alt" style="width:100%;padding:12px" onclick="connectDhGmail()">Połącz konto Google</button>'+
-      '<div class="gmail-api-field"><label>Do</label><input id="gmailApiTo" type="email" placeholder="odbiorca@szpital.pl"></div>'+
-      '<div class="gmail-api-grid"><div class="gmail-api-field"><label>DW (opcjonalnie)</label><input id="gmailApiCc" placeholder="adres@firma.pl"></div><div class="gmail-api-field"><label>UDW (opcjonalnie)</label><input id="gmailApiBcc" placeholder="adres@firma.pl"></div></div>'+
-      '<div class="gmail-api-field"><label>Temat</label><input id="gmailApiSubject" value="'+safe((project()?.name||'Newsletter DH Medical'))+'"></div>'+
-      '<div class="gmail-api-actions"><button id="gmailApiSend" class="btn dark" style="padding:13px" onclick="sendDhGmail()" disabled>Wyślij newsletter przez Gmail</button><button class="btn ghost" onclick="disconnectDhGmail()">Rozłącz konto</button></div>'+
-      '<p class="note" style="margin-top:10px">Wysyłany jest bezpośrednio wynik <b>output()</b> z V8.2. Nie zmieniamy renderera desktopowego i nie używamy schowka Gmaila.</p>';
-    modal.classList.add('show');
-    if(accessToken){
-      stateBox('on','✓ Połączono z Gmail: <b>'+safe(connectedEmail||'konto Google')+'</b>');
-      const btn=el('gmailApiSend'); if(btn)btn.disabled=false;
-    }
-    if(!tokenClient) setTimeout(initGoogle,250);
-  };
-
-  setTimeout(()=>{
-    const sub=document.querySelector('.sub');
-    if(sub) sub.textContent='NEWSLETTER STUDIO · V10 GMAIL API';
-    const headBtn=el('gmailHeadBtn'); if(headBtn) headBtn.textContent='Gmail API';
-    const mainBtn=el('gmailSendMain'); if(mainBtn) mainBtn.innerHTML='✉ Wyślij przez Gmail API';
-  },500);
+ const CLIENT_ID='33554222811-n0nm3g8ecrc7hph1qhmqfuv2frqvdnkh.apps.googleusercontent.com', SCOPE='https://www.googleapis.com/auth/gmail.send';
+ let tc=null,token=null;
+ const E=id=>document.getElementById(id);
+ function safe(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+ function bytes64(s){const b=new TextEncoder().encode(s);let x='';for(let i=0;i<b.length;i+=32768)x+=String.fromCharCode(...b.subarray(i,i+32768));return btoa(x)}
+ function raw64(s){return bytes64(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'')}
+ function hdr(s){return /^[\x20-\x7E]*$/.test(s)?s:'=?UTF-8?B?'+bytes64(s)+'?='}
+ function state(k,t){let x=E('gmailApiState');if(x){x.className='gmail-api-state gmail-api-'+k;x.innerHTML=t}}
+ function init(){
+  if(!window.google?.accounts?.oauth2){state('error','Nie udało się załadować logowania Google. Odśwież stronę.');return false}
+  tc=google.accounts.oauth2.initTokenClient({client_id:CLIENT_ID,scope:SCOPE,callback:r=>{
+   if(r.error)return state('error','Google: '+safe(r.error));
+   token=r.access_token;state('on','✓ Połączono z Google. Możesz wysłać newsletter.');let b=E('gmailApiSend');if(b)b.disabled=false;
+  }});return true
+ }
+ window.connectDhGmail=function(){if(!tc&&!init())return;tc.requestAccessToken({prompt:token?'':'consent'})}
+ function emails(s){return String(s||'').split(',').map(x=>x.trim()).filter(Boolean).every(x=>/^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(x))}
+ window.sendDhGmail=async function(){
+  if(!token)return connectDhGmail();
+  const to=(E('gmailApiTo')?.value||'').trim(),cc=(E('gmailApiCc')?.value||'').trim(),bcc=(E('gmailApiBcc')?.value||'').trim(),sub=(E('gmailApiSubject')?.value||'').trim();
+  if(!to||!emails(to))return state('error','Wpisz poprawny adres w polu <b>Do</b>.');
+  if(cc&&!emails(cc))return state('error','Sprawdź pole <b>DW</b>.'); if(bcc&&!emails(bcc))return state('error','Sprawdź pole <b>UDW</b>.'); if(!sub)return state('error','Wpisz temat.');
+  try{
+   if(typeof gmailImageStats==='function'){const st=gmailImageStats();if(st.local)return state('error','Masz '+st.local+' lokalne grafiki. Przed wysyłką podmień je na publiczne URL HTTPS.')}
+   const lines=['To: '+to,cc?'Cc: '+cc:null,bcc?'Bcc: '+bcc:null,'Subject: '+hdr(sub),'MIME-Version: 1.0','Content-Type: text/html; charset=UTF-8','Content-Transfer-Encoding: 8bit','',output()].filter(x=>x!==null);
+   let b=E('gmailApiSend');b.disabled=true;b.textContent='Wysyłanie…';
+   const r=await fetch('https://gmail.googleapis.com/gmail/v1/users/me/messages/send',{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({raw:raw64(lines.join('\r\n'))})});
+   const d=await r.json(); if(!r.ok)throw new Error(d?.error?.message||('HTTP '+r.status));
+   state('on','✓ Newsletter wysłany przez Gmail.'); if(typeof toast==='function')toast('Newsletter wysłany przez Gmail API.');
+  }catch(e){state('error','Nie udało się wysłać: '+safe(e.message||e))}
+  finally{let b=E('gmailApiSend');if(b){b.disabled=!token;b.textContent='Wyślij newsletter przez Gmail'}}
+ }
+ window.openGmailApiSend=function(){
+  const modal=E('v3modal'); if(!modal)return;
+  E('v3title').textContent='Wyślij przez Gmail API';
+  E('v3body').innerHTML='<div id="gmailApiState" class="gmail-api-state gmail-api-off">'+(token?'✓ Połączono z Google.':'Połącz konto Google, aby wysłać pełny HTML newslettera.')+'</div>'+
+   '<button class="btn alt" style="width:100%;padding:12px" onclick="connectDhGmail()">Połącz konto Google</button>'+
+   '<div class="gmail-api-field"><label>Do</label><input id="gmailApiTo" placeholder="odbiorca@szpital.pl"></div>'+
+   '<div class="gmail-api-grid"><div class="gmail-api-field"><label>DW</label><input id="gmailApiCc"></div><div class="gmail-api-field"><label>UDW</label><input id="gmailApiBcc"></div></div>'+
+   '<div class="gmail-api-field"><label>Temat</label><input id="gmailApiSubject" value="'+safe((typeof v3==='function'&&v3().subject)||project().name||'Newsletter DH Medical')+'"></div>'+
+   '<div class="gmail-api-actions"><button id="gmailApiSend" class="btn dark" style="padding:13px" onclick="sendDhGmail()" '+(token?'':'disabled')+'>Wyślij newsletter przez Gmail</button><button class="btn ghost" onclick="closeV3()">Anuluj</button></div>'+
+   '<p class="note" style="margin-top:10px">Wysyłany jest bezpośrednio pełny HTML generowany przez tę wersję Studio — bez kopiowania przez schowek Gmaila.</p>';
+  modal.classList.add('show'); if(token)state('on','✓ Połączono z Google. Możesz wysłać newsletter.');
+ }
+ setTimeout(()=>{
+   const bar=document.getElementById('v3bar');
+   if(bar && !document.getElementById('gmailApiBtn')){
+     const b=document.createElement('button');b.id='gmailApiBtn';b.className='btn dark small';b.textContent='✉ Gmail API';b.onclick=openGmailApiSend;bar.appendChild(b);
+   }
+ },600);
 })();
 </script>
 </body></html>
