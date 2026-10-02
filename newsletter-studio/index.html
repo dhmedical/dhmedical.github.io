@@ -398,4 +398,32 @@ setTimeout(()=>{renderAll();let s=document.querySelector('.sub');if(s)s.textCont
  },600);
 })();
 </script>
+
+<script id="dhGmailApiUiFix">
+(function(){
+ function wireGmailApi(){
+   // Header Gmail button in V8.2
+   const candidates=[...document.querySelectorAll('button')].filter(b=>b.textContent.trim()==='Gmail');
+   const header=candidates.find(b=>b.closest('header')) || candidates[0];
+   if(header){
+     header.setAttribute('onclick','openGmailApiSend()');
+     header.onclick=function(e){e.preventDefault();e.stopPropagation();openGmailApiSend();};
+     header.title='Wyślij newsletter przez Gmail API';
+   }
+   // Also ensure an explicit API button is visible in the campaign toolbar.
+   const bar=document.getElementById('v3bar');
+   if(bar && !document.getElementById('gmailApiBtnFixed')){
+     const b=document.createElement('button');
+     b.id='gmailApiBtnFixed';
+     b.className='btn dark small';
+     b.textContent='✉ Wyślij przez Gmail';
+     b.onclick=function(){openGmailApiSend();};
+     bar.appendChild(b);
+   }
+ }
+ document.addEventListener('DOMContentLoaded',()=>setTimeout(wireGmailApi,800));
+ setTimeout(wireGmailApi,1200);
+})();
+</script>
+
 </body></html>
