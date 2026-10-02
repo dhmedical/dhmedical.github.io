@@ -679,4 +679,92 @@ setTimeout(()=>{renderAll();let s=document.querySelector('.sub');if(s)s.textCont
 })();
 </script>
 
+
+<style id="dhProjectTransferCss">
+.dh-project-transfer{display:flex;gap:6px;flex-wrap:wrap}
+.dh-drop-project{border:2px dashed #bcdce9;border-radius:12px;padding:22px;text-align:center;background:#f6fcfe;color:#52717f;margin:10px 0;cursor:pointer}
+.dh-drop-project.drag{border-color:#25a7df;background:#eaf8fd}
+</style>
+<script id="dhProjectTransfer">
+(function(){
+ function safeName(s){return (s||'newsletter').replace(/[^a-z0-9ąćęłńóśźż_-]+/gi,'-').replace(/^-+|-+$/g,'')||'newsletter'}
+ function downloadProject(){
+   persist();
+   const pack={
+     format:'DHMedicalNewsletterProject',
+     version:1,
+     exportedAt:new Date().toISOString(),
+     project:JSON.parse(JSON.stringify(project()))
+   };
+   const blob=new Blob([JSON.stringify(pack,null,2)],{type:'application/json;charset=utf-8'});
+   const a=document.createElement('a');
+   a.href=URL.createObjectURL(blob);
+   a.download=safeName(project().name)+'.dhnewsletter.json';
+   document.body.appendChild(a);a.click();a.remove();
+   setTimeout(()=>URL.revokeObjectURL(a.href),700);
+   toast('Projekt wyeksportowany.');
+ }
+ function importProjectFile(file){
+   if(!file)return;
+   const r=new FileReader();
+   r.onload=()=>{
+     try{
+       const data=JSON.parse(r.result);
+       const incoming=data && data.format==='DHMedicalNewsletterProject' ? data.project : data;
+       if(!incoming || typeof incoming!=='object' || !Array.isArray(incoming.modules) || !incoming.settings)
+         throw new Error('Nieprawidłowy format projektu.');
+       const copy=JSON.parse(JSON.stringify(incoming));
+       copy.name=(copy.name||'Zaimportowany newsletter')+' — import';
+       const id='p'+Date.now();
+       state.projects[id]=copy; state.current=id; state.selected=0;
+       renderAll(); closeV3();
+       toast('Projekt zaimportowany 1:1.');
+     }catch(e){alert('Nie udało się zaimportować projektu.\n\n'+e.message)}
+   };
+   r.readAsText(file,'utf-8');
+ }
+ function openProjectImport(){
+   openV3('Import projektu DH Medical',`
+     <p class="note">Wybierz plik <b>.dhnewsletter.json</b> otrzymany z Newsletter Studio. Projekt zostanie dodany jako nowy newsletter — nie nadpisze obecnego.</p>
+     <div id="dhProjectDrop" class="dh-drop-project" onclick="document.getElementById('dhProjectFile').click()">
+       <b>Przeciągnij plik projektu tutaj</b><br><span style="font-size:11px">albo kliknij, aby wybrać plik</span>
+     </div>
+     <input id="dhProjectFile" type="file" accept=".json,.dhnewsletter.json,application/json" style="display:none">
+   `);
+   setTimeout(()=>{
+     const inp=document.getElementById('dhProjectFile'),drop=document.getElementById('dhProjectDrop');
+     inp.onchange=()=>importProjectFile(inp.files[0]);
+     ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('drag')}));
+     ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('drag')}));
+     drop.addEventListener('drop',e=>importProjectFile(e.dataTransfer.files[0]));
+   },0);
+ }
+ window.exportProjectFile=downloadProject;
+ window.openProjectImport=openProjectImport;
+
+ // Add dedicated project transfer buttons next to the existing HTML Export / Import.
+ const oldAddV3UI=window.addV3UI;
+ window.addV3UI=function(){
+   oldAddV3UI();
+   const bar=document.getElementById('v3bar');
+   if(bar && !document.getElementById('dhExportProjectBtn')){
+     const exp=document.createElement('button');
+     exp.id='dhExportProjectBtn'; exp.className='btn ghost small';
+     exp.textContent='💾 Eksport projektu'; exp.onclick=downloadProject;
+     const imp=document.createElement('button');
+     imp.id='dhImportProjectBtn'; imp.className='btn ghost small';
+     imp.textContent='📂 Import projektu'; imp.onclick=openProjectImport;
+     bar.append(exp,imp);
+   }
+ };
+ // UI already exists at load time in this build, so add immediately too.
+ const bar=document.getElementById('v3bar');
+ if(bar && !document.getElementById('dhExportProjectBtn')){
+   const exp=document.createElement('button');exp.id='dhExportProjectBtn';exp.className='btn ghost small';exp.textContent='💾 Eksport projektu';exp.onclick=downloadProject;
+   const imp=document.createElement('button');imp.id='dhImportProjectBtn';imp.className='btn ghost small';imp.textContent='📂 Import projektu';imp.onclick=openProjectImport;
+   bar.append(exp,imp);
+ }
+})();
+</script>
+
 </body></html>
