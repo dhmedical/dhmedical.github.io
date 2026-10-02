@@ -518,4 +518,81 @@ setTimeout(()=>{renderAll();let s=document.querySelector('.sub');if(s)s.textCont
 })();
 </script>
 
+
+<script id="dhHeaderLogoAndAutolinkFix">
+(function(){
+  // Gmail/mobile: use the public logo URL for the header whenever available.
+  // Local data/blob images can work in preview but are not reliable in received email.
+  const oldV7LogoCard = v7LogoCard;
+  v7LogoCard=function(b){
+    const publicLogo=(b && b.logoUrl && /^https:\/\//i.test(b.logoUrl)) ? b.logoUrl : '';
+    if(publicLogo){
+      const bb=Object.assign({},b,{logo:publicLogo});
+      return oldV7LogoCard(bb);
+    }
+    return oldV7LogoCard(b);
+  };
+
+  // Prevent Gmail/iOS from auto-linking NIP and phone numbers in the footer.
+  // Zero-width non-joiners are visually invisible but break automatic detection.
+  function noAuto(s){ return String(s).split('').join('&#8204;'); }
+  const oldV7FooterNoLinks=v7Footer;
+  v7Footer=function(c,b){
+    let h=oldV7FooterNoLinks(c,b);
+    h=h.replace('NIP: 7382168824','NIP: '+noAuto('7382168824'))
+       .replace('NIP: 7343623098','NIP: '+noAuto('7343623098'))
+       .replace('+48 883 480 355',noAuto('+48 883 480 355'))
+       .replace('+48 507 687 927',noAuto('+48 507 687 927'));
+    return h;
+  };
+  renderPreview();
+})();
+</script>
+
+
+<script id="dhPermanentBrandKit">
+(function(){
+ const DH={
+   logo:'https://www.dhmedical.org/logo.png',
+   logoSvg:'https://www.dhmedical.org/logo.svg',
+   color:'#25a7df',
+   navy:'#061b28',
+   name:'DH Medical'
+ };
+ function applyPermanentBrand(){
+   try{
+     // V7/V8 Brand Kit object: force only permanent corporate identity.
+     if(typeof brand==='function'){
+       const b=brand();
+       b.logo=DH.logo;
+       b.logoUrl=DH.logo;
+       b.name=DH.name;
+       b.color=DH.color;
+     }
+     // Project defaults that should never vary between campaigns.
+     if(typeof project==='function' && project()){
+       project().settings.logoText=DH.name;
+       project().settings.color=DH.color;
+     }
+     // Brand Kit UI, if present.
+     const logoText=document.getElementById('logoText');
+     if(logoText) logoText.value=DH.name;
+     const color=document.getElementById('color');
+     if(color) color.value=DH.color;
+     // Fill public logo URL inputs used by later V8 extensions.
+     [...document.querySelectorAll('input')].forEach(i=>{
+       const ph=(i.placeholder||'').toLowerCase(), val=(i.value||'').toLowerCase();
+       if((ph.includes('logo')||val.includes('/logo')) && (ph.includes('https')||i.type==='url'||val.startsWith('http'))){
+         i.value=DH.logo;
+       }
+     });
+   }catch(e){}
+ }
+ const oldRenderAllBrand=renderAll;
+ renderAll=function(){applyPermanentBrand();oldRenderAllBrand();applyPermanentBrand();}
+ applyPermanentBrand();
+ setTimeout(()=>{applyPermanentBrand();renderPreview();},400);
+})();
+</script>
+
 </body></html>
