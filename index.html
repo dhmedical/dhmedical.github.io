@@ -39,20 +39,21 @@
 .offer-grid .offer-card>.regulatory-badges{grid-row:4;align-self:start;margin:10px 20px 0}
 @media(max-width:700px){.offer-grid .offer-card{display:block}.offer-grid .offer-card>p{min-height:0}.offer-grid .offer-card>.regulatory-badges{margin:10px 20px 0}}
 </style>
-</head>
+<style id="home-news-style">.home-news{padding:78px 0;background:#f4f8fb}.home-news .section-kicker{color:#087ca5;font-weight:800;text-transform:uppercase;letter-spacing:.12em}.home-news h2{font-size:clamp(28px,4vw,42px);color:#0b2940;margin:12px 0}.home-news .intro{color:#567084;margin-bottom:30px}.home-news-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.home-news-card{display:block;background:#fff;border:1px solid #dce8f0;border-radius:17px;padding:28px;text-decoration:none;box-shadow:0 8px 25px #08223b0a;transition:transform .2s}.home-news-card:hover{transform:translateY(-4px)}.home-news-meta{font-size:12px;color:#087ca5;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.home-news-card h3{font-size:20px;line-height:1.35;color:#0b2940;margin:14px 0}.home-news-card p{color:#567084;line-height:1.65}.home-news-link{color:#0678a3;font-weight:800}.home-news-more{display:inline-block;margin-top:27px;padding:13px 21px;background:#0d3853;border-radius:10px;color:white;text-decoration:none;font-weight:700}@media(max-width:850px){.home-news-grid{grid-template-columns:1fr}.home-news{padding:50px 0}}</style></head>
 
 <body>
   <header class="site-header">
     <div class="container nav-wrapper">
-      <a href="/" class="brand" aria-label="DH Medical - strona główna">
+      <a href="index.html" class="brand" aria-label="DH Medical - strona główna">
         <img src="assets/logo.svg" alt="DH Medical">
       </a>
 
       <button class="mobile-toggle" type="button" aria-label="Otwórz menu" aria-expanded="false"><i class="bi bi-list"></i></button>
       <nav class="nav-links" aria-label="Główna nawigacja">
-        <a href="/">Strona główna</a>
+        <a href="index.html">Strona główna</a>
         <a href="oferta.html">Oferta</a>
         <a href="o-nas.html">O nas</a>
+        <a href="aktualnosci.html">Aktualności</a>
         <a href="kontakt.html" class="nav-cta">Kontakt</a>
       </nav>
     </div>
@@ -281,6 +282,7 @@
       </div>
     </section>
 
+    <section class="home-news" aria-labelledby="home-news-title"><div class="container"><div class="section-kicker">Z życia DH Medical</div><h2 id="home-news-title">Co u nas nowego?</h2><p class="intro">Wydarzenia, publikacje naukowe i materiały edukacyjne ze świata dostępów naczyniowych.</p><div class="home-news-grid"><a class="home-news-card" href="aktualnosci/infuzja-2026.html"><img src="assets/aktualnosci/infuzja-2026/stoisko.jpg" alt="Stoisko DH Medical na INFUzji 2026" loading="lazy" style="display:block;width:100%;height:170px;object-fit:cover;object-position:center 40%;border-radius:12px;margin-bottom:16px"><div class="home-news-meta">Wydarzenia · 7–10 października 2026</div><h3>DH Medical na konferencji INFUzja 2026 w Toruniu</h3><p>Relacja z konferencji, rozmowy ze specjalistami oraz rozwiązania do bezszwowego mocowania dostępów naczyniowych.</p><span class="home-news-link">Czytaj więcej →</span></a><a class="home-news-card" href="aktualnosci/secureportiv-materialy.html"><img src="assets/aktualnosci/secureportiv-2026/log-reduction.png" alt="Materiał H.B. Fuller o redukcji drobnoustrojów" loading="lazy" style="display:block;width:100%;height:170px;object-fit:contain;background:#fff;border-radius:12px;margin-bottom:16px"><div class="home-news-meta">Produkty i edukacja · Październik 2026</div><h3>Nowe materiały instruktażowe SecurePortIV</h3><p>Nowe materiały wideo dotyczące aplikacji kleju i zmiany opatrunku.</p><span class="home-news-link">Czytaj więcej →</span></a><a class="home-news-card" href="aktualnosci/publikacja-nevat.html"><img src="assets/aktualnosci/nevat-2026/logo-nevat.png" alt="Logo Neonates – NEVAT" loading="lazy" style="display:block;width:100%;height:170px;object-fit:contain;background:#f4f7ff;padding:24px;border-radius:12px;margin-bottom:16px;box-sizing:border-box"><div class="home-news-meta">Nauka i badania · Wrzesień 2026</div><h3>Nowe zalecenia NEVAT–ESPR w neonatologii</h3><p>Publikacja dotycząca postępowania z cewnikami tętniczymi u noworodków.</p><span class="home-news-link">Czytaj więcej →</span></a></div><a class="home-news-more" href="aktualnosci.html">Zobacz wszystkie aktualności →</a></div></section>
     <section class="partners">
       <div class="container">
         <div class="section-header">
@@ -345,7 +347,7 @@
 
         <div>
           <div class="footer-brand-row">
-            <a class="footer-logo-box" href="/" aria-label="DH Medical — strona główna">
+            <a class="footer-logo-box" href="index.html" aria-label="DH Medical — strona główna">
               <img src="assets/logo.svg" alt="DH Medical" loading="lazy" decoding="async">
             </a>
 
