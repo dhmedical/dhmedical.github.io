@@ -22,7 +22,17 @@ main > section.about-cta-wrap { padding-top: 0 !important; }
 .czd-gallery a:hover img{transform:scale(1.025);filter:brightness(.96)}
 .czd-gallery a:focus-visible{outline:3px solid #087fa7;outline-offset:3px}
 @media(max-width:600px){.czd-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.czd-gallery img{height:160px}}
-</style></head><body><header class="site-header">
+</style><style id="dh-lightbox-style">
+.dh-lightbox{position:fixed;inset:0;z-index:99999;background:rgba(8,17,30,.92);display:none;align-items:center;justify-content:center;padding:56px 65px;box-sizing:border-box}
+.dh-lightbox.is-open{display:flex}
+.dh-lightbox img{max-width:100%;max-height:calc(100vh - 112px);object-fit:contain;border-radius:5px;box-shadow:0 10px 45px rgba(0,0,0,.25)}
+.dh-lightbox button{position:absolute;border:0;background:rgba(255,255,255,.13);color:#fff;cursor:pointer;border-radius:50%;width:43px;height:43px;font-size:29px;line-height:1;display:flex;align-items:center;justify-content:center}
+.dh-lightbox button:hover,.dh-lightbox button:focus-visible{background:rgba(255,255,255,.27)}
+.dh-lightbox .dh-close{top:14px;right:16px}.dh-lightbox .dh-prev{left:13px;top:50%;transform:translateY(-50%)}.dh-lightbox .dh-next{right:13px;top:50%;transform:translateY(-50%)}
+.dh-lightbox .dh-count{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:#fff;font:14px system-ui,sans-serif}
+@media(max-width:600px){.dh-lightbox{padding:58px 12px}.dh-lightbox img{max-height:calc(100vh - 145px)}.dh-lightbox .dh-prev,.dh-lightbox .dh-next{top:auto;bottom:13px;transform:none}.dh-lightbox .dh-prev{left:18px}.dh-lightbox .dh-next{right:18px}}
+</style>
+</head><body><header class="site-header">
 <div class="container nav-wrapper">
 <a aria-label="DH Medical - strona główna" class="brand" href="../index.html">
 <img alt="DH Medical" src="../assets/logo.svg"/>
@@ -139,6 +149,28 @@ main > section.about-cta-wrap { padding-top: 0 !important; }
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
+})();
+</script>
+<script id="dh-lightbox-script">
+(function(){
+ function init(){
+  var gallery=document.querySelector('.czd-gallery, .czd25-gallery');if(!gallery)return;
+  var links=Array.from(gallery.querySelectorAll('a[href]'));if(!links.length)return;
+  var modal=document.createElement('div');modal.className='dh-lightbox';modal.setAttribute('role','dialog');modal.setAttribute('aria-modal','true');modal.setAttribute('aria-label','Podgląd zdjęcia');
+  modal.innerHTML='<button type="button" class="dh-close" aria-label="Zamknij zdjęcie">×</button><button type="button" class="dh-prev" aria-label="Poprzednie zdjęcie">‹</button><img alt=""><button type="button" class="dh-next" aria-label="Następne zdjęcie">›</button><span class="dh-count" aria-live="polite"></span>';
+  document.body.appendChild(modal);
+  var img=modal.querySelector('img'),count=modal.querySelector('.dh-count'),index=0,lastFocus=null,previousOverflow='';
+  function show(i){index=(i+links.length)%links.length;var link=links[index];img.src=link.href;img.alt=(link.querySelector('img')||{}).alt||'Zdjęcie z warsztatów';count.textContent=(index+1)+' / '+links.length;}
+  function open(i){lastFocus=document.activeElement;previousOverflow=document.body.style.overflow;show(i);modal.classList.add('is-open');document.body.style.overflow='hidden';modal.querySelector('.dh-close').focus();}
+  function close(){modal.classList.remove('is-open');document.body.style.overflow=previousOverflow;img.removeAttribute('src');if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+  links.forEach(function(link,i){link.removeAttribute('target');link.removeAttribute('rel');link.setAttribute('aria-label','Powiększ zdjęcie '+(i+1)+' z '+links.length);link.addEventListener('click',function(e){e.preventDefault();open(i);});});
+  modal.querySelector('.dh-close').addEventListener('click',close);
+  modal.querySelector('.dh-prev').addEventListener('click',function(){show(index-1)});
+  modal.querySelector('.dh-next').addEventListener('click',function(){show(index+1)});
+  modal.addEventListener('click',function(e){if(e.target===modal)close();});
+  document.addEventListener('keydown',function(e){if(!modal.classList.contains('is-open'))return;if(e.key==='Escape'){e.preventDefault();close()}else if(e.key==='ArrowLeft'){e.preventDefault();show(index-1)}else if(e.key==='ArrowRight'){e.preventDefault();show(index+1)}else if(e.key==='Tab'){var buttons=Array.from(modal.querySelectorAll('button'));var first=buttons[0],last=buttons[buttons.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 })();
 </script>
 </body></html>
