@@ -1,6 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://www.dhmedical.org/aktualnosci.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dhmedical.org/aktualnosci/infuzja-2026.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dhmedical.org/aktualnosci/publikacja-nevat.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dhmedical.org/aktualnosci/secureportiv-materialy.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dhmedical.org/aktualnosci/warsztaty-czd-2025.html</loc>
+  </url>
+  <url>
+    <loc>https://www.dhmedical.org/aktualnosci/warsztaty-czd.html</loc>
+  </url>
+  <url>
     <loc>https://www.dhmedical.org/exitpocket.html</loc>
   </url>
   <url>
@@ -16,6 +34,9 @@
     <loc>https://www.dhmedical.org/oferta.html</loc>
   </url>
   <url>
+    <loc>https://www.dhmedical.org/polityka-prywatnosci.html</loc>
+  </url>
+  <url>
     <loc>https://www.dhmedical.org/porty-naczyniowe.html</loc>
   </url>
   <url>
@@ -27,10 +48,4 @@
   <url>
     <loc>https://www.dhmedical.org/zestawy-infuzyjne.html</loc>
   </url>
-<url><loc>https://www.dhmedical.org/aktualnosci.html</loc></url>
-<url><loc>https://www.dhmedical.org/aktualnosci/infuzja-2026.html</loc></url>
-<url><loc>https://www.dhmedical.org/aktualnosci/warsztaty-czd.html</loc></url>
-<url><loc>https://www.dhmedical.org/aktualnosci/publikacja-nevat.html</loc></url>
-<url><loc>https://www.dhmedical.org/aktualnosci/secureportiv-materialy.html</loc></url>
-<url><loc>https://www.dhmedical.org/aktualnosci/warsztaty-czd-2025.html</loc></url>
 </urlset>
